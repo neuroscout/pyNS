@@ -1,2 +1,2 @@
-# pyneuroscout
-Python wrapper for neuroscout api
+# pyns 📌
+Python neuroscout API wrapper
