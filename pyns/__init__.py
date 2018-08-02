@@ -6,7 +6,7 @@
     :license: MIT, see LICENSE for more details.
 """
 
-API_BASE_URL = 'https://alpha.neuroscout.org/api/'
+API_BASE_URL = 'http://alpha.neuroscout.org/api/'
 
 from .client import Client
 
