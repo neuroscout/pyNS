@@ -1,2 +1,2 @@
-# pyns 📌
+# pyns 🌲
 Python neuroscout API wrapper
