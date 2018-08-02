@@ -9,23 +9,23 @@ class Client(object):
                  api_base_url=None):
         if session is None:
             self.session = requests.Session()
-            self.flask_session = False
+            self._flask_session = False
         else:
-            self.flask_session = session
-            self.client_flask = False
+            self._flask_session = session
+            self._flask_session = True
 
-        self.api_base_url = api_base_url or API_BASE_URL
+        self._api_base_url = api_base_url or API_BASE_URL
 
-        self.token = None
+        self._api_token = None
 
         if email is not None and password is not None:
             self.email = email
             self.password = password
-            self._authorize(email, password)
+            self._authorize()
 
     def _get_headers(self):
-        if self.token is not None:
-           return {'Authorization': 'JWT %s' % self.token}
+        if self._api_token is not None:
+           return {'Authorization': 'JWT %s' % self._api_token}
         else:
             return None
 
@@ -33,26 +33,28 @@ class Client(object):
         """ Generic request handler """
         request_function = getattr(self.session, request)
         headers = headers or self._get_headers()
+        route = self._api_base_url + route
 
-        if self.flask_session:
-            return request_function(self.api_base_url + route, data=json.dumps(data),
-                content_type='application/json', headers=headers, query_string=params)
+        if self._flask_session:
+            return request_function(
+                route, content_type='application/json', data=json.dumps(data),
+                headers=headers, query_string=params)
         else:
-            return request_function(self.api_base_url + route, json=data,
-                headers=headers, params=params)
+            return request_function(
+                route, json=data, headers=headers, params=params)
 
     def _authorize(self, email=None, password=None):
         if email is not None and password is not None:
             self.email = email
             self.password = password
 
-        rv = self.post('/api/auth',
+        rv = self.post('auth',
                         data={'email': self.email, 'password': self.password})
 
-        if self.flask_session:
-             self.token = json.loads(rv.data.decode())['access_token']
+        if self._flask_session:
+             self._api_token = json.loads(rv.data.decode())['access_token']
         else:
-            self.token = rv.json()['access_token']
+            self._api_token = rv.json()['access_token']
 
     get = partialmethod(_make_request, 'get')
     post = partialmethod(_make_request, 'post')
