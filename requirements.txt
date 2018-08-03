@@ -1,3 +1,4 @@
 pytest
 requests
 betamax
+betamax_serializers
