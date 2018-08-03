@@ -8,14 +8,13 @@ class Client(object):
     def __init__(self, email=None, password=None, session=None,
                  api_base_url=None):
         if session is None:
-            self.session = requests.Session()
+            session = requests.Session()
             self._flask_session = False
         else:
-            self._flask_session = session
             self._flask_session = True
 
+        self.session = session
         self._api_base_url = api_base_url or API_BASE_URL
-
         self._api_token = None
 
         if email is not None and password is not None:
