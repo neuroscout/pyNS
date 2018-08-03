@@ -29,11 +29,6 @@ def recorder(client_recorder):
     return client_recorder[0]
 
 @pytest.fixture(scope='function')
-def anonymous_client(client_recorder):
-    """ Returns only anonymous client """
-    return client_recorder[1]
-
-@pytest.fixture(scope='function')
 def client(client_recorder):
     """ Authorizes and returns client """
     recorder, client = client_recorder

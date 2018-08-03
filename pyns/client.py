@@ -18,9 +18,7 @@ class Client(object):
         self._api_token = None
 
         if email is not None and password is not None:
-            self.email = email
-            self.password = password
-            self._authorize()
+            self._authorize(email, password)
 
     def _get_headers(self):
         if self._api_token is not None:
