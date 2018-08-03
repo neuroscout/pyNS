@@ -8,9 +8,9 @@
 
 API_BASE_URL = 'http://alpha.neuroscout.org/api/'
 
-from .client import Client
+from .api import Neuroscout
 
-__all__ = ['Client']
+__all__ = ['Neuroscout']
 
 __author__ = ['Alejandro de la Vega']
 __license__ = 'MIT'

@@ -3,8 +3,9 @@ import json
 from functools import partialmethod
 
 from . import API_BASE_URL
+from . import models
 
-class Client(object):
+class Neuroscout(object):
     def __init__(self, email=None, password=None, session=None,
                  api_base_url=None):
         if session is None:
@@ -19,6 +20,9 @@ class Client(object):
 
         if email is not None and password is not None:
             self._authorize(email, password)
+
+
+        self.user = models.User(self)
 
     def _get_headers(self):
         if self._api_token is not None:

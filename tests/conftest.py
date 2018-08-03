@@ -3,7 +3,7 @@ import pytest
 import betamax
 from betamax_serializers import pretty_json
 
-from pyns import Client
+from pyns import Neuroscout
 
 USER_TEST_EMAIL = os.environ.get('USER_TEST_EMAIL', '** secret user **')
 USER_TEST_PWD = os.environ.get('USER_TEST_PWD', '** secret password **')
@@ -20,7 +20,7 @@ with betamax.Betamax.configure() as config:
 @pytest.fixture(scope='function')
 def client_recorder():
     """ Sets up client, recorder pair """
-    client = Client()
+    client = Neuroscout()
     return betamax.Betamax(client.session), client
 
 @pytest.fixture(scope='function')
