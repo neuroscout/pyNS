@@ -4,10 +4,13 @@
 
 The Python Neuroscout API wrapper
 
-Requirements:
-  - Python 3.4 or greater
+#### Requirements
+  - python 3.4+
   - requests
 
+#### Usage
+Coming soon...
 
-
-
+#### Testing
+We use pytest for testing, and betamax to record HTTP requests used in test into cassettes.
+To re-run tests locally (if necessary), configure `USER_TEST_EMAIL` and `USER_TEST_PWD` environment variables with valid Neuroscout API log in credentials. 
