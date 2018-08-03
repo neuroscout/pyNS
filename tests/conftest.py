@@ -18,20 +18,20 @@ with betamax.Betamax.configure() as config:
 
 
 @pytest.fixture(scope='function')
-def client_recorder():
+def neuroscout_recorder():
     """ Sets up client, recorder pair """
-    client = Neuroscout()
-    return betamax.Betamax(client.session), client
+    neuroscout = Neuroscout()
+    return betamax.Betamax(neuroscout.session), neuroscout
 
 @pytest.fixture(scope='function')
-def recorder(client_recorder):
+def recorder(neuroscout_recorder):
     """ Returns only recorder """
-    return client_recorder[0]
+    return neuroscout_recorder[0]
 
 @pytest.fixture(scope='function')
-def client(client_recorder):
+def neuroscout(neuroscout_recorder):
     """ Authorizes and returns client """
-    recorder, client = client_recorder
+    recorder, neuroscout = neuroscout_recorder
     with recorder.use_cassette('auth'):
-        client._authorize(email=USER_TEST_EMAIL, password=USER_TEST_PWD)
-    return client
+        neuroscout._authorize(email=USER_TEST_EMAIL, password=USER_TEST_PWD)
+    return neuroscout

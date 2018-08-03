@@ -1,0 +1,49 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2018-08-03T22:14:52",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzM5MjQ0NzksImlhdCI6MTUzMzMxOTY3OSwibmJmIjoxNTMzMzE5Njc5LCJpZGVudGl0eSI6Nn0.MTo4D94ZmqFtACYFRm6S-7S21reF4KtS-tCqtQAA-Tg",
+          "Connection": "keep-alive",
+          "User-Agent": "python-requests/2.18.4"
+        },
+        "method": "GET",
+        "uri": "http://alpha.neuroscout.org/api/user"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA1WOwQrCMAyG73uKkrOTWRFkJwfiA8guIjJCW1lhbWXJDjL27rYVYUII+f/vT8hcCAHocXiTIajFPWoh5twj0YbUaF9sg48QYCN+pEfqO6uTux9vK+CCtk9rdIecoKx2x7KKJVsp68Mq6NGZlGgN8comRp7SK3C+NpcWsr/E/sgZMA7tkDDHvTKrUxppq4L73vk7XTZKhckzFEvxATAygo3uAAAA",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": "*",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Content-Type": "application/json",
+          "Date": "Fri, 03 Aug 2018 22:14:51 GMT",
+          "Server": "nginx/1.15.1",
+          "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
+          "Transfer-Encoding": "chunked",
+          "Vary": "Accept-Encoding",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "DENY",
+          "X-XSS-Protection": "1; mode=block"
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "http://alpha.neuroscout.org/api/user"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.7.1"
+}
