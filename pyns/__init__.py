@@ -6,7 +6,8 @@
     :license: MIT, see LICENSE for more details.
 """
 
-API_BASE_URL = 'http://alpha.neuroscout.org/api/'
+API_BASE_URL = 'http://alpha.neuroscout.org/api'
+ROUTE_PATTERN = '{base_url}/{route}[/{id}][/{sub_route}]'
 
 from .api import Neuroscout
 

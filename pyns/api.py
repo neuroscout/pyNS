@@ -1,7 +1,8 @@
 import requests
+import re
 from functools import partialmethod
 
-from . import API_BASE_URL
+from . import API_BASE_URL, ROUTE_PATTERN
 from . import models
 
 class Neuroscout(object):
@@ -29,11 +30,34 @@ class Neuroscout(object):
         else:
             return None
 
-    def _make_request(self, request, route, params=None, data=None, headers=None):
+    def _build_path(self, route, **kwargs):
+        def _replace_variables(pattern, variables):
+            """ Replaces variables in pattern, returning an empty string
+                if any fail to match """
+            for name in re.findall('\{(.*?)\}', pattern):
+                if name in variables and variables[name] is not None:
+                    di = {name: str(variables[name])}
+                    pattern = pattern.format(**di)
+                else:
+                    return ''
+
+            return pattern
+
+        new_path = ROUTE_PATTERN
+        optional_patterns = re.findall('\[(.*?)\]', ROUTE_PATTERN)
+
+        for pattern in optional_patterns:
+            chunk = _replace_variables(pattern, kwargs)
+            new_path = new_path.replace('[%s]' % pattern, chunk)
+
+        return new_path.format(base_url=self._api_base_url, route=route)
+
+    def _make_request(self, request, route, sub_route=None, id=None,
+                      params=None, headers=None, **data):
         """ Generic request handler """
         request_function = getattr(self._session, request)
         headers = headers or self._get_headers()
-        route = self._api_base_url + route
+        route = self._build_path(route, sub_route=sub_route, id=id)
 
         return request_function(
             route, json=data, headers=headers, params=params)
