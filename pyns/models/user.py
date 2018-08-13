@@ -3,4 +3,4 @@ from .base import Base
 
 class User(Base):
     _base_path = 'user'
-    _allowed_methods = ('get', 'post', 'put')
+    _auto_methods = ('get', 'post', 'put')

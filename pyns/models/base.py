@@ -16,10 +16,10 @@ class Base(ABC):
                 setattr(self, attribute, value)
 
         all_methods = ('get', 'post', 'put', 'delete')
-        if not set(self._allowed_methods) <= set(all_methods):
+        if not set(self._auto_methods) <= set(all_methods):
             raise ValueError("Incorrect methods specified")
 
-        for method in self._allowed_methods:
+        for method in self._auto_methods:
             setattr(self,
                     method,
                     partial(
@@ -34,5 +34,5 @@ class Base(ABC):
 
     @property
     @abstractmethod
-    def _allowed_methods(self):
+    def _auto_methods(self):
         pass
