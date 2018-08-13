@@ -1,22 +1,38 @@
 """Provide the Base superclass."""
+from abc import ABC, abstractmethod
+from functools import partial
 
 
-class Base(object):
+class Base(ABC):
     """Superclass for all models."""
 
-    @classmethod
-    def parse(cls, data, neuroscout):
-        """Return an instance of ``cls`` from ``data``.
-        :param data: The structured data.
-        :param neuroscout: An instance of :class:`.Neuroscout`.
-        """
-        return cls(neuroscout, _data=data)
-
-    def __init__(self, neuroscout, _data):
+    def __init__(self, client, **_data):
         """Initialize a Model instance.
-        :param neuroscout: An instance of :class:`.Neuroscout`.
+        :param client: An instance of :class:`.Neuroscout`.
         """
-        self._neuroscout = neuroscout
+        self._client = client
         if _data:
             for attribute, value in _data.items():
                 setattr(self, attribute, value)
+
+        all_methods = ('get', 'post', 'put', 'delete')
+        if not set(self._allowed_methods) <= set(all_methods):
+            raise ValueError("Incorrect methods specified")
+
+        for method in self._allowed_methods:
+            setattr(self,
+                    method,
+                    partial(
+                        getattr(self._client, "_" + method),
+                        self._base_path)
+                    )
+
+    @property
+    @abstractmethod
+    def _base_path(self):
+        pass
+
+    @property
+    @abstractmethod
+    def _allowed_methods(self):
+        pass

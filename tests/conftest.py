@@ -21,7 +21,7 @@ with betamax.Betamax.configure() as config:
 def neuroscout_recorder():
     """ Sets up client, recorder pair """
     neuroscout = Neuroscout()
-    return betamax.Betamax(neuroscout.session), neuroscout
+    return betamax.Betamax(neuroscout._session), neuroscout
 
 @pytest.fixture(scope='function')
 def recorder(neuroscout_recorder):
