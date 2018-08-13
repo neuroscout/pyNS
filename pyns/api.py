@@ -13,6 +13,14 @@ class Neuroscout(object):
         if email is not None and password is not None:
             self._authorize(email, password)
 
+        # Set up main routes
+        self.analyses = models.Analyses(self)
+        self.datasets = models.Datasets(self)
+        self.tasks = models.Tasks(self)
+        self.runs = models.Runs(self)
+        self.predictors = models.Predictors(self)
+        self.predictor_events = models.PredictorEvents(self)
+        self.datasets = models.Datasets(self)
         self.user = models.User(self)
 
     def _get_headers(self):
