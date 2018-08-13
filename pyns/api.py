@@ -63,7 +63,7 @@ class Neuroscout(object):
             route, json=data, headers=headers, params=params)
 
     def _authorize(self, email=None, password=None):
-        rv = self._post('auth', data={'email': email, 'password': password})
+        rv = self._post('auth', email=email, password=password)
         self._api_token = rv.json()['access_token']
 
     _get = partialmethod(_make_request, 'get')
