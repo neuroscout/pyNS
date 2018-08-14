@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2018-08-14T17:01:33",
+      "recorded_at": "2018-08-14T17:01:19",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -17,11 +17,11 @@
           "User-Agent": "python-requests/2.18.4"
         },
         "method": "GET",
-        "uri": "http://alpha.neuroscout.org/api/user"
+        "uri": "http://alpha.neuroscout.org/api/analyses/qxA"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA9WSUWvCMBCA3/srwj3bkXbdlD5ZqIqMqcy+yJCStZGGtakzKbOI/31JVeygYh8mzJcjue84vlxuZyAEhJO0FFSAi97VHaFdFRWJqYg2bC1ZzhXkRZp20IklRCQhi1UePp0POIMsj9mK0TgkUkMbWz0T90zLCaxn96lWyElGdcW6lFTIUIcaFZLIQjuB/+YNA6jy+yO/YAicfof1VKPudFG20+26+B/ofm29P9A9fDITjcozbz4f+K2cLy7BC97e0xJ0X6e3XILZYOKPJ6N2ws2Gj5vFdUNsB7bdONCgzSRVXFY1QDPCUo31k8zq1tdH8RDl2aHPr9amF0V5wSUYe+MHwEcWsUYEAAA=",
+          "base64_string": "H4sIAAAAAAAAA5VTsW6DMBDd+QrkuakCahOULVIVdckSZYsiZODSuDE2tQ1qFPHvNcYGkyqqOuG7d3537/m4BWGI9ju0CqPn16ewi3JeVoRCqgTOIcP5RYMITbAixUpnWU2pzQvAyqVRPI+S2TyZRS/7aLma27sFVlijt3YMJaiUFDppWxcgc0EqRTib0J+xPPeF6Ot7bflKXgDtCHWgw4zy/CJ1fDBxaPMGw7Xiac6ZliRVV6NEDYbFFvjY4egjFBrTBYmaIR+YtrfJ990mbbAgOKPwi0vjE8wDuvkF+TgrBlIiDzgO59Zvrodl8sRFiTuv+k7Bfd1/DBhk2mdxM7Tm61QgwqpaeaKRrLNPyNVEDooTd32UjzSt2aQtCErYljcE+io3MGK4hK6iuiqQKsUM06skxo52eHJyIn/s2SOaHq2wAGa3blywSkBBcuel23ab5WJ8rkG4IYjiZZwEzqeju0Ua/TP4JnfL85hjcc8gFVa1GeRtt97s7TSdgakT57vYw7UE0ctaBG3wAxTo2CXYAwAA",
           "encoding": null,
           "string": ""
         },
@@ -30,7 +30,7 @@
           "Connection": "keep-alive",
           "Content-Encoding": "gzip",
           "Content-Type": "application/json",
-          "Date": "Tue, 14 Aug 2018 17:01:33 GMT",
+          "Date": "Tue, 14 Aug 2018 17:01:18 GMT",
           "Server": "nginx/1.15.1",
           "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
           "Transfer-Encoding": "chunked",
@@ -43,7 +43,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "http://alpha.neuroscout.org/api/user"
+        "url": "http://alpha.neuroscout.org/api/analyses/qxA"
       }
     }
   ],
