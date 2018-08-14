@@ -67,6 +67,7 @@ For example, we could use this to get the first predictor associated with a data
 
 
 And get the predictor-events associated with that predictor:
+
     >>> neuroscout.predictor_events.get(predictor_id=first['id']).json()[0:2]
     [{'duration': 9.0,
       'id': '1050781',
