@@ -5,26 +5,51 @@ class Analyses(Base):
     _base_path = 'analyses'
     _auto_methods = ('get', 'post', 'put')
 
-    def delete(self, id):
+    def delete(self, analysis_id):
         """ Delete analysis
-        :param id: Analysis hash_id.
+        :param str analysis_id: Analysis hash_id.
+        :return: client response object
         """
-        return self._client._delete(self._base_path, id=id)
+        return self._client._delete(self._base_path, id=analysis_id)
 
-    def get_bundle(self):
-        pass
+    def bundle(self, analysis_id):
+        """ Get analysis bundle
+        :param str analysis_id: Analysis hash_id.
+        :return: client response object
+        """
+        return self.get(id=analysis_id, sub_route='bundle')
 
-    def clone(self):
-        pass
+    def clone(self, analysis_id):
+        """ Clone analysis
+        :param str analysis_id: Analysis hash_id.
+        :return: client response object, with new analysis id
+        """
+        return self.post(id=analysis_id, sub_route='clone')
 
-    def compile(self):
-        pass
+    def compile(self, analysis_id):
+        """ Submit analysis for complication
+        :param str analysis_id: Analysis hash_id.
+        :return: client response object
+        """
+        return self.post(id=analysis_id, sub_route='compile')
 
-    def get_full(self):
-        pass
+    def full(self, analysis_id):
+        """ Submit analysis for complication
+        :param str analysis_id: Analysis hash_id.
+        :return: client response object
+        """
+        return self.get(id=analysis_id, sub_route='full')
 
-    def get_resources(self):
-        pass
+    def resources(self, analysis_id):
+        """ Get analysis resources
+        :param str analysis_id: Analysis hash_id.
+        :return: client response object
+        """
+        return self.get(id=analysis_id, sub_route='resources')
 
-    def get_status(self):
-        pass
+    def status(self, analysis_id):
+        """ Get analysis status
+        :param str analysis_id: Analysis hash_id.
+        :return: client response object
+        """
+        return self.get(id=analysis_id, sub_route='status')
