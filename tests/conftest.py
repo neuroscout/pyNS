@@ -17,18 +17,18 @@ with betamax.Betamax.configure() as config:
     config.define_cassette_placeholder('<USER_TEST_PWD>', USER_TEST_PWD)
 
 
-@pytest.fixture(scope='function')
+@pytest.fixture(scope='module')
 def neuroscout_recorder():
     """ Sets up client, recorder pair """
     neuroscout = Neuroscout()
     return betamax.Betamax(neuroscout._session), neuroscout
 
-@pytest.fixture(scope='function')
+@pytest.fixture(scope='module')
 def recorder(neuroscout_recorder):
     """ Returns only recorder """
     return neuroscout_recorder[0]
 
-@pytest.fixture(scope='function')
+@pytest.fixture(scope='module')
 def neuroscout(neuroscout_recorder):
     """ Authorizes and returns client """
     recorder, neuroscout = neuroscout_recorder

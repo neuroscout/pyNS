@@ -1,4 +1,3 @@
-
 def test_auth(recorder, neuroscout):
     assert neuroscout._api_token is not None
     assert len(neuroscout._api_token)
