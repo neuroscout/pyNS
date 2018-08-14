@@ -69,9 +69,15 @@ class Neuroscout(object):
         return new_path.format(base_url=self._api_base_url, route=route)
 
     def _make_request(self, request, route, sub_route=None, id=None,
-                      params=None, headers=None, **data):
+                      params=None, data=None, headers=None, **kwargs):
         """ Generic request handler """
         request_function = getattr(self._session, request)
+
+        if request == 'get':
+            params = kwargs
+        elif request == 'post':
+            data = kwargs
+            
         headers = headers or self._get_headers()
         route = self._build_path(route, sub_route=sub_route, id=id)
 
