@@ -16,7 +16,7 @@ Use `pip` to install it from github:
     pip install --upgrade https://github.com/neuroscout/pyns/archive/master.zip
 
 ### Quickstart
-We are assuming you already have valid Neuroscout API credentials (and if you dont, sign up at: alpha.neuroscout.org)
+We are assuming you already have valid Neuroscout API credentials (and if you dont, sign up at: `alpha.neuroscout.org`)
 
 First, instantiate a Neuroscout API Client object:
 
@@ -30,49 +30,58 @@ For example we can retrieve our user profile:
 
     >>> neuroscout.user.get().json()
     {'email': 'user@example.com',
-    'analyses': [ {'description': 'Does the brain care about language?',
-    'hash_id': 'RZd',
-    'modified_at': '2018-08-09T23:3',
-    'name': 'My new analysis',
-    'status': 'PASSED'}]]}
+     'analyses': [ {'description': 'Does the brain care about language?',
+      'hash_id': 'RZd',
+      'modified_at': '2018-08-09T23:3',
+      'name': 'My new analysis',
+      'status': 'PASSED'}]]}
 
 Or query various endpoints, such as `datasets`:
 
     >>> neuroscout.datasets.get().json()
     [{'description': {'Acknowledgements': '',
-    'Authors': ['Tomoyasu Horikawa', 'Yukiyasu Kamitani'],
-    'DatasetDOI': '',
-    'Funding': '',
-    'HowToAcknowledge': '',
-    'License': '',
-    'Name': 'Generic Object Decoding (fMRI on ImageNet)',
-    'ReferencesAndLinks': ['Horikawa & Kamitani (2017) Generic decoding of seen and imagined objects using hierarchical visual features. Nature Communications volume 8:15037. doi:10.1038/ncomms15037']},
-    'id': 1,
-    'name': 'generic_object_decoding',
+       'Authors': ['Tomoyasu Horikawa', 'Yukiyasu Kamitani'],
+       'DatasetDOI': '',
+       'Funding': '',
+       'HowToAcknowledge': '',
+       'License': '',
+       'Name': 'Generic Object Decoding (fMRI on ImageNet)',
+       'ReferencesAndLinks': ['Horikawa & Kamitani (2017) Generic decoding of seen and imagined objects using hierarchical visual features. Nature Communications volume 8:15037. doi:10.1038/ncomms15037']},
+      'id': 1,
+      'name': 'generic_object_decoding',
     ...
-    'tasks': [{'id': 8, 'name': 'life'}]}]
+      'tasks': [{'id': 8, 'name': 'life'}]}]
 
-For example, we could use this to get the predictors associated with a dataset:
+For example, we could use this to get the first predictor associated with a dataset:
 
-    >>> neuroscout.predictors.get(dataset_id=5).json()[0:2]
-    [{'description': 'Bounding polygon around face. y coordinate for vertex 1',
-    'extracted_feature': {'created_at': '2018-04-12 00:44:14.868349',
-    'description': 'Bounding polygon around face. y coordinate for vertex 1',
-    'extractor_name': 'GoogleVisionAPIFaceExtractor',
-    'id': 102,
-    'modality': None},
-    'id': 197,
-    'name': 'boundingPoly_vertex1_y',
-    'source': 'extracted'},
-    {'description': None,
-    'extracted_feature': {'created_at': '2018-04-12 00:44:14.925944',
-    'description': None,
-    'extractor_name': 'GoogleVisionAPIFaceExtractor',
-    'id': 110,
-    'modality': None},
-    'id': 93,
-    'name': 'landmark_NOSE_BOTTOM_RIGHT_z',
-    'source': 'extracted'}]
+    >>> first = neuroscout.predictors.get(dataset_id=5).json()[0]
+    {'description': 'Bounding polygon around face. y coordinate for vertex 1',
+     'extracted_feature': {'created_at': '2018-04-12 00:44:14.868349',
+      'description': 'Bounding polygon around face. y coordinate for vertex 1',
+      'extractor_name': 'GoogleVisionAPIFaceExtractor',
+      'id': 102,
+      'modality': None},
+     'id': 197,
+     'name': 'boundingPoly_vertex1_y',
+     'source': 'extracted'}
+
+
+And get the predictor-events associated with that predictor:
+    >>> neuroscout.predictor_events.get(predictor_id=first['id']).json()[0:2]
+    [{'duration': 9.0,
+      'id': '1050781',
+      'onset': 114.0,
+      'predictor_id': 197,
+      'run_id': 2,
+      'value': '13'},
+     {'duration': 9.0,
+      'id': '1050782',
+      'onset': 114.0,
+      'predictor_id': 197,
+      'run_id': 26,
+      'value': '13'}]
+
+
 
 
 ### Testing
