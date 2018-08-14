@@ -87,4 +87,5 @@ And get the predictor-events associated with that predictor:
 
 ### Testing
 We use pytest for testing, and betamax to record HTTP requests used in test into cassettes.
-To re-run tests locally (if necessary), configure `USER_TEST_EMAIL` and `USER_TEST_PWD` environment variables with valid Neuroscout API log in credentials.
+
+To re-run tests locally set the`USER_TEST_EMAIL` and `USER_TEST_PWD` environment variables with valid API credentials.
