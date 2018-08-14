@@ -6,18 +6,14 @@ from functools import partial
 class Base(ABC):
     """Superclass for all models."""
 
-    def __init__(self, client, **_data):
+    def __init__(self, client):
         """Initialize a Model instance.
         :param client: An instance of :class:`.Neuroscout`.
         """
         self._client = client
-        if _data:
-            for attribute, value in _data.items():
-                setattr(self, attribute, value)
 
         all_methods = ('get', 'post', 'put', 'delete')
-        if not set(self._auto_methods) <= set(all_methods):
-            raise ValueError("Incorrect methods specified")
+        assert set(self._auto_methods) <= set(all_methods)
 
         for method in self._auto_methods:
             setattr(self,
