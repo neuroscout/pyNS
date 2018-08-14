@@ -10,3 +10,21 @@ class Analyses(Base):
         :param id: Analysis hash_id.
         """
         return self._client._delete(self._base_path, id=id)
+
+    def get_bundle(self):
+        pass
+
+    def clone(self):
+        pass
+
+    def compile(self):
+        pass
+
+    def get_full(self):
+        pass
+
+    def get_resources(self):
+        pass
+
+    def get_status(self):
+        pass

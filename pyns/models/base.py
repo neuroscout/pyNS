@@ -35,4 +35,5 @@ class Base(ABC):
     @property
     @abstractmethod
     def _auto_methods(self):
+        """ HTTP methods to auto create in subordinate classes """
         pass
