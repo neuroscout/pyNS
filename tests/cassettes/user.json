@@ -1,26 +1,27 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2018-08-14T17:01:18",
+      "recorded_at": "2018-08-14T17:01:33",
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "{\"password\": \"<USER_TEST_PWD>\", \"email\": \"<USER_TEST_EMAIL>\"}"
+          "string": "{}"
         },
         "headers": {
           "Accept": "*/*",
           "Accept-Encoding": "gzip, deflate",
+          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzQ4NzA4NzgsImlhdCI6MTUzNDI2NjA3OCwibmJmIjoxNTM0MjY2MDc4LCJpZGVudGl0eSI6Nn0.kcgFbGAXwMNBkPkjMn9Do0usyG1QOCqXvvqZW8NRf4A",
           "Connection": "keep-alive",
-          "Content-Length": "63",
+          "Content-Length": "2",
           "Content-Type": "application/json",
           "User-Agent": "python-requests/2.18.4"
         },
-        "method": "POST",
-        "uri": "http://alpha.neuroscout.org/api/auth"
+        "method": "GET",
+        "uri": "http://alpha.neuroscout.org/api/user"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAAxWMSQ6CMAAA77yC8ABSkBj1VkFrqy3iilyM1AotmwYVxfh38TCHSSbz0XTdOHEu6vp4rzJRGiPdEG8CRAilL8l8ZwVy4ZI0RvzveNtii0kyNLsoF7MuUhOLtoHDWtiR1LjI07OL+3SzbZmHbaZgz3cbGRekwKp6sQ0FVB1s6nGnG18jtHucUQ7EGvdZCcyMJ9MYwbChbJwtM0XLoVeBR/1GVuC7t/D5vEX7AVtdHGhoX+0HO8UU6cEAAAA=",
+          "base64_string": "H4sIAAAAAAAAA9WSUWvCMBCA3/srwj3bkXbdlD5ZqIqMqcy+yJCStZGGtakzKbOI/31JVeygYh8mzJcjue84vlxuZyAEhJO0FFSAi97VHaFdFRWJqYg2bC1ZzhXkRZp20IklRCQhi1UePp0POIMsj9mK0TgkUkMbWz0T90zLCaxn96lWyElGdcW6lFTIUIcaFZLIQjuB/+YNA6jy+yO/YAicfof1VKPudFG20+26+B/ofm29P9A9fDITjcozbz4f+K2cLy7BC97e0xJ0X6e3XILZYOKPJ6N2ws2Gj5vFdUNsB7bdONCgzSRVXFY1QDPCUo31k8zq1tdH8RDl2aHPr9amF0V5wSUYe+MHwEcWsUYEAAA=",
           "encoding": null,
           "string": ""
         },
@@ -29,7 +30,7 @@
           "Connection": "keep-alive",
           "Content-Encoding": "gzip",
           "Content-Type": "application/json",
-          "Date": "Tue, 14 Aug 2018 17:01:18 GMT",
+          "Date": "Tue, 14 Aug 2018 17:01:33 GMT",
           "Server": "nginx/1.15.1",
           "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
           "Transfer-Encoding": "chunked",
@@ -42,7 +43,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "http://alpha.neuroscout.org/api/auth"
+        "url": "http://alpha.neuroscout.org/api/user"
       }
     }
   ],

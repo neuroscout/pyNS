@@ -3,7 +3,7 @@ import pytest
 import betamax
 from betamax_serializers import pretty_json
 
-from pyns import Client
+from pyns import Neuroscout
 
 USER_TEST_EMAIL = os.environ.get('USER_TEST_EMAIL', '** secret user **')
 USER_TEST_PWD = os.environ.get('USER_TEST_PWD', '** secret password **')
@@ -17,21 +17,21 @@ with betamax.Betamax.configure() as config:
     config.define_cassette_placeholder('<USER_TEST_PWD>', USER_TEST_PWD)
 
 
-@pytest.fixture(scope='function')
-def client_recorder():
+@pytest.fixture(scope='module')
+def neuroscout_recorder():
     """ Sets up client, recorder pair """
-    client = Client()
-    return betamax.Betamax(client.session), client
+    neuroscout = Neuroscout()
+    return betamax.Betamax(neuroscout._session), neuroscout
 
-@pytest.fixture(scope='function')
-def recorder(client_recorder):
+@pytest.fixture(scope='module')
+def recorder(neuroscout_recorder):
     """ Returns only recorder """
-    return client_recorder[0]
+    return neuroscout_recorder[0]
 
-@pytest.fixture(scope='function')
-def client(client_recorder):
+@pytest.fixture(scope='module')
+def neuroscout(neuroscout_recorder):
     """ Authorizes and returns client """
-    recorder, client = client_recorder
+    recorder, neuroscout = neuroscout_recorder
     with recorder.use_cassette('auth'):
-        client._authorize(email=USER_TEST_EMAIL, password=USER_TEST_PWD)
-    return client
+        neuroscout._authorize(email=USER_TEST_EMAIL, password=USER_TEST_PWD)
+    return neuroscout

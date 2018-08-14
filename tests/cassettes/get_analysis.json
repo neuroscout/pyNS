@@ -1,26 +1,27 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2018-08-14T17:01:18",
+      "recorded_at": "2018-08-14T17:01:19",
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "{\"password\": \"<USER_TEST_PWD>\", \"email\": \"<USER_TEST_EMAIL>\"}"
+          "string": "{}"
         },
         "headers": {
           "Accept": "*/*",
           "Accept-Encoding": "gzip, deflate",
+          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzQ4NzA4NzgsImlhdCI6MTUzNDI2NjA3OCwibmJmIjoxNTM0MjY2MDc4LCJpZGVudGl0eSI6Nn0.kcgFbGAXwMNBkPkjMn9Do0usyG1QOCqXvvqZW8NRf4A",
           "Connection": "keep-alive",
-          "Content-Length": "63",
+          "Content-Length": "2",
           "Content-Type": "application/json",
           "User-Agent": "python-requests/2.18.4"
         },
-        "method": "POST",
-        "uri": "http://alpha.neuroscout.org/api/auth"
+        "method": "GET",
+        "uri": "http://alpha.neuroscout.org/api/analyses/qxA"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAAxWMSQ6CMAAA77yC8ABSkBj1VkFrqy3iilyM1AotmwYVxfh38TCHSSbz0XTdOHEu6vp4rzJRGiPdEG8CRAilL8l8ZwVy4ZI0RvzveNtii0kyNLsoF7MuUhOLtoHDWtiR1LjI07OL+3SzbZmHbaZgz3cbGRekwKp6sQ0FVB1s6nGnG18jtHucUQ7EGvdZCcyMJ9MYwbChbJwtM0XLoVeBR/1GVuC7t/D5vEX7AVtdHGhoX+0HO8UU6cEAAAA=",
+          "base64_string": "H4sIAAAAAAAAA5VTsW6DMBDd+QrkuakCahOULVIVdckSZYsiZODSuDE2tQ1qFPHvNcYGkyqqOuG7d3537/m4BWGI9ju0CqPn16ewi3JeVoRCqgTOIcP5RYMITbAixUpnWU2pzQvAyqVRPI+S2TyZRS/7aLma27sFVlijt3YMJaiUFDppWxcgc0EqRTib0J+xPPeF6Ot7bflKXgDtCHWgw4zy/CJ1fDBxaPMGw7Xiac6ZliRVV6NEDYbFFvjY4egjFBrTBYmaIR+YtrfJ990mbbAgOKPwi0vjE8wDuvkF+TgrBlIiDzgO59Zvrodl8sRFiTuv+k7Bfd1/DBhk2mdxM7Tm61QgwqpaeaKRrLNPyNVEDooTd32UjzSt2aQtCErYljcE+io3MGK4hK6iuiqQKsUM06skxo52eHJyIn/s2SOaHq2wAGa3blywSkBBcuel23ab5WJ8rkG4IYjiZZwEzqeju0Ua/TP4JnfL85hjcc8gFVa1GeRtt97s7TSdgakT57vYw7UE0ctaBG3wAxTo2CXYAwAA",
           "encoding": null,
           "string": ""
         },
@@ -42,7 +43,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "http://alpha.neuroscout.org/api/auth"
+        "url": "http://alpha.neuroscout.org/api/analyses/qxA"
       }
     }
   ],

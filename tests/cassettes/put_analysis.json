@@ -1,0 +1,51 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2018-08-14T17:01:19",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"task_name\": \"MerlinMovie\", \"model\": {\"blocks\": [{\"transformations\": [], \"model\": {\"variables\": [\"brightness\"], \"HRF_variables\": []}, \"contrasts\": [], \"level\": \"run\", \"auto_contrasts\": true}, {\"level\": \"dataset\", \"auto_contrasts\": true}], \"name\": \"pytest_analysis\", \"input\": {\"subject\": [\"28\"], \"task\": \"MerlinMovie\"}}, \"predictions\": \"\", \"data\": {}, \"hash_id\": \"qxA\", \"private\": true, \"TR\": 1.5, \"name\": \"pytest_analysis\", \"runs\": [{\"id\": 126}], \"parent_id\": null, \"description\": \"new_description\", \"created_at\": \"2018-08-14T17:0\", \"status\": \"DRAFT\", \"compiled_at\": null, \"predictors\": [{\"id\": 12728}], \"modified_at\": \"2018-08-14T17:0\", \"user_id\": 6, \"compile_traceback\": \"\", \"dataset_id\": 5}"
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate",
+          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzQ4NzA4NzgsImlhdCI6MTUzNDI2NjA3OCwibmJmIjoxNTM0MjY2MDc4LCJpZGVudGl0eSI6Nn0.kcgFbGAXwMNBkPkjMn9Do0usyG1QOCqXvvqZW8NRf4A",
+          "Connection": "keep-alive",
+          "Content-Length": "694",
+          "Content-Type": "application/json",
+          "User-Agent": "python-requests/2.18.4"
+        },
+        "method": "PUT",
+        "uri": "http://alpha.neuroscout.org/api/analyses/qxA"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA5VTwW7CMAy99yuqnMdE0QZoN6QJ7cIFcUMoSlszMtKkS1I2hPrvS9KkpExo2on6PfvZzzGXJE3RZo1e0uzx+SG1USGqmjLAWpICclIcDYnQgCsx0QblDWMel0B0gNFknM1H4/koe9pks5exry2JJoa9tNdQgca0NKBvXYIqJK01FdzqcPjCMdQlHYg6dFXo83vhwUqUwKy6CUyYM1EclYm3Lk497jjSaIELwY0/pW2Olg04FZ8Qc9tdzDA4uS5INn4aTwzbe/BtvcQnIinJGfzSMvyAiwg7v6TvB81BKRQRu/67jZubYbnaC1kRu6WuU3Kb958F9Db9G4UZWvcbXCDK60ZHppFq8g8o9MAOmsxD+dU+MrLurFYgGeUrcaLQZYWBEScV2Iz6rEFpTDhhZ0XdOtr+yeme/nF092Q6tiYSuD/B6zHXEkpahF2G0/eokNfn6o07gWwym8yTsKddqKIn88+Il2yP577G9FZBaaIbN8jrerHc+GnsAnEwF2+xoxsFsrM1TdrkB9vlXpDlAwAA",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": "*",
+          "Connection": "keep-alive",
+          "Content-Encoding": "gzip",
+          "Content-Type": "application/json",
+          "Date": "Tue, 14 Aug 2018 17:01:18 GMT",
+          "Server": "nginx/1.15.1",
+          "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
+          "Transfer-Encoding": "chunked",
+          "Vary": "Accept-Encoding",
+          "X-Content-Type-Options": "nosniff",
+          "X-Frame-Options": "DENY",
+          "X-XSS-Protection": "1; mode=block"
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "http://alpha.neuroscout.org/api/analyses/qxA"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.7.1"
+}

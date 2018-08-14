@@ -6,11 +6,12 @@
     :license: MIT, see LICENSE for more details.
 """
 
-API_BASE_URL = 'http://alpha.neuroscout.org/api/'
+API_BASE_URL = 'http://alpha.neuroscout.org/api'
+ROUTE_PATTERN = '{base_url}/{route}[/{id}][/{sub_route}]'
 
-from .client import Client
+from .api import Neuroscout
 
-__all__ = ['Client']
+__all__ = ['Neuroscout']
 
 __author__ = ['Alejandro de la Vega']
 __license__ = 'MIT'
