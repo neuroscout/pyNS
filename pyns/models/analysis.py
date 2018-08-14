@@ -1,4 +1,4 @@
-"""Provides the Dataset related classes."""
+"""Provides the Analysis related classes."""
 from .base import Base
 
 class Analyses(Base):
@@ -27,14 +27,14 @@ class Analyses(Base):
         return self.post(id=id, sub_route='clone')
 
     def compile(self, id):
-        """ Submit analysis for complication
+        """ Submit analysis for complilation
         :param str id: Analysis hash_id.
         :return: client response object
         """
         return self.post(id=id, sub_route='compile')
 
     def full(self, id):
-        """ Submit analysis for complication
+        """ Get full analysis object (including runs and predictors)
         :param str id: Analysis hash_id.
         :return: client response object
         """
