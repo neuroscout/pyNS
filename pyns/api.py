@@ -6,6 +6,14 @@ from . import API_BASE_URL, ROUTE_PATTERN
 from . import models
 
 class Neuroscout(object):
+    """Neuroscout API client object. This is the access point for the API.
+
+    Args:
+        email (str, optional): Email address to use for authorization.
+        password (str, optional): Password for authorization (not saved)
+        api_base_url (str, optional): Alternate base URL for API
+
+    """
     def __init__(self, email=None, password=None, api_base_url=None):
         self._session = requests.Session()
         self._api_base_url = api_base_url or API_BASE_URL
@@ -25,15 +33,23 @@ class Neuroscout(object):
         self.user = models.User(self)
 
     def _get_headers(self):
+        """ Build authorization header """
         if self._api_token is not None:
            return {'Authorization': 'JWT %s' % self._api_token}
         else:
             return None
 
     def _build_path(self, route, **kwargs):
+        """ Build and format a URI for a request.
+
+        Args:
+            route (str): Primary API route. E.g. 'user'
+            kwargs (dict): Dictionary of variables used to format URI.
+
+        Returns:
+            path (str): Formatted URI
+        """
         def _replace_variables(pattern, variables):
-            """ Replaces variables in pattern, returning an empty string
-                if any fail to match """
             for name in re.findall('\{(.*?)\}', pattern):
                 if name in variables and variables[name] is not None:
                     di = {name: str(variables[name])}
@@ -63,6 +79,7 @@ class Neuroscout(object):
             route, json=data, headers=headers, params=params)
 
     def _authorize(self, email=None, password=None):
+        """ Fetch api_token given access credentials """
         rv = self._post('auth', email=email, password=password)
         self._api_token = rv.json()['access_token']
 
