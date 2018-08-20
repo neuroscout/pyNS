@@ -5,15 +5,15 @@
 The Neuroscout API wrapper for Python
 
 ### Overview
-py-ns is a python package to easily interact with the Neuroscout API.
+pyNS is a python package to easily interact with the Neuroscout API.
 
 For more API documentation, check out the Swagger API Docs: http://alpha.neuroscout.org/swagger-ui/
 
 ### Installation
-py-ns is supported in Python 3.4+
-Use `pip` to install it from github:
+pyNS is supported in Python 3.4+
+Use `pip` to install it:
 
-    pip install --upgrade https://github.com/neuroscout/pyns/archive/master.zip
+    pip install pyns
 
 ### Quickstart
 We are assuming you already have valid Neuroscout API credentials (and if you dont, sign up at: `alpha.neuroscout.org`)
