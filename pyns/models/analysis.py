@@ -1,5 +1,6 @@
 """Provides the Analysis related classes."""
 from .base import Base
+from pathlib import Path
 
 class Analyses(Base):
     _base_path = 'analyses'
@@ -12,12 +13,20 @@ class Analyses(Base):
         """
         return self._client._delete(self._base_path, id=id)
 
-    def bundle(self, id):
+    def bundle(self, id, filename=None):
         """ Get analysis bundle
         :param str id: Analysis hash_id.
+        :param str, object filename: Optional filename to save bundle to
         :return: client response object
         """
-        return self.get(id=id, sub_route='bundle')
+        bundle = self.get(id=id, sub_route='bundle')
+        if filename is not None:
+            if isinstance(filename, str):
+                filename = Path(filename)
+            with filename.open('wb') as f:
+                f.write(bundle.content)
+        else:
+            return bundle
 
     def clone(self, id):
         """ Clone analysis
