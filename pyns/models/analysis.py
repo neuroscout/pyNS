@@ -24,7 +24,7 @@ class Analyses(Base):
             if isinstance(filename, str):
                 filename = Path(filename)
             with filename.open('wb') as f:
-                f.write(bundle.content)
+                f.write(bundle)
         else:
             return bundle
 
