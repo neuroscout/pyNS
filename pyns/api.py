@@ -75,19 +75,36 @@ class Neuroscout(object):
 
         if request == 'get':
             params = kwargs
-        elif request == 'post':
+        elif request in ['put', 'post']:
             data = kwargs
-            
+
         headers = headers or self._get_headers()
         route = self._build_path(route, sub_route=sub_route, id=id)
 
-        return request_function(
+        resp = request_function(
             route, json=data, headers=headers, params=params)
+
+        if resp.headers.get('Content-Type') == 'application/json':
+            content =  resp.json()
+        else:
+            content = resp.content
+
+        try:
+            resp.raise_for_status()
+        except requests.exceptions.HTTPError as error:
+            if isinstance(content, dict):
+                if content.get('message') is not None:
+                    error = str(error) + "\n Message: {}".format(content['message'])
+
+            raise requests.exceptions.HTTPError(error)
+
+        return content
+
 
     def _authorize(self, email=None, password=None):
         """ Fetch api_token given access credentials """
         rv = self._post('auth', email=email, password=password)
-        self._api_token = rv.json()['access_token']
+        self._api_token = rv['access_token']
 
     _get = partialmethod(_make_request, 'get')
     _post = partialmethod(_make_request, 'post')

@@ -5,7 +5,6 @@ def test_auth(recorder, neuroscout):
 def test_datasets(recorder, neuroscout):
     with recorder.use_cassette('get_dataset'):
         resp = neuroscout._get('datasets')
-        assert resp.status_code == 200
 
-        datasets = resp.json()
-        assert len(datasets) > 4
+        datasets = resp
+        assert len(datasets) > 1

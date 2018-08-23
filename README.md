@@ -28,7 +28,7 @@ and return `requests` `Response` objects.
 
 For example we can retrieve our user profile:
 
-    >>> neuroscout.user.get().json()
+    >>> neuroscout.user.get()
     {'email': 'user@example.com',
      'analyses': [ {'description': 'Does the brain care about language?',
       'hash_id': 'RZd',
@@ -38,7 +38,7 @@ For example we can retrieve our user profile:
 
 Or query various endpoints, such as `datasets`:
 
-    >>> neuroscout.datasets.get().json()
+    >>> neuroscout.datasets.get()
     [{'description': {'Acknowledgements': '',
        'Authors': ['Tomoyasu Horikawa', 'Yukiyasu Kamitani'],
        'DatasetDOI': '',
@@ -54,7 +54,7 @@ Or query various endpoints, such as `datasets`:
 
 For example, we could use this to get the first predictor associated with a dataset:
 
-    >>> first = neuroscout.predictors.get(dataset_id=5).json()[0]
+    >>> first = neuroscout.predictors.get(dataset_id=5)[0]
     {'description': 'Bounding polygon around face. y coordinate for vertex 1',
      'extracted_feature': {'created_at': '2018-04-12 00:44:14.868349',
       'description': 'Bounding polygon around face. y coordinate for vertex 1',
@@ -68,7 +68,7 @@ For example, we could use this to get the first predictor associated with a data
 
 And get the predictor-events associated with that predictor:
 
-    >>> neuroscout.predictor_events.get(predictor_id=first['id']).json()[0:2]
+    >>> neuroscout.predictor_events.get(predictor_id=first['id'])[0:2]
     [{'duration': 9.0,
       'id': '1050781',
       'onset': 114.0,
