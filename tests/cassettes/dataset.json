@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2018-08-14T17:16:10",
+      "recorded_at": "2018-08-23T21:32:29",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -10,16 +10,16 @@
         "headers": {
           "Accept": "*/*",
           "Accept-Encoding": "gzip, deflate",
-          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzQ4NzA4NzgsImlhdCI6MTUzNDI2NjA3OCwibmJmIjoxNTM0MjY2MDc4LCJpZGVudGl0eSI6Nn0.kcgFbGAXwMNBkPkjMn9Do0usyG1QOCqXvvqZW8NRf4A",
+          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzU2NjQ3NDcsImlhdCI6MTUzNTA1OTk0NywibmJmIjoxNTM1MDU5OTQ3LCJpZGVudGl0eSI6Nn0.ESdQAYQ55rWSNpdWgSzsgBUwEKVCaM_pNalxEr3qtiA",
           "Connection": "keep-alive",
-          "User-Agent": "python-requests/2.18.4"
+          "User-Agent": "python-requests/2.19.1"
         },
         "method": "GET",
-        "uri": "http://alpha.neuroscout.org/api/datasets"
+        "uri": "https://alpha.neuroscout.org/api/datasets"
       },
       "response": {
         "body": {
-          "base64_string": "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",
+          "base64_string": "H4sIAAAAAAAAA7WYS2/bOBDH7/kUhA+LFrBlvR+9pQ7SJJtHUXdTdIvFgpbGNmGJFCgqjlH0u+9QfsTupqu57MGwPByRwx//mhn52xlj3/HD2KCAJteiNkLJwbudEc3nrVkq3aDp286Exj95MVOqGLJzZ8gmS5BDdoNXt6DkYsi+OhP8ca90xXHgd8c6/caueNMo/P2HM9hN9NeQ7Vd5f30xfQTdbBcfeI7r+IOX4ctWFkIu7NA9txHykl3LxgjTGmiYmrMr4KVZsjfeJ9e7u/I8P4iSkesxLgt2sEVxjLa3RxPf8wrsrNMl6FLlq7/v8FvII49PMAcNMofmXBa3Qq5+QrE0pm7ejcc85wVUIndUWzu5qsY56FzpMddG5CWMCyXGnut4bhbsh2bLZ9/1x6GbuqmfjK/UevQFRp81l00lzOgOKqUFNCOjRg8GAxy911zI5oCv+/6xC3UgCgws2v+qRAVmU8NxtAPeFkKNn0dr/nS0Q1HxBYxrxPtiM/BsxnXJT1A8iQLUuKrDbQT74xvInyCeMhzoVh5H8f2FXRey58c7y4/DUv/2SQg+KcEn6/fxCGt5hLU8wlq+S/DxCD4+wSck+ET9PgEh5oAQc0CIOQgIPod9ncqyaauK641V5sfuKRQ1l6Zha27yJRRsL1dWqScBXaYoRWNA4phRDJ841j0wTAM+rTb/2ESzFff2HuegccOb1X+JPDyEf/S8bKe6szMNTrdwtt9wT27OV1KtSygWFeDO7JxfAAPncsVuOGZb9gFTN6ZgKBvYsA8O+7IEKEFjtmbTNddK1exDK01b87IUQ3bHjQHFHkWTK2kEKwR7KGGxQAgTjmjKUqGTw64LjlPPZkLiTZ9B6w2b8nwFZthhtOg0NMbystcX768n7M0FHkKlsJywLo+xa8w7FuoEYwf9ltWY/5WUULK50gyrBR4Gx8TL0LfghrNclSXkFsI4b3VXB5yj9PRqpZryqsUZzx12jxvgDQyOT+IrImhK/sQeHKxPJcpCrtSJByZ9DWs2cdgEY8MANifDN3iUDXu0dz/PNrTC5r1a2I5ijrp65SZR4sYnq10GPtrTKAwCrGPn3sng/fQSS1yWxOErYWBt+axe5NLJ73rONqplc9GdmGi2kBswrG1g3pZDVpeAxFguDHTnOMf9q7U9s5rjab3bMx2yqbNtBXaMbGPAbBPwoFA1eqnm2A/gEaDlgNn2Cch9eCJAq0s0/Up3j9a9k/RNd7VToFXkrsfAU+hmwSN547te8hYDQ01LKxbcW6efJyg3Vp9L3ETTbWwBCsslqhgFW6DstJhhY1HgDdjCYOZA7xpvwGm2qkPNaphp7EImSmOtPJbhrchBNh3hjxcXt680G/fQ2ltxwlqhZ2OzjeTGGnFtXC0vRd11NVxicS53Ff+00mf/f6V/HlXc4AOy4r8o+LdiDtQy74f9JcEP+0uCH/aXBD/sL3V+2F/q/LC/NfHD/nbBD/vbBT/sbxf8qL/0+hGBc0TgHBE4RwTOEYFzROAcEThHBM4RgXNM4BwTOMcEzjGBc0zgHBM4xwTOMYFzTOAcEzgnBM4JgXNC4JwQOCcEzgmBc0LgnBA4JwTOCYFzSuCcEjinBM4pgXNK4JwSOKcEzimBc0rgnBI4ZwTOGYFzRuCcEThnBM4ZgXNG4JwROGcEzlk/58Dt5xy4/ZwDt59z4PZzDtx+zoHbzzlw+zkHbj/nwO3nHLgEPQcEbQQEbQQEbQQEbQSEmEOCNryDT/f92l8Gl6rV2P9v36z3L7K24d226sAKlbd2EP3RpPF9FF8YZht2wbF73r50zJRW7WJJ/pcgfe1fgtI22afhntmrv87+AUQst8m9FQAA",
           "encoding": null,
           "string": ""
         },
@@ -28,7 +28,7 @@
           "Connection": "keep-alive",
           "Content-Encoding": "gzip",
           "Content-Type": "application/json",
-          "Date": "Tue, 14 Aug 2018 17:16:09 GMT",
+          "Date": "Thu, 23 Aug 2018 21:32:29 GMT",
           "Server": "nginx/1.15.1",
           "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
           "Transfer-Encoding": "chunked",
@@ -41,11 +41,11 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "http://alpha.neuroscout.org/api/datasets"
+        "url": "https://alpha.neuroscout.org/api/datasets"
       }
     },
     {
-      "recorded_at": "2018-08-14T17:16:10",
+      "recorded_at": "2018-08-23T21:32:29",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -54,16 +54,16 @@
         "headers": {
           "Accept": "*/*",
           "Accept-Encoding": "gzip, deflate",
-          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzQ4NzA4NzgsImlhdCI6MTUzNDI2NjA3OCwibmJmIjoxNTM0MjY2MDc4LCJpZGVudGl0eSI6Nn0.kcgFbGAXwMNBkPkjMn9Do0usyG1QOCqXvvqZW8NRf4A",
+          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzU2NjQ3NDcsImlhdCI6MTUzNTA1OTk0NywibmJmIjoxNTM1MDU5OTQ3LCJpZGVudGl0eSI6Nn0.ESdQAYQ55rWSNpdWgSzsgBUwEKVCaM_pNalxEr3qtiA",
           "Connection": "keep-alive",
-          "User-Agent": "python-requests/2.18.4"
+          "User-Agent": "python-requests/2.19.1"
         },
         "method": "GET",
-        "uri": "http://alpha.neuroscout.org/api/datasets/5"
+        "uri": "https://alpha.neuroscout.org/api/datasets/5"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA32USW/bMBCF7/kVhA5FC1iiqMWWc0tSFE4bp0DSBW1RBGNybBOWSIGksjTIfy8trw1QXiRyPuHxzeNAzyeERAIcWHR3IIRBa6NTorq6HpCeoeVGtk5q5evPvuSLZ51barP+8Fdf8KWfIGZaiwE5SwbkYolqQD761RVqtRiQH8mF31xr04AHn5L1R2/IBKzVfv81iXqZ3/2RXuz88v3tNzR2c2jEkjTJoh380Ckh1WINrmHtC2pyqayTrnNoiZ6TCULtluQtu0nZdMJYlpejOGUElCD7Wjkc+tq7vew1NLjWvF2iqTVf3U39W6o9v8E5GlQc7ZkSV1Kt/ml/6VxrTykFDgIbyRPdtQnXDeVouDYUjJO8Riq0pCxNWDrOd2i2fMzSjBZplVbZiE70Q/wd4y8GlG2ki6fYaCPRxk7Hn503F58bkMpuI/PPl81NSeENlZt1Ixt0Ty0ePEbQCanpY/wA9/ueZAMLpK0Pc1dx+OhoW8NR4/dSoKZNW6xP3FxRpF6FdZxV1BpsjeZH47SPx+YJNPDH39mD7ePRLSqFndE+MNd2zlJWjNOqLMdZxvMZztIKK54JgGJWzEWZMzorigJ4PoqrkonYx1bGkGVVXAKOh1gMqxwFnTd+aL2PrSXTqUMUz7tL6xNj2bDfv2z7fU1HQVoF6ThEWVCZBZVZUDlLg5QFaRakRZCWIZoHXeVBV3nQVZ4H6dbzYXr93271v3EotiJHQ74Z7qm+lxgdpE5eTv4Cbku7Nz0FAAA=",
+          "base64_string": "H4sIAAAAAAAAA31U207cMBB95yusPFSttInjXHazvAFVBW2XVtCL2qpCs/EsaxHbke2wUMS/18lei1S/JPEc5/jM8cw8HREScXBg0d0A5watjY6J6ppmRAYMbW1E64RWPv7kQz540rmlNv3GX0PAh34Cn2vNR+QkGZGzJaoRee+/PqJWtyPyIznzi0ttJHjgQ9JvekXOwVrt11+TaKD5PRzpyU4v3l5/Q2PXh0YsSZMs2oLvOsWFuu2BS+h1QUMulHXCdQ4t0QtyjtC4JXnNrlI2O2csy8tJnDICipNdrByPfezNjvYSJPac10s0ja7vbmb+LdQOv8IFGlQ12hPFPwp190/6S+dae0wp1MBRijrRXZvUWtIaTa0NBeNE3SDlWlCWJiyd5ltovnzI0owWaZVW2YSe61X8HeMvBpSVwsUzlNoItLHT8SfnxcWnBoSyG8v883l9U4J7QeX6WwqJ7rHFvcYIOi40fYhXcL/LSUi4Rdp6M7cRhw+Otg0cJH4vOGoq26I/cX1FkXph1qFXUWuwNbo+KKedPTZPQMIff2crO9ijW1QKO6O9Ya7tnKWsmKZVWU6zrM7nOE8rrOqMAxTzYsHLnNF5URRQ55O4KhmPvW1lDFlWxSXgdIzFuMqR04X0Ret1bCSZTu2teNpe2uAYy8bD+nmT70t0EkSrIDoNoSzIzILMLMicpUGUBdEsiBZBtAyheVBVHlSVB1XleRDdaN5Xr+2kBPPYF+bnoTFFC8pZsgJXL5GTbVUTqe8FDmOjEdah8pjTxDchGbqJGPQN3A+jfuqse2D9T7KpOz9X7/5XeMVG7kE7rSlmPUO0F330fPQXsBWxRqcFAAA=",
           "encoding": null,
           "string": ""
         },
@@ -72,7 +72,7 @@
           "Connection": "keep-alive",
           "Content-Encoding": "gzip",
           "Content-Type": "application/json",
-          "Date": "Tue, 14 Aug 2018 17:16:09 GMT",
+          "Date": "Thu, 23 Aug 2018 21:32:29 GMT",
           "Server": "nginx/1.15.1",
           "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
           "Transfer-Encoding": "chunked",
@@ -85,11 +85,11 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "http://alpha.neuroscout.org/api/datasets/5"
+        "url": "https://alpha.neuroscout.org/api/datasets/5"
       }
     },
     {
-      "recorded_at": "2018-08-14T17:16:10",
+      "recorded_at": "2018-08-23T21:32:29",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -98,12 +98,12 @@
         "headers": {
           "Accept": "*/*",
           "Accept-Encoding": "gzip, deflate",
-          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzQ4NzA4NzgsImlhdCI6MTUzNDI2NjA3OCwibmJmIjoxNTM0MjY2MDc4LCJpZGVudGl0eSI6Nn0.kcgFbGAXwMNBkPkjMn9Do0usyG1QOCqXvvqZW8NRf4A",
+          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzU2NjQ3NDcsImlhdCI6MTUzNTA1OTk0NywibmJmIjoxNTM1MDU5OTQ3LCJpZGVudGl0eSI6Nn0.ESdQAYQ55rWSNpdWgSzsgBUwEKVCaM_pNalxEr3qtiA",
           "Connection": "keep-alive",
-          "User-Agent": "python-requests/2.18.4"
+          "User-Agent": "python-requests/2.19.1"
         },
         "method": "GET",
-        "uri": "http://alpha.neuroscout.org/api/tasks?dataset_id=5"
+        "uri": "https://alpha.neuroscout.org/api/tasks?dataset_id=5"
       },
       "response": {
         "body": {
@@ -116,7 +116,7 @@
           "Connection": "keep-alive",
           "Content-Encoding": "gzip",
           "Content-Type": "application/json",
-          "Date": "Tue, 14 Aug 2018 17:16:10 GMT",
+          "Date": "Thu, 23 Aug 2018 21:32:29 GMT",
           "Server": "nginx/1.15.1",
           "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
           "Transfer-Encoding": "chunked",
@@ -129,11 +129,11 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "http://alpha.neuroscout.org/api/tasks?dataset_id=5"
+        "url": "https://alpha.neuroscout.org/api/tasks?dataset_id=5"
       }
     },
     {
-      "recorded_at": "2018-08-14T17:16:10",
+      "recorded_at": "2018-08-23T21:32:29",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -142,12 +142,12 @@
         "headers": {
           "Accept": "*/*",
           "Accept-Encoding": "gzip, deflate",
-          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzQ4NzA4NzgsImlhdCI6MTUzNDI2NjA3OCwibmJmIjoxNTM0MjY2MDc4LCJpZGVudGl0eSI6Nn0.kcgFbGAXwMNBkPkjMn9Do0usyG1QOCqXvvqZW8NRf4A",
+          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzU2NjQ3NDcsImlhdCI6MTUzNTA1OTk0NywibmJmIjoxNTM1MDU5OTQ3LCJpZGVudGl0eSI6Nn0.ESdQAYQ55rWSNpdWgSzsgBUwEKVCaM_pNalxEr3qtiA",
           "Connection": "keep-alive",
-          "User-Agent": "python-requests/2.18.4"
+          "User-Agent": "python-requests/2.19.1"
         },
         "method": "GET",
-        "uri": "http://alpha.neuroscout.org/api/runs?dataset_id=5"
+        "uri": "https://alpha.neuroscout.org/api/runs?dataset_id=5"
       },
       "response": {
         "body": {
@@ -160,7 +160,7 @@
           "Connection": "keep-alive",
           "Content-Encoding": "gzip",
           "Content-Type": "application/json",
-          "Date": "Tue, 14 Aug 2018 17:16:10 GMT",
+          "Date": "Thu, 23 Aug 2018 21:32:29 GMT",
           "Server": "nginx/1.15.1",
           "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
           "Transfer-Encoding": "chunked",
@@ -173,7 +173,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "http://alpha.neuroscout.org/api/runs?dataset_id=5"
+        "url": "https://alpha.neuroscout.org/api/runs?dataset_id=5"
       }
     }
   ],

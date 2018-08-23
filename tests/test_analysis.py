@@ -53,73 +53,59 @@ def analysis(recorder, neuroscout):
     return new
 
 def test_get_analysis(recorder, neuroscout, analysis):
-    analysis_id = analysis.json()['hash_id']
+    analysis_id = analysis['hash_id']
 
     # Test get
     with recorder.use_cassette('get_analysis'):
         resp = neuroscout.analyses.get(id=analysis_id)
-        assert resp.status_code == 200
-
-        analysis_json = resp.json()
-        assert analysis_json['name'] == 'pytest_analysis'
-        assert analysis_json['status'] == 'DRAFT'
+        assert resp['name'] == 'pytest_analysis'
+        assert resp['status'] == 'DRAFT'
 
 def test_put_analysis(recorder, neuroscout, analysis):
-    analysis_json = analysis.json()
-    analysis_id = analysis_json['hash_id']
+    analysis_id = analysis['hash_id']
 
-    analysis_json['description'] = 'new_description'
+    analysis['description'] = 'new_description'
 
     # Test put
     with recorder.use_cassette('put_analysis'):
-        resp = neuroscout.analyses.put(id=analysis_id, **analysis_json)
-        assert resp.status_code == 200
+        resp = neuroscout.analyses.put(id=analysis_id, **analysis)
 
-        analysis_json = resp.json()
-        assert analysis_json['name'] == 'pytest_analysis'
-        assert analysis_json['description'] == 'new_description'
+        assert resp['name'] == 'pytest_analysis'
+        assert resp['description'] == 'new_description'
 
 def test_id_actions(recorder, neuroscout, analysis):
-    analysis_json = analysis.json()
-    analysis_id = analysis_json['hash_id']
+    analysis_id = analysis['hash_id']
 
     with recorder.use_cassette('id_analysis'):
         # Test full
         resp = neuroscout.analyses.full(id=analysis_id)
-        assert resp.status_code == 200
-        assert 'runs' in resp.json()
+        assert 'runs' in resp
 
         # Test compile
         resp = neuroscout.analyses.compile(id=analysis_id)
-        assert resp.status_code == 200
-        assert resp.json()['hash_id'] == analysis_id
-        assert resp.json()['status'] == 'PENDING'
+        assert resp['hash_id'] == analysis_id
+        assert resp['status'] == 'PENDING'
 
         # Test status
         resp = neuroscout.analyses.status(id=analysis_id)
-        assert resp.status_code == 200
-        assert 'status' in resp.json()
+        assert 'status' in resp
 
         # Wait until compiled
-        while(resp.json()['status'] == 'PENDING'):
+        while(resp['status'] == 'PENDING'):
             sleep(1)
             resp = neuroscout.analyses.status(id=analysis_id)
 
         # Test resources
         resp = neuroscout.analyses.resources(id=analysis_id)
-        assert resp.status_code == 200
-        assert 'dataset_address' in resp.json()
+        assert 'dataset_address' in resp
 
         # Test bundle
         resp = neuroscout.analyses.bundle(id=analysis_id)
-        assert resp.status_code == 200
 
         # Test clone
         resp = neuroscout.analyses.clone(id=analysis_id)
-        assert resp.status_code == 200
-        new_id = resp.json()['hash_id']
+        new_id = resp['hash_id']
         assert new_id != analysis_id
 
         # Test delete
         resp = neuroscout.analyses.delete(id=new_id)
-        assert resp.status_code == 200

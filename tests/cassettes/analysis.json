@@ -1,27 +1,27 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2018-08-14T17:01:19",
+      "recorded_at": "2018-08-23T21:32:27",
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "{\"task_name\": \"MerlinMovie\", \"runs\": [{\"id\": 126}], \"dataset_id\": 5, \"predictors\": [{\"id\": 12728}], \"name\": \"pytest_analysis\", \"model\": {\"blocks\": [{\"transformations\": [], \"model\": {\"variables\": [\"brightness\"], \"HRF_variables\": []}, \"contrasts\": [], \"level\": \"run\", \"auto_contrasts\": true}, {\"level\": \"dataset\", \"auto_contrasts\": true}], \"name\": \"pytest_analysis\", \"input\": {\"subject\": [\"28\"], \"task\": \"MerlinMovie\"}}}"
+          "string": "{\"name\": \"pytest_analysis\", \"runs\": [{\"id\": 126}], \"dataset_id\": 5, \"predictors\": [{\"id\": 12728}], \"task_name\": \"MerlinMovie\", \"model\": {\"blocks\": [{\"auto_contrasts\": true, \"level\": \"run\", \"contrasts\": [], \"transformations\": [], \"model\": {\"variables\": [\"brightness\"], \"HRF_variables\": []}}, {\"auto_contrasts\": true, \"level\": \"dataset\"}], \"name\": \"pytest_analysis\", \"input\": {\"subject\": [\"28\"], \"task\": \"MerlinMovie\"}}}"
         },
         "headers": {
           "Accept": "*/*",
           "Accept-Encoding": "gzip, deflate",
-          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzQ4NzA4NzgsImlhdCI6MTUzNDI2NjA3OCwibmJmIjoxNTM0MjY2MDc4LCJpZGVudGl0eSI6Nn0.kcgFbGAXwMNBkPkjMn9Do0usyG1QOCqXvvqZW8NRf4A",
+          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzU2NjQ3NDcsImlhdCI6MTUzNTA1OTk0NywibmJmIjoxNTM1MDU5OTQ3LCJpZGVudGl0eSI6Nn0.ESdQAYQ55rWSNpdWgSzsgBUwEKVCaM_pNalxEr3qtiA",
           "Connection": "keep-alive",
           "Content-Length": "418",
           "Content-Type": "application/json",
-          "User-Agent": "python-requests/2.18.4"
+          "User-Agent": "python-requests/2.19.1"
         },
         "method": "POST",
-        "uri": "http://alpha.neuroscout.org/api/analyses"
+        "uri": "https://alpha.neuroscout.org/api/analyses"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA5VTsW6DMBDd+QrkuakCahOULVIVdckSZYsiZODSuDE2tQ1qFPHvNcYGkyqqOuG7d3537/m4BWGI9ju0CqPn16ewi3JeVoRCqgTOIcP5RYMITbAixUpnWU2pzQvAyqVRPI+S2TyZRS/7aLma27sFVlijt3YMJaiUFDppWxcgc0EqRTib0J+xPPeF6Ot7bflKXgDtCHWgw4zy/CJ1fDBxaPMGw7Xiac6ZliRVV6NEDYbFFvjY4egjFBrTBYmaIR+YtrfJ990mbbAgOKPwi0vjE8wDuvkF+TgrBlIiDzgO59Zvrodl8sRFiTuv+k7Bfd1/DBhk2mdxM7Tm61QgwqpaeaKRrLNPyNVEDooTd32UjzSt2aQtCErYljcE+io3MGK4hK6iuiqQKsUM06skxo52eHJyIn/s2SOaHq2wAGa3blywSkBBcuel23ab5WJ8rkG4IYjiZZwEzqeju0Ua/TP4JnfL85hjcc8gFVa1GeRtt97s7TSdgakT57vYw7UE0ctaBG3wAxTo2CXYAwAA",
+          "base64_string": "H4sIAAAAAAAAA5VTsW6DMBDd+QrkuakKUVOUrVIVdckSZWmjCBm4JG6MjWyDlEb8e42xwaSKqk747p3f3Xs+rkEYou0GLcPo8fkh7KKclxWhkCqBc8hwftYgQhOsSLHSWVZTavMCsHJpFD9FyewpmcXzbRwt5/ZugRXW6LUdQwkqJYVO2tYFyFyQShHOJvQnLE99ITp+fn8cLWPJC6AdpQ50mFGen6WOdyYObd5guFY8zTnToqTqapSowbDYAh/b7X2EQmO6IFEz5APT9jb5vlmlDRYEZxR+cWl8gnlAN78gx5NiICXygP1wbv3melgmD1yUuHOr7xTc1v3HgEGmfRg3Q2u+TgUirKqVJxrJOvuCXE3koDhx10f5SNOaXVqDoISteUOgr3IDI4ZL6CqqiwKpUswwvUhi7GiHJycH8sem3aPp0QoLYHbvxhWrBBQkd166fbdZLsbnGoQbgih+iZPA+bR3t0ijfwff5G557nMsbhmkwqo2g7xtXldbO01nYOrE+S72cC1B9LIWQRv8AHerwovaAwAA",
           "encoding": null,
           "string": ""
         },
@@ -30,7 +30,7 @@
           "Connection": "keep-alive",
           "Content-Encoding": "gzip",
           "Content-Type": "application/json",
-          "Date": "Tue, 14 Aug 2018 17:01:18 GMT",
+          "Date": "Thu, 23 Aug 2018 21:32:27 GMT",
           "Server": "nginx/1.15.1",
           "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
           "Transfer-Encoding": "chunked",
@@ -43,7 +43,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "http://alpha.neuroscout.org/api/analyses"
+        "url": "https://alpha.neuroscout.org/api/analyses"
       }
     }
   ],
