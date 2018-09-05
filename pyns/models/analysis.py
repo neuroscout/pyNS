@@ -6,7 +6,8 @@ from functools import partial
 class Analysis:
     _fields_ = ['dataset_id', 'description', 'name',  'predictions',
                 'predictors', 'private', 'runs']
-    _aliased_methods_ = ['delete', 'bundle', 'compile', 'full', 'resources']
+
+    _aliased_methods_ = ['delete', 'bundle', 'compile']
 
     def __init__(self, *, analyses, name, dataset_id, **kwargs):
         self.name = name
@@ -21,7 +22,7 @@ class Analysis:
         # Create
         self._fromdict(self._analyses.post(**self._asdict()))
 
-        ## Attach aliased methods
+        # Attach aliased methods
         for method in self._aliased_methods_:
             setattr(self,
                     method,
@@ -29,6 +30,7 @@ class Analysis:
                         getattr(self._analyses, method),
                         self.hash_id)
                     )
+
 
     def _asdict(self):
         """ Return dictionary representation of valid fields """
@@ -52,11 +54,23 @@ class Analysis:
         """ Pull updates from API, overriding changes made locally """
         self._fromdict(self._analyses.get(self.hash_id))
 
+    def _getter_wrapper(self, method):
+        """ Get representation of analysis, sync and return """
+        new = getattr(self._analyses, method)(self.hash_id)
+        self._fromdict(new)
+        return new
+
     def get_status(self):
-        """ Get and update compiled status """
-        new_status = self._analyses.status(self.hash_id)
-        self._fromdict(new_status)
-        return new_status
+        """ Get compilation status """
+        return self._getter_wrapper('status')
+
+    def get_resources(self):
+        """ Get analysis resources """
+        return self._getter_wrapper('resources')
+
+    def get_full(self):
+        """ Get full analysis representation """
+        return self._getter_wrapper('full')
 
     def clone(self):
         pass
