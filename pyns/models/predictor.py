@@ -2,9 +2,9 @@
 from .base import Base
 
 class Predictors(Base):
-    _base_path = 'predictors'
-    _auto_methods = ('get', )
+    _base_path_= 'predictors'
+    _autho_methods_= ('get', )
 
 class PredictorEvents(Base):
-    _base_path = 'predictor-events'
-    _auto_methods = ('get', )
+    _base_path_= 'predictor-events'
+    _autho_methods_= ('get', )

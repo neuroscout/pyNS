@@ -13,14 +13,14 @@ class Base(ABC):
         self._client = client
 
         all_methods = ('get', 'post', 'put', 'delete')
-        assert set(self._auto_methods) <= set(all_methods)
+        assert set(self._auto_methods_) <= set(all_methods)
 
-        for method in self._auto_methods:
+        for method in self._auto_methods_:
             setattr(self,
                     method,
                     partial(
                         getattr(self._client, "_" + method),
-                        self._base_path)
+                        self._base_path_)
                     )
 
     @property
