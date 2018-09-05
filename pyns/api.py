@@ -69,9 +69,13 @@ class Neuroscout(object):
         return new_path.format(base_url=self._api_base_url, route=route)
 
     def _make_request(self, request, route, sub_route=None, id=None,
-                      params=None, data=None, headers=None, **kwargs):
+                      params=None, data=None, headers=None, remove_null=True,
+                      **kwargs):
         """ Generic request handler """
         request_function = getattr(self._session, request)
+
+        if remove_null == True:
+            kwargs = {k:v for (k,v) in kwargs.items() if v is not None}
 
         if request == 'get':
             params = kwargs
