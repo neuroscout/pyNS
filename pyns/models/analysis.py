@@ -19,8 +19,9 @@ class Analysis:
             if k in set(self._fields_):
                 setattr(self, k, v)
 
-        # Create
-        self._fromdict(self._analyses.post(**self._asdict()))
+        # If no hash_id, create
+        if not hasattr(self, 'hash_id'):
+            self._fromdict(self._analyses.post(**self._asdict()))
 
         # Attach aliased methods
         for method in self._aliased_methods_:
@@ -73,7 +74,8 @@ class Analysis:
         return self._getter_wrapper('full')
 
     def clone(self):
-        pass
+        return Analysis(
+            analyses=self._analyses, **self._analyses.clone(self.hash_id))
 
 
 class Analyses(Base):

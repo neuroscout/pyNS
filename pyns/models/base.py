@@ -25,11 +25,11 @@ class Base(ABC):
 
     @property
     @abstractmethod
-    def _base_path(self):
+    def _base_path_(self):
         pass
 
     @property
     @abstractmethod
-    def _auto_methods(self):
+    def _auto_methods_(self):
         """ HTTP methods to auto create in subordinate classes """
         pass
