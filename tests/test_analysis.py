@@ -89,6 +89,7 @@ def test_analysis_object(recorder, analysis_object):
         new = analysis_object.clone()
         assert new.name == analysis_object.name
         assert new.hash_id != analysis_object.hash_id
+        assert new.parent_id == analysis_object.hash_id
 
         # Test delete
         new.delete()
