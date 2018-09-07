@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2018-09-07T21:00:26",
+      "recorded_at": "2018-09-07T21:06:55",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -10,7 +10,7 @@
         "headers": {
           "Accept": "*/*",
           "Accept-Encoding": "gzip, deflate",
-          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY5NTg4MjEsImlhdCI6MTUzNjM1NDAyMSwibmJmIjoxNTM2MzU0MDIxLCJpZGVudGl0eSI6Nn0.-uqyFRDQEoIZMZmLpWnbHwR4JFtzs8MnXEFQN9yHJ8Q",
+          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY5NTkyMTMsImlhdCI6MTUzNjM1NDQxMywibmJmIjoxNTM2MzU0NDEzLCJpZGVudGl0eSI6Nn0.f36XyHFvp4PinUtWaX1n1UlNyZoiShe80LwEfxqCGxQ",
           "Connection": "keep-alive",
           "User-Agent": "python-requests/2.19.1"
         },
@@ -19,7 +19,7 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA9WXXU+jQBSG7/srCNfLZhgotFztNEUjSFtXLuwa02AZEeWjK1RKjf99mbommPRjtDO13Exgzsnkyck758z70hIE0Uu8qMxwJhrCdfUvCC+rtYr4OJs+hbM8TJMqKCa4mNS3fgjvifdedj8JfZJURJbu1EJx6od3IfYnXk7CEMgdCXQl0HahYoBaYuLFmGTMyhxn+eSNKsxqGVnu5XOCKfZ/oxNXXO2//o/vBe0kgxENtObKuqF+EfoEnZ2bfYbUaHG1RE0rdWEtF0XToB3l2eJe6RG6vGSqD6f/YHIv9SdUncyjaL0mLtRO93g0sZEzKOxesIuzI0HFhbIBv49TQw+IOydzuRbAirhPDuZNuLD9q2NqDRtF8aje7paErLqyZrQ3Y5LlIC13OC7pcPVtVT0Y7t/FThFQ4B72wgUR0KnbhPKN0rXBoknS1Z0hT+mOzEH/bHBKB7yeUHka7yYE0IVwbUHdQ1USafqweSMh+LMcN+JeJb3ho3Y87xlqg9lunMGsrJrdRKumcvcPzKda17ywaczEXl6evVebpTGNQHQXgm1Dbjv1ZyYHna7H5/iYLCalRHq4eS2kMsk+d5PM3tSVtx3uumZe6sC0aPShk7n45VIzv4zOCJTcsdmP82equ7hfreuyrtabVZKIYy+MSJycIK3+fpHP7Oc0jd8O+vDmldB0ms6TXGy9tv4B7sn2JTsXAAA=",
+          "base64_string": "H4sIAAAAAAAAA9WY206DQBCG7/sUhGsxy6FAe+U2RSNIW5WLVmMaLCuiHKrQUmp8d9lWk5r0sOpuLTcbYCbky/Dvzvy81TiOd2M3LFKU8k3utrznuLfFWkY8lI5eg3EWJHEZ5GOUD1cfHXFfiY9u+jgMPJyUh6Zmr4SixAseAuQN3QyHJSDqAmgIoO5IchOsJMZuhHDGuMhQmg2XVEG6kpFmbjbBmHz7Cp46/OL5+2f8T9B23OmRQKuOqDWVX0KfwvMLo02RGs76c1i1UufmfJZXDdqWpybzSvfg9TVVfeSmrpCoWnMk8dfU1FVtt58M5gL5AXU8CcP15b1U9MbhKHkjp59bLX8Xpy5IMpaB9H+cKnyCzDnpbzJghsz7HfVNllte/5AOtI2ieFbud0tCVBxRbdY3Y+JlL42iOyjIcLVtVd0b7stspwgIcPe74fwQaMTHhPyP0rXArErS1ewuS+n2jE77vHNGc/wdzBHz8eYn8l2PKb8OdtcVSI4krZWBs6/vD1WtW71G5t/MB5U4DeJW91k9nCmM2MzXK2fmS1tsVdEWK8xdD/Ve3DAuLRIL9Kf/JtSp7XESkQikbBxgW2veTs2g312gQzLGhBJpoeodIaW195hbe/pWtLjXmeuaeql9w2Q/xVHfjHYPFMyx6bfzKdFepDcxl+vdIolHkRuEOI7fICzuTvBlejxKouWLvs28AhyNkkmc8bX32gfz3NiJpxgAAA==",
           "encoding": null,
           "string": ""
         },
@@ -28,7 +28,7 @@
           "Connection": "keep-alive",
           "Content-Encoding": "gzip",
           "Content-Type": "application/json",
-          "Date": "Fri, 07 Sep 2018 21:00:25 GMT",
+          "Date": "Fri, 07 Sep 2018 21:06:55 GMT",
           "Server": "nginx/1.15.1",
           "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
           "Transfer-Encoding": "chunked",

@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2018-09-07T21:00:22",
+      "recorded_at": "2018-09-07T21:06:53",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -10,7 +10,7 @@
         "headers": {
           "Accept": "*/*",
           "Accept-Encoding": "gzip, deflate",
-          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY5NTg4MjEsImlhdCI6MTUzNjM1NDAyMSwibmJmIjoxNTM2MzU0MDIxLCJpZGVudGl0eSI6Nn0.-uqyFRDQEoIZMZmLpWnbHwR4JFtzs8MnXEFQN9yHJ8Q",
+          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY5NTkyMTMsImlhdCI6MTUzNjM1NDQxMywibmJmIjoxNTM2MzU0NDEzLCJpZGVudGl0eSI6Nn0.f36XyHFvp4PinUtWaX1n1UlNyZoiShe80LwEfxqCGxQ",
           "Connection": "keep-alive",
           "User-Agent": "python-requests/2.19.1"
         },
@@ -28,7 +28,7 @@
           "Connection": "keep-alive",
           "Content-Encoding": "gzip",
           "Content-Type": "application/json",
-          "Date": "Fri, 07 Sep 2018 21:00:21 GMT",
+          "Date": "Fri, 07 Sep 2018 21:06:53 GMT",
           "Server": "nginx/1.15.1",
           "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
           "Transfer-Encoding": "chunked",
@@ -45,7 +45,7 @@
       }
     },
     {
-      "recorded_at": "2018-09-07T21:00:22",
+      "recorded_at": "2018-09-07T21:06:53",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -54,12 +54,12 @@
         "headers": {
           "Accept": "*/*",
           "Accept-Encoding": "gzip, deflate",
-          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY5NTg4MjEsImlhdCI6MTUzNjM1NDAyMSwibmJmIjoxNTM2MzU0MDIxLCJpZGVudGl0eSI6Nn0.-uqyFRDQEoIZMZmLpWnbHwR4JFtzs8MnXEFQN9yHJ8Q",
+          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY5NTkyMTMsImlhdCI6MTUzNjM1NDQxMywibmJmIjoxNTM2MzU0NDEzLCJpZGVudGl0eSI6Nn0.f36XyHFvp4PinUtWaX1n1UlNyZoiShe80LwEfxqCGxQ",
           "Connection": "keep-alive",
           "User-Agent": "python-requests/2.19.1"
         },
         "method": "GET",
-        "uri": "https://alpha.neuroscout.org/api/runs?subject=28&dataset_id=5"
+        "uri": "https://alpha.neuroscout.org/api/runs?dataset_id=5&subject=28"
       },
       "response": {
         "body": {
@@ -72,7 +72,7 @@
           "Connection": "keep-alive",
           "Content-Encoding": "gzip",
           "Content-Type": "application/json",
-          "Date": "Fri, 07 Sep 2018 21:00:21 GMT",
+          "Date": "Fri, 07 Sep 2018 21:06:53 GMT",
           "Server": "nginx/1.15.1",
           "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
           "Transfer-Encoding": "chunked",
@@ -85,11 +85,11 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://alpha.neuroscout.org/api/runs?subject=28&dataset_id=5"
+        "url": "https://alpha.neuroscout.org/api/runs?dataset_id=5&subject=28"
       }
     },
     {
-      "recorded_at": "2018-09-07T21:00:22",
+      "recorded_at": "2018-09-07T21:06:53",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -98,7 +98,7 @@
         "headers": {
           "Accept": "*/*",
           "Accept-Encoding": "gzip, deflate",
-          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY5NTg4MjEsImlhdCI6MTUzNjM1NDAyMSwibmJmIjoxNTM2MzU0MDIxLCJpZGVudGl0eSI6Nn0.-uqyFRDQEoIZMZmLpWnbHwR4JFtzs8MnXEFQN9yHJ8Q",
+          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY5NTkyMTMsImlhdCI6MTUzNjM1NDQxMywibmJmIjoxNTM2MzU0NDEzLCJpZGVudGl0eSI6Nn0.f36XyHFvp4PinUtWaX1n1UlNyZoiShe80LwEfxqCGxQ",
           "Connection": "keep-alive",
           "User-Agent": "python-requests/2.19.1"
         },
@@ -116,7 +116,7 @@
           "Connection": "keep-alive",
           "Content-Encoding": "gzip",
           "Content-Type": "application/json",
-          "Date": "Fri, 07 Sep 2018 21:00:21 GMT",
+          "Date": "Fri, 07 Sep 2018 21:06:53 GMT",
           "Server": "nginx/1.15.1",
           "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
           "Transfer-Encoding": "chunked",
@@ -133,18 +133,18 @@
       }
     },
     {
-      "recorded_at": "2018-09-07T21:00:22",
+      "recorded_at": "2018-09-07T21:06:53",
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "{\"predictors\": [12728], \"name\": \"pytest_analysis\", \"model\": {\"input\": {\"task\": \"MerlinMovie\", \"subject\": [\"28\"]}, \"blocks\": [{\"auto_contrasts\": true, \"level\": \"run\", \"model\": {\"HRF_variables\": [], \"variables\": [\"brightness\"]}, \"contrasts\": [], \"transformations\": []}, {\"auto_contrasts\": true, \"level\": \"dataset\"}]}, \"dataset_id\": 5, \"runs\": [126]}"
+          "string": "{\"name\": \"pytest_analysis\", \"runs\": [126], \"dataset_id\": 5, \"predictors\": [12728]}"
         },
         "headers": {
           "Accept": "*/*",
           "Accept-Encoding": "gzip, deflate",
-          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY5NTg4MjEsImlhdCI6MTUzNjM1NDAyMSwibmJmIjoxNTM2MzU0MDIxLCJpZGVudGl0eSI6Nn0.-uqyFRDQEoIZMZmLpWnbHwR4JFtzs8MnXEFQN9yHJ8Q",
+          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY5NTkyMTMsImlhdCI6MTUzNjM1NDQxMywibmJmIjoxNTM2MzU0NDEzLCJpZGVudGl0eSI6Nn0.f36XyHFvp4PinUtWaX1n1UlNyZoiShe80LwEfxqCGxQ",
           "Connection": "keep-alive",
-          "Content-Length": "347",
+          "Content-Length": "82",
           "Content-Type": "application/json",
           "User-Agent": "python-requests/2.19.1"
         },
@@ -153,7 +153,7 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA5VSwWrDMAy95yuCz+tIAlu73QZbGYNeSm+lBCVRW6+OHWwno5T8++zUbpztMHZKpPespyfpEsUx2azJc5zeP9zFNipF3VCGuZZQYgHlyYCETLAqB22yvGXM5SWC9mmSJeliljzNkvkmS58T97YCDQp1TivDcVoVqlLSRlPBJ/WOoI5XIvk6vH2sXIlaVMhM8mICExZMlCdl4u0Qxy4/YNBqkZeCGxdKW46WLQ5VHCHEtrsQYdgNKkS2nITAVN4l39fLvANJoWD4q5bBJ1gA2P4lPRw1R6VIAOxu/30obprlai9kDXZaV6XoJ+8/A7jZdIvxPfTD17sglDetDkwT1RafWOqJHZIt/PPRPjFlh+NZoWSUr0RH8cqyEv1tpXRP/zgdDjVatDlrVDoHDuysqHJoAxK5u6vxhBqJFS39rPwBu6yQ4zrSbJ4tIt+4YdDO3HI4MHsIIf9xZCsNuh0EXtcvy41TscZz3/TEfR99A0sNRHByAwAA",
+          "base64_string": "H4sIAAAAAAAAA4WQQU/DMAyF7/0VUc4MtRWwshsS4oDUy9QbQpFpPM1amkSJOzRN+++kLGXbiVv8vRc/28dCCNmt5UpU9493Yqp6N3gyqDhAj1/Q75Io5Y2mFXCidjQm84DAM5Z1WTWL8nlRLru6WpX5rwaGiKxIJ0/O0hj7QJ7J2Zt+W4jbs1F+vzcPbW4xOI0mwePpr6YN/ZNrYcBJ9QfGyAosmEOkmFUPAW0e6pLvA2rqp7Hi1faZujDBj0SEqOpl3aTX5+ygfTpEkjmMeGZhtNf+p4s7MvD4G/C6fnnrckq60k7NQ7cYDNnW7QllcSp+ADL/25CvAQAA",
           "encoding": null,
           "string": ""
         },
@@ -162,7 +162,7 @@
           "Connection": "keep-alive",
           "Content-Encoding": "gzip",
           "Content-Type": "application/json",
-          "Date": "Fri, 07 Sep 2018 21:00:21 GMT",
+          "Date": "Fri, 07 Sep 2018 21:06:53 GMT",
           "Server": "nginx/1.15.1",
           "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
           "Transfer-Encoding": "chunked",
