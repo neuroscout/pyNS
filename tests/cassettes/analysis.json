@@ -1,18 +1,18 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2018-09-06T17:45:46",
+      "recorded_at": "2018-09-07T21:06:53",
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "{\"name\": \"pytest_analysis\", \"runs\": [{\"id\": 126}], \"model\": {\"input\": {\"subject\": [\"28\"], \"task\": \"MerlinMovie\"}, \"blocks\": [{\"contrasts\": [], \"level\": \"run\", \"transformations\": [], \"auto_contrasts\": true, \"model\": {\"HRF_variables\": [], \"variables\": [\"brightness\"]}}, {\"level\": \"dataset\", \"auto_contrasts\": true}], \"name\": \"pytest_analysis\"}, \"predictors\": [{\"id\": 12728}], \"dataset_id\": 5, \"task_name\": \"MerlinMovie\"}"
+          "string": "{\"name\": \"pytest_analysis\", \"dataset_id\": 5, \"model\": {\"name\": \"pytest_analysis\", \"input\": {\"subject\": [\"28\"], \"task\": \"MerlinMovie\"}, \"blocks\": [{\"auto_contrasts\": true, \"model\": {\"HRF_variables\": [], \"variables\": [\"brightness\"]}, \"level\": \"run\", \"contrasts\": [], \"transformations\": []}, {\"auto_contrasts\": true, \"level\": \"dataset\"}]}, \"task_name\": \"MerlinMovie\", \"runs\": [126], \"predictors\": [12728]}"
         },
         "headers": {
           "Accept": "*/*",
           "Accept-Encoding": "gzip, deflate",
-          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY4NjA3NDUsImlhdCI6MTUzNjI1NTk0NSwibmJmIjoxNTM2MjU1OTQ1LCJpZGVudGl0eSI6Nn0.w9M4G024evopWIk5vZ2VAhBH7pGnFUUYiw3nQ9gla3E",
+          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY5NTkyMTMsImlhdCI6MTUzNjM1NDQxMywibmJmIjoxNTM2MzU0NDEzLCJpZGVudGl0eSI6Nn0.f36XyHFvp4PinUtWaX1n1UlNyZoiShe80LwEfxqCGxQ",
           "Connection": "keep-alive",
-          "Content-Length": "418",
+          "Content-Length": "402",
           "Content-Type": "application/json",
           "User-Agent": "python-requests/2.19.1"
         },
@@ -21,7 +21,7 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA5VTy2rDMBC8+yuMzk2JTZvXrdCGQsmhIbcQjGxvGjWyZCTZEIL/vbIs2XJKKD1Zu7Oa3Rmtr0EYot0WrcLo8fkhbKOMFyWhkCiBM0hxdtYgQiMsT7DSWVZRavMCsHJpFE+jxWS6nExnu2i+erJ3c6ywRq/NEEpQCcl10rbOQWaClIpwNqI/YXnqCtHy7fNjaRkLngNtKXWgw5Ty7Cx1vDdxaPMGw5XiScaZFiVVW6NEBYbFFvjY/uAjFGrTBYmKIR8Yt7fJ9+06qbEgOKXwi0vjI8wD2vkF+TopBlIiDzj058Zvrodl8shFgVu3uk7Bbd1/DOhl2odxMzTm61QgwspKeaKRrNJvyNRIDooX7vogH2las0sbEJSwDa8JdFVuYMRwAW1FeVEgVYIZphdJjB1N/+TkSP7YtHs0HVpiAczu3bBipYCcZM5Lt+82y8XwXL1wQxDF83gROJ8O7hap9e/gm9wuz32O2S2DVFhVZpDX7ct6Z6dpDUycON/FDq4kiE7WLGiCH/F0OYHaAwAA",
+          "base64_string": "H4sIAAAAAAAAA5VSwWrDMAy99yuCz+tIAlu73gqj7NJL6WWUEpREW706drCdQFfy73Mcu3E2xtgpkd6zpCe96yyKyH5HVlFy/3AX9VEhqpoyzLSEAnMozgYkZIKVGWiT5Q1jLi8RtE+TNE6W8/hpHi/2abKK3dsSNCjUGS0Nx/UqURWS1poKPql3AnUaiGT9+olbV6ISJTKTvJrAhDkTxVmZ+GDjyOUtBo0WWSG4UaF0z9GyQVvFEULscAwRhq3tQmTDSQhM27vky26TtSAp5Ax/1DL4BAuAfn5J30+ao1IkAI63/y5sbobl6k3ICvptDZ1m33n/WcBNpjuMn6GzX6+CUF43OhBNVJN/YKEncki69M9H+cSUtebZomSUb0VLcWD5gQmHCntGfdGodAYc2EVRu47udnL6Rv+w1m9lBrQGidz5brRYLbGkhd+lN7jLCjmeK0kX6XLmhRkGbY3Xw4X2Rgn5jyNbadCNbfC8W2/2rku/mMwPPdlON/sCQD7NIpIDAAA=",
           "encoding": null,
           "string": ""
         },
@@ -30,7 +30,7 @@
           "Connection": "keep-alive",
           "Content-Encoding": "gzip",
           "Content-Type": "application/json",
-          "Date": "Thu, 06 Sep 2018 17:45:46 GMT",
+          "Date": "Fri, 07 Sep 2018 21:06:53 GMT",
           "Server": "nginx/1.15.1",
           "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
           "Transfer-Encoding": "chunked",

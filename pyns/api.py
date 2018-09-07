@@ -79,6 +79,12 @@ class Neuroscout(object):
 
         if request == 'get':
             params = kwargs
+            # Join lists as comma separated list
+            for k,v in params.items():
+                if isinstance(v, list):
+                    v = [str(i) for i in v]
+                    params[k] = ','.join(v)
+
         elif request in ['put', 'post']:
             data = kwargs
 

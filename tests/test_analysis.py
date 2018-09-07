@@ -32,16 +32,8 @@ TEST_ANALYSIS = {
     "name": "pytest_analysis"
   },
   "name": "pytest_analysis",
-  "predictors": [
-    {
-      "id": 12728
-    }
-  ],
-  "runs": [
-    {
-      "id": 126
-    }
-  ],
+  "predictors": [12728],
+  "runs": [126],
   "task_name": "MerlinMovie",
 }
 
@@ -57,7 +49,11 @@ def analysis(recorder, neuroscout):
 def analysis_object(recorder, neuroscout):
     """ Create analysis object """
     with recorder.use_cassette('analysis_object'):
-        new = neuroscout.analyses.create_analysis(**TEST_ANALYSIS)
+        new = neuroscout.analyses.create_analysis(
+            name='pytest_analysis',
+            dataset_name='SherlockMerlin',
+            predictor_names=['brightness'],
+            subject=['28'])
 
     return new
 
