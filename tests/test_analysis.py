@@ -57,7 +57,7 @@ def analysis_object(recorder, neuroscout):
 
     return new
 
-def test_analysis_object(recorder, analysis_object):
+def test_analysis_object(recorder, neuroscout,analysis_object):
     assert analysis_object.status == 'DRAFT'
     assert analysis_object.name == 'pytest_analysis'
     assert analysis_object.description == None
@@ -85,12 +85,19 @@ def test_analysis_object(recorder, analysis_object):
         new = analysis_object.clone()
         assert new.name == analysis_object.name
         assert new.hash_id != analysis_object.hash_id
+        assert new.parent_id == analysis_object.hash_id
+
+        # Create object from existing id
+        same = neuroscout.analyses.get_analysis(id=new.hash_id)
+        assert same.hash_id == new.hash_id
+        assert same.name == new.name
 
         # Test delete
         new.delete()
 
         with pytest.raises(HTTPError):
             analysis_object._analyses.get(id=new.hash_id)
+
 
 def test_get_analysis(recorder, neuroscout, analysis):
     analysis_id = analysis['hash_id']
