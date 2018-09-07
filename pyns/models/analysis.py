@@ -4,7 +4,10 @@ from pathlib import Path
 from functools import partial
 
 class Analysis:
-    _fields_ = ['dataset_id', 'description', 'name',  'predictions',
+    """ Analysis object class. Object representing an analysis that can be
+    synced with the API """
+
+    _mutable_fields_ = ['dataset_id', 'description', 'name',  'predictions',
                 'predictors', 'private', 'runs']
 
     _aliased_methods_ = ['delete', 'bundle', 'compile']
@@ -14,10 +17,9 @@ class Analysis:
         self.dataset_id = dataset_id
         self._analyses = analyses
 
-        # Set up
+        # Set up (invalid fields will also be set, but not pushed to API)
         for k, v in kwargs.items():
-            if k in set(self._fields_):
-                setattr(self, k, v)
+            setattr(self, k, v)
 
         # If no hash_id, create
         if not hasattr(self, 'hash_id'):
@@ -32,11 +34,10 @@ class Analysis:
                         self.hash_id)
                     )
 
-
     def _asdict(self):
-        """ Return dictionary representation of valid fields """
+        """ Return dictionary representation of mutable fields """
         di = {}
-        for field in self._fields_:
+        for field in self._mutable_fields_:
             if hasattr(self, field):
                 di[field] = getattr(self, field)
 
@@ -79,6 +80,7 @@ class Analysis:
 
 
 class Analyses(Base):
+    """ Class used to access analysis API route """
     _base_path_ = 'analyses'
     _auto_methods_ = ('get', 'post')
 
@@ -118,7 +120,20 @@ class Analyses(Base):
         """
         return self.post(id=id, sub_route='clone')
 
+    def get_analysis(self, id):
+        """ Convenience function to fetch and create Analysis object from
+        a known analysis id
+        :param str id: Analysis hash_id.
+        :return: Analysis object
+        """
+        return Analysis(analyses=self, **self.get(id=id))
+
     def create_analysis(self, *, name, dataset_id, **kwargs):
+        """ Create new analysis object.
+        :param str name: Analysis name
+        :param int dataset_id: Dataset id
+        :return Analysis object
+        """
         return Analysis(analyses=self, name=name,
                         dataset_id=dataset_id, **kwargs)
 

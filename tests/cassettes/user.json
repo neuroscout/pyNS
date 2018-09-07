@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2018-09-05T23:08:35",
+      "recorded_at": "2018-09-06T17:45:48",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -10,7 +10,7 @@
         "headers": {
           "Accept": "*/*",
           "Accept-Encoding": "gzip, deflate",
-          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY3OTM3MTIsImlhdCI6MTUzNjE4ODkxMiwibmJmIjoxNTM2MTg4OTEyLCJpZGVudGl0eSI6Nn0.ezyjxW7iIsLNKdkl_Q8z7IssYWSZVg3lXuyijRQgjdk",
+          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY4NjA3NDUsImlhdCI6MTUzNjI1NTk0NSwibmJmIjoxNTM2MjU1OTQ1LCJpZGVudGl0eSI6Nn0.w9M4G024evopWIk5vZ2VAhBH7pGnFUUYiw3nQ9gla3E",
           "Connection": "keep-alive",
           "User-Agent": "python-requests/2.19.1"
         },
@@ -19,7 +19,7 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA9WXTW+CQBCG7/4Kwrk0fAnKqWvQRtBiKwdp0xAKW0T5sIIFNf73ArYJJlpoKiiXDbsz2TyZvDvDu20gCKq5mr32oY9yyEu8R5BtusYRA/r60loElufGQdSFoZo9ukF+EqeaP1UtI0kKbYEdZkKOZ1jvFjRULUjCJE60MLyN4U2ZpDg8k+hqDkwyFusA+oG6p7L8TIYfaMEqwUT5J9CT0fR89x3/FzSIJhtQN+hQ2ERh3aCH1KdQeqVHYDzu8uek5mfd0kvdA/1BQWp3ZdvHNfFIt9rXo4mTnGYodsw8zhZGUjJJcOTlOBkwA6Vznl2uIS7YpffgP8i1ILVoTK6pNZwUxZx+y5cEQcsEwzVPYyZLJS1XUtbFcNnfqloZ7keUK4ICuNU+ONPG2cJtgrqgdEU8qpN02aFUpnRH3Qe+/3BfDPg4IbVU8glxUibJowWVq6okYFipfiPBfN4otXhXbkeaM9fzP1PYqjXraNXEOlo1unT/cPapBpQBvCbXU4y63YH1U3Xs24zSfduBQOL1NU1CoaNZdhJPbsDS3V3y6d/qnrO/6GBeYUDXvZUboI1d4wuXlyilQRIAAA==",
+          "base64_string": "H4sIAAAAAAAAA9WXwW6CQBCG7z4F4VwaWBCUU9eojSKilYO0aQyVLaIIVrCgxncvYJtgooVWULls2J3J5svk3xn+bQnDcNVSzbWDHJzHXoI9hm2jNYhoyBkvjYVr2FYQxC3kjeJHd9hP4kR1JiNDC5M8s82JsdDc1ox3A2kj1Q3DgKQqBFklyLIMaJ6MJVrqHIUZi7WLHHe0pzKcWIbjqu4qxMTrT7Ap49H57jt+FrRodXtpoFmZ4njmn9BN2Oo06hlSQ3+4gUUrtdfe+F7RoEX6s517pXtwMMhUH2J92si91H9QtbUyzeOa6DOV6u1o4iSn7gk1PYmzQgBaBhQPrsfJwinMnTNzuXpk28x9cmTehD1BG95SazgpihnzliwJipEpli+fxgyXi7RcSVmnw+V+q+rFcD/8RBGkwL3sg9NNkkvdJugrSlcg/SJJlxOlPKXba3Trre5jOuDjhPRSSSYkgQzA0YLKl6okZDmpeCNBf94ohXhXVk2asbfzP5PaYJYLZzADqyYU0aoxufuHzKdatdEX0piJs7x85tRQ6aBb8mopa11DxXuLgdvUcnebBwIJ1tcoCUdz1TDDeHgDEe0ewk/nfmzP9xcdTFkCjsf2ynLx0q70Bd2iTIitEwAA",
           "encoding": null,
           "string": ""
         },
@@ -28,7 +28,7 @@
           "Connection": "keep-alive",
           "Content-Encoding": "gzip",
           "Content-Type": "application/json",
-          "Date": "Wed, 05 Sep 2018 23:08:34 GMT",
+          "Date": "Thu, 06 Sep 2018 17:45:48 GMT",
           "Server": "nginx/1.15.1",
           "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
           "Transfer-Encoding": "chunked",
