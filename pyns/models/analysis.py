@@ -5,16 +5,11 @@ from functools import partial
 from .utils import build_model
 
 class Analysis:
-<<<<<<< HEAD
-    _fields_ = ['dataset_id', 'description', 'name',  'predictions',
-                'predictors', 'private', 'runs', 'model']
-=======
     """ Analysis object class. Object representing an analysis that can be
     synced with the API """
 
     _mutable_fields_ = ['dataset_id', 'description', 'name',  'predictions',
                 'predictors', 'private', 'runs']
->>>>>>> master
 
     _aliased_methods_ = ['delete', 'bundle', 'compile']
 
