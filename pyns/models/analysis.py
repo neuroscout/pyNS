@@ -5,7 +5,7 @@ from functools import partial
 
 class Analysis:
     _fields_ = ['dataset_id', 'description', 'name',  'predictions',
-                'predictors', 'private', 'runs']
+                'predictors', 'private', 'runs', 'model']
 
     _aliased_methods_ = ['delete', 'bundle', 'compile']
 
