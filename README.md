@@ -16,6 +16,8 @@ Use `pip` to install it:
     pip install pyns
 
 ### Quickstart
+For a tutorial on how to build an analysis, see this Jupyter Notebook: https://github.com/neuroscout/pyNS/blob/master/examples/Tutorial.ipynb
+
 We are assuming you already have valid Neuroscout API credentials (and if you dont, sign up at: `alpha.neuroscout.org`)
 
 First, instantiate a Neuroscout API Client object:
