@@ -9,7 +9,7 @@ class Analysis:
     synced with the API """
 
     _mutable_fields_ = ['dataset_id', 'description', 'name',  'predictions',
-                'predictors', 'private', 'runs']
+                        'model', 'predictors', 'private', 'runs']
 
     _aliased_methods_ = ['delete', 'bundle', 'compile']
 
@@ -149,8 +149,11 @@ class Analyses(Base):
 
 
         # Get Run IDs
-        runs = [r['id'] for r in self._client.runs.get(
-            dataset_id=dataset['id'], subject=subject, number=run, session=session)]
+        runs = self._client.runs.get(
+            dataset_id=dataset['id'], subject=subject, number=run, session=session)
+        if subject is None:
+            subject = list(set(r['subject'] for r in runs))
+        runs = [r['id'] for r in runs]
 
         if len(runs) < 1:
             raise ValueError("No runs could be found with the given criterion")
