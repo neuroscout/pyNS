@@ -9,7 +9,7 @@ class Analysis:
     synced with the API """
 
     _mutable_fields_ = ['dataset_id', 'description', 'name',  'predictions',
-                'predictors', 'private', 'runs']
+                        'model', 'predictors', 'private', 'runs']
 
     _aliased_methods_ = ['delete', 'bundle', 'compile']
 
