@@ -1,6 +1,6 @@
 """ Miscelaneous utilities """
 
-def build_model(variables, task, subject, run=None, session=None,
+def build_model(name, variables, task, subject, run=None, session=None,
                 hrf_variables=None, transformations=None,
                 contrasts=None, auto_contrasts=True):
     """ Builds a basic two level BIDS-Model """
@@ -31,7 +31,8 @@ def build_model(variables, task, subject, run=None, session=None,
         "input": {
           "subject": subject,
           "task": task,
-        }
+        },
+        "name": name,
     }
 
     if run is not None:
