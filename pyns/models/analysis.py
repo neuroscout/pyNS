@@ -167,7 +167,8 @@ class Analyses(Base):
 
         # Build model
         model = build_model(
-            predictor_names, task, subject=subject, run=run, session=session,
+            name, predictor_names, task,
+            subject=subject, run=run, session=session,
             hrf_variables=hrf_variables, transformations=transformations,
             contrasts=contrasts, auto_contrasts=True
             )
