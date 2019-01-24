@@ -161,6 +161,19 @@ def test_id_actions(recorder, neuroscout, analysis):
         resp = neuroscout.analyses.full(id=analysis_id)
         assert 'runs' in resp
 
+        # Test get_report
+        resp = neuroscout.analyses.generate_report(id=analysis_id,
+                                                   run_id=analysis['runs'][0])
+        assert resp['status'] == 'PENDING'
+
+        # Wait until compiled
+        while(resp['status'] == 'PENDING'):
+            sleep(1)
+            resp = neuroscout.analyses.get_report(id=analysis_id)
+
+        assert 'contrast_plot' in resp['result']
+        assert len(resp['result']['design_matrix']) == 1
+
         # Test compile
         resp = neuroscout.analyses.compile(id=analysis_id)
         assert resp['status'] == 'PENDING'

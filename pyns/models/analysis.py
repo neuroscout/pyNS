@@ -12,7 +12,8 @@ class Analysis:
     _mutable_fields_ = ['dataset_id', 'description', 'name',  'predictions',
                         'model', 'predictors', 'private', 'runs']
 
-    _aliased_methods_ = ['delete', 'bundle', 'compile']
+    _aliased_methods_ = ['delete', 'bundle', 'compile', 'generate_report',
+                         'get_report']
 
     def __init__(self, *, analyses, name, dataset_id, **kwargs):
         self.name = name
@@ -204,6 +205,22 @@ class Analyses(Base):
         """
         return self.post(id=id, sub_route='compile')
 
+    def generate_report(self, id, run_id=None):
+        """ Submit analysis for report generation
+        :param str id: Analysis hash_id.
+        :param bool run_id: Optional run_id to constrain report.
+        :return: client response object
+        """
+        return self.post(id=id, sub_route='report', run_id=run_id)
+
+    def get_report(self, id, run_id=None):
+        """ Submit analysis for report generation
+        :param str id: Analysis hash_id.
+        :param bool run_id: Optional run_id to constrain report.
+        :return: client response object
+        """
+        return self.get(id=id, sub_route='report', run_id=run_id)
+
     def full(self, id):
         """ Get full analysis object (including runs and predictors)
         :param str id: Analysis hash_id.
@@ -214,6 +231,8 @@ class Analyses(Base):
     def fill(self, id, partial=True, dryrun=False):
         """ Fill missing fields
         :param str id: Analysis hash_id.
+        :param bool partial: Partial fill?
+        :param bool dryrun: Dryrun do not commit to database.
         :return: client response object
         """
         return self.post(id=id, sub_route='fill',
