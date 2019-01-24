@@ -4,6 +4,7 @@ from pathlib import Path
 from functools import partial
 from .utils import build_model
 
+
 class Analysis:
     """ Analysis object class. Object representing an analysis that can be
     synced with the API """
@@ -121,10 +122,10 @@ class Analyses(Base):
         """
         return self.post(id=id, sub_route='clone')
 
-    def create_analysis(self, *, name, dataset_name, predictor_names, task=None,
-                        subject=None, run=None, session=None,
-                        hrf_variables=None, contrasts=None, auto_contrasts=True,
-                        transformations=None, **kwargs):
+    def create_analysis(self, *, name, dataset_name, predictor_names,
+                        task=None, subject=None, run=None, session=None,
+                        hrf_variables=None, contrasts=None,
+                        auto_contrasts=True, transformations=None, **kwargs):
         """ Analysis creation "wizard". Given run selection filters, and name
         of Predictors, builds Analysis object with prepopulated BIDS model.
         """
@@ -133,7 +134,8 @@ class Analyses(Base):
         datasets = self._client.datasets.get()
         dataset = [d for d in datasets if d['name'] == dataset_name]
         if len(dataset) != 1:
-            raise ValueError("Dataset name does not match any existing dataset.")
+            raise ValueError(
+                "Dataset name does not match any existing dataset.")
         else:
             dataset = dataset[0]
 
@@ -141,16 +143,18 @@ class Analyses(Base):
         if task is not None:
             search = [t for t in dataset['tasks'] if t['name'] == task]
             if len(search) != 1:
-                raise ValueError("Task name does not match any tasks in the dataset")
+                raise ValueError(
+                    "Task name does not match any tasks in the dataset")
         else:
             if len(dataset['tasks']) > 1:
-                raise ValueError("No task specified, but dataset has more than one task")
+                raise ValueError(
+                    "No task specified, but dataset has more than one task")
             task = dataset['tasks'][0]['name']
-
 
         # Get Run IDs
         runs = self._client.runs.get(
-            dataset_id=dataset['id'], subject=subject, number=run, session=session)
+            dataset_id=dataset['id'], subject=subject, number=run,
+            session=session)
         if subject is None:
             subject = list(set(r['subject'] for r in runs))
         runs = [r['id'] for r in runs]
@@ -160,10 +164,12 @@ class Analyses(Base):
 
         # Get Predictor IDs
         predictors = [p['id'] for p in self._client.predictors.get(
-            run_id=runs,name=predictor_names)]
+            run_id=runs, name=predictor_names)]
 
         if len(predictors) != len(predictor_names):
-            raise ValueError("Not all named predictors could be found for the specified runs.")
+            raise ValueError(
+                "Not all named predictors could be found for the "
+                "specified runs.")
 
         # Build model
         model = build_model(
