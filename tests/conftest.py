@@ -23,10 +23,12 @@ def neuroscout_recorder():
     neuroscout = Neuroscout()
     return betamax.Betamax(neuroscout._session), neuroscout
 
+
 @pytest.fixture(scope='module')
 def recorder(neuroscout_recorder):
     """ Returns only recorder """
     return neuroscout_recorder[0]
+
 
 @pytest.fixture(scope='module')
 def neuroscout(neuroscout_recorder):

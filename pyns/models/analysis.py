@@ -4,6 +4,7 @@ from pathlib import Path
 from functools import partial
 from .utils import build_model
 
+
 class Analysis:
     """ Analysis object class. Object representing an analysis that can be
     synced with the API """
@@ -11,7 +12,8 @@ class Analysis:
     _mutable_fields_ = ['dataset_id', 'description', 'name',  'predictions',
                         'model', 'predictors', 'private', 'runs']
 
-    _aliased_methods_ = ['delete', 'bundle', 'compile']
+    _aliased_methods_ = ['delete', 'bundle', 'compile', 'generate_report',
+                         'get_report']
 
     def __init__(self, *, analyses, name, dataset_id, **kwargs):
         self.name = name
@@ -62,6 +64,10 @@ class Analysis:
         new = getattr(self._analyses, method)(self.hash_id)
         self._fromdict(new)
         return new
+
+    def fill(self):
+        """ Fill missing fields from API """
+        return self._getter_wrapper('fill')
 
     def get_status(self):
         """ Get compilation status """
@@ -121,19 +127,20 @@ class Analyses(Base):
         """
         return self.post(id=id, sub_route='clone')
 
-    def create_analysis(self, *, name, dataset_name, predictor_names, task=None,
-                        subject=None, run=None, session=None,
-                        hrf_variables=None, contrasts=None, auto_contrasts=True,
-                        transformations=None, **kwargs):
+    def create_analysis(self, *, name, dataset_name, predictor_names,
+                        task=None, subject=None, run=None, session=None,
+                        hrf_variables=None, contrasts=None,
+                        auto_contrasts=True, transformations=None, **kwargs):
         """ Analysis creation "wizard". Given run selection filters, and name
         of Predictors, builds Analysis object with prepopulated BIDS model.
         """
 
         # Get dataset id
-        datasets = self._client.datasets.get()
+        datasets = self._client.datasets.get(active_only=False)
         dataset = [d for d in datasets if d['name'] == dataset_name]
         if len(dataset) != 1:
-            raise ValueError("Dataset name does not match any existing dataset.")
+            raise ValueError(
+                "Dataset name does not match any existing dataset.")
         else:
             dataset = dataset[0]
 
@@ -141,16 +148,18 @@ class Analyses(Base):
         if task is not None:
             search = [t for t in dataset['tasks'] if t['name'] == task]
             if len(search) != 1:
-                raise ValueError("Task name does not match any tasks in the dataset")
+                raise ValueError(
+                    "Task name does not match any tasks in the dataset")
         else:
             if len(dataset['tasks']) > 1:
-                raise ValueError("No task specified, but dataset has more than one task")
+                raise ValueError(
+                    "No task specified, but dataset has more than one task")
             task = dataset['tasks'][0]['name']
-
 
         # Get Run IDs
         runs = self._client.runs.get(
-            dataset_id=dataset['id'], subject=subject, number=run, session=session)
+            dataset_id=dataset['id'], subject=subject, number=run,
+            session=session)
         if subject is None:
             subject = list(set(r['subject'] for r in runs))
         runs = [r['id'] for r in runs]
@@ -160,10 +169,12 @@ class Analyses(Base):
 
         # Get Predictor IDs
         predictors = [p['id'] for p in self._client.predictors.get(
-            run_id=runs,name=predictor_names)]
+            run_id=runs, name=predictor_names)]
 
         if len(predictors) != len(predictor_names):
-            raise ValueError("Not all named predictors could be found for the specified runs.")
+            raise ValueError(
+                "Not all named predictors could be found for the "
+                "specified runs.")
 
         # Build model
         model = build_model(
@@ -194,12 +205,38 @@ class Analyses(Base):
         """
         return self.post(id=id, sub_route='compile')
 
+    def generate_report(self, id, run_id=None):
+        """ Submit analysis for report generation
+        :param str id: Analysis hash_id.
+        :param bool run_id: Optional run_id to constrain report.
+        :return: client response object
+        """
+        return self.post(id=id, sub_route='report', params=dict(run_id=run_id))
+
+    def get_report(self, id, run_id=None):
+        """ Submit analysis for report generation
+        :param str id: Analysis hash_id.
+        :param bool run_id: Optional run_id to constrain report.
+        :return: client response object
+        """
+        return self.get(id=id, sub_route='report', run_id=run_id)
+
     def full(self, id):
         """ Get full analysis object (including runs and predictors)
         :param str id: Analysis hash_id.
         :return: client response object
         """
         return self.get(id=id, sub_route='full')
+
+    def fill(self, id, partial=True, dryrun=False):
+        """ Fill missing fields
+        :param str id: Analysis hash_id.
+        :param bool partial: Partial fill?
+        :param bool dryrun: Dryrun do not commit to database.
+        :return: client response object
+        """
+        return self.post(id=id, sub_route='fill',
+                         params=dict(partial=partial, dryrun=dryrun))
 
     def resources(self, id):
         """ Get analysis resources
@@ -213,4 +250,4 @@ class Analyses(Base):
         :param str id: Analysis hash_id.
         :return: client response object
         """
-        return self.get(id=id, sub_route='status')
+        return self.get(id=id, sub_route='compile')

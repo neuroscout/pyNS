@@ -5,37 +5,37 @@ from requests.exceptions import HTTPError
 TEST_ANALYSIS = {
   "dataset_id": 5,
   "model": {
-    "blocks": [
+    "Steps": [
       {
-        "auto_contrasts": True,
-        "contrasts": [],
-        "level": "run",
-        "model": {
-          "HRF_variables": [],
-          "variables": [
+        "AutoContrasts": True,
+        "Contrasts": [],
+        "Level": "Run",
+        "Model": {
+          "X": [
             "brightness"
           ]
         },
-        "transformations": []
+        "Transformations": []
       },
       {
-        "auto_contrasts": True,
-        "level": "dataset"
+        "AutoContrasts": True,
+        "Level": "Dataset"
       }
     ],
-    "input": {
-      "subject": [
+    "Input": {
+      "Subject": [
         "28"
       ],
-      "task": "MerlinMovie"
+      "Task": "MerlinMovie"
     },
-    "name": "pytest_analysis"
+    "Name": "pytest_analysis"
   },
   "name": "pytest_analysis",
   "predictors": [12728],
   "runs": [126],
   "task_name": "MerlinMovie",
 }
+
 
 @pytest.fixture(scope='module')
 def analysis(recorder, neuroscout):
@@ -45,6 +45,7 @@ def analysis(recorder, neuroscout):
 
     return new
 
+
 @pytest.fixture(scope='module')
 def analysis_object(recorder, neuroscout):
     """ Create analysis object """
@@ -53,14 +54,16 @@ def analysis_object(recorder, neuroscout):
             name='pytest_analysis',
             dataset_name='SherlockMerlin',
             predictor_names=['brightness'],
+            hrf_variables=['brightness'],
             subject=['28'])
 
     return new
 
-def test_analysis_object(recorder, neuroscout,analysis_object):
+
+def test_analysis_object(recorder, neuroscout, analysis_object):
     assert analysis_object.status == 'DRAFT'
     assert analysis_object.name == 'pytest_analysis'
-    assert analysis_object.description == None
+    assert analysis_object.description is None
 
     analysis_object.description = 'new_description'
 
@@ -74,12 +77,33 @@ def test_analysis_object(recorder, neuroscout,analysis_object):
 
         assert analysis_object.get_status()['status'] == 'DRAFT'
 
+        # test fill
+        analysis_object.predictors = []
+        analysis_object.push()
+        analysis_object.fill()
+        assert len(analysis_object.predictors) == 1
+
+        # Test get_report
+        resp = analysis_object.generate_report(run_id=analysis_object.runs[0])
+        assert resp['status'] == 'PENDING'
+
+        # Wait until compiled
+        while(resp['status'] == 'PENDING'):
+            sleep(1)
+            resp = analysis_object.get_report(run_id=analysis_object.runs[0])
+
+        assert 'contrast_plot' in resp['result']
+        assert len(resp['result']['design_matrix']) == 1
+
         # compile
         analysis_object.compile()
         assert analysis_object.get_status()['status'] != 'DRAFT'
 
         assert 'dataset_address' in analysis_object.get_resources()
         assert hasattr(analysis_object, 'dataset_address')
+
+        while analysis_object.get_status()['status'] != 'PASSED':
+            sleep(1)
 
         # clone
         new = analysis_object.clone()
@@ -108,6 +132,7 @@ def test_get_analysis(recorder, neuroscout, analysis):
         assert resp['name'] == 'pytest_analysis'
         assert resp['status'] == 'DRAFT'
 
+
 def test_put_analysis(recorder, neuroscout, analysis):
     analysis_id = analysis['hash_id']
 
@@ -120,6 +145,7 @@ def test_put_analysis(recorder, neuroscout, analysis):
         assert resp['name'] == 'pytest_analysis'
         assert resp['description'] == 'new_description'
 
+
 def test_id_actions(recorder, neuroscout, analysis):
     analysis_id = analysis['hash_id']
 
@@ -128,9 +154,37 @@ def test_id_actions(recorder, neuroscout, analysis):
         resp = neuroscout.analyses.full(id=analysis_id)
         assert 'runs' in resp
 
+        # Test get_report
+        resp = neuroscout.analyses.generate_report(id=analysis_id,
+                                                   run_id=analysis['runs'][0])
+        assert resp['status'] == 'PENDING'
+
+        # Wait until compiled
+        while(resp['status'] == 'PENDING'):
+            sleep(1)
+            resp = neuroscout.analyses.get_report(id=analysis_id,
+                                                  run_id=analysis['runs'][0])
+
+        assert 'contrast_plot' in resp['result']
+        assert len(resp['result']['design_matrix']) == 1
+
+        # Test fill
+
+        analysis['runs'] = []
+        analysis['predictors'] = []
+
+        # Put first
+        resp = neuroscout.analyses.put(id=analysis_id, **analysis)
+        assert len(resp['predictors']) == 0
+
+        resp = neuroscout.analyses.fill(
+            id=analysis_id)
+
+        assert len(resp['runs']) == 17
+        assert len(resp['predictors']) == 1
+
         # Test compile
         resp = neuroscout.analyses.compile(id=analysis_id)
-        assert resp['hash_id'] == analysis_id
         assert resp['status'] == 'PENDING'
 
         # Test status
