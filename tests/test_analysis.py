@@ -37,6 +37,7 @@ TEST_ANALYSIS = {
   "task_name": "MerlinMovie",
 }
 
+
 @pytest.fixture(scope='module')
 def analysis(recorder, neuroscout):
     """ Creates analysis """
@@ -44,6 +45,7 @@ def analysis(recorder, neuroscout):
         new = neuroscout.analyses.post(**TEST_ANALYSIS)
 
     return new
+
 
 @pytest.fixture(scope='module')
 def analysis_object(recorder, neuroscout):
@@ -56,6 +58,7 @@ def analysis_object(recorder, neuroscout):
             subject=['28'])
 
     return new
+
 
 def test_analysis_object(recorder, neuroscout,analysis_object):
     assert analysis_object.status == 'DRAFT'
@@ -80,6 +83,9 @@ def test_analysis_object(recorder, neuroscout,analysis_object):
 
         assert 'dataset_address' in analysis_object.get_resources()
         assert hasattr(analysis_object, 'dataset_address')
+
+        while analysis_object.get_status()['status'] != 'PASSED':
+            sleep(1)
 
         # clone
         new = analysis_object.clone()
@@ -108,6 +114,7 @@ def test_get_analysis(recorder, neuroscout, analysis):
         assert resp['name'] == 'pytest_analysis'
         assert resp['status'] == 'DRAFT'
 
+
 def test_put_analysis(recorder, neuroscout, analysis):
     analysis_id = analysis['hash_id']
 
@@ -120,6 +127,7 @@ def test_put_analysis(recorder, neuroscout, analysis):
         assert resp['name'] == 'pytest_analysis'
         assert resp['description'] == 'new_description'
 
+
 def test_id_actions(recorder, neuroscout, analysis):
     analysis_id = analysis['hash_id']
 
@@ -130,7 +138,6 @@ def test_id_actions(recorder, neuroscout, analysis):
 
         # Test compile
         resp = neuroscout.analyses.compile(id=analysis_id)
-        assert resp['hash_id'] == analysis_id
         assert resp['status'] == 'PENDING'
 
         # Test status

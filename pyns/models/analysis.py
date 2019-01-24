@@ -131,7 +131,7 @@ class Analyses(Base):
         """
 
         # Get dataset id
-        datasets = self._client.datasets.get()
+        datasets = self._client.datasets.get(active_only=False)
         dataset = [d for d in datasets if d['name'] == dataset_name]
         if len(dataset) != 1:
             raise ValueError(
@@ -219,4 +219,4 @@ class Analyses(Base):
         :param str id: Analysis hash_id.
         :return: client response object
         """
-        return self.get(id=id, sub_route='status')
+        return self.get(id=id, sub_route='compile')

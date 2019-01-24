@@ -1,49 +1,83 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2018-09-07T21:06:53",
+      "recorded_at": "2019-01-24T20:02:32",
       "request": {
         "body": {
           "encoding": "utf-8",
           "string": ""
         },
         "headers": {
-          "Accept": "*/*",
-          "Accept-Encoding": "gzip, deflate",
-          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY5NTkyMTMsImlhdCI6MTUzNjM1NDQxMywibmJmIjoxNTM2MzU0NDEzLCJpZGVudGl0eSI6Nn0.f36XyHFvp4PinUtWaX1n1UlNyZoiShe80LwEfxqCGxQ",
-          "Connection": "keep-alive",
-          "User-Agent": "python-requests/2.19.1"
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NjQ5NTAsImlhdCI6MTU0ODM2MDE1MCwibmJmIjoxNTQ4MzYwMTUwLCJpZGVudGl0eSI6MX0.J6riLjuDL_ojaOvfzROipnz9fExWezh7tuBGEZn3Fos"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
         },
         "method": "GET",
-        "uri": "https://alpha.neuroscout.org/api/analyses/AYzeM"
+        "uri": "https://alpha.neuroscout.org/api/analyses/Mn4Xw"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA5VSwWrDMAy99yuCz+tIAlu73gqj7NJL6WWUEpREW706drCdQFfy73Mcu3E2xtgpkd6zpCe96yyKyH5HVlFy/3AX9VEhqpoyzLSEAnMozgYkZIKVGWiT5Q1jLi8RtE+TNE6W8/hpHi/2abKK3dsSNCjUGS0Nx/UqURWS1poKPql3AnUaiGT9+olbV6ISJTKTvJrAhDkTxVmZ+GDjyOUtBo0WWSG4UaF0z9GyQVvFEULscAwRhq3tQmTDSQhM27vky26TtSAp5Ax/1DL4BAuAfn5J30+ao1IkAI63/y5sbobl6k3ICvptDZ1m33n/WcBNpjuMn6GzX6+CUF43OhBNVJN/YKEncki69M9H+cSUtebZomSUb0VLcWD5gQmHCntGfdGodAYc2EVRu47udnL6Rv+w1m9lBrQGidz5brRYLbGkhd+lN7jLCjmeK0kX6XLmhRkGbY3Xw4X2Rgn5jyNbadCNbfC8W2/2rku/mMwPPdlON/sCQD7NIpIDAAA=",
+          "base64_string": "H4sIAAAAAAAAA5VTy27CMBC85ysin0uVRPTFrVKFeuGCOFRCKFqSpbg4dmRvqBDi32snDnFaVVVPsDPD7s54OUdxzFZLNovT27ub2FWFqmouMCcNBW6hOFiSMc9pBMIyB3JglqRPkySdZNNVlswSrymBwCDlvLQa37NEU2heE1fSgrIRosP3YPadkC3k9O3TtxCqOKBDdyAMdlilShQWOtvCllunMbZet3Xs8ZaDhlReKGkdGHIa0k3XxQtCbr0JGYHHdgrTjWQhMR7vwdflPD+C5rAV+KOX5UdcQLj9NX/fk0RjWEBsrt8v4XC7rDQ7pStwCXaTou+6/wRwtekfq9/h0n72LhiXdUOBaWaa7QcWNLLDssf+54N9Ztu2h7NALbhcqCPHTtUvzCRU6BT1idBQDhLEyfA2jsv1yfmO/3Fuv7Xp2Bo0Sn+Lw9nVGkte9Fn2x+1RpYfnSrOH7DHqjVkFP9r7DwN1hxLq7we1IaCmHfCyfJ6v/BQbYcXp+icalnKJ5b2bUWyX6AusMQ8hpwMAAA==",
           "encoding": null,
           "string": ""
         },
         "headers": {
-          "Access-Control-Allow-Origin": "*",
-          "Connection": "keep-alive",
-          "Content-Encoding": "gzip",
-          "Content-Type": "application/json",
-          "Date": "Fri, 07 Sep 2018 21:06:53 GMT",
-          "Server": "nginx/1.15.1",
-          "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
-          "Transfer-Encoding": "chunked",
-          "Vary": "Accept-Encoding",
-          "X-Content-Type-Options": "nosniff",
-          "X-Frame-Options": "DENY",
-          "X-XSS-Protection": "1; mode=block"
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 20:02:32 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
         },
         "status": {
           "code": 200,
           "message": "OK"
         },
-        "url": "https://alpha.neuroscout.org/api/analyses/AYzeM"
+        "url": "https://alpha.neuroscout.org/api/analyses/Mn4Xw"
       }
     }
   ],
-  "recorded_with": "betamax/0.7.1"
+  "recorded_with": "betamax/0.8.1"
 }

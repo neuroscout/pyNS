@@ -1,41 +1,75 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2018-09-07T21:06:55",
+      "recorded_at": "2019-01-24T20:02:35",
       "request": {
         "body": {
           "encoding": "utf-8",
           "string": ""
         },
         "headers": {
-          "Accept": "*/*",
-          "Accept-Encoding": "gzip, deflate",
-          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY5NTkyMTMsImlhdCI6MTUzNjM1NDQxMywibmJmIjoxNTM2MzU0NDEzLCJpZGVudGl0eSI6Nn0.f36XyHFvp4PinUtWaX1n1UlNyZoiShe80LwEfxqCGxQ",
-          "Connection": "keep-alive",
-          "User-Agent": "python-requests/2.19.1"
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NjQ5NTAsImlhdCI6MTU0ODM2MDE1MCwibmJmIjoxNTQ4MzYwMTUwLCJpZGVudGl0eSI6MX0.J6riLjuDL_ojaOvfzROipnz9fExWezh7tuBGEZn3Fos"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
         },
         "method": "GET",
         "uri": "https://alpha.neuroscout.org/api/datasets"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA7VW227bOBB9z1cM/LBoAVvWxbq4b6mDNMnmUjTdFN2iWNDS2CYikQJJJTEW/fcdynY87ibYvuxDkGPeznDm8Iy+HQH8TX8AgwptaWTrpFaDd9tBGj7u3EobS0PftkM0+Keo5lpXQzgOhjBboRrCBaFL1Go5hK/BjH5ca9MImvg98It+gzNhrabffwSD7UHfh7BjeX9+cnuHxm7IB1EQBvFgP33aqUqqpZ+6Fj5CUcO5sk66zqEFvYAzFLVbwZvoUxhdnUVRnKT5KIxAqAqex9Iso7G37OBr0aA/9XaFptbl/V9X9F8qtuITLtCgKtEeq+pSqvufUrFyrrXvxmNRigobWQa6a4NSN+MSTanNWBgnyxrHlZbjKAyicJrspuarpziMx5OwCIs4H5/px9EXHH02QtlGutEVNtpItCOnRzeOAhy9N0Iq+5y+/v+PbagDWVFg6e5XIxt06xZ5tAPRVVKPn0aP4oHdUDZiieOW0rsfc/jkxm0tDlLxICvU46adbCLYlW+gfkriYQ4HplM8iijOno+M4pzhguHpHkdsTcTWRGxNHDIcMRwzPGE43eOE7U3Y3oTtTRKGJ4fXt13TCLP2GfjYV1u2QjkLj8KVK6xglxZo9IPEXpG1tA4VzTkNVFnoCwMGSRVe517QmyRu9gTPuXTCHghw90x39d9fkdVlc9SVP2mnnR9HOwVt9PMfHlDeK/1YY7VskG7mz/yCFLhQ93Ah6FXDB7IIeupYW1zDhwC+rBBrNOQKcPsojNYtfOiU61pR13IIV8I51HAnbamVk1BJuKlxuaQkzASlpq41LQrgvBJ09HwuFW36jMas4VaU9+iGfRp96gxa5/Pl8cn78xm8OaEiNJpsC/r3Auekb5/UGcWO5i205DNaKaxhoQ2QK1ExBD1woLWVcAJKXddY+iSMy870fhOwZ/CiI96KpqMTjwO4pgsIiwNeia+UAluLB7gJyAdrkoW61wcryFwMPsIsgBnFRgGsD6YvqJQW7vzup/n61ww0etFAWcxp74thnuZhdsB2msQ0XqSTJCG/PI4OJq9vT8lKp3k2eSEM8rDPei+XXn7nC1jrDhayr5i0myRbdNBZXHT1ENoaKWNQSod9HRd0f/3oa9YKqta7XU6HcBtsWs42R74BgW82N5pUY1Z6QX2HSkAjz2n2/YjyPjwQoNclDb2muzu/vJf0RY+2CvSK3PYyqkJ/CpXkTRxG+VsKjDStvFjobr1+HrBee32u6BK2v9gSNdkyqZgEW5HsjJxTA6toA7VKcg5a3dIGOmajOtKswbmhbjfThjyZy/BSlqhsn+GPJyeXLzS1a+z8Vjqw1bTSerdRwvlB4ia2spZt3z2FoiZQbzvLYUfZmez/2FGeRo1w9EDuxSuN5VIu8LV2Ek/2lh1PYoYThicMpwxnDOcMFwzv20ychgwz3pTxpow3Zbwp400Zb8p4U8abMt6M8WaMN2O8GePNGG/GeDPGmzHejPFmjDdnvDnjzRlvznhzxpsz3pzx5ow3Z7w54y0Yb8F4C8ZbMN6C8RaMt2C8BeMtGG/BeKeMd8p4p4x3yninjHfKeKeMd8p4p4x3uudNwpDhiOGY4YThCcMpwxnDOcMFw+y+CYs5YTEnLOaExZywvRMWcxS++kl0qjtD/rb5ctg1av+gN1aEUOmy85O0noYM9VsyxPkaTgS5w8ZU59robrn65a+gfcTMRGpvIv/+/Dn6fvQPipbrjwUNAAA=",
+          "base64_string": "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",
           "encoding": null,
           "string": ""
         },
         "headers": {
-          "Access-Control-Allow-Origin": "*",
-          "Connection": "keep-alive",
-          "Content-Encoding": "gzip",
-          "Content-Type": "application/json",
-          "Date": "Fri, 07 Sep 2018 21:06:55 GMT",
-          "Server": "nginx/1.15.1",
-          "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
-          "Transfer-Encoding": "chunked",
-          "Vary": "Accept-Encoding",
-          "X-Content-Type-Options": "nosniff",
-          "X-Frame-Options": "DENY",
-          "X-XSS-Protection": "1; mode=block"
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 20:02:35 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
         },
         "status": {
           "code": 200,
@@ -45,41 +79,75 @@
       }
     },
     {
-      "recorded_at": "2018-09-07T21:06:55",
+      "recorded_at": "2019-01-24T20:02:35",
       "request": {
         "body": {
           "encoding": "utf-8",
           "string": ""
         },
         "headers": {
-          "Accept": "*/*",
-          "Accept-Encoding": "gzip, deflate",
-          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY5NTkyMTMsImlhdCI6MTUzNjM1NDQxMywibmJmIjoxNTM2MzU0NDEzLCJpZGVudGl0eSI6Nn0.f36XyHFvp4PinUtWaX1n1UlNyZoiShe80LwEfxqCGxQ",
-          "Connection": "keep-alive",
-          "User-Agent": "python-requests/2.19.1"
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NjQ5NTAsImlhdCI6MTU0ODM2MDE1MCwibmJmIjoxNTQ4MzYwMTUwLCJpZGVudGl0eSI6MX0.J6riLjuDL_ojaOvfzROipnz9fExWezh7tuBGEZn3Fos"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
         },
         "method": "GET",
         "uri": "https://alpha.neuroscout.org/api/datasets/5"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA11Uy27bMBC85ysIHYoWsERRD1vOLUlRJG2dFkkfaIsiWIvrmIhICiQVJw3y76Uki3F7kYY74nJ3dqinI0IiDg4suhvg3KC10TFRXdPMyMChrY1ondDKx598yAdPOrfVpv/w1xDwoZ/A11rzGTlJZuRsi2pG3nv0EbW6nZEfyZlfXGojwRMfkv6jV+QcrNV+/TWJhjS/hyN9stOLt9ff0Njx0IglaZJFE/muU1yo2564hL4uaMiFsk64zqElekPOERq3Ja/ZVcpW54xlebmIU0ZAcRJi5XzuY29C2kuQ2Oe83qJpdH13s/JvoQJ/hRs0qGq0J4p/FOrun/a3zrX2mFKogaMUdaK7Nqm1pDWaWhsKxom6Qcq1oCxNWLrMJ2q9fcjSjBZplVbZgp7rXfwd4y8GlJXCxSuU2gi0sdPxJ+eLi08NCGX3kvnn8zgpwX1B5YilkOgeW3ypMYKOC00f4h3ch56EhFukrRdzijh8cLRt4KDxe8FRU9kW/YnjiCL1n1iHWkWtwdbo+sBOQR6bJyDhj5/Zzg7y6BaVws5oL5hrO2cpK5ZpVZbLLKvzNa7TCqs64wDFutjwMmd0XRQF1PkirkrGYy9bGUOWVXEJuJxjMa9y5HQjvWl9HfuSTKdepGDZfN8byxYBVQEtJ8QCywLLApulAbGAsoCKgMoJ5WFHHnbkYUeeB1S8KG07KcE89iJ+HkwkWlDOkh24eoucTBMgUt8LHCzeCOtQec5p4g1DhskTg95s/cXpb8g4r3FPstfI/wMOPP00OXuw1dTMwejHFKs+w2jF577oo+ejv9AWAhZTBAAA",
+          "base64_string": "H4sIAAAAAAAAA21TXU/cMBB851dYeaha6RLHyR0HvB201dFygKClaqsKmXi5WMTeyHb4ELr/Xie5+ELVl2Sym4x3Zyave4REgjtuwd1yIQxYGx0R3VTVhHQ9sIWRtZOoff3Vl3xx0bgSTfvi767gS7+4uEMUE7JIJuSkBD0hXzw6A9TrCfmZnPiHczSK+8bXpH3pHVlya9E/f0+ijuZPd6QnOz79eH0DxvaHRixJkywamp8bLaRet41z3s7FK3KqrZOucWAJ3pMl8MqV5D27StlqyViWz+ZxygjXgoTabH/f1z4E2nOuoOW8LsFUWDzcrvxd6tC/gnswoAuwCy3OpH54s37pXG2PKOUFF6BkkWBTJwUqWoAp0FBunCwqoAIlZWnC0sN8aN2Vz1ma0Wl6kB5kc7rEp/gHxN8M11ZJF69AoZFgY4fxhfPDxceGS223kvnrpndKCj/QrMdKKnAvNexmjHgjJNLn+Ik/hp2k4mugtRdzqDh4drSu+GjxRykAqaqn7Ym9RZH+R6yxVlFtoDZYjOIU5FlLVzZ3nTAaGoO2wMbF2/xZ+l860+jdGozNt3MxdhDQ4YCyNCAWUBbQNKBZQPsBBeYsMGeBOQ/MeWDOA3OeBzTdqWQbpbh5aQW47AIga66dJU/cFSUIMqxLFD5K6OJZSetA+55D4s0mnWvEgA9KG/o23b04/TfJViOv3yiPr0Mqu0gMS49s6ylWLUM06jbqdit2UPntFosbcuktBe26H+9omOVTLS0K6CO52QnQmGrsPtagO9sTNGsaXBc2TRljabS32fsL77gJ8pAEAAA=",
           "encoding": null,
           "string": ""
         },
         "headers": {
-          "Access-Control-Allow-Origin": "*",
-          "Connection": "keep-alive",
-          "Content-Encoding": "gzip",
-          "Content-Type": "application/json",
-          "Date": "Fri, 07 Sep 2018 21:06:55 GMT",
-          "Server": "nginx/1.15.1",
-          "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
-          "Transfer-Encoding": "chunked",
-          "Vary": "Accept-Encoding",
-          "X-Content-Type-Options": "nosniff",
-          "X-Frame-Options": "DENY",
-          "X-XSS-Protection": "1; mode=block"
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 20:02:35 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
         },
         "status": {
           "code": 200,
@@ -89,41 +157,75 @@
       }
     },
     {
-      "recorded_at": "2018-09-07T21:06:55",
+      "recorded_at": "2019-01-24T20:02:35",
       "request": {
         "body": {
           "encoding": "utf-8",
           "string": ""
         },
         "headers": {
-          "Accept": "*/*",
-          "Accept-Encoding": "gzip, deflate",
-          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY5NTkyMTMsImlhdCI6MTUzNjM1NDQxMywibmJmIjoxNTM2MzU0NDEzLCJpZGVudGl0eSI6Nn0.f36XyHFvp4PinUtWaX1n1UlNyZoiShe80LwEfxqCGxQ",
-          "Connection": "keep-alive",
-          "User-Agent": "python-requests/2.19.1"
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NjQ5NTAsImlhdCI6MTU0ODM2MDE1MCwibmJmIjoxNTQ4MzYwMTUwLCJpZGVudGl0eSI6MX0.J6riLjuDL_ojaOvfzROipnz9fExWezh7tuBGEZn3Fos"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
         },
         "method": "GET",
         "uri": "https://alpha.neuroscout.org/api/tasks?dataset_id=5"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA3WTy26DMBBF9/kKy+sK2fiB6a6LZkcXIbsoihC4xAqYiEelKsq/d0ggZCJ1gYTPXHvuNcNuRcgFHkLodkPfCQ/UG7mvi6zPOtsfXAF8obbLW3fuXeMB37cC/syPzdbVFhgLWGgmOVTWlTt/+LIaS1ouPMlKb3uXr52tirRvrS/7I2iooM8iP3xneT+0th1rqbO19d0/ii5pClt9ZTcbND39ttmTcmPP0G80PhldskI1rVxuoeB8CaXdhAlhDwm8B5wrESMSChYZRITUPEIEgMJERTpWiOg4FAIRw6IoRAQk/AnwgAkjY0TAnzGIhHCyRgQ2aYWIYozh5mx0iKNHguGgoTHyJSgYegnKcXcICvcjEYmgPQ5qtJIcRzcMx2Kx5i9BOb5lCArZcXQpQyGn9X75+NusO81jk9i2cp4kzY+z9Ca4zrN/+xNm79SjDXf9ozbUh3aAQYUpmz3RCVyusLyu9qs/SSyQXXwDAAA=",
+          "base64_string": "H4sIAAAAAAAAA4vmUlCoBmIFBaWQICUrBUM9Ux0FCD8lsSSxOLUkPjMFKA4XBfNMYLy8xNxUIF/JN7UoJzPPN78sM1UJLleaG19UmlcMMtUcJlhcmpubWFQJ0uMYphBQlFqcmleSWJKZn2elADFEwbUgszg/JVUJqKGWK5YLANjtDvKiAAAA",
           "encoding": null,
           "string": ""
         },
         "headers": {
-          "Access-Control-Allow-Origin": "*",
-          "Connection": "keep-alive",
-          "Content-Encoding": "gzip",
-          "Content-Type": "application/json",
-          "Date": "Fri, 07 Sep 2018 21:06:55 GMT",
-          "Server": "nginx/1.15.1",
-          "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
-          "Transfer-Encoding": "chunked",
-          "Vary": "Accept-Encoding",
-          "X-Content-Type-Options": "nosniff",
-          "X-Frame-Options": "DENY",
-          "X-XSS-Protection": "1; mode=block"
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 20:02:35 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
         },
         "status": {
           "code": 200,
@@ -133,41 +235,75 @@
       }
     },
     {
-      "recorded_at": "2018-09-07T21:06:55",
+      "recorded_at": "2019-01-24T20:02:35",
       "request": {
         "body": {
           "encoding": "utf-8",
           "string": ""
         },
         "headers": {
-          "Accept": "*/*",
-          "Accept-Encoding": "gzip, deflate",
-          "Authorization": "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1MzY5NTkyMTMsImlhdCI6MTUzNjM1NDQxMywibmJmIjoxNTM2MzU0NDEzLCJpZGVudGl0eSI6Nn0.f36XyHFvp4PinUtWaX1n1UlNyZoiShe80LwEfxqCGxQ",
-          "Connection": "keep-alive",
-          "User-Agent": "python-requests/2.19.1"
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NjQ5NTAsImlhdCI6MTU0ODM2MDE1MCwibmJmIjoxNTQ4MzYwMTUwLCJpZGVudGl0eSI6MX0.J6riLjuDL_ojaOvfzROipnz9fExWezh7tuBGEZn3Fos"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
         },
         "method": "GET",
         "uri": "https://alpha.neuroscout.org/api/runs?dataset_id=5"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA9WVwW7CMAyG732KKOcJNXFSKO/AE0zTFCCHQCmiaXaZePeFQjnE3MzBO7RSbSfup/z5/VkJ8ZsfIaTbXVKIYQznXq5Fn7ruQ9wzeze66MfvsM8J+4ymwT2KlTWweCamMqWb+btPp60fij2jjxF3iml78LsxR6VeyTmaux9z6P6fcwPzyN4auJO/Ldn4oQv95vwTvJxy1/y+TnVvYawR45LI2LJjxOe4ojFCzY0R2kVdMLZERsWN0diSURG1qvhptSm1qoha1ey0ij1HEbWq2Wn1xX2siYz6HzAqIiNwY3wxHzWR0bBjxPPREBkbdowaadUSGZfsGNF8BKLnADvPaVSpVSB6DvDzHKRVIHoO8PMczAhERsuOEd9Hoq/Cu3y1+qr+AAeNLqsmDwAA",
+          "base64_string": "H4sIAAAAAAAAA72Wvw7CIBCH9z4FYTYNcKW1vooxpv+Gaq2xlMn47pJqHaDbeQwM3BH4Qn7h45gw9nSDMV41D9ubfu7vIz+w0Q7Djn06bTVXppvPfesa+le1U/VdLHWmU7E2lmVSFut8tLe6m7w9TWdMeJKx9aVrZlflsuRr1Z1+daXMzV5L7S/Eeao94j2OWAliYhEQl0hiSUsMpZ8KJZDEKjqxRBJD7FQohSTOiIkhIM6QxDkxsQpSoZHERfQ7zpHE++g5RhpEURskvGOkQYDYIBuvG9IgQGyQ8F8BSIMAsUFy6acCkAYBaoMErxsgDQLUBgmJAUmso+cY6TzYdl5ySt4sAp011AsAAA==",
           "encoding": null,
           "string": ""
         },
         "headers": {
-          "Access-Control-Allow-Origin": "*",
-          "Connection": "keep-alive",
-          "Content-Encoding": "gzip",
-          "Content-Type": "application/json",
-          "Date": "Fri, 07 Sep 2018 21:06:55 GMT",
-          "Server": "nginx/1.15.1",
-          "Strict-Transport-Security": "max-age=63072000; includeSubDomains; preload",
-          "Transfer-Encoding": "chunked",
-          "Vary": "Accept-Encoding",
-          "X-Content-Type-Options": "nosniff",
-          "X-Frame-Options": "DENY",
-          "X-XSS-Protection": "1; mode=block"
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 20:02:35 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
         },
         "status": {
           "code": 200,
@@ -177,5 +313,5 @@
       }
     }
   ],
-  "recorded_with": "betamax/0.7.1"
+  "recorded_with": "betamax/0.8.1"
 }
