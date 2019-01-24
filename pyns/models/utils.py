@@ -1,5 +1,6 @@
 """ Miscelaneous utilities """
 
+
 def build_model(name, variables, task, subject, run=None, session=None,
                 hrf_variables=None, transformations=None,
                 contrasts=None, auto_contrasts=True):
@@ -11,34 +12,42 @@ def build_model(name, variables, task, subject, run=None, session=None,
     if not set(variables) >= set(hrf_variables):
         raise ValueError("HRF Variables must be a subset of all variables")
 
+    transformations.append({
+        "Input": hrf_variables,
+        "Name": "Convolve"
+    })
+
     model = {
-        "blocks": [
+        "Steps": [
           {
-            "auto_contrasts": auto_contrasts,
-            "contrasts": contrasts,
-            "level": "run",
-            "model": {
-              "HRF_variables": hrf_variables,
-              "variables": variables
+            "AutoContrasts": auto_contrasts,
+            "Contrasts": contrasts,
+            "Level": "Run",
+            "Model": {
+              "X": variables
             },
-            "transformations": transformations
+            "Transformations": transformations
           },
           {
-            "auto_contrasts": True,
-            "level": "dataset"
+            "AutoContrasts": True,
+            "Level": "Subject"
+          },
+          {
+            "AutoContrasts": True,
+            "Level": "Dataset"
           }
         ],
-        "input": {
-          "subject": subject,
-          "task": task,
+        "Input": {
+          "Subject": subject,
+          "Task": task,
         },
-        "name": name,
+        "Name": name,
     }
 
     if run is not None:
-        model['input']['run'] = run
+        model['Input']['Run'] = run
 
     if session is not None:
-        model['input']['session'] = run
+        model['Input']['Session'] = run
 
     return model

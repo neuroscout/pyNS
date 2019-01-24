@@ -64,6 +64,10 @@ class Analysis:
         self._fromdict(new)
         return new
 
+    def fill(self):
+        """ Fill missing fields from API """
+        return self._getter_wrapper('fill')
+
     def get_status(self):
         """ Get compilation status """
         return self._getter_wrapper('status')

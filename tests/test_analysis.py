@@ -54,6 +54,7 @@ def analysis_object(recorder, neuroscout):
             name='pytest_analysis',
             dataset_name='SherlockMerlin',
             predictor_names=['brightness'],
+            hrf_variables=['brightness'],
             subject=['28'])
 
     return new
@@ -75,6 +76,12 @@ def test_analysis_object(recorder, neuroscout, analysis_object):
         assert analysis_object.description == 'new_description'
 
         assert analysis_object.get_status()['status'] == 'DRAFT'
+
+        # test fill
+        analysis_object.predictors = []
+        analysis_object.push()
+        analysis_object.fill()
+        assert len(analysis_object.predictors) == 1
 
         # compile
         analysis_object.compile()
