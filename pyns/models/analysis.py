@@ -207,6 +207,14 @@ class Analyses(Base):
         """
         return self.get(id=id, sub_route='full')
 
+    def fill(self, id, partial=True, dryrun=False):
+        """ Fill missing fields
+        :param str id: Analysis hash_id.
+        :return: client response object
+        """
+        return self.post(id=id, sub_route='fill',
+                         partial=partial, dryrun=dryrun)
+
     def resources(self, id):
         """ Get analysis resources
         :param str id: Analysis hash_id.

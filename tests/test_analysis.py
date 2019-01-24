@@ -5,31 +5,30 @@ from requests.exceptions import HTTPError
 TEST_ANALYSIS = {
   "dataset_id": 5,
   "model": {
-    "blocks": [
+    "Steps": [
       {
-        "auto_contrasts": True,
-        "contrasts": [],
-        "level": "run",
-        "model": {
-          "HRF_variables": [],
-          "variables": [
+        "AutoContrasts": True,
+        "Contrasts": [],
+        "Level": "Run",
+        "Model": {
+          "X": [
             "brightness"
           ]
         },
-        "transformations": []
+        "Transformations": []
       },
       {
-        "auto_contrasts": True,
-        "level": "dataset"
+        "AutoContrasts": True,
+        "Level": "Dataset"
       }
     ],
-    "input": {
-      "subject": [
+    "Input": {
+      "Subject": [
         "28"
       ],
-      "task": "MerlinMovie"
+      "Task": "MerlinMovie"
     },
-    "name": "pytest_analysis"
+    "Name": "pytest_analysis"
   },
   "name": "pytest_analysis",
   "predictors": [12728],
@@ -60,10 +59,10 @@ def analysis_object(recorder, neuroscout):
     return new
 
 
-def test_analysis_object(recorder, neuroscout,analysis_object):
+def test_analysis_object(recorder, neuroscout, analysis_object):
     assert analysis_object.status == 'DRAFT'
     assert analysis_object.name == 'pytest_analysis'
-    assert analysis_object.description == None
+    assert analysis_object.description is None
 
     analysis_object.description = 'new_description'
 
@@ -126,6 +125,25 @@ def test_put_analysis(recorder, neuroscout, analysis):
 
         assert resp['name'] == 'pytest_analysis'
         assert resp['description'] == 'new_description'
+
+
+def test_fill_analysis(recorder, neuroscout, analysis):
+    analysis_id = analysis['hash_id']
+
+    analysis['runs'] = []
+    analysis['predictors'] = []
+
+    # Test fill
+    with recorder.use_cassette('fill_analysis'):
+        # Put first
+        resp = neuroscout.analyses.put(id=analysis_id, **analysis)
+        assert len(resp['predictors']) == 0
+
+        resp = neuroscout.analyses.fill(
+            id=analysis_id, dryrun=True)
+
+        assert len(resp['runs']) == 17
+        assert len(resp['predictors']) == 1
 
 
 def test_id_actions(recorder, neuroscout, analysis):
