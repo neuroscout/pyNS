@@ -5,7 +5,7 @@
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "{\"dataset_id\": 5, \"model\": {\"Steps\": [{\"AutoContrasts\": true, \"Contrasts\": [], \"Level\": \"Run\", \"Model\": {\"X\": [\"brightness\"]}, \"Transformations\": []}, {\"AutoContrasts\": true, \"Level\": \"Dataset\"}], \"Input\": {\"Subject\": [\"28\"], \"Task\": \"MerlinMovie\"}, \"Name\": \"pytest_analysis\"}, \"name\": \"pytest_analysis\", \"predictors\": [12728], \"runs\": [126], \"task_name\": \"MerlinMovie\"}"
+          "string": "{\"TR\": 1.5, \"compile_traceback\": \"\", \"created_at\": \"2019-01-24T21:3\", \"dataset_id\": 5, \"description\": \"new_description\", \"hash_id\": \"wJpvM\", \"locked\": false, \"model\": {\"Input\": {\"Subject\": [\"28\"], \"Task\": \"MerlinMovie\"}, \"Name\": \"pytest_analysis\", \"Steps\": [{\"AutoContrasts\": true, \"Contrasts\": [], \"Level\": \"Run\", \"Model\": {\"X\": [\"brightness\"]}, \"Transformations\": []}, {\"AutoContrasts\": true, \"Level\": \"Dataset\"}]}, \"modified_at\": \"2019-01-24T21:3\", \"name\": \"pytest_analysis\", \"predictions\": \"\", \"predictors\": [12728], \"private\": true, \"runs\": [126], \"status\": \"DRAFT\", \"task_name\": \"MerlinMovie\"}"
         },
         "headers": {
           "Accept": [
@@ -21,7 +21,7 @@
             "keep-alive"
           ],
           "Content-Length": [
-            "370"
+            "599"
           ],
           "Content-Type": [
             "application/json"
@@ -30,12 +30,12 @@
             "python-requests/2.19.1"
           ]
         },
-        "method": "POST",
-        "uri": "https://alpha.neuroscout.org/api/analyses"
+        "method": "PUT",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wJpvM"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA5VTy26DMBC88xXI56Yq9JXmFjWq1Kr0kHCoFEXIwKZxAzay16miiH+vAQNOD616Y2dGuzve4eT5PomXZOYHl7cXflNloqxYAQlKmkFKs70hCbGcBIqQJxQbMLwKHiZXwSS8icNgdm01OUWqABOWG43tmYPKJKuQCW5Arouiw3dU7Toh+XqpDpFtUYhsDw26pYWCDitFDoWBTqYw5TOvNA6lAVY6/YSsgdYWMmA4JbbYtF1aMKaq9RSBLBiPxIFBp6qthrzREhpFdURQmFBOi6NiivT8CqFSzqTTOHGuUTwKbh5PYSNBqWEYbXiXW29c5hUOrUGy1Jy4RHTm3ILvZ0ZbKJXsY4cclCIOsRm+a7dpLClXWyFL2hyl28b7qfuHr2H7RXf+foXa65eohzuyLfsjQ/y3A5CKSuA2YGOWKgk5y3o3fWItKuR4ryC8D6deHwmjYAcTatcTkZq7+rtRrZCibgcslvOn2E5ROi0ZDn/GuJR5i33SuzkLXO19A/hh/0d8AwAA",
+          "base64_string": "H4sIAAAAAAAAA5VTy26DMBC88xXI56YK9JXmFjWq1KrpIeFQKYqQgU3jBmxkrxNFEf9eAwacHlr1xs6MvTve4ez5PomWZOoH13dXfl2loihZDjFKmkJC070hCbGcBIqQxRRrMBwHj6NxMApvozCY3lhNRpEqwJhlRmPvzEClkpXIBK8PcjjGLtSKdlTt2lPk+FoeFhbORbqHGt3SXEGLFSKD3EBnU5jyhZca+9IAK518QVpDawsZMJwQW2yaWxowoqoxuACZM74QBwatqrIa8k4LqBXlCUFhTDnNT4op0vErhFI5nc5Dx5lG8SS4eUmFtQSlhr614V1uvXGZNzg0BslSc+ISiwvnFvy4MNpAiWSfO+SgFHGITf9duZdGknK1FbKg9Traabyfun/46qeft1noRqi8boiq3yPbsj8CxX9bACmpBG7TxnWeW1RCxtLOTRdfiwo57CsIH8KJ10XCKNjBJNz1RKTmrv5+UCukqJsG8+XsObJdlE4Khv1vMgxl3mIfd24uAld53xvv9k+JAwAA",
           "encoding": null,
           "string": ""
         },
@@ -81,7 +81,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://alpha.neuroscout.org/api/analyses"
+        "url": "https://alpha.neuroscout.org/api/analyses/wJpvM"
       }
     }
   ],

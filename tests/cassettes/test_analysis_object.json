@@ -1,0 +1,2053 @@
+{
+  "http_interactions": [
+    {
+      "recorded_at": "2019-01-24T21:38:09",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"dataset_id\": 5, \"description\": \"new_description\", \"name\": \"pytest_analysis\", \"predictions\": \"\", \"model\": {\"Input\": {\"Subject\": [\"28\"], \"Task\": \"MerlinMovie\"}, \"Name\": \"pytest_analysis\", \"Steps\": [{\"AutoContrasts\": true, \"Contrasts\": [], \"Level\": \"Run\", \"Model\": {\"X\": [\"brightness\"]}, \"Transformations\": [{\"Input\": [\"brightness\"], \"Name\": \"Convolve\"}]}, {\"AutoContrasts\": true, \"Level\": \"Subject\"}, {\"AutoContrasts\": true, \"Level\": \"Dataset\"}]}, \"predictors\": [12728], \"private\": true, \"runs\": [126]}"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "502"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "PUT",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wlDvw"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA61TXUvDMBR9368YeVax9Xtv4hAE58PsgyCjZO2di0uTktx0yOh/N22TNhVUBN9yzzm5Hye5h8l0SpIlmU2jk4ujaRNlsigZhxQVzWBNs50lCXGcAoqQpxQbMD6Nbo5Po+P4PImj2ZnT5BSpBkxZbjUuZw46U6xEJkVzUcA+DaFOtKV6290iez6v9g7mMttBg24o19BhhcyBW+hgAxs+iNJgH1rg2azfIWugVwdZML4mLli1WVowobodcAGKM7GQFYNOVTsNeaIFNIryA0FjSgXlH5pp4vlnhFIHlQ5DxVuD8k4K66TGRoLKQF/a8iH3ugqZR6jaAcnSCBISi9HkDnwZDdpCa8XetihAaxIQq/5ch0kTRYXeSFXQ5jn0l2yHcWZv9rjgtyVDt53QO2rHrySvIJTX/dn3OnT6B2d7//xP+Jdk8+5r98kmvs+6/5Zsw37ZD/HTfyIlVSDc8gjDuUMV5Czzj+O30aFSDS8WxVfx9cR7bhWssgsbzkSUEaH+clBrpGjaAvPl7X3iqmizLhj2Wz80Zb3YpX6a0f7Uk08qgyrpWAQAAA==",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:09 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/wlDvw"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:09",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wlDvw"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA61TXUvDMBR9368YeVax9Xtv4hAE58PsgyCjZO2di0uTktx0yOh/N22TNhVUBN9yzzm5Hye5h8l0SpIlmU2jk4ujaRNlsigZhxQVzWBNs50lCXGcAoqQpxQbMD6Nbo5Po+P4PImj2ZnT5BSpBkxZbjUuZw46U6xEJkVzUcA+DaFOtKV6290iez6v9g7mMttBg24o19BhhcyBW+hgAxs+iNJgH1rg2azfIWugVwdZML4mLli1WVowobodcAGKM7GQFYNOVTsNeaIFNIryA0FjSgXlH5pp4vlnhFIHlQ5DxVuD8k4K66TGRoLKQF/a8iH3ugqZR6jaAcnSCBISi9HkDnwZDdpCa8XetihAaxIQq/5ch0kTRYXeSFXQ5jn0l2yHcWZv9rjgtyVDt53QO2rHrySvIJTX/dn3OnT6B2d7//xP+Jdk8+5r98kmvs+6/5Zsw37ZD/HTfyIlVSDc8gjDuUMV5Czzj+O30aFSDS8WxVfx9cR7bhWssgsbzkSUEaH+clBrpGjaAvPl7X3iqmizLhj2Wz80Zb3YpX6a0f7Uk08qgyrpWAQAAA==",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:09 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/wlDvw"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:09",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wlDvw/compile"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6vmUlBQSs7PLcjMSY0vKUpMTk1KTM5WslJQUtJRAMkVlySWlBaDBFyCHN1ClLhquQACUk+rNAAAAA==",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:09 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/wlDvw/compile"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:09",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{\"dataset_id\": 5, \"description\": \"new_description\", \"name\": \"pytest_analysis\", \"predictions\": \"\", \"model\": {\"Input\": {\"Subject\": [\"28\"], \"Task\": \"MerlinMovie\"}, \"Name\": \"pytest_analysis\", \"Steps\": [{\"AutoContrasts\": true, \"Contrasts\": [], \"Level\": \"Run\", \"Model\": {\"X\": [\"brightness\"]}, \"Transformations\": [{\"Input\": [\"brightness\"], \"Name\": \"Convolve\"}]}, {\"AutoContrasts\": true, \"Level\": \"Subject\"}, {\"AutoContrasts\": true, \"Level\": \"Dataset\"}]}, \"predictors\": [], \"private\": true, \"runs\": [126]}"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "497"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "PUT",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wlDvw"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA61TXUvDMBR9368YeXZi6wfqmzgEwfmw9UEYo2TtnYtLk5LcdIzR/27aJl0qqAi+5Z57cu73cTQek2RO7sfR+fXZuLEyWZSMQ4qKZrCm2c46CXE+BRQhTyk2YHwR3U0uokl8lcTR/aXj5BSpBkxZbjlOMwedKVYik6L5KGCfhlBH2lK97X6RPZ9Wewdzme2gQTeUa+iwQubALXS0hjWfRWmwNy2wMOsPyBpo6SALxrfEGatWpQUTqtsCZ6A4EzNZMehYteOQV1pAwygPCBpTKig/aKaJ9y8QSh1EOp4iPhiUj1LYTmpsKKgM9KGtP/QtV6HnBaq2QDI3goSO2aByB74NCm2htWLvWxSgNQkcq/5dh6KJokJvpCpoMw79Re04VPbNHgb8NmTYbUf0HbXlV5JXENLr/u1zPWX6h872/fOb8C9i0261e7GRz7Pu15Jt2C/3IX7aJ1JSBcIdjzCcO1RBzjI/HH+NDpUq2B8LssreaFgGUSYYahTfjPxQiEaKptWczh+eEieszbpg2B/6KQ9b/i71BQxOph59AqiJM+pLBAAA",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:09 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/wlDvw"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:09",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{}"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "2"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "POST",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wlDvw/fill?partial=True&dryrun=False"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA61TXUvDMBR9368YeVax9Xtv4hAE58PsgyCjZO2di0uTktx0yOh/N22TNhVUBN9yzzm5Hye5h8l0SpIlmU2jk4ujaRNlsigZhxQVzWBNs50lCXGcAoqQpxQbMD6Nbo5Po+P4PImj2ZnT5BSpBkxZbjUuZw46U6xEJkVzUcA+DaFOtKV6290iez6v9g7mMttBg24o19BhhcyBW+hgAxs+iNJgH1rg2azfIWugVwdZML4mLli1WVowobodcAGKM7GQFYNOVTsNeaIFNIryA0FjSgXlH5pp4vlnhFIHlQ5DxVuD8k4K66TGRoLKQF/a8iH3ugqZR6jaAcnSCBISi9HkDnwZDdpCa8XetihAaxIQq/5ch0kTRYXeSFXQ5jn0l2yHcWZv9rjgtyVDt53QO2rHrySvIJTX/dn3OnT6B2d7//xP+Jdk8+5r98kmvs+6/5Zsw37ZD/HTfyIlVSDc8gjDuUMV5Czzj+O30aFSDS8WxVfx9cR7bhWssgsbzkSUEaH+clBrpGjaAvPl7X3iqmizLhj2Wz80Zb3YpX6a0f7Uk08qgyrpWAQAAA==",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:09 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/wlDvw/fill?partial=True&dryrun=False"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:10",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{}"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "2"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "POST",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6vmUlBQSk/NSy1KLElNiU8sUbJSUDIyMLTUNTDUNTIJMTK0MlbSUQCpKkotLs0ByeeV5uRAhIpLEktKi0FaAlz9XDz93KFKS4oSk1OTEpOzoaq5arkAxLVfKmkAAAA=",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:10 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:11",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6vmUlBQSk/NSy1KLElNiU8sUbJSUDIyMLTUNTDUNTIJMTK0MlbSUQCpKkotLs0ByeeV5uRAhIpLEktKi0FaAlz9XDz93KFKS4oSk1OTEpOzoaq5arkAxLVfKmkAAAA=",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:11 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:12",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6vmUlBQSk/NSy1KLElNiU8sUbJSUDIyMLTUNTDUNTIJMTK0MlbSUQCpKkotLs0ByeeV5uRAhIpLEktKi0FaAlz9XDz93KFKS4oSk1OTEpOzoaq5arkAxLVfKmkAAAA=",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:12 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:13",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6vmUlBQSk/NSy1KLElNiU8sUbJSUDIyMLTUNTDUNTIJMTK0MlbSUQCpKkotLs0ByeeV5uRAhIpLEktKi0FaAlz9XDz93KFKS4oSk1OTEpOzoaq5arkAxLVfKmkAAAA=",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:13 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:14",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6vmUlBQSk/NSy1KLElNiU8sUbJSUDIyMLTUNTDUNTIJMTK0MlbSUQCpKkotLs0ByeeV5uRAhIpLEktKi0FaAlz9XDz93KFKS4oSk1OTEpOzoaq5arkAxLVfKmkAAAA=",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:14 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:15",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6vmUlBQSk/NSy1KLElNiU8sUbJSUDIyMLTUNTDUNTIJMTK0MlbSUQCpKkotLs0ByeeV5uRAhIpLEktKi0FaAlz9XDz93KFKS4oSk1OTEpOzoaq5arkAxLVfKmkAAAA=",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:15 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:16",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6vmUlBQSk/NSy1KLElNiU8sUbJSUDIyMLTUNTDUNTIJMTK0MlbSUQCpKkotLs0ByeeV5uRAhIpLEktKi0FaAlz9XDz93KFKS4oSk1OTEpOzoaq5arkAxLVfKmkAAAA=",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:16 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:17",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6vmUlBQSk/NSy1KLElNiU8sUbJSUDIyMLTUNTDUNTIJMTK0MlbSUQCpKkotLs0ByeeV5uRAhIpLEktKi0FaAlz9XDz93KFKS4oSk1OTEpOzoaq5arkAxLVfKmkAAAA=",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:17 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:18",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6vmUlBQSk/NSy1KLElNiU8sUbJSUDIyMLTUNTDUNTIJMTK0MlbSUQCpKkotLs0ByeeV5uRAhIpLEktKi0FaAlz9XDz93KFKS4oSk1OTEpOzoaq5arkAxLVfKmkAAAA=",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:18 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:19",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6vmUlBQSk/NSy1KLElNiU8sUbJSUDIyMLTUNTDUNTIJMTK0MlbSUQCpKkotLs0ByeeV5uRAhIpLEktKi0FaAlz9XDz93KFKS4oSk1OTEpOzoaq5arkAxLVfKmkAAAA=",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:19 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:20",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6vmUlBQSk/NSy1KLElNiU8sUbJSUDIyMLTUNTDUNTIJMTK0MlbSUQCpKkotLs0ByeeV5uRAhIpLEktKi0FaAlz9XDz93KFKS4oSk1OTEpOzoaq5arkAxLVfKmkAAAA=",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:20 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:21",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA62SPY+CQBCGe34F2VpA8ArP2s4YGztzISNOOMK6S2Zm4RLif3fhzOWMRhuaTeZ9N8989kEYqhINEgiechC1ClU2Tz+jeRplH/ssXS3ULBx+EbLTg9/7yMeFNULAkjfaDvJhlL0BuvmG2KAjy4V1ElsqE8LGknDS6XXbJeyOUbbMBbiOtki6MlvbVpj/Mc8gVP3EjSnViP0aa/DwE3JVmps/UdY7ZizcvsrpaySasOXn8HedTzn0R/C/7P69/O6fBcTxcB+7ze0k/K4KPEJRe9U4rYNLcAVzIrwjUQIAAA==",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:21 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/wlDvw/report?run_id=126"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:21",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{}"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "2"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "POST",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wlDvw/compile"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6vmUlBQSs7PLcjMSY0vKUpMTk1KTM5WslJQUtJRAMkVlySWlBaDBAJc/Vw8/dyVuGq5ABhRPYA2AAAA",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:21 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/wlDvw/compile"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:21",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wlDvw/compile"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6vmUlBQSs7PLcjMSY0vKUpMTk1KTM5WslJQUtJRAMkVlySWlBaDBAJc/Vw8/dyVuGq5ABhRPYA2AAAA",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:21 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/wlDvw/compile"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:21",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wlDvw/resources"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA7VQQQrCMBC89xUlZ9NoQVBvHgXrxaNISJPVBtskZBNBxb+bUkXRs6ddZnZmlrlleU6UCAIhcKGUB0SyyE1s21H+yRnRQSLItgHfWnmq0tCGDEeHaCR3IjS9dpeQhGGsaTljPcWGnSenEx2ElT1r4OiEBFptVpNpuVlrU47Hc7nES8cVoKTOg/NW8tq2qjBaF8crSeb7IbRLbn8Irb3Qhvfmv5Gvh95FkSYEhwvGjjo0sS6k7ZiB6C1KGwN9tofsq7bsnj0A6eNu9noBAAA=",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:21 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/wlDvw/resources"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:21",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wlDvw/compile"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6vmUlBQSs7PLcjMSY0vKUpMTk1KTM5WslJQUtJRAMkVlySWlBaDBAJc/Vw8/dyVuGq5ABhRPYA2AAAA",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:21 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/wlDvw/compile"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:22",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wlDvw/compile"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6vmUlBQSs7PLcjMSY0vKUpMTk1KTM5WslJQUtJRAMkVlySWlBaDBAIcg4NdXZS4arkAEre85jUAAAA=",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:22 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/wlDvw/compile"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:23",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": "{}"
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "2"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "POST",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wlDvw/clone"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA61T32vCMBB+96+QPM9hu9++yWQwmBtoYQOREttzZrZJSa51Iv3fl7ZJTQebDPaW+74vd7kvd4dev0+CGRn1vfOrs34VRSLNWAIhShrBikZbTRJiOAkUIQ4pVqA/9O4GQ2/gXwa+N7owmpgiVYAhi7XG5IxBRZJlyASvLnLYhS7UiDZUbZpbZPz58rozcCKiLVTomiYKGiwVMSQaOuhAh488y7ENNTDPVx8QVdDCQBr0b4kJlnWWGgyoqhucgkwYn4qCQaMqjYY80xQqRbZHUBhSTpO9YopYfo6QKafS4VhxnKO4F1w7qbCSoMyhLa15l1ssXeYJirpBMss5cYlpp3MDvnUaraGVZO8b5KAUcYhley7dpIGkXK2FTGn1HepbtkM3szW7W/DHkq7bRmgd1e0XIinAlZft2b71+NI/ONv6ZyfhX5JNmtFuk/XsO8t2LNmandgP/ts8kYxK4GZ5yC6ZFHYNMgkxi+z/kC4q5PHTPP/Gv+1Z27WCFXpn3baIzLmrvz6qFVLM6wKT2fghMFVUvkoZnlp87c02tN119qnsfQEeWwaUaAQAAA==",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:22 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/wlDvw/clone"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:23",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://alpha.neuroscout.org/api/analyses/AxOWw"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA61T32vCMBB+96+QPM9hu9++yWQwmBtoYQOREttzZrZJSa51Iv3fl7ZJTQebDPaW+74vd7kvd4dev0+CGRn1vfOrs34VRSLNWAIhShrBikZbTRJiOAkUIQ4pVqA/9O4GQ2/gXwa+N7owmpgiVYAhi7XG5IxBRZJlyASvLnLYhS7UiDZUbZpbZPz58rozcCKiLVTomiYKGiwVMSQaOuhAh488y7ENNTDPVx8QVdDCQBr0b4kJlnWWGgyoqhucgkwYn4qCQaMqjYY80xQqRbZHUBhSTpO9YopYfo6QKafS4VhxnKO4F1w7qbCSoMyhLa15l1ssXeYJirpBMss5cYlpp3MDvnUaraGVZO8b5KAUcYhley7dpIGkXK2FTGn1HepbtkM3szW7W/DHkq7bRmgd1e0XIinAlZft2b71+NI/ONv6ZyfhX5JNmtFuk/XsO8t2LNmandgP/ts8kYxK4GZ5yC6ZFHYNMgkxi+z/kC4q5PHTPP/Gv+1Z27WCFXpn3baIzLmrvz6qFVLM6wKT2fghMFVUvkoZnlp87c02tN119qnsfQEeWwaUaAQAAA==",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:23 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/AxOWw"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:23",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "0"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "DELETE",
+        "uri": "https://alpha.neuroscout.org/api/analyses/AxOWw"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": "{}\n"
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "3"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:23 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/AxOWw"
+      }
+    },
+    {
+      "recorded_at": "2019-01-24T21:38:23",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NDg5NzA2ODksImlhdCI6MTU0ODM2NTg4OSwibmJmIjoxNTQ4MzY1ODg5LCJpZGVudGl0eSI6MX0.rLXVrGikLe1vr5ihvKL13pvPXXhDWZsr1MUYr3Xkjt4"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.19.1"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://alpha.neuroscout.org/api/analyses/AxOWw"
+      },
+      "response": {
+        "body": {
+          "base64_string": "H4sIAAAAAAAAA6vmUlBQyk0tLk5MT1WyUlAKSi3OLy1KTlXIyy9RSMsvzUtR4qrlAgBk5qMNJgAAAA==",
+          "encoding": null,
+          "string": ""
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Encoding": [
+            "gzip"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Thu, 24 Jan 2019 21:38:23 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Transfer-Encoding": [
+            "chunked"
+          ],
+          "Vary": [
+            "Accept-Encoding"
+          ]
+        },
+        "status": {
+          "code": 404,
+          "message": "NOT FOUND"
+        },
+        "url": "https://alpha.neuroscout.org/api/analyses/AxOWw"
+      }
+    }
+  ],
+  "recorded_with": "betamax/0.8.1"
+}

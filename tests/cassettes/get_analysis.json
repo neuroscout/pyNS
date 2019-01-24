@@ -5,7 +5,7 @@
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "{\"dataset_id\": 5, \"model\": {\"Steps\": [{\"AutoContrasts\": true, \"Contrasts\": [], \"Level\": \"Run\", \"Model\": {\"X\": [\"brightness\"]}, \"Transformations\": []}, {\"AutoContrasts\": true, \"Level\": \"Dataset\"}], \"Input\": {\"Subject\": [\"28\"], \"Task\": \"MerlinMovie\"}, \"Name\": \"pytest_analysis\"}, \"name\": \"pytest_analysis\", \"predictors\": [12728], \"runs\": [126], \"task_name\": \"MerlinMovie\"}"
+          "string": ""
         },
         "headers": {
           "Accept": [
@@ -20,18 +20,12 @@
           "Connection": [
             "keep-alive"
           ],
-          "Content-Length": [
-            "370"
-          ],
-          "Content-Type": [
-            "application/json"
-          ],
           "User-Agent": [
             "python-requests/2.19.1"
           ]
         },
-        "method": "POST",
-        "uri": "https://alpha.neuroscout.org/api/analyses"
+        "method": "GET",
+        "uri": "https://alpha.neuroscout.org/api/analyses/wJpvM"
       },
       "response": {
         "body": {
@@ -81,7 +75,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://alpha.neuroscout.org/api/analyses"
+        "url": "https://alpha.neuroscout.org/api/analyses/wJpvM"
       }
     }
   ],

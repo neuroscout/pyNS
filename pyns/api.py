@@ -5,6 +5,7 @@ from functools import partialmethod
 from . import API_BASE_URL, ROUTE_PATTERN
 from . import models
 
+
 class Neuroscout(object):
     """Neuroscout API client object. This is the access point for the API.
 
@@ -35,7 +36,7 @@ class Neuroscout(object):
     def _get_headers(self):
         """ Build authorization header """
         if self._api_token is not None:
-           return {'Authorization': 'JWT %s' % self._api_token}
+            return {'Authorization': 'JWT %s' % self._api_token}
         else:
             return None
 
@@ -50,7 +51,7 @@ class Neuroscout(object):
             path (str): Formatted URI
         """
         def _replace_variables(pattern, variables):
-            for name in re.findall('\{(.*?)\}', pattern):
+            for name in re.findall("\{(.*?)\}", pattern):
                 if name in variables and variables[name] is not None:
                     di = {name: str(variables[name])}
                     pattern = pattern.format(**di)
@@ -74,13 +75,13 @@ class Neuroscout(object):
         """ Generic request handler """
         request_function = getattr(self._session, request)
 
-        if remove_null == True:
-            kwargs = {k:v for (k,v) in kwargs.items() if v is not None}
+        if remove_null is True:
+            kwargs = {k: v for (k, v) in kwargs.items() if v is not None}
 
         if request == 'get':
             params = kwargs
             # Join lists as comma separated list
-            for k,v in params.items():
+            for k, v in params.items():
                 if isinstance(v, list):
                     v = [str(i) for i in v]
                     params[k] = ','.join(v)
@@ -95,7 +96,7 @@ class Neuroscout(object):
             route, json=data, headers=headers, params=params)
 
         if resp.headers.get('Content-Type') == 'application/json':
-            content =  resp.json()
+            content = resp.json()
         else:
             content = resp.content
 
@@ -104,12 +105,12 @@ class Neuroscout(object):
         except requests.exceptions.HTTPError as error:
             if isinstance(content, dict):
                 if content.get('message') is not None:
-                    error = str(error) + "\n Message: {}".format(content['message'])
+                    error = str(error) + "\n Message: {}".format(
+                        content['message'])
 
             raise requests.exceptions.HTTPError(error)
 
         return content
-
 
     def _authorize(self, email=None, password=None):
         """ Fetch api_token given access credentials """

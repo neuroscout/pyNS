@@ -211,7 +211,7 @@ class Analyses(Base):
         :param bool run_id: Optional run_id to constrain report.
         :return: client response object
         """
-        return self.post(id=id, sub_route='report', run_id=run_id)
+        return self.post(id=id, sub_route='report', params=dict(run_id=run_id))
 
     def get_report(self, id, run_id=None):
         """ Submit analysis for report generation
@@ -236,7 +236,7 @@ class Analyses(Base):
         :return: client response object
         """
         return self.post(id=id, sub_route='fill',
-                         partial=partial, dryrun=dryrun)
+                         params=dict(partial=partial, dryrun=dryrun))
 
     def resources(self, id):
         """ Get analysis resources
