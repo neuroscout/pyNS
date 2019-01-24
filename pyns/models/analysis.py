@@ -12,7 +12,7 @@ class Analysis:
     _mutable_fields_ = ['dataset_id', 'description', 'name',  'predictions',
                         'model', 'predictors', 'private', 'runs']
 
-    _aliased_methods_ = ['delete', 'bundle', 'compile']
+    _aliased_methods_ = ['delete', 'bundle', 'compile', 'fill']
 
     def __init__(self, *, analyses, name, dataset_id, **kwargs):
         self.name = name
@@ -64,10 +64,6 @@ class Analysis:
         self._fromdict(new)
         return new
 
-    def fill(self):
-        """ Fill missing fields from API """
-        return self._getter_wrapper('fill')
-
     def get_status(self):
         """ Get compilation status """
         return self._getter_wrapper('status')
@@ -75,6 +71,10 @@ class Analysis:
     def get_resources(self):
         """ Get analysis resources """
         return self._getter_wrapper('resources')
+
+    def get_full(self):
+        """ Get full analysis representation """
+        return self._getter_wrapper('full')
 
     def get_full(self):
         """ Get full analysis representation """
