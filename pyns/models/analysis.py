@@ -59,14 +59,18 @@ class Analysis:
         """ Pull updates from API, overriding changes made locally """
         self._fromdict(self._analyses.get(self.hash_id))
 
-    def _getter_wrapper(self, method):
+    def _getter_wrapper(self, method, **kwargs):
         """ Get representation of analysis, sync and return """
-        new = getattr(self._analyses, method)(self.hash_id)
+        new = getattr(self._analyses, method)(self.hash_id, **kwargs)
         self._fromdict(new)
         return new
 
-    def fill(self):
-        """ Fill missing fields from API """
+    def fill(self, partial=True, dryrun=False):
+        """ Fill missing fields from API
+        :param bool partial: Partial fill?
+        :param bool dryrun: Dryrun do not commit to database.
+        :return: client response object
+        """
         return self._getter_wrapper('fill')
 
     def get_status(self):
