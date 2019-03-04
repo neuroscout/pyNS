@@ -16,6 +16,14 @@ class Analysis:
                          'get_report']
 
     def __init__(self, *, analyses, name, dataset_id, **kwargs):
+        """ Initate a new Analysis object. Typically, this is done by
+        'get_analysis' or 'create_analysis'.
+        Args:
+            self (obj)
+            analyses (obj)- Instantiated analyses object
+            name (str) - Analysis name
+            dataset_id (int) - ID of dataset
+        """
         self.name = name
         self.dataset_id = dataset_id
         self._analyses = analyses
