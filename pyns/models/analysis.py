@@ -86,6 +86,7 @@ class Analysis:
         return self._getter_wrapper('full')
 
     def clone(self):
+        """ Clone current analysis, and return a new Analysis object """
         return Analysis(
             analyses=self._analyses, **self._analyses.clone(self.hash_id))
 
