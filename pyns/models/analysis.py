@@ -45,6 +45,10 @@ class Analysis:
                         self.hash_id)
                     )
 
+    def __repr__(self):
+        return "<Analysis hash_id={} name={} dataset_id={}>".format(
+            self.hash_id, self.name, self.dataset_id)
+
     def _asdict(self):
         """ Return dictionary representation of mutable fields """
         di = {}
