@@ -16,6 +16,14 @@ class Analysis:
                          'get_report']
 
     def __init__(self, *, analyses, name, dataset_id, **kwargs):
+        """ Initate a new Analysis object. Typically, this is done by
+        'get_analysis' or 'create_analysis'.
+        Args:
+            self (obj)
+            analyses (obj)- Instantiated analyses object
+            name (str) - Analysis name
+            dataset_id (int) - ID of dataset
+        """
         self.name = name
         self.dataset_id = dataset_id
         self._analyses = analyses
@@ -36,6 +44,10 @@ class Analysis:
                         getattr(self._analyses, method),
                         self.hash_id)
                     )
+
+    def __repr__(self):
+        return "<Analysis hash_id={} name={} dataset_id={}>".format(
+            self.hash_id, self.name, self.dataset_id)
 
     def _asdict(self):
         """ Return dictionary representation of mutable fields """
@@ -59,14 +71,18 @@ class Analysis:
         """ Pull updates from API, overriding changes made locally """
         self._fromdict(self._analyses.get(self.hash_id))
 
-    def _getter_wrapper(self, method):
+    def _getter_wrapper(self, method, **kwargs):
         """ Get representation of analysis, sync and return """
-        new = getattr(self._analyses, method)(self.hash_id)
+        new = getattr(self._analyses, method)(self.hash_id, **kwargs)
         self._fromdict(new)
         return new
 
-    def fill(self):
-        """ Fill missing fields from API """
+    def fill(self, partial=True, dryrun=False):
+        """ Fill missing fields from API
+        :param bool partial: Partial fill?
+        :param bool dryrun: Dryrun do not commit to database.
+        :return: client response object
+        """
         return self._getter_wrapper('fill')
 
     def get_status(self):
@@ -82,6 +98,7 @@ class Analysis:
         return self._getter_wrapper('full')
 
     def clone(self):
+        """ Clone current analysis, and return a new Analysis object """
         return Analysis(
             analyses=self._analyses, **self._analyses.clone(self.hash_id))
 
