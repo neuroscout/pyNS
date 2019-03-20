@@ -238,7 +238,7 @@ class Analyses(Base):
         """
         return self.get(id=id, sub_route='report', run_id=run_id)
 
-    def upload_results(self, id, tarball, validation_hash, force=False):
+    def push_upload(self, id, tarball, validation_hash, force=False):
         """ Submit analysis for report generation
         :param str id: Analysis hash_id.
         :param str tarball: Path to tarball.
