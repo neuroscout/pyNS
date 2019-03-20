@@ -70,8 +70,9 @@ class Neuroscout(object):
         return new_path.format(base_url=self._api_base_url, route=route)
 
     def _make_request(self, request, route, sub_route=None, id=None,
-                      params=None, data=None, headers=None, remove_null=True,
-                      **kwargs):
+                      params=None, data=None,
+                      json=None, headers=None, remove_null=True,
+                      files=None, **kwargs):
         """ Generic request handler """
         request_function = getattr(self._session, request)
 
@@ -87,13 +88,17 @@ class Neuroscout(object):
                     params[k] = ','.join(v)
 
         elif request in ['put', 'post']:
-            data = kwargs
+            if files:
+                data = kwargs
+            else:
+                json = kwargs
 
         headers = headers or self._get_headers()
         route = self._build_path(route, sub_route=sub_route, id=id)
 
         resp = request_function(
-            route, json=data, headers=headers, params=params)
+            route, json=json, data=data, files=files,
+            headers=headers, params=params)
 
         if resp.headers.get('Content-Type') == 'application/json':
             content = resp.json()

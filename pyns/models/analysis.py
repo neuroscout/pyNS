@@ -13,7 +13,7 @@ class Analysis:
                         'model', 'predictors', 'private', 'runs']
 
     _aliased_methods_ = ['delete', 'bundle', 'compile', 'generate_report',
-                         'get_report']
+                         'get_report', 'push_upload', 'get_uploads']
 
     def __init__(self, *, analyses, name, dataset_id, **kwargs):
         """ Initate a new Analysis object. Typically, this is done by
@@ -233,10 +233,29 @@ class Analyses(Base):
     def get_report(self, id, run_id=None):
         """ Submit analysis for report generation
         :param str id: Analysis hash_id.
-        :param bool run_id: Optional run_id to constrain report.
+        :param int run_id: Optional run_id to constrain report.
         :return: client response object
         """
         return self.get(id=id, sub_route='report', run_id=run_id)
+
+    def upload_results(self, id, tarball, validation_hash, force=False):
+        """ Submit analysis for report generation
+        :param str id: Analysis hash_id.
+        :param str tarball: Path to tarball.
+        :param str validation_hash: Validation hash string.
+        :param bool force: Force upload with unique timestamped name.
+        :return: client response object
+        """
+        files = {'tarball': open(tarball, 'rb')}
+        return self.post(id=id, sub_route='upload', files=files,
+                         validation_hash=validation_hash, force=force)
+
+    def get_uploads(self, id):
+        """ Get NeuroVault uploads associated with this analysis
+        :param str id: Analysis hash_id.
+        :return: client response object
+        """
+        return self.get(id=id, sub_route='upload')
 
     def full(self, id):
         """ Get full analysis object (including runs and predictors)
