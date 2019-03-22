@@ -210,3 +210,32 @@ def test_id_actions(recorder, neuroscout, analysis):
 
         # Test delete
         resp = neuroscout.analyses.delete(id=new_id)
+
+
+def test_upload_analysis(recorder, neuroscout, analysis, get_test_data_path):
+    analysis_id = 'qxA'  # This is an existing analysis on the api
+
+    with recorder.use_cassette('upload_analysis'):
+        resp = neuroscout.analyses.upload_neurovault(
+            id=analysis_id, tarball=str(get_test_data_path / 'tarball.tar.gz'),
+            validation_hash='8Av1Jbo1aO', force=True)
+
+        assert 'uploaded_at' in resp
+        uploaded_at = resp['uploaded_at']
+
+        # Check uploads
+        uploads = neuroscout.analyses.get_uploads(id=analysis_id)
+
+        assert len(uploads) >= 1
+        newest = [u for u in uploads if u['uploaded_at'] == uploaded_at][0]
+
+        # Wait until compiled
+        while(newest['status'] == 'PENDING'):
+            sleep(1)
+            uploads = neuroscout.analyses.get_uploads(id=analysis_id)
+            newest = [u for u in uploads if u['uploaded_at'] == uploaded_at]
+            if len(newest) > 0:
+                newest = newest[0]
+
+        assert newest['status'] == 'OK'
+        assert newest['collection_id'] is not None

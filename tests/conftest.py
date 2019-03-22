@@ -2,6 +2,7 @@ import os
 import pytest
 import betamax
 from betamax_serializers import pretty_json
+from pathlib import Path
 
 from pyns import Neuroscout
 
@@ -37,3 +38,8 @@ def neuroscout(neuroscout_recorder):
     with recorder.use_cassette('auth'):
         neuroscout._authorize(email=USER_TEST_EMAIL, password=USER_TEST_PWD)
     return neuroscout
+
+
+@pytest.fixture(scope='module')
+def get_test_data_path():
+    return Path(__file__).parents[0].absolute() / 'data'
