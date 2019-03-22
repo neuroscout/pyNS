@@ -13,7 +13,7 @@ class Analysis:
                         'model', 'predictors', 'private', 'runs']
 
     _aliased_methods_ = ['delete', 'bundle', 'compile', 'generate_report',
-                         'get_report', 'push_upload', 'get_uploads']
+                         'get_report', 'upload_neurovault', 'get_uploads']
 
     def __init__(self, *, analyses, name, dataset_id, **kwargs):
         """ Initate a new Analysis object. Typically, this is done by
@@ -238,7 +238,7 @@ class Analyses(Base):
         """
         return self.get(id=id, sub_route='report', run_id=run_id)
 
-    def push_upload(self, id, tarball, validation_hash, force=False):
+    def upload_neurovault(self, id, tarball, validation_hash, force=False):
         """ Submit analysis for report generation
         :param str id: Analysis hash_id.
         :param str tarball: Path to tarball.
