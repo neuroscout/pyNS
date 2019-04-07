@@ -95,7 +95,7 @@ class Analysis:
 
     def get_full(self):
         """ Get full analysis representation """
-        return self._getter_wrapper('full')
+        return self._agetter_wrapper('full')
 
     def clone(self):
         """ Clone current analysis, and return a new Analysis object """
@@ -198,7 +198,7 @@ class Analyses(Base):
             name, predictor_names, task,
             subject=subject, run=run, session=session,
             hrf_variables=hrf_variables, transformations=transformations,
-            contrasts=contrasts, auto_contrasts=True
+            contrasts=contrasts, auto_contrasts=auto_contrasts
             )
 
         analysis = Analysis(analyses=self, dataset_id=dataset['id'],
