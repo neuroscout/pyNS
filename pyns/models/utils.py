@@ -27,27 +27,34 @@ def build_model(name, variables, task, subject, run=None, session=None,
               "X": variables
             },
             "Transformations": transformations
-          },
-          {
-            "AutoContrasts": True,
-            "Level": "Subject"
-          },
-          {
-            "AutoContrasts": True,
-            "Level": "Dataset"
           }
         ],
         "Input": {
           "Subject": subject,
-          "Task": task,
+          "Task": task
         },
         "Name": name,
     }
 
+    if run is not None and len(run) > 1:
+        model['Steps'].append(
+            {
+                "AutoContrasts": True,
+                "Level": "Subject"
+            }
+        )
+
+    model['Steps'].append(
+        {
+            "AutoContrasts": True,
+            "Level": "Dataset"
+        }
+    )
+
     if run is not None:
-        model['Input']['Run'] = run
+        model['Input']['Session'] = run
 
     if session is not None:
-        model['Input']['Session'] = run
+        model['Input']['Session'] = session
 
     return model
