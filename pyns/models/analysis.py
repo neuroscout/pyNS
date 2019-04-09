@@ -95,7 +95,7 @@ class Analysis:
 
     def get_full(self):
         """ Get full analysis representation """
-        return self._agetter_wrapper('full')
+        return self._getter_wrapper('full')
 
     def clone(self):
         """ Clone current analysis, and return a new Analysis object """
