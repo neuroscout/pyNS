@@ -174,19 +174,23 @@ class Analyses(Base):
             task = dataset['tasks'][0]['name']
 
         # Get Run IDs
-        runs = self._client.runs.get(
+        run_models = self._client.runs.get(
             dataset_id=dataset['id'], subject=subject, number=run,
             session=session)
-        if subject is None:
-            subject = list(set(r['subject'] for r in runs))
-        runs = [r['id'] for r in runs]
 
-        if len(runs) < 1:
+        if len(run_models) < 1:
             raise ValueError("No runs could be found with the given criterion")
 
+        if subject is None:
+            subject = list(set(r['subject'] for r in run_models))
+        if run is None:
+            run = list(set(r['number'] for r in run_models if r['number']))
+            run = run or None
+
+        run_id = [r['id'] for r in run_models]
         # Get Predictor IDs
         predictors = [p['id'] for p in self._client.predictors.get(
-            run_id=runs, name=predictor_names)]
+            run_id=run_id, name=predictor_names)]
 
         if len(predictors) != len(predictor_names):
             raise ValueError(
@@ -198,11 +202,11 @@ class Analyses(Base):
             name, predictor_names, task,
             subject=subject, run=run, session=session,
             hrf_variables=hrf_variables, transformations=transformations,
-            contrasts=contrasts, auto_contrasts=True
+            contrasts=contrasts, auto_contrasts=auto_contrasts
             )
 
         analysis = Analysis(analyses=self, dataset_id=dataset['id'],
-                            name=name, model=model, runs=runs,
+                            name=name, model=model, runs=run_id,
                             predictors=predictors, **kwargs)
 
         return analysis
