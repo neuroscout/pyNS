@@ -218,7 +218,8 @@ def test_upload_analysis(recorder, neuroscout, analysis, get_test_data_path):
     with recorder.use_cassette('upload_analysis'):
         resp = neuroscout.analyses.upload_neurovault(
             id=analysis_id, tarball=str(get_test_data_path / 'tarball.tar.gz'),
-            validation_hash='8Av1Jbo1aO', force=True)
+            validation_hash='8Av1Jbo1aO', force=True,
+            n_subjects=99)
 
         assert 'uploaded_at' in resp
         uploaded_at = resp['uploaded_at']
