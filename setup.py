@@ -5,11 +5,11 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(name='pyns',
-      version='0.2.2',
+      version='0.2.3',
       description='Neuroscout API wrapper',
       long_description=long_description,
       long_description_content_type="text/markdown",
-      url='http://github.com/neuroscout/pynv',
+      url='http://github.com/neuroscout/pyns',
       author='Alejandro de la Vega',
       author_email='aleph4@gmail.com',
       license='MIT',

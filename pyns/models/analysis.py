@@ -242,17 +242,20 @@ class Analyses(Base):
         """
         return self.get(id=id, sub_route='report', run_id=run_id)
 
-    def upload_neurovault(self, id, tarball, validation_hash, force=False):
+    def upload_neurovault(self, id, tarball, validation_hash, force=False,
+                          n_subjects=None):
         """ Submit analysis for report generation
         :param str id: Analysis hash_id.
         :param str tarball: Path to tarball.
         :param str validation_hash: Validation hash string.
         :param bool force: Force upload with unique timestamped name.
+        :param int n_subjects: Number of subjects in analysis.
         :return: client response object
         """
         files = {'tarball': open(tarball, 'rb')}
         return self.post(id=id, sub_route='upload', files=files,
-                         validation_hash=validation_hash, force=force)
+                         validation_hash=validation_hash, force=force,
+                         n_subjects=n_subjects)
 
     def get_uploads(self, id):
         """ Get NeuroVault uploads associated with this analysis
