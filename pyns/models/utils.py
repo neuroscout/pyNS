@@ -52,7 +52,7 @@ def build_model(name, variables, task, subject, run=None, session=None,
     )
 
     if run is not None:
-        model['Input']['Session'] = run
+        model['Input']['Run'] = run
 
     if session is not None:
         model['Input']['Session'] = session
