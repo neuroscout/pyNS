@@ -1,6 +1,7 @@
 import requests
 import re
 from functools import partialmethod
+import os
 
 from . import API_BASE_URL, ROUTE_PATTERN
 from . import models
@@ -22,6 +23,10 @@ class Neuroscout(object):
 
         if email is not None and password is not None:
             self._authorize(email, password)
+        elif all([a in os.environ
+                  for a in ['NEUROSCOUT_PASSWORD', 'NEUROSCOUT_USER']]):
+            self._authorize(os.environ['NEUROSCOUT_USER'],
+                            os.environ['NEUROSCOUT_PASSWORD'])
 
         # Set up main routes
         self.analyses = models.Analyses(self)
