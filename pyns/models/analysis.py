@@ -181,11 +181,9 @@ class Analyses(Base):
         if len(run_models) < 1:
             raise ValueError("No runs could be found with the given criterion")
 
-        if subject is None:
-            subject = list(set(r['subject'] for r in run_models))
-        if run is None:
-            run = list(set(r['number'] for r in run_models if r['number']))
-            run = run or None
+        subject = list(set(r['subject'] for r in run_models))
+        run = list(set(r['number'] for r in run_models if r['number']))
+        run = run or None
 
         run_id = [r['id'] for r in run_models]
         # Get Predictor IDs
