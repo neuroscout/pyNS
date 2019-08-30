@@ -3,7 +3,7 @@ from .base import Base
 from pathlib import Path
 from functools import partial
 from .utils import build_model
-
+import tqdm
 
 class Analysis:
     """ Analysis object class. Object representing an analysis that can be
@@ -254,7 +254,8 @@ class Analyses(Base):
         """
         # Do group, then subject level
         if group_paths is not None:
-            for path in group_paths:
+            print("Uploading group images")
+            for path in tqdm.tqdm(group_paths):
                 files = {'image_file': open(path, 'rb')}
                 req = self.post(
                     id=id, sub_route='upload', files=files, level='GROUP',
@@ -264,7 +265,8 @@ class Analyses(Base):
                     collection_id = req['collection_id']
 
         if subject_paths is not None:
-            for path in subject_paths:
+            print("Uploading subject images")
+            for path in tqdm.tqdm(subject_paths):
                 files = {'image_file': open(path, 'rb')}
                 req = self.post(
                     id=id, sub_route='upload', files=files, level='SUBJECT',
