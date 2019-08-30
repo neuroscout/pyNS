@@ -216,8 +216,13 @@ def test_upload_analysis(recorder, neuroscout, analysis, get_test_data_path):
     analysis_id = 'qxA'  # This is an existing analysis on the api
 
     with recorder.use_cassette('upload_analysis'):
+        group_paths = [str(p) for p in
+                       (get_test_data_path / 'fitlins').glob('task*')]
+        sub_paths = [str(p) for p in
+                     (get_test_data_path / 'fitlins').glob('sub*')]
         resp = neuroscout.analyses.upload_neurovault(
-            id=analysis_id, tarball=str(get_test_data_path / 'tarball.tar.gz'),
+            id=analysis_id, group_paths=group_paths,
+            subject_paths=sub_paths,
             validation_hash='8Av1Jbo1aO', force=True,
             n_subjects=99)
 
@@ -231,12 +236,13 @@ def test_upload_analysis(recorder, neuroscout, analysis, get_test_data_path):
         newest = [u for u in uploads if u['uploaded_at'] == uploaded_at][0]
 
         # Wait until compiled
-        while(newest['status'] == 'PENDING'):
-            sleep(1)
+        while(
+          any([True for f in newest['files'] if f['status'] == 'PENDING'])):
+            sleep(2)
             uploads = neuroscout.analyses.get_uploads(id=analysis_id)
             newest = [u for u in uploads if u['uploaded_at'] == uploaded_at]
             if len(newest) > 0:
                 newest = newest[0]
 
-        assert newest['status'] == 'OK'
+        assert all([f['status'] == 'OK' for f in newest['files']])
         assert newest['collection_id'] is not None

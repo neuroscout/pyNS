@@ -3,7 +3,7 @@ from .base import Base
 from pathlib import Path
 from functools import partial
 from .utils import build_model
-
+import tqdm
 
 class Analysis:
     """ Analysis object class. Object representing an analysis that can be
@@ -240,20 +240,42 @@ class Analyses(Base):
         """
         return self.get(id=id, sub_route='report', run_id=run_id)
 
-    def upload_neurovault(self, id, tarball, validation_hash, force=False,
+    def upload_neurovault(self, id, validation_hash, subject_paths=None,
+                          group_paths=None, collection_id=None, force=False,
                           n_subjects=None):
         """ Submit analysis for report generation
         :param str id: Analysis hash_id.
-        :param str tarball: Path to tarball.
         :param str validation_hash: Validation hash string.
+        :param list(str) subject_paths: List of image paths.
+        :param list(str) group_paths: List of image paths.
         :param bool force: Force upload with unique timestamped name.
         :param int n_subjects: Number of subjects in analysis.
         :return: client response object
         """
-        files = {'tarball': open(tarball, 'rb')}
-        return self.post(id=id, sub_route='upload', files=files,
-                         validation_hash=validation_hash, force=force,
-                         n_subjects=n_subjects)
+        # Do group, then subject level
+        if group_paths is not None:
+            print("Uploading group images")
+            for path in tqdm.tqdm(group_paths):
+                files = {'image_file': open(path, 'rb')}
+                req = self.post(
+                    id=id, sub_route='upload', files=files, level='GROUP',
+                    validation_hash=validation_hash, force=force,
+                    n_subjects=n_subjects, collection_id=collection_id)
+                if collection_id is None:
+                    collection_id = req['collection_id']
+
+        if subject_paths is not None:
+            print("Uploading subject images")
+            for path in tqdm.tqdm(subject_paths):
+                files = {'image_file': open(path, 'rb')}
+                req = self.post(
+                    id=id, sub_route='upload', files=files, level='SUBJECT',
+                    validation_hash=validation_hash, force=force,
+                    collection_id=collection_id)
+                if collection_id is None:
+                    collection_id = req['collection_id']
+
+        return req
 
     def get_uploads(self, id):
         """ Get NeuroVault uploads associated with this analysis
