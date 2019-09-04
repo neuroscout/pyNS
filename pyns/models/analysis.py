@@ -97,10 +97,20 @@ class Analysis:
         """ Get full analysis representation """
         return self._getter_wrapper('full')
 
-    def clone(self):
-        """ Clone current analysis, and return a new Analysis object """
-        return Analysis(
+    def clone(self, dataset_id=None):
+        """ Clone current analysis, and return a new Analysis object
+        :param int dataset_id: If dataset_id is provided, new run and
+                               predictor_ids will be filled for that dataset.
+        """
+        new = Analysis(
             analyses=self._analyses, **self._analyses.clone(self.hash_id))
+        if dataset_id is not None:
+            new.dataset_id = dataset_id
+            new.runs = []
+            new.predictors = []
+            new.push()
+            new.fill()
+        return new
 
 
 class Analyses(Base):
