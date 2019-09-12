@@ -12,9 +12,6 @@ def test_predictor(recorder, neuroscout):
         resp = neuroscout.predictors.get(id=first['id'])
         assert 'source' in resp
 
-        first = resp[0]
-        assert 'duration' in first
-
 
 def test_predictor_collection(recorder, neuroscout, get_test_data_path):
     with recorder.use_cassette('predictor_collection'):

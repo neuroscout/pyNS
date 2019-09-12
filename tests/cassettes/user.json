@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2019-03-22T23:39:48",
+      "recorded_at": "2019-09-12T22:54:34",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -15,7 +15,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NTM5MDI3NjksImlhdCI6MTU1MzI5Nzk2OSwibmJmIjoxNTUzMjk3OTY5LCJpZGVudGl0eSI6MX0.DtNCRdxTarcunC0S6C3JyFwbIapm2TfqMpIdZnhS7J8"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1Njg5MzM2NDQsImlhdCI6MTU2ODMyODg0NCwibmJmIjoxNTY4MzI4ODQ0LCJpZGVudGl0eSI6MX0.2d1tXjaviiP005FWpIoYwoNHaGG9YM4B8Zf51AR6QlU"
           ],
           "Connection": [
             "keep-alive"
@@ -25,11 +25,11 @@
           ]
         },
         "method": "GET",
-        "uri": "https://alpha.neuroscout.org/api/user"
+        "uri": "https://neuroscout.org/api/user"
       },
       "response": {
         "body": {
-          "base64_string": "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",
+          "base64_string": "H4sIAAAAAAAAA82XXY+aQBSG7/sryFxrwwB+4FVJtZtYSVy129hmQ0YYd0f5EgbR3fjfO6BW6i6wVCXcwczJeZ/zDjOceQXIRubWxz7o/H4FBqLIx1QjBug0asDAvu4RlxLHBh1g41BLjtTAM/Kf41igdvtWyEYsxyBzgg0NUTYq8FCu83IdChNB6DTYvI0szCbcLcU+1fbaxGcTPkU0YBBgqIzHvS7Y1S6gCXlbVG9JI5/T/GvGywKmybfqkJ8IsCOe5D3seE9chHCxsrIRv6ctQ7POS1HhCeVxLMb9cJkC5iZXITCmm4zaYVR70nrszePSOXixdHhvQyVFul0XxDPbY1XXxCw7Z2ATU5wk6I6Ub5M3AALMI1hmELQnsJEsXgmo89WxqYcYybn77wMU2gbKarHM3gbwg9vgv9xQX5CU7UYzKR8ZwHl4TXDIuY4buFd2Q+7NltlH1GVuFDsv736Obrk0xWCQM8w7vGFZMOFitq0MjDxwpnk/kvKcWYoP1XGmNVhXBkaVVoKcAyOWBaMIvVxnPgZzjVZIbaBV3hdcmjXqur2qjjUy/iVWh0Z1h4O8hZLK66DN6UPav7t8GnUEp9WhUaZ3zbzTpkRvhu37Cn03fb53UxqY04H3Z1L6BQi2zvqqqAPXjx34+Q3scOA91gC2EDHZSOBj7wveIItdGz7rjsWi58RjBZjOE2EsdmCax9z7Z5foNPBOrx422IjjabpjmliPStjfvE/v2oEtRBHNvs+OXHgbEXt3Gj5EQ75QdEruhLpQKF+xaLFQtJTKGl8fY9piGRvvR1uBSckxY1bMX9lmRpBwDGoVYRMLOSkWqluUdo+7T38AEcai/v0RAAA=",
           "encoding": null,
           "string": ""
         },
@@ -47,7 +47,7 @@
             "application/json"
           ],
           "Date": [
-            "Fri, 22 Mar 2019 23:39:48 GMT"
+            "Thu, 12 Sep 2019 22:54:34 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -75,7 +75,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://alpha.neuroscout.org/api/user"
+        "url": "https://neuroscout.org/api/user"
       }
     }
   ],

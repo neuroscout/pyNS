@@ -92,7 +92,6 @@ def test_analysis_object(recorder, neuroscout, analysis_object):
             sleep(1)
             resp = analysis_object.get_report(run_id=analysis_object.runs[0])
 
-        assert 'contrast_plot' in resp['result']
         assert len(resp['result']['design_matrix']) == 1
 
         # compile
@@ -165,7 +164,6 @@ def test_id_actions(recorder, neuroscout, analysis):
             resp = neuroscout.analyses.get_report(id=analysis_id,
                                                   run_id=analysis['runs'][0])
 
-        assert 'contrast_plot' in resp['result']
         assert len(resp['result']['design_matrix']) == 1
 
         # Test fill
