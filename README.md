@@ -7,7 +7,7 @@ The Neuroscout API wrapper for Python
 ### Overview
 pyNS is a python package to easily interact with the Neuroscout API.
 
-For more API documentation, check out the Swagger API Docs: http://alpha.neuroscout.org/swagger-ui/
+For more API documentation, check out the Swagger API Docs: http://neuroscout.org/swagger-ui/
 
 ### Installation
 pyNS is supported in Python 3.4+
