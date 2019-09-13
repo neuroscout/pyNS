@@ -201,7 +201,7 @@ class Analyses(Base):
             run_id=run_id, name=predictor_names)]
 
         # Get Predictor IDs
-        predictors += [p['id'] for p in self._client.user.get_predictors.get(
+        predictors += [p['id'] for p in self._client.user.get_predictors(
             run_id=run_id, name=predictor_names)]
 
         if len(predictors) != len(predictor_names):
