@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2019-09-12T22:54:04",
+      "recorded_at": "2019-09-13T22:27:35",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -47,7 +47,7 @@
             "application/json"
           ],
           "Date": [
-            "Thu, 12 Sep 2019 22:54:04 GMT"
+            "Fri, 13 Sep 2019 22:27:35 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -79,7 +79,7 @@
       }
     },
     {
-      "recorded_at": "2019-09-12T22:54:04",
+      "recorded_at": "2019-09-13T22:27:35",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -125,7 +125,7 @@
             "application/json"
           ],
           "Date": [
-            "Thu, 12 Sep 2019 22:54:04 GMT"
+            "Fri, 13 Sep 2019 22:27:35 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -157,7 +157,7 @@
       }
     },
     {
-      "recorded_at": "2019-09-12T22:54:04",
+      "recorded_at": "2019-09-13T22:27:35",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -203,7 +203,7 @@
             "application/json"
           ],
           "Date": [
-            "Thu, 12 Sep 2019 22:54:04 GMT"
+            "Fri, 13 Sep 2019 22:27:35 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -235,7 +235,78 @@
       }
     },
     {
-      "recorded_at": "2019-09-12T22:54:04",
+      "recorded_at": "2019-09-13T22:27:35",
+      "request": {
+        "body": {
+          "encoding": "utf-8",
+          "string": ""
+        },
+        "headers": {
+          "Accept": [
+            "*/*"
+          ],
+          "Accept-Encoding": [
+            "gzip, deflate"
+          ],
+          "Authorization": [
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1Njg5MzM2NDQsImlhdCI6MTU2ODMyODg0NCwibmJmIjoxNTY4MzI4ODQ0LCJpZGVudGl0eSI6MX0.2d1tXjaviiP005FWpIoYwoNHaGG9YM4B8Zf51AR6QlU"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "User-Agent": [
+            "python-requests/2.21.0"
+          ]
+        },
+        "method": "GET",
+        "uri": "https://neuroscout.org/api/user/predictors?run_id=126&name=brightness"
+      },
+      "response": {
+        "body": {
+          "encoding": null,
+          "string": "[]\n"
+        },
+        "headers": {
+          "Access-Control-Allow-Origin": [
+            "*"
+          ],
+          "Connection": [
+            "keep-alive"
+          ],
+          "Content-Length": [
+            "3"
+          ],
+          "Content-Type": [
+            "application/json"
+          ],
+          "Date": [
+            "Fri, 13 Sep 2019 22:27:35 GMT"
+          ],
+          "Server": [
+            "nginx/1.15.6"
+          ],
+          "Strict-Transport-Security": [
+            "max-age=63072000; includeSubDomains; preload"
+          ],
+          "X-Content-Type-Options": [
+            "nosniff"
+          ],
+          "X-Frame-Options": [
+            "DENY"
+          ],
+          "X-XSS-Protection": [
+            "1; mode=block"
+          ]
+        },
+        "status": {
+          "code": 200,
+          "message": "OK"
+        },
+        "url": "https://neuroscout.org/api/user/predictors?run_id=126&name=brightness"
+      }
+    },
+    {
+      "recorded_at": "2019-09-13T22:27:35",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -269,7 +340,7 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA3WSTW/CMAyG7/sZPpeJVmKD3qahSZvGDtDDJISq0JqRkSZV7HRCaP99DgU0Dtyi1x/vYzsHKOaQp/ejBCqPirEuFUMO2TCdDIaTQZoVWZaPIIFasSLkUteQS3aNVHndsnYWchuMSWCraHsMw2z61vxIjXHVDkXYKEOYQONqNJAf4NW2geNjEdbfWMlzCdkYVgkUinaxAXqj7cx1GuE3gQ/VoKjtnpG4VFaZPWkSgwVjS1J9gKfA7tlZ9opYFPZBDP8JS2n+jl30h3mwUjs703xG+7XXX1u2SAQrcSy8srRxvlFxwt7iRH2de4ETr86ZTnil/gbPGWDa7/KYGreiN/r24u2t4Vvl0fYH6Q/Qeqx1dQIGuAjOxwHS7DEbr6KoOzn0mckH20cfJEasOMTi6fzppZAOFNaN5vO36G2EfVeeqK4OdfcHot3RUU4CAAA=",
+          "base64_string": "H4sIAAAAAAAAA3WSTWvCQBCG7/0Zc47FRNpqblJpKTSlaA4FkbBJxrp1sxt2ZwMi/e+dNUbqwdvyzsf7zMweIV9CGt8/RFBZFIR1IQhSSMbxbDSejeJJniRpAhHUgoRDKmQNKWfX6CorW5JGQ6q9UhHshNudwpBNXj8zrlGm2iMLW6EcRtCYGhWkR3jTrafwWPnyByt+riGZwiaCXLh9aIBWSZ2ZTiL8RvAhGmS1PRA6KoQW6uCkY4MVYeu4+ghzT+bZaLLCEStkPRv+E9bc/B274A9Lr7k2G2i+gn1p5feONDoHG3bMrdBua2wjwoS9xZn6OvcCx16dUR3zcv0NngFg0e/ylBq2Irfy9uL1reFbYVH3B+kP0FqsZXUGBrgIxoYB4uQpmW6CKDs+9MBkve6jjxxzJMiH4sVy/pJzB+fLRtLwLXobZt8XZ6qrQ939AdazcNhOAgAA",
           "encoding": null,
           "string": ""
         },
@@ -287,7 +358,7 @@
             "application/json"
           ],
           "Date": [
-            "Thu, 12 Sep 2019 22:54:04 GMT"
+            "Fri, 13 Sep 2019 22:27:35 GMT"
           ],
           "Server": [
             "nginx/1.15.6"

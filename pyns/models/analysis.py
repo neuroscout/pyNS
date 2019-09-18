@@ -200,6 +200,10 @@ class Analyses(Base):
         predictors = [p['id'] for p in self._client.predictors.get(
             run_id=run_id, name=predictor_names)]
 
+        # Get Predictor IDs
+        predictors += [p['id'] for p in self._client.user.get_predictors(
+            run_id=run_id, name=predictor_names)]
+
         if len(predictors) != len(predictor_names):
             raise ValueError(
                 "Not all named predictors could be found for the "
