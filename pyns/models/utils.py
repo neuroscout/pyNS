@@ -3,7 +3,7 @@
 
 def build_model(name, variables, task, subject, run=None, session=None,
                 hrf_variables=None, transformations=None,
-                contrasts=None, auto_contrasts=True):
+                contrasts=None, dummy_contrasts=True):
     """ Builds a basic two level BIDS-Model """
     hrf_variables = hrf_variables or []
     transformations = transformations or []
@@ -20,7 +20,7 @@ def build_model(name, variables, task, subject, run=None, session=None,
     model = {
         "Steps": [
           {
-            "AutoContrasts": auto_contrasts,
+            "DummyContrasts": {"Type": "t"},
             "Contrasts": contrasts,
             "Level": "Run",
             "Model": {
@@ -36,20 +36,23 @@ def build_model(name, variables, task, subject, run=None, session=None,
         "Name": name,
     }
 
-    if run is not None and len(run) > 1:
-        model['Steps'].append(
-            {
-                "AutoContrasts": True,
-                "Level": "Subject"
-            }
-        )
+    model['Steps'].append(
+        {
+            "DummyContrasts": {"Type": "FEMA"},
+            "Level": "Subject"
+        }
+    )
 
     model['Steps'].append(
         {
-            "AutoContrasts": True,
+            "DummyContrasts": {"Type": "t"},
             "Level": "Dataset"
         }
     )
+
+    if not dummy_contrasts:
+        for s in model['Steps']:
+            s.pop('DummyContrasts')
 
     if run is not None:
         model['Input']['Run'] = run

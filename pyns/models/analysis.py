@@ -157,7 +157,7 @@ class Analyses(Base):
     def create_analysis(self, *, name, dataset_name, predictor_names,
                         task=None, subject=None, run=None, session=None,
                         hrf_variables=None, contrasts=None,
-                        auto_contrasts=True, transformations=None, **kwargs):
+                        dummy_contrasts=True, transformations=None, **kwargs):
         """ Analysis creation "wizard". Given run selection filters, and name
         of Predictors, builds Analysis object with prepopulated BIDS model.
         """
@@ -214,7 +214,7 @@ class Analyses(Base):
             name, predictor_names, task,
             subject=subject, run=run, session=session,
             hrf_variables=hrf_variables, transformations=transformations,
-            contrasts=contrasts, auto_contrasts=auto_contrasts
+            contrasts=contrasts, dummy_contrasts=dummy_contrasts
             )
 
         analysis = Analysis(analyses=self, dataset_id=dataset['id'],

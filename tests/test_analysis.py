@@ -7,7 +7,7 @@ TEST_ANALYSIS = {
   "model": {
     "Steps": [
       {
-        "AutoContrasts": True,
+        "DummyContrasts": {"Type": "t"},
         "Contrasts": [],
         "Level": "Run",
         "Model": {
@@ -18,7 +18,7 @@ TEST_ANALYSIS = {
         "Transformations": []
       },
       {
-        "AutoContrasts": True,
+        "DummyContrasts": {"Type": "t"},
         "Level": "Dataset"
       }
     ],
