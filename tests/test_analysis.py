@@ -53,6 +53,7 @@ def analysis_object(recorder, neuroscout):
         new = neuroscout.analyses.create_analysis(
             name='pytest_analysis',
             dataset_name='SherlockMerlin',
+            task='MerlinMovie',
             predictor_names=['brightness'],
             hrf_variables=['brightness'],
             subject=['28'])
