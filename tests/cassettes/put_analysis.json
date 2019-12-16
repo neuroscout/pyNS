@@ -1,11 +1,11 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2019-09-12T22:54:14",
+      "recorded_at": "2019-12-16T22:01:59",
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "{\"TR\": 1.5, \"created_at\": \"2019-09-12T22:5\", \"dataset_id\": 5, \"description\": \"new_description\", \"hash_id\": \"w0n3M\", \"locked\": false, \"model\": {\"Input\": {\"Subject\": [\"28\"], \"Task\": \"MerlinMovie\"}, \"Name\": \"pytest_analysis\", \"Steps\": [{\"AutoContrasts\": true, \"Contrasts\": [], \"Level\": \"Run\", \"Model\": {\"X\": [\"brightness\"]}, \"Transformations\": []}, {\"AutoContrasts\": true, \"Level\": \"Dataset\"}]}, \"modified_at\": \"2019-09-12T22:5\", \"name\": \"pytest_analysis\", \"predictions\": \"\", \"predictors\": [12728], \"private\": true, \"runs\": [126], \"status\": \"DRAFT\", \"task_name\": \"MerlinMovie\"}"
+          "string": "{\"TR\": 1.5, \"created_at\": \"2019-12-16T22:0\", \"dataset_id\": 5, \"description\": \"new_description\", \"hash_id\": \"wWx5A\", \"locked\": false, \"model\": {\"Input\": {\"Subject\": [\"28\"], \"Task\": \"MerlinMovie\"}, \"Name\": \"pytest_analysis\", \"Steps\": [{\"Contrasts\": [], \"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Run\", \"Model\": {\"X\": [\"brightness\"]}, \"Transformations\": []}, {\"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Dataset\"}]}, \"modified_at\": \"2019-12-16T22:0\", \"name\": \"pytest_analysis\", \"predictions\": \"\", \"predictors\": [12728], \"private\": true, \"runs\": [126], \"status\": \"DRAFT\", \"task_name\": \"MerlinMovie\"}"
         },
         "headers": {
           "Accept": [
@@ -15,13 +15,13 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1Njg5MzM2NDQsImlhdCI6MTU2ODMyODg0NCwibmJmIjoxNTY4MzI4ODQ0LCJpZGVudGl0eSI6MX0.2d1tXjaviiP005FWpIoYwoNHaGG9YM4B8Zf51AR6QlU"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzcxMzgyNTMsImlhdCI6MTU3NjUzMzQ1MywibmJmIjoxNTc2NTMzNDUzLCJpZGVudGl0eSI6MX0.spYLzByUnmkff8CC6iK8tQRwOSzjimjaJOSqQ7mwDMU"
           ],
           "Connection": [
             "keep-alive"
           ],
           "Content-Length": [
-            "574"
+            "594"
           ],
           "Content-Type": [
             "application/json"
@@ -31,11 +31,11 @@
           ]
         },
         "method": "PUT",
-        "uri": "https://neuroscout.org/api/analyses/w0n3M"
+        "uri": "https://neuroscout.org/api/analyses/wWx5A"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA3WRQW/CMAyF7/sZPpeJdmKD3tDQpEnrDtDDJIQq05qR0SZV4oAQ4r/PoXRiB27RF/u9Z/sE+RzS+HEUQWkJmaoCGVJIhvFkMJwM4iRPknQEEVTI6IgLVUEq1RW50qqWldFSrulQ3JIItui2l1o4DPVTJqQ25Y4EbLB2FEFjKqohPcG7bj2Hx8Kvf6iU5xKSMawiyNHtRCAjWyudmb0iOEfwiQ0JbY9MjgvUWB+dcmKwYGqddJ9g6tm8Gs0WHQth68XwBixF/IP2wR/mPsTN+jRfwX5t1feWNTkHK3HMLWq3MbbBMNyl/xzdcellZ9264BwEZFa1Ufd3q++N1KIl3e1c+7oWYKlS5TUGwB8wNsSKk5dkvApQ7eWWfSbrdff7LH+OkX1ons2nb7koOL9uFPeX72wk+664pvq3/odfTAPVyzECAAA=",
+          "base64_string": "H4sIAAAAAAAAA41SwWrCQBC99zPmHItZ0NrcSqVQqD1ooIUiYUzGujXZhN1ZbQj+e2eNFnsQept98+bNm5ntIJ1DEt+OIsgtIVORIUMCahjfD2I1iMepUskQIiiQ0RFnuoBE2AW53OqGdW2EbmifXSIRbNBtjlzYv32PHgQp63xLAqyxdBRBVRdUQtLBs2k8h2DhV1+US/gBagLLCFJ0WxGYkS21mdU7TXCI4BUrErRpmRxnaLBsnXbSYMHUOKnu4LE2bNFxeInO1FdVe4F1kLZN0OCg90K7YATmPvienW29Bx8rqz83bMg5WAo1tWjcurYVhimP6oeo+6f+tF8gHIKSTK/X+vq2zbUhG7Rk+isYX5YCWCp0fvID8AvUNviL1Z2aLAOod3JdSNh6Wb71ps+OJecY2Yfi6fzhKRUF51eV5vNf6NuI9212cvXnIDc/VO/KDUMCAAA=",
           "encoding": null,
           "string": ""
         },
@@ -53,7 +53,7 @@
             "application/json"
           ],
           "Date": [
-            "Thu, 12 Sep 2019 22:54:14 GMT"
+            "Mon, 16 Dec 2019 22:01:59 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -81,7 +81,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://neuroscout.org/api/analyses/w0n3M"
+        "url": "https://neuroscout.org/api/analyses/wWx5A"
       }
     }
   ],
