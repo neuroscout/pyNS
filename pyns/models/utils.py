@@ -36,13 +36,12 @@ def build_model(name, variables, task, subject, run=None, session=None,
         "Name": name,
     }
 
-    if run is not None and len(run) > 1:
-        model['Steps'].append(
-            {
-                "AutoContrasts": True,
-                "Level": "Subject"
-            }
-        )
+    model['Steps'].append(
+        {
+            "AutoContrasts": True,
+            "Level": "Subject"
+        }
+    )
 
     model['Steps'].append(
         {
