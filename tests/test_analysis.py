@@ -179,7 +179,7 @@ def test_id_actions(recorder, neuroscout, analysis):
         resp = neuroscout.analyses.fill(
             id=analysis_id)
 
-        assert len(resp['runs']) == 17
+        assert len(resp['runs']) == 36
         assert len(resp['predictors']) == 1
 
         # Test compile
@@ -212,7 +212,7 @@ def test_id_actions(recorder, neuroscout, analysis):
 
 
 def test_upload_analysis(recorder, neuroscout, analysis, get_test_data_path):
-    analysis_id = 'qxA'  # This is an existing analysis on the api
+    analysis_id = 'A1rYM'  # This is an existing analysis on the api
 
     with recorder.use_cassette('upload_analysis'):
         group_paths = [str(p) for p in
@@ -222,7 +222,7 @@ def test_upload_analysis(recorder, neuroscout, analysis, get_test_data_path):
         resp = neuroscout.analyses.upload_neurovault(
             id=analysis_id, group_paths=group_paths,
             subject_paths=sub_paths,
-            validation_hash='8Av1Jbo1aO', force=True,
+            validation_hash='QEynReX0Xp', force=True,
             n_subjects=99)
 
         assert 'uploaded_at' in resp

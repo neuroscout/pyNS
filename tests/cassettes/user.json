@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2019-09-12T22:54:34",
+      "recorded_at": "2019-12-16T22:06:37",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -15,7 +15,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1Njg5MzM2NDQsImlhdCI6MTU2ODMyODg0NCwibmJmIjoxNTY4MzI4ODQ0LCJpZGVudGl0eSI6MX0.2d1tXjaviiP005FWpIoYwoNHaGG9YM4B8Zf51AR6QlU"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzcxMzgyNTMsImlhdCI6MTU3NjUzMzQ1MywibmJmIjoxNTc2NTMzNDUzLCJpZGVudGl0eSI6MX0.spYLzByUnmkff8CC6iK8tQRwOSzjimjaJOSqQ7mwDMU"
           ],
           "Connection": [
             "keep-alive"
@@ -29,7 +29,7 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA82XXY+aQBSG7/sryFxrwwB+4FVJtZtYSVy129hmQ0YYd0f5EgbR3fjfO6BW6i6wVCXcwczJeZ/zDjOceQXIRubWxz7o/H4FBqLIx1QjBug0asDAvu4RlxLHBh1g41BLjtTAM/Kf41igdvtWyEYsxyBzgg0NUTYq8FCu83IdChNB6DTYvI0szCbcLcU+1fbaxGcTPkU0YBBgqIzHvS7Y1S6gCXlbVG9JI5/T/GvGywKmybfqkJ8IsCOe5D3seE9chHCxsrIRv6ctQ7POS1HhCeVxLMb9cJkC5iZXITCmm4zaYVR70nrszePSOXixdHhvQyVFul0XxDPbY1XXxCw7Z2ATU5wk6I6Ub5M3AALMI1hmELQnsJEsXgmo89WxqYcYybn77wMU2gbKarHM3gbwg9vgv9xQX5CU7UYzKR8ZwHl4TXDIuY4buFd2Q+7NltlH1GVuFDsv736Obrk0xWCQM8w7vGFZMOFitq0MjDxwpnk/kvKcWYoP1XGmNVhXBkaVVoKcAyOWBaMIvVxnPgZzjVZIbaBV3hdcmjXqur2qjjUy/iVWh0Z1h4O8hZLK66DN6UPav7t8GnUEp9WhUaZ3zbzTpkRvhu37Cn03fb53UxqY04H3Z1L6BQi2zvqqqAPXjx34+Q3scOA91gC2EDHZSOBj7wveIItdGz7rjsWi58RjBZjOE2EsdmCax9z7Z5foNPBOrx422IjjabpjmliPStjfvE/v2oEtRBHNvs+OXHgbEXt3Gj5EQ75QdEruhLpQKF+xaLFQtJTKGl8fY9piGRvvR1uBSckxY1bMX9lmRpBwDGoVYRMLOSkWqluUdo+7T38AEcai/v0RAAA=",
+          "base64_string": "H4sIAAAAAAAAA82T3WvCMBDA3/dXjHuuw6TWaZ9WcNuTMKbsEylZe86w9IMkRUX83xetncLULgiyt+bu17tf7toFsJSJuUIF/vsCYqaZQh3yGHzPgRhVJHmueZaCDylOw92IAxOmJmsW+i9uLzCRJIv5mGMcMm2itEm6DUIbpD2kxG+ZfMoSNIl8rlHpsOzNlUkozXRhJKD3GNwNYemcIBN83L/1a2S8P8k8BIPBbe80m+nzzDs+Guo3z2YTPLW/6hZFz7WofofNu/9FJiDyte6rca32NHIAE8aFCRUK5Q3OWJILvIqyxOBjLs37IvvkxiwthKhKl885j3Qht0eJsYlkMowyITBa6Zf/7PYcbtSmxtyB1aUoWY3kN7FW34Y3NGla0Qdq73SnVvXsaNeKbh10vSSVrV1Fbz+dFELzquIx5qdt+whEK+jaxs21mqRrdW/3wCT3062OFd1djpYX3+clk3WTBgAA",
           "encoding": null,
           "string": ""
         },
@@ -47,7 +47,7 @@
             "application/json"
           ],
           "Date": [
-            "Thu, 12 Sep 2019 22:54:34 GMT"
+            "Mon, 16 Dec 2019 22:06:37 GMT"
           ],
           "Server": [
             "nginx/1.15.6"

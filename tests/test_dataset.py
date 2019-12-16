@@ -8,7 +8,7 @@ def test_dataset(recorder, neuroscout):
         runs = resp['runs']
         assert len(runs) > 10
         tasks = resp['tasks']
-        assert len(tasks) == 1
+        assert len(tasks) == 2
 
         resp = neuroscout.tasks.get(dataset_id=5)
         assert resp[0]['name'] == tasks[0]['name']
