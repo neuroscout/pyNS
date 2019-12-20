@@ -1,4 +1,19 @@
 """ Miscelaneous utilities """
+import collections
+
+module_names = {}
+Dependency = collections.namedtuple('Dependency', 'package value')
+
+
+def attempt_to_import(dependency, name=None, fromlist=None):
+    if name is None:
+        name = dependency
+    try:
+        mod = __import__(dependency, fromlist=fromlist)
+    except ImportError:
+        mod = None
+    module_names[name] = Dependency(dependency, mod)
+    return mod
 
 
 def build_model(name, variables, task, subject, run=None, session=None,
