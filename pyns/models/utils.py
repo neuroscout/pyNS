@@ -66,8 +66,7 @@ def build_model(name, variables, task, subject, run=None, session=None,
     )
 
     if not dummy_contrasts:
-        for s in model['Steps']:
-            s.pop('DummyContrasts')
+        model['Steps'][0].pop('DummyContrasts')
 
     if dummy_contrasts == 'hrf' and hrf_variables:
         model['Steps'][0]['DummyContrasts']['Conditions'] = hrf_variables
