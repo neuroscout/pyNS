@@ -5,6 +5,7 @@ from functools import partial
 from .utils import build_model
 import tqdm
 
+
 class Analysis:
     """ Analysis object class. Object representing an analysis that can be
     synced with the API """
@@ -247,12 +248,16 @@ class Analyses(Base):
         return self.post(id=id, sub_route='report', params=dict(run_id=run_id))
 
     def get_report(self, id, run_id=None):
-        """ Submit analysis for report generation
+        """ Get generated reports for analysis
         :param str id: Analysis hash_id.
         :param int run_id: Optional run_id to constrain report.
         :return: client response object
         """
         return self.get(id=id, sub_route='report', run_id=run_id)
+
+    def plot_reports(self, id, run_id=None):
+        reports = self.get_report(id=id, run_id=run_id)
+        
 
     def upload_neurovault(self, id, validation_hash, subject_paths=None,
                           group_paths=None, collection_id=None, force=False,
