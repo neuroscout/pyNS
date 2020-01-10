@@ -1,4 +1,19 @@
 """ Miscelaneous utilities """
+import collections
+
+module_names = {}
+Dependency = collections.namedtuple('Dependency', 'package value')
+
+
+def attempt_to_import(dependency, name=None, fromlist=None):
+    if name is None:
+        name = dependency
+    try:
+        mod = __import__(dependency, fromlist=fromlist)
+    except ImportError:
+        mod = None
+    module_names[name] = Dependency(dependency, mod)
+    return mod
 
 
 def build_model(name, variables, task, subject, run=None, session=None,
@@ -51,8 +66,10 @@ def build_model(name, variables, task, subject, run=None, session=None,
     )
 
     if not dummy_contrasts:
-        for s in model['Steps']:
-            s.pop('DummyContrasts')
+        model['Steps'][0].pop('DummyContrasts')
+
+    if dummy_contrasts == 'hrf' and hrf_variables:
+        model['Steps'][0]['DummyContrasts']['Conditions'] = hrf_variables
 
     if run is not None:
         model['Input']['Run'] = run
