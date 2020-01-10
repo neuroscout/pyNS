@@ -182,16 +182,18 @@ class Analyses(Base):
             if len(search) != 1:
                 raise ValueError(
                     "Task name does not match any tasks in the dataset")
+            task_id = search[0]['id']
         else:
             if len(dataset['tasks']) > 1:
                 raise ValueError(
                     "No task specified, but dataset has more than one task")
             task = dataset['tasks'][0]['name']
+            task_id = task['id']
 
         # Get Run IDs
         run_models = self._client.runs.get(
-            dataset_id=dataset['id'], subject=subject, number=run,
-            session=session)
+            dataset_id=dataset['id'], task_id=task_id,
+            subject=subject, number=run, session=session)
 
         if len(run_models) < 1:
             raise ValueError("No runs could be found with the given criterion")
