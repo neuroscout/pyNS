@@ -1,11 +1,11 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2019-12-16T22:06:35",
+      "recorded_at": "2020-01-10T19:43:58",
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "--9403ab997620b51e2a319666b2deda7f\r\nContent-Disposition: form-data; name=\"dataset_id\"\r\n\r\n10\r\n--9403ab997620b51e2a319666b2deda7f\r\nContent-Disposition: form-data; name=\"runs\"\r\n\r\n10,9\r\n--9403ab997620b51e2a319666b2deda7f\r\nContent-Disposition: form-data; name=\"runs\"\r\n\r\n8,7\r\n--9403ab997620b51e2a319666b2deda7f\r\nContent-Disposition: form-data; name=\"collection_name\"\r\n\r\ntest_collection\r\n--9403ab997620b51e2a319666b2deda7f\r\nContent-Disposition: form-data; name=\"descriptions\"\r\n\r\n{\"reaction_time\": \"fake RT\"}\r\n--9403ab997620b51e2a319666b2deda7f\r\nContent-Disposition: form-data; name=\"event_files\"; filename=\"new_events1.tsv\"\r\n\r\nonset\tduration\ttrial_type\treaction_time\tstim_file\n1\t5\trate\t198\tobama.jpg\n7\t3\tview\t220\tapple.jpg\n13\t5\trate\t121\tthai_people.jpg\n21\t3\tview\t130\tbutton.jpg\n\r\n--9403ab997620b51e2a319666b2deda7f\r\nContent-Disposition: form-data; name=\"event_files\"; filename=\"new_events1.tsv\"\r\n\r\nonset\tduration\ttrial_type\treaction_time\tstim_file\n1\t5\trate\t198\tobama.jpg\n7\t3\tview\t220\tapple.jpg\n13\t5\trate\t121\tthai_people.jpg\n21\t3\tview\t130\tbutton.jpg\n\r\n--9403ab997620b51e2a319666b2deda7f--\r\n"
+          "string": "--0ec4f10bbc0a3e84c900df0be802534a\r\nContent-Disposition: form-data; name=\"dataset_id\"\r\n\r\n10\r\n--0ec4f10bbc0a3e84c900df0be802534a\r\nContent-Disposition: form-data; name=\"runs\"\r\n\r\n10,9\r\n--0ec4f10bbc0a3e84c900df0be802534a\r\nContent-Disposition: form-data; name=\"runs\"\r\n\r\n8,7\r\n--0ec4f10bbc0a3e84c900df0be802534a\r\nContent-Disposition: form-data; name=\"collection_name\"\r\n\r\ntest_collection\r\n--0ec4f10bbc0a3e84c900df0be802534a\r\nContent-Disposition: form-data; name=\"descriptions\"\r\n\r\n{\"reaction_time\": \"fake RT\"}\r\n--0ec4f10bbc0a3e84c900df0be802534a\r\nContent-Disposition: form-data; name=\"event_files\"; filename=\"new_events1.tsv\"\r\n\r\nonset\tduration\ttrial_type\treaction_time\tstim_file\n1\t5\trate\t198\tobama.jpg\n7\t3\tview\t220\tapple.jpg\n13\t5\trate\t121\tthai_people.jpg\n21\t3\tview\t130\tbutton.jpg\n\r\n--0ec4f10bbc0a3e84c900df0be802534a\r\nContent-Disposition: form-data; name=\"event_files\"; filename=\"new_events1.tsv\"\r\n\r\nonset\tduration\ttrial_type\treaction_time\tstim_file\n1\t5\trate\t198\tobama.jpg\n7\t3\tview\t220\tapple.jpg\n13\t5\trate\t121\tthai_people.jpg\n21\t3\tview\t130\tbutton.jpg\n\r\n--0ec4f10bbc0a3e84c900df0be802534a--\r\n"
         },
         "headers": {
           "Accept": [
@@ -15,7 +15,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzcxMzgyNTMsImlhdCI6MTU3NjUzMzQ1MywibmJmIjoxNTc2NTMzNDUzLCJpZGVudGl0eSI6MX0.spYLzByUnmkff8CC6iK8tQRwOSzjimjaJOSqQ7mwDMU"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzkyODk2NjcsImlhdCI6MTU3ODY4NDg2NywibmJmIjoxNTc4Njg0ODY3LCJpZGVudGl0eSI6MX0.mBIekUDEYBfJyFh3sSLnXm9EX1PJeBe_zFvRLrA1UMI"
           ],
           "Connection": [
             "keep-alive"
@@ -24,7 +24,7 @@
             "1082"
           ],
           "Content-Type": [
-            "multipart/form-data; boundary=9403ab997620b51e2a319666b2deda7f"
+            "multipart/form-data; boundary=0ec4f10bbc0a3e84c900df0be802534a"
           ],
           "User-Agent": [
             "python-requests/2.21.0"
@@ -35,7 +35,7 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA0XKMQtCIRSG4b2f8c1euEoE17mIlktDW4Sc9AyS6UWPU/Tfc2t7eXk+8CUl9hJLdpneDAvhJu6/oRAD7H5R2CqH6KXUBnt/KDQh6aNxPa3Hy3oeVCp5fpJ/weaekkLfUqHAwZEMaGa9TNpM+nAzxs747n5zEZRiggAAAA==",
+          "base64_string": "H4sIAAAAAAAAA0XKsQ4CIRBF0d7PeDWbANFCao2x2WxhZwwZYQoiwmYZKuO/S2d3c3M+CDVnDpJq8YXeDAfhJv6/oZAi3MEqrBvHFKRuDe7+UGhC0kdjOc+n63wZVDYK/KTwgis9Z4W+5kqRoycZ0GqrJ20mo2/m6Pb47n67R3wlggAAAA==",
           "encoding": null,
           "string": ""
         },
@@ -53,7 +53,7 @@
             "application/json"
           ],
           "Date": [
-            "Mon, 16 Dec 2019 22:06:35 GMT"
+            "Fri, 10 Jan 2020 19:43:58 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -85,7 +85,7 @@
       }
     },
     {
-      "recorded_at": "2019-12-16T22:06:35",
+      "recorded_at": "2020-01-10T19:43:58",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -99,7 +99,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzcxMzgyNTMsImlhdCI6MTU3NjUzMzQ1MywibmJmIjoxNTc2NTMzNDUzLCJpZGVudGl0eSI6MX0.spYLzByUnmkff8CC6iK8tQRwOSzjimjaJOSqQ7mwDMU"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzkyODk2NjcsImlhdCI6MTU3ODY4NDg2NywibmJmIjoxNTc4Njg0ODY3LCJpZGVudGl0eSI6MX0.mBIekUDEYBfJyFh3sSLnXm9EX1PJeBe_zFvRLrA1UMI"
           ],
           "Connection": [
             "keep-alive"
@@ -109,11 +109,11 @@
           ]
         },
         "method": "GET",
-        "uri": "https://neuroscout.org/api/predictors/collection?collection_id=49"
+        "uri": "https://neuroscout.org/api/predictors/collection?collection_id=52"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA12OuwoCMRBFe79Cps7CbhAfaVXERizsRMKYTBGMmyWZCCL+u1llFWzv49z7ABO8J8MutLrFK4ECpsT6J4MAZ0FNFgK6SNYZDjGBOj7AImMi1r3d1AIsJRNd9y6pNnv/acp6Np0LGOjRodd87wh6oLshF5ljJgEp5Gj60PK7rsb/d56nEmTkXE7Afr1bbXebguKIhs5oLsN07nxAS1Yjl6Csm0XVyKqZHqRUNTxHLzyrnIf7AAAA",
+          "base64_string": "H4sIAAAAAAAAA51QTUsDMRC9+yvKO6eQXSq4uWoRL0WkN5EwJiOEppslmQhS+t/NWtqCF8Hrm/c5B7gUIzsJabQj7RkGwkXsFYZC8DC3vcKU2QcnKReY1wM8CRUWO587reC5uBymH5EZa4wnZa+H1Z3C2T0Hila+JsZsGD5JGiy5skJJNbuZdH9JN4vfdY7qj2R80I4XL1tc44dLfGY6jZWw/3eDt0YUktregOf15uFp89isJJPjd3K78/g6xUSevSVpxF73eqm7Zae33WBWON58AyPxp359AQAA",
           "encoding": null,
           "string": ""
         },
@@ -131,7 +131,7 @@
             "application/json"
           ],
           "Date": [
-            "Mon, 16 Dec 2019 22:06:35 GMT"
+            "Fri, 10 Jan 2020 19:43:58 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -159,11 +159,11 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://neuroscout.org/api/predictors/collection?collection_id=49"
+        "url": "https://neuroscout.org/api/predictors/collection?collection_id=52"
       }
     },
     {
-      "recorded_at": "2019-12-16T22:06:36",
+      "recorded_at": "2020-01-10T19:44:00",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -177,7 +177,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzcxMzgyNTMsImlhdCI6MTU3NjUzMzQ1MywibmJmIjoxNTc2NTMzNDUzLCJpZGVudGl0eSI6MX0.spYLzByUnmkff8CC6iK8tQRwOSzjimjaJOSqQ7mwDMU"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzkyODk2NjcsImlhdCI6MTU3ODY4NDg2NywibmJmIjoxNTc4Njg0ODY3LCJpZGVudGl0eSI6MX0.mBIekUDEYBfJyFh3sSLnXm9EX1PJeBe_zFvRLrA1UMI"
           ],
           "Connection": [
             "keep-alive"
@@ -187,11 +187,11 @@
           ]
         },
         "method": "GET",
-        "uri": "https://neuroscout.org/api/predictors/collection?collection_id=49"
+        "uri": "https://neuroscout.org/api/predictors/collection?collection_id=52"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA7WQMYsCMRCFe3+FTB0hG0Rv01paCGJ3SJhLRgjGzZJMhEP872ZPXDkb4eDamTfve28uYGMIZNnHznR4ItDAlNk8xyDAO9DzVkCfyHnLMWXQnxdwyJiJzbBupABH2Sbf/xzproRwv1RyufgQ8HBPHoPh755gMPRn5DrmVEhAjiXZQbQa6Xr6Gucq3pDhgEeabnfwxLcjPhHey7I//VuCX92XcoTnCjUHH/4M3lchI5f6f9isqwsntPSF9viAlj5EdOQMctUo2bSzRs2axU4pLeE6uQH/gXRr8QEAAA==",
+          "base64_string": "H4sIAAAAAAAAA7WQQUsDMRCF7/6K8s4pZJcW3Fw9ehCkN5EwJlMITTdLMhGk9L+btXSLXgTB68yb9703J7gUIzsJabQjHRkGwkXsbQyF4GG2vcKU2QcnKReYlxM8CRUWO687reC5uBymryMz1hgvl70eNvcKV/ccKFr5mBizYXgnaWPJlRVKqtnNooeFblY/45zVL2Ts6cCr5x1u+GHBZ6ZLWQnHf0vwrftWL/DSoHYf4p/Br00oJLX9H0+PzUUyOX4jd7hC6xQTefaWpGl63eu17tad3nWD2eB89wmKS1fs8QEAAA==",
           "encoding": null,
           "string": ""
         },
@@ -209,7 +209,7 @@
             "application/json"
           ],
           "Date": [
-            "Mon, 16 Dec 2019 22:06:36 GMT"
+            "Fri, 10 Jan 2020 19:44:00 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -237,7 +237,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://neuroscout.org/api/predictors/collection?collection_id=49"
+        "url": "https://neuroscout.org/api/predictors/collection?collection_id=52"
       }
     }
   ],

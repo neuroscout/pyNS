@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2019-12-16T22:06:35",
+      "recorded_at": "2020-01-10T19:43:57",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -15,7 +15,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzcxMzgyNTMsImlhdCI6MTU3NjUzMzQ1MywibmJmIjoxNTc2NTMzNDUzLCJpZGVudGl0eSI6MX0.spYLzByUnmkff8CC6iK8tQRwOSzjimjaJOSqQ7mwDMU"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzkyODk2NjcsImlhdCI6MTU3ODY4NDg2NywibmJmIjoxNTc4Njg0ODY3LCJpZGVudGl0eSI6MX0.mBIekUDEYBfJyFh3sSLnXm9EX1PJeBe_zFvRLrA1UMI"
           ],
           "Connection": [
             "keep-alive"
@@ -47,7 +47,7 @@
             "application/json"
           ],
           "Date": [
-            "Mon, 16 Dec 2019 22:06:35 GMT"
+            "Fri, 10 Jan 2020 19:43:57 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -79,7 +79,7 @@
       }
     },
     {
-      "recorded_at": "2019-12-16T22:06:35",
+      "recorded_at": "2020-01-10T19:43:57",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -93,7 +93,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzcxMzgyNTMsImlhdCI6MTU3NjUzMzQ1MywibmJmIjoxNTc2NTMzNDUzLCJpZGVudGl0eSI6MX0.spYLzByUnmkff8CC6iK8tQRwOSzjimjaJOSqQ7mwDMU"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzkyODk2NjcsImlhdCI6MTU3ODY4NDg2NywibmJmIjoxNTc4Njg0ODY3LCJpZGVudGl0eSI6MX0.mBIekUDEYBfJyFh3sSLnXm9EX1PJeBe_zFvRLrA1UMI"
           ],
           "Connection": [
             "keep-alive"
@@ -125,7 +125,7 @@
             "application/json"
           ],
           "Date": [
-            "Mon, 16 Dec 2019 22:06:35 GMT"
+            "Fri, 10 Jan 2020 19:43:57 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -157,7 +157,7 @@
       }
     },
     {
-      "recorded_at": "2019-12-16T22:06:35",
+      "recorded_at": "2020-01-10T19:43:57",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -171,7 +171,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzcxMzgyNTMsImlhdCI6MTU3NjUzMzQ1MywibmJmIjoxNTc2NTMzNDUzLCJpZGVudGl0eSI6MX0.spYLzByUnmkff8CC6iK8tQRwOSzjimjaJOSqQ7mwDMU"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzkyODk2NjcsImlhdCI6MTU3ODY4NDg2NywibmJmIjoxNTc4Njg0ODY3LCJpZGVudGl0eSI6MX0.mBIekUDEYBfJyFh3sSLnXm9EX1PJeBe_zFvRLrA1UMI"
           ],
           "Connection": [
             "keep-alive"
@@ -203,7 +203,7 @@
             "application/json"
           ],
           "Date": [
-            "Mon, 16 Dec 2019 22:06:35 GMT"
+            "Fri, 10 Jan 2020 19:43:57 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -235,7 +235,7 @@
       }
     },
     {
-      "recorded_at": "2019-12-16T22:06:35",
+      "recorded_at": "2020-01-10T19:43:57",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -249,7 +249,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzcxMzgyNTMsImlhdCI6MTU3NjUzMzQ1MywibmJmIjoxNTc2NTMzNDUzLCJpZGVudGl0eSI6MX0.spYLzByUnmkff8CC6iK8tQRwOSzjimjaJOSqQ7mwDMU"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzkyODk2NjcsImlhdCI6MTU3ODY4NDg2NywibmJmIjoxNTc4Njg0ODY3LCJpZGVudGl0eSI6MX0.mBIekUDEYBfJyFh3sSLnXm9EX1PJeBe_zFvRLrA1UMI"
           ],
           "Connection": [
             "keep-alive"
@@ -281,7 +281,7 @@
             "application/json"
           ],
           "Date": [
-            "Mon, 16 Dec 2019 22:06:35 GMT"
+            "Fri, 10 Jan 2020 19:43:57 GMT"
           ],
           "Server": [
             "nginx/1.15.6"

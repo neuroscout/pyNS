@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2019-12-16T21:57:33",
+      "recorded_at": "2020-01-10T19:34:27",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -15,7 +15,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzcxMzgyNTMsImlhdCI6MTU3NjUzMzQ1MywibmJmIjoxNTc2NTMzNDUzLCJpZGVudGl0eSI6MX0.spYLzByUnmkff8CC6iK8tQRwOSzjimjaJOSqQ7mwDMU"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzkyODk2NjcsImlhdCI6MTU3ODY4NDg2NywibmJmIjoxNTc4Njg0ODY3LCJpZGVudGl0eSI6MX0.mBIekUDEYBfJyFh3sSLnXm9EX1PJeBe_zFvRLrA1UMI"
           ],
           "Connection": [
             "keep-alive"
@@ -47,7 +47,7 @@
             "application/json"
           ],
           "Date": [
-            "Mon, 16 Dec 2019 21:57:33 GMT"
+            "Fri, 10 Jan 2020 19:34:27 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -79,7 +79,7 @@
       }
     },
     {
-      "recorded_at": "2019-12-16T21:57:33",
+      "recorded_at": "2020-01-10T19:34:27",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -93,7 +93,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzcxMzgyNTMsImlhdCI6MTU3NjUzMzQ1MywibmJmIjoxNTc2NTMzNDUzLCJpZGVudGl0eSI6MX0.spYLzByUnmkff8CC6iK8tQRwOSzjimjaJOSqQ7mwDMU"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzkyODk2NjcsImlhdCI6MTU3ODY4NDg2NywibmJmIjoxNTc4Njg0ODY3LCJpZGVudGl0eSI6MX0.mBIekUDEYBfJyFh3sSLnXm9EX1PJeBe_zFvRLrA1UMI"
           ],
           "Connection": [
             "keep-alive"
@@ -103,7 +103,7 @@
           ]
         },
         "method": "GET",
-        "uri": "https://neuroscout.org/api/runs?dataset_id=5&subject=28"
+        "uri": "https://neuroscout.org/api/runs?dataset_id=5&task_id=4&subject=28"
       },
       "response": {
         "body": {
@@ -125,7 +125,7 @@
             "application/json"
           ],
           "Date": [
-            "Mon, 16 Dec 2019 21:57:33 GMT"
+            "Fri, 10 Jan 2020 19:34:27 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -153,11 +153,11 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://neuroscout.org/api/runs?dataset_id=5&subject=28"
+        "url": "https://neuroscout.org/api/runs?dataset_id=5&task_id=4&subject=28"
       }
     },
     {
-      "recorded_at": "2019-12-16T21:57:33",
+      "recorded_at": "2020-01-10T19:34:27",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -171,7 +171,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzcxMzgyNTMsImlhdCI6MTU3NjUzMzQ1MywibmJmIjoxNTc2NTMzNDUzLCJpZGVudGl0eSI6MX0.spYLzByUnmkff8CC6iK8tQRwOSzjimjaJOSqQ7mwDMU"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzkyODk2NjcsImlhdCI6MTU3ODY4NDg2NywibmJmIjoxNTc4Njg0ODY3LCJpZGVudGl0eSI6MX0.mBIekUDEYBfJyFh3sSLnXm9EX1PJeBe_zFvRLrA1UMI"
           ],
           "Connection": [
             "keep-alive"
@@ -203,7 +203,7 @@
             "application/json"
           ],
           "Date": [
-            "Mon, 16 Dec 2019 21:57:33 GMT"
+            "Fri, 10 Jan 2020 19:34:27 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -235,7 +235,7 @@
       }
     },
     {
-      "recorded_at": "2019-12-16T21:57:33",
+      "recorded_at": "2020-01-10T19:34:27",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -249,7 +249,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzcxMzgyNTMsImlhdCI6MTU3NjUzMzQ1MywibmJmIjoxNTc2NTMzNDUzLCJpZGVudGl0eSI6MX0.spYLzByUnmkff8CC6iK8tQRwOSzjimjaJOSqQ7mwDMU"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzkyODk2NjcsImlhdCI6MTU3ODY4NDg2NywibmJmIjoxNTc4Njg0ODY3LCJpZGVudGl0eSI6MX0.mBIekUDEYBfJyFh3sSLnXm9EX1PJeBe_zFvRLrA1UMI"
           ],
           "Connection": [
             "keep-alive"
@@ -280,7 +280,7 @@
             "application/json"
           ],
           "Date": [
-            "Mon, 16 Dec 2019 21:57:33 GMT"
+            "Fri, 10 Jan 2020 19:34:27 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -306,7 +306,7 @@
       }
     },
     {
-      "recorded_at": "2019-12-16T21:57:33",
+      "recorded_at": "2020-01-10T19:34:28",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -320,7 +320,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzcxMzgyNTMsImlhdCI6MTU3NjUzMzQ1MywibmJmIjoxNTc2NTMzNDUzLCJpZGVudGl0eSI6MX0.spYLzByUnmkff8CC6iK8tQRwOSzjimjaJOSqQ7mwDMU"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzkyODk2NjcsImlhdCI6MTU3ODY4NDg2NywibmJmIjoxNTc4Njg0ODY3LCJpZGVudGl0eSI6MX0.mBIekUDEYBfJyFh3sSLnXm9EX1PJeBe_zFvRLrA1UMI"
           ],
           "Connection": [
             "keep-alive"
@@ -340,7 +340,7 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA32SwU7DMAyG7zyGzx2ilTZGbxNjCIly2HpAoKlKW4+FpUmVOJWminfHodu0HcYtsePfn/2nh3wJaXw7jqCyKAjrQhCkkNzFD6M4GcWTPInTMURQCxIOqZA1pPy6RldZ2ZI0GlLtlYpgK9z2Lw2z8vkj4xplqh1yYCOUwwgaU6OCtIcX3XoKh5Uvv7Hi4yckU1hHkAu3Y4EMrZI6M51E+IngTTTI0XZP6KgQWqi9k44brAhbx9U9PBpNVjgKN9aZ+6bZn8V6yPdt0KCg94pdAIGl1yySHbHeA0dp5deWNDoHa36aW6HdxthGhFGHXgf8y7cnSu7aGdUxONf310kWT9nsHOa4i3+LLvDngyV/jcJy5UZe909f22ErLOrB18HH1mItq8O4AKeAsWH8OLlPpusQlB3/F0jJevbWej1kJ5xzJMiH4vlytshZwfmykXT8XUMbZt8VB6oLv29+AVA8YyiVAgAA",
+          "base64_string": "H4sIAAAAAAAAA32SwU7DMAyG7zyGzx1ai4DR28SYhEQ5dD0goanKWo+FpUmVOJWqinfHWTe0HcYtsePfn/1ngCKHNL69j6CyKAjrUhCkkEyT6WQaT+JpET+ldxBBLUg4pFLWkPLrGl1lZUvSaEi1VyqCnXC7QxqyPOl6rlGm2iMHtkI5jKAxNSpIB3jVradwWPnNN1Z8/IRkBusICuH2QQCtkjoznUT4ieBdNMjRtid0VAotVO+k4wYrwtZx9QDPRpMVjsKNdRa+afqz2ABF3wYNCnpv2AUQyL1mkeyE9RE4NlZ+7Uijc7Dmp4UV2m2NbUQYdex1xL98+0fJXTujOgbn+uE6yfIlm5/DnHbxb9EF/mK05NAoLFdu5XX/9LUdtsKiHn0dfWwt1rI6jgvwFzA2jB8nj8lsHYKy4/8CKVnP3lqvx+wD5xwJ8qF4kc+XBSs4v2kknX7X2IbZ9+WR6sLvm19nB1IxlQIAAA==",
           "encoding": null,
           "string": ""
         },
@@ -358,7 +358,7 @@
             "application/json"
           ],
           "Date": [
-            "Mon, 16 Dec 2019 21:57:33 GMT"
+            "Fri, 10 Jan 2020 19:34:28 GMT"
           ],
           "Server": [
             "nginx/1.15.6"

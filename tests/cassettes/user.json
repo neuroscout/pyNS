@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2019-12-16T22:06:37",
+      "recorded_at": "2020-01-10T19:44:00",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -15,7 +15,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzcxMzgyNTMsImlhdCI6MTU3NjUzMzQ1MywibmJmIjoxNTc2NTMzNDUzLCJpZGVudGl0eSI6MX0.spYLzByUnmkff8CC6iK8tQRwOSzjimjaJOSqQ7mwDMU"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzkyODk2NjcsImlhdCI6MTU3ODY4NDg2NywibmJmIjoxNTc4Njg0ODY3LCJpZGVudGl0eSI6MX0.mBIekUDEYBfJyFh3sSLnXm9EX1PJeBe_zFvRLrA1UMI"
           ],
           "Connection": [
             "keep-alive"
@@ -29,7 +29,7 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA82T3WvCMBDA3/dXjHuuw6TWaZ9WcNuTMKbsEylZe86w9IMkRUX83xetncLULgiyt+bu17tf7toFsJSJuUIF/vsCYqaZQh3yGHzPgRhVJHmueZaCDylOw92IAxOmJmsW+i9uLzCRJIv5mGMcMm2itEm6DUIbpD2kxG+ZfMoSNIl8rlHpsOzNlUkozXRhJKD3GNwNYemcIBN83L/1a2S8P8k8BIPBbe80m+nzzDs+Guo3z2YTPLW/6hZFz7WofofNu/9FJiDyte6rca32NHIAE8aFCRUK5Q3OWJILvIqyxOBjLs37IvvkxiwthKhKl885j3Qht0eJsYlkMowyITBa6Zf/7PYcbtSmxtyB1aUoWY3kN7FW34Y3NGla0Qdq73SnVvXsaNeKbh10vSSVrV1Fbz+dFELzquIx5qdt+whEK+jaxs21mqRrdW/3wCT3062OFd1djpYX3+clk3WTBgAA",
+          "base64_string": "H4sIAAAAAAAAA72UXW+CMBSG7/crll7DQguocDUSNy8WE6NmnzGkgzqblY/QMiXG/74qOk0mYKPxjp4+nPPwtmEJcIxZwQkH7scShFhgToRPQ+DaGggJDzKaCprEwAUxmfuHFQ3MMJ9tWOB99t77shIlIZ1SEvpYyCoyoKNDpMPWGEHXlvsxjojcSAtBuPDL2ZTLDS6wyKUEGHij0UMXrLQzbOYvC9urtUGucTUb77n1XWPjrG3Mk2y6Q+9xfKYMzN6aDuo0mUtE0381u/XRwBMP6gLR9NNObB+RQYZuQB0aY+i48Hp3uOj20gYbdLVohuinaJC54q0ZPD1bDTbWOTYIKul0cOFU6hjtMTLUTmqiARJhymQl5yS7JwscpYzcBUkk6SnN5Oss+aJSLM4Z23Uun1MaiDzbLzMSykqS+UHCGAnW9uW/fr/2t2ZzKa6BMoB1JP+Jjfm+vKWhoURX9D6YjpT6qdGmEm1Vut7Cna1aR/s4HeVM0F3HOuZvbKsGQjuoreJmKiVpKn23WZHkcdrqKNGOCm2j1WR18wuso0nW+QgAAA==",
           "encoding": null,
           "string": ""
         },
@@ -47,7 +47,7 @@
             "application/json"
           ],
           "Date": [
-            "Mon, 16 Dec 2019 22:06:37 GMT"
+            "Fri, 10 Jan 2020 19:44:00 GMT"
           ],
           "Server": [
             "nginx/1.15.6"

@@ -1,11 +1,11 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2019-12-16T22:01:59",
+      "recorded_at": "2020-01-10T19:38:50",
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "{\"TR\": 1.5, \"created_at\": \"2019-12-16T22:0\", \"dataset_id\": 5, \"description\": \"new_description\", \"hash_id\": \"wWx5A\", \"locked\": false, \"model\": {\"Input\": {\"Subject\": [\"28\"], \"Task\": \"MerlinMovie\"}, \"Name\": \"pytest_analysis\", \"Steps\": [{\"Contrasts\": [], \"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Run\", \"Model\": {\"X\": [\"brightness\"]}, \"Transformations\": []}, {\"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Dataset\"}]}, \"modified_at\": \"2019-12-16T22:0\", \"name\": \"pytest_analysis\", \"predictions\": \"\", \"predictors\": [12728], \"private\": true, \"runs\": [126], \"status\": \"DRAFT\", \"task_name\": \"MerlinMovie\"}"
+          "string": "{\"TR\": 1.5, \"created_at\": \"2020-01-10T19:3\", \"dataset_id\": 5, \"description\": \"new_description\", \"hash_id\": \"MPKV4\", \"locked\": false, \"model\": {\"Input\": {\"Subject\": [\"28\"], \"Task\": \"MerlinMovie\"}, \"Name\": \"pytest_analysis\", \"Steps\": [{\"Contrasts\": [], \"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Run\", \"Model\": {\"X\": [\"brightness\"]}, \"Transformations\": []}, {\"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Dataset\"}]}, \"modified_at\": \"2020-01-10T19:3\", \"name\": \"pytest_analysis\", \"predictions\": \"\", \"predictors\": [12728], \"private\": true, \"runs\": [126], \"status\": \"DRAFT\", \"task_name\": \"MerlinMovie\"}"
         },
         "headers": {
           "Accept": [
@@ -15,7 +15,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzcxMzgyNTMsImlhdCI6MTU3NjUzMzQ1MywibmJmIjoxNTc2NTMzNDUzLCJpZGVudGl0eSI6MX0.spYLzByUnmkff8CC6iK8tQRwOSzjimjaJOSqQ7mwDMU"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzkyODk2NjcsImlhdCI6MTU3ODY4NDg2NywibmJmIjoxNTc4Njg0ODY3LCJpZGVudGl0eSI6MX0.mBIekUDEYBfJyFh3sSLnXm9EX1PJeBe_zFvRLrA1UMI"
           ],
           "Connection": [
             "keep-alive"
@@ -31,11 +31,11 @@
           ]
         },
         "method": "PUT",
-        "uri": "https://neuroscout.org/api/analyses/wWx5A"
+        "uri": "https://neuroscout.org/api/analyses/MPKV4"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA41SwWrCQBC99zPmHItZ0NrcSqVQqD1ooIUiYUzGujXZhN1ZbQj+e2eNFnsQept98+bNm5ntIJ1DEt+OIsgtIVORIUMCahjfD2I1iMepUskQIiiQ0RFnuoBE2AW53OqGdW2EbmifXSIRbNBtjlzYv32PHgQp63xLAqyxdBRBVRdUQtLBs2k8h2DhV1+US/gBagLLCFJ0WxGYkS21mdU7TXCI4BUrErRpmRxnaLBsnXbSYMHUOKnu4LE2bNFxeInO1FdVe4F1kLZN0OCg90K7YATmPvienW29Bx8rqz83bMg5WAo1tWjcurYVhimP6oeo+6f+tF8gHIKSTK/X+vq2zbUhG7Rk+isYX5YCWCp0fvID8AvUNviL1Z2aLAOod3JdSNh6Wb71ps+OJecY2Yfi6fzhKRUF51eV5vNf6NuI9212cvXnIDc/VO/KDUMCAAA=",
+          "base64_string": "H4sIAAAAAAAAA41STUvDQBC9+zPmnEoSv2puYhFEK9IGEaSESTK1a5NN2J2thND/7mzTSj0UvM2+efPmzcz2kM4gic6vAigMIVOZIUMCcRiHozAaRWEa3SYXEECJjJY4UyUkwi7JFka1rBotdE3f2TESwArtaseF6evT26UgVVOsSYAlVpYCqJuSKkh6eNStYx/MXf5FhYQfEI9hEUCKdu0FyFRKT5uNItgG8II1Cdp2TJYz1Fh1VllpMGdqrVT3cN9oNmjZv0Rn4uq6O8J6SLvWa7DXe6aNNwIz531PD7bevY/cqM8Va7IWFkJNDWq7bEyNfsqd+jbo/6k/GRYIW68k06ulOr1tfWrIFg3p4QraVZUAhkpV7P0A/AKN8f6i+CYeLzyoNnJdSNg4Wb5xesheS84ysvPFk9ndQyoK1uW14sNfGNqI93W2d/XnIGc/r25KkkMCAAA=",
           "encoding": null,
           "string": ""
         },
@@ -53,7 +53,7 @@
             "application/json"
           ],
           "Date": [
-            "Mon, 16 Dec 2019 22:01:59 GMT"
+            "Fri, 10 Jan 2020 19:38:50 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -81,7 +81,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://neuroscout.org/api/analyses/wWx5A"
+        "url": "https://neuroscout.org/api/analyses/MPKV4"
       }
     }
   ],
