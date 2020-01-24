@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2020-01-24T19:24:01",
+      "recorded_at": "2020-01-24T19:39:56",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -15,7 +15,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODA0OTg0MTEsImlhdCI6MTU3OTg5MzYxMSwibmJmIjoxNTc5ODkzNjExLCJpZGVudGl0eSI6MX0.xfndD5bu4rdxP9gXM3jsbsBfSSvRfxetA5xouPvJJfU"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODA0OTkzMDEsImlhdCI6MTU3OTg5NDUwMSwibmJmIjoxNTc5ODk0NTAxLCJpZGVudGl0eSI6MX0.-vuaHxl4z9VE3-FJiRcUfF2NKrKP8SrnZVGXPTuw1uo"
           ],
           "Connection": [
             "keep-alive"
@@ -35,7 +35,7 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA42RT0vDQBDF736MOafSBv/U3MQiCNZDmoMgJUyTqV2bbOLObCCEfndnm1b0IHjbfbPz2zdvBshSSGaX1xEUjlCozFEggXgaTyfT2SS+ymZ3SQwRlCjIJLkpIdHXJXHhTCumsZBYX1UR7JB3xzIs8bNLtadqij2psMWKKYK6KamCZIAn23oJh5XffFChxzeI57COIEPeBwC5ythl0xmCQwQvWJOqbS/EkqPFqmfD+sFKqGXtHuChseKQJdyUs/B13f/QBsj6NjAk8J6pC0Yg9VYhy7Ot1+Bj48z7Tiwxw1qfZg4tbxtXYxj1SD9Ewz/5izEzOASSTm+25u+A7V9DtujIjsGPQbeOSlOc/AB8C40L/mbxbTxfB9F0ulBIxHkN33k7Vm+0xoLiQ/MivX/MlMB+Uxs5r3/8Rr3v85OrXwu5+AKLFcdUNgIAAA==",
+          "base64_string": "H4sIAAAAAAAAA42RQU/DMAyF7/wMnzu0FhijN8SEhGActh6Q0FRlrcdC07SKnaGq2n/HWTcEh0nckuf4y/NzD9kC0vjyJoLCoWIsc8WQQjJOxqNxPEqus/guvYIISsWKkHNdQiqvS6TC6ZZ1YyG13pgItoq2hzJ8Vc9mIj2mKSoUYaMMYQR1U6KBtIcn23oOh6Vff2Ihx3dIprCKIFNUCWCOzmg7b3YaYR/Bq6pR1LZjJM6VVaYjTfLBkrEl6e7hobHsFHG4CWfm67r7pfWQdW1gcOC94C4YgYW3ApmfbL0FH2unP7ZskQhW8jRzytKmcbUKox7o+6j/J382ZAb7QJLp9UafD9ieG7JVDu0Q/BB067DUxdEPwI/QuOAvTm6T6SqIeicLhZSdl/Cdt0N1IjVixT40zxb3j5kQyK9rzaf1D9+I9yo/uvqzkItv+DoNljYCAAA=",
           "encoding": null,
           "string": ""
         },
@@ -53,7 +53,7 @@
             "application/json"
           ],
           "Date": [
-            "Fri, 24 Jan 2020 19:24:01 GMT"
+            "Fri, 24 Jan 2020 19:39:56 GMT"
           ],
           "Server": [
             "nginx/1.15.6"

@@ -77,7 +77,8 @@ class Neuroscout(object):
                       files=None, **kwargs):
         """ Generic request handler """
 
-        self._check_expiry()
+        if route != 'auth':
+            self._check_expiry()
 
         request_function = getattr(self._session, request)
 
