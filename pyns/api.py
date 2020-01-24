@@ -1,7 +1,9 @@
 import requests
 import re
-from functools import partialmethod
+import jwt
 import os
+from datetime import datetime
+from functools import partialmethod
 
 from . import API_BASE_URL, ROUTE_PATTERN
 from . import models
@@ -21,12 +23,7 @@ class Neuroscout(object):
         self._api_base_url = api_base_url or API_BASE_URL
         self._api_token = None
 
-        if email is not None and password is not None:
-            self._authorize(email, password)
-        elif all([a in os.environ
-                  for a in ['NEUROSCOUT_PASSWORD', 'NEUROSCOUT_USER']]):
-            self._authorize(os.environ['NEUROSCOUT_USER'],
-                            os.environ['NEUROSCOUT_PASSWORD'])
+        self._authorize(email, password)
 
         # Set up main routes
         self.analyses = models.Analyses(self)
@@ -79,6 +76,10 @@ class Neuroscout(object):
                       json=None, headers=None, remove_null=True,
                       files=None, **kwargs):
         """ Generic request handler """
+
+        if route != 'auth':
+            self._check_expiry()
+
         request_function = getattr(self._session, request)
 
         if remove_null is True:
@@ -124,8 +125,25 @@ class Neuroscout(object):
 
     def _authorize(self, email=None, password=None):
         """ Fetch api_token given access credentials """
-        rv = self._post('auth', email=email, password=password)
-        self._api_token = rv['access_token']
+        if email is None and 'NEUROSCOUT_USER' in os.environ:
+            email = os.environ['NEUROSCOUT_USER']
+        if password is None and 'NEUROSCOUT_PASSWORD' in os.environ:
+            password = os.environ['NEUROSCOUT_PASSWORD']
+
+        if email is not None and password is not None:
+            rv = self._post('auth', email=email, password=password)
+            self._api_token = rv['access_token']
+
+            iat = datetime.utcfromtimestamp(
+                jwt.decode(self._api_token, verify=False)['iat'])
+            adj = iat - datetime.now()
+            self._api_token_exp = datetime.utcfromtimestamp(
+                jwt.decode(self._api_token, verify=False)['exp']) - adj
+
+    def _check_expiry(self):
+        if self._api_token is not None:
+            if datetime.now() > self._api_token_exp:
+                self._authorize()
 
     _get = partialmethod(_make_request, 'get')
     _post = partialmethod(_make_request, 'post')

@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2020-01-10T19:44:00",
+      "recorded_at": "2020-01-24T19:44:29",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -15,7 +15,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NzkyODk2NjcsImlhdCI6MTU3ODY4NDg2NywibmJmIjoxNTc4Njg0ODY3LCJpZGVudGl0eSI6MX0.mBIekUDEYBfJyFh3sSLnXm9EX1PJeBe_zFvRLrA1UMI"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODA0OTkzMDEsImlhdCI6MTU3OTg5NDUwMSwibmJmIjoxNTc5ODk0NTAxLCJpZGVudGl0eSI6MX0.-vuaHxl4z9VE3-FJiRcUfF2NKrKP8SrnZVGXPTuw1uo"
           ],
           "Connection": [
             "keep-alive"
@@ -29,7 +29,7 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA72UXW+CMBSG7/crll7DQguocDUSNy8WE6NmnzGkgzqblY/QMiXG/74qOk0mYKPxjp4+nPPwtmEJcIxZwQkH7scShFhgToRPQ+DaGggJDzKaCprEwAUxmfuHFQ3MMJ9tWOB99t77shIlIZ1SEvpYyCoyoKNDpMPWGEHXlvsxjojcSAtBuPDL2ZTLDS6wyKUEGHij0UMXrLQzbOYvC9urtUGucTUb77n1XWPjrG3Mk2y6Q+9xfKYMzN6aDuo0mUtE0381u/XRwBMP6gLR9NNObB+RQYZuQB0aY+i48Hp3uOj20gYbdLVohuinaJC54q0ZPD1bDTbWOTYIKul0cOFU6hjtMTLUTmqiARJhymQl5yS7JwscpYzcBUkk6SnN5Oss+aJSLM4Z23Uun1MaiDzbLzMSykqS+UHCGAnW9uW/fr/2t2ZzKa6BMoB1JP+Jjfm+vKWhoURX9D6YjpT6qdGmEm1Vut7Cna1aR/s4HeVM0F3HOuZvbKsGQjuoreJmKiVpKn23WZHkcdrqKNGOCm2j1WR18wuso0nW+QgAAA==",
+          "base64_string": "H4sIAAAAAAAAA82WXU+DMBSG7/0VptfM0PLh4Mol011MEjMXdRpDKlTXrHxIi5OY/Xe7sbklDlgzQ7yD05fTp+85B/gCOMas4IQD9+kLhFhgToRPQ+BaGggJDzKaCprEwAUxmfu7EQ1MMZ+utMAbvExSGYmSkL5SEvpYyCjSkd7RYQeZY+i4SK7HOCJyIS0E4cIv96ZcLnCBRS4hwE3v9vayDxbaETS9l8Gjt4cGOh2IOtAeI+hardHM7z+tXi0NcvXWaDz8/jH6N5Vyrt+HsIHGaK9SsyGzG2jM9rr4zp7V9I2z7JvDvOmPelfjI2FgNmkaqfYK5T0Y/Xpr4IEj9QfWeGk3tiq7BurLroHt9XDRH1S/iUuaw+b7L6wZoY+iAabFrrkZ3pkNNEeNN4JKOF1cONU49hieH/iVWlfqWQMkwpTJSM5JdkE+cZQychYkkVS/0kw+zpI3KsHinLFN5vI6pYHIs+1tRkIZSTI/SBgjwZK+/EfY3vtrsrkE10BpwNKS34oV+Ta8VkNdSV2Re2d3pJRPTW0oqc1K1lO4oVXLaO1XRzkTdJOxTvOzrV0jQhvRuQqboeSkoXRuo8LJ/Wqzq6R2VNSW0iktpVNa5uJ5cfIN4zVUmY0LAAA=",
           "encoding": null,
           "string": ""
         },
@@ -47,7 +47,7 @@
             "application/json"
           ],
           "Date": [
-            "Fri, 10 Jan 2020 19:44:00 GMT"
+            "Fri, 24 Jan 2020 19:44:29 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
