@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2020-01-24T19:35:02",
+      "recorded_at": "2020-01-31T20:41:24",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -15,7 +15,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODA0OTkzMDEsImlhdCI6MTU3OTg5NDUwMSwibmJmIjoxNTc5ODk0NTAxLCJpZGVudGl0eSI6MX0.-vuaHxl4z9VE3-FJiRcUfF2NKrKP8SrnZVGXPTuw1uo"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODExMDgwODQsImlhdCI6MTU4MDUwMzI4NCwibmJmIjoxNTgwNTAzMjg0LCJpZGVudGl0eSI6MX0.Rngsaw2m-lpP6goCcW9KmcOGLME_K65S82D-nHYMmkE"
           ],
           "Connection": [
             "keep-alive"
@@ -47,7 +47,7 @@
             "application/json"
           ],
           "Date": [
-            "Fri, 24 Jan 2020 19:35:01 GMT"
+            "Fri, 31 Jan 2020 20:41:24 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -79,7 +79,7 @@
       }
     },
     {
-      "recorded_at": "2020-01-24T19:35:02",
+      "recorded_at": "2020-01-31T20:41:24",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -93,7 +93,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODA0OTkzMDEsImlhdCI6MTU3OTg5NDUwMSwibmJmIjoxNTc5ODk0NTAxLCJpZGVudGl0eSI6MX0.-vuaHxl4z9VE3-FJiRcUfF2NKrKP8SrnZVGXPTuw1uo"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODExMDgwODQsImlhdCI6MTU4MDUwMzI4NCwibmJmIjoxNTgwNTAzMjg0LCJpZGVudGl0eSI6MX0.Rngsaw2m-lpP6goCcW9KmcOGLME_K65S82D-nHYMmkE"
           ],
           "Connection": [
             "keep-alive"
@@ -125,7 +125,7 @@
             "application/json"
           ],
           "Date": [
-            "Fri, 24 Jan 2020 19:35:02 GMT"
+            "Fri, 31 Jan 2020 20:41:24 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -157,7 +157,7 @@
       }
     },
     {
-      "recorded_at": "2020-01-24T19:35:02",
+      "recorded_at": "2020-01-31T20:41:24",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -171,7 +171,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODA0OTkzMDEsImlhdCI6MTU3OTg5NDUwMSwibmJmIjoxNTc5ODk0NTAxLCJpZGVudGl0eSI6MX0.-vuaHxl4z9VE3-FJiRcUfF2NKrKP8SrnZVGXPTuw1uo"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODExMDgwODQsImlhdCI6MTU4MDUwMzI4NCwibmJmIjoxNTgwNTAzMjg0LCJpZGVudGl0eSI6MX0.Rngsaw2m-lpP6goCcW9KmcOGLME_K65S82D-nHYMmkE"
           ],
           "Connection": [
             "keep-alive"
@@ -181,7 +181,7 @@
           ]
         },
         "method": "GET",
-        "uri": "https://neuroscout.org/api/predictors?run_id=126&name=brightness"
+        "uri": "https://neuroscout.org/api/predictors?run_id=126&name=brightness&active_only=False"
       },
       "response": {
         "body": {
@@ -203,7 +203,7 @@
             "application/json"
           ],
           "Date": [
-            "Fri, 24 Jan 2020 19:35:02 GMT"
+            "Fri, 31 Jan 2020 20:41:24 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -231,82 +231,11 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://neuroscout.org/api/predictors?run_id=126&name=brightness"
+        "url": "https://neuroscout.org/api/predictors?run_id=126&name=brightness&active_only=False"
       }
     },
     {
-      "recorded_at": "2020-01-24T19:35:02",
-      "request": {
-        "body": {
-          "encoding": "utf-8",
-          "string": ""
-        },
-        "headers": {
-          "Accept": [
-            "*/*"
-          ],
-          "Accept-Encoding": [
-            "gzip, deflate"
-          ],
-          "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODA0OTkzMDEsImlhdCI6MTU3OTg5NDUwMSwibmJmIjoxNTc5ODk0NTAxLCJpZGVudGl0eSI6MX0.-vuaHxl4z9VE3-FJiRcUfF2NKrKP8SrnZVGXPTuw1uo"
-          ],
-          "Connection": [
-            "keep-alive"
-          ],
-          "User-Agent": [
-            "python-requests/2.21.0"
-          ]
-        },
-        "method": "GET",
-        "uri": "https://neuroscout.org/api/user/predictors?run_id=126&name=brightness"
-      },
-      "response": {
-        "body": {
-          "encoding": null,
-          "string": "[]\n"
-        },
-        "headers": {
-          "Access-Control-Allow-Origin": [
-            "*"
-          ],
-          "Connection": [
-            "keep-alive"
-          ],
-          "Content-Length": [
-            "3"
-          ],
-          "Content-Type": [
-            "application/json"
-          ],
-          "Date": [
-            "Fri, 24 Jan 2020 19:35:02 GMT"
-          ],
-          "Server": [
-            "nginx/1.15.6"
-          ],
-          "Strict-Transport-Security": [
-            "max-age=63072000; includeSubDomains; preload"
-          ],
-          "X-Content-Type-Options": [
-            "nosniff"
-          ],
-          "X-Frame-Options": [
-            "DENY"
-          ],
-          "X-XSS-Protection": [
-            "1; mode=block"
-          ]
-        },
-        "status": {
-          "code": 200,
-          "message": "OK"
-        },
-        "url": "https://neuroscout.org/api/user/predictors?run_id=126&name=brightness"
-      }
-    },
-    {
-      "recorded_at": "2020-01-24T19:35:02",
+      "recorded_at": "2020-01-31T20:41:24",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -320,7 +249,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODA0OTkzMDEsImlhdCI6MTU3OTg5NDUwMSwibmJmIjoxNTc5ODk0NTAxLCJpZGVudGl0eSI6MX0.-vuaHxl4z9VE3-FJiRcUfF2NKrKP8SrnZVGXPTuw1uo"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODExMDgwODQsImlhdCI6MTU4MDUwMzI4NCwibmJmIjoxNTgwNTAzMjg0LCJpZGVudGl0eSI6MX0.Rngsaw2m-lpP6goCcW9KmcOGLME_K65S82D-nHYMmkE"
           ],
           "Connection": [
             "keep-alive"
@@ -340,7 +269,7 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA32STW/CMAyG7/sZPpeJdl/QGxpDmkZ3gB4mTagKrRkZbdIlTqWq2n+fQwHBgd0SO3792G86SBcQh7cPAeQGBWGRCYIYomE0HAzDQXSfhuP4DgIoBAmLlMkCYn5doM2NrElqBbFyZRnAVtjtPg3j+c9byDWlznfIgY0oLQZQ6QJLiDt4VbUjf1i69TfmfPyEaASrAFJhdyyQoCmlSnQjEX4DeBcVcrRuCS1lQomytdJygyVhbbm6g2etyAhL/sY6U1dV7Vmsg7StvQZ5vTk2HgQWTrFIcsT68BxrI7+2pNBaWPHT1AhlN9pUwo/a9zrgX749UXLXRpcNg3N9d51k9pJMzmGOu/i36AJ/2luyb+SXKzfyun/q2g5rYVD1vvY+1gYLmR/GBTgFtPHjh9FTNFr5oGz4v0BMxrG3xqk++8g5S4KcL54uJrOUFaxbV5KOv6tvw+y77EB14ffNH7UrCsyVAgAA",
+          "base64_string": "H4sIAAAAAAAAA32STWvDMAyG7/sZOqcjyb5KbmVdYbD00AY2GCU4ibp6Texgy4EQ9t8nL21pD93NlqxXj/R6gGwFSXT7EEBpUBBWuSBIIA7jcBJGk7soi8PkHgKoBAmLlMsKEn5doS2NbElqBYlydR3ATtjdXxrS5XtbcE2tyz1yYCtqiwE0usIakgFeVevIH9au+MaSj58QT2ETQCbs3gugqaVKdScRfgJYigY52vaElnKhRN1babnBmrC1XD3As1ZkhCV/Y525a5r+LDZA1rdeg7zeG3YeBFZOsUh6xPrwHIWRXztSaC1s+GlmhLJbbRrhRx17HfAv354ouWun647BuX64TrJ4SWfnMMdd/Ft0gT8fLflr5Jcrt/K6f+raDlthUI2+jj62BitZHsYFOAW08eNH8VM83fig7Pi/QELGsbfGqTH7yDlLgpwvnq9mi4wVrCsaScffNbZh9n1+oLrw++YXxIRTuJUCAAA=",
           "encoding": null,
           "string": ""
         },
@@ -358,7 +287,7 @@
             "application/json"
           ],
           "Date": [
-            "Fri, 24 Jan 2020 19:35:02 GMT"
+            "Fri, 31 Jan 2020 20:41:24 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
