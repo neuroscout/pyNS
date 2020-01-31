@@ -206,7 +206,7 @@ class Analyses(Base):
         run_id = [r['id'] for r in run_models]
         # Get Predictor IDs
         public_preds = self._client.predictors.get(
-            run_id=run_id, name=predictor_names, active=False)
+            run_id=run_id, name=predictor_names, active_only=False)
 
         predictors = [p['id'] for p in public_preds]
 
