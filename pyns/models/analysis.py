@@ -187,8 +187,9 @@ class Analyses(Base):
             if len(dataset['tasks']) > 1:
                 raise ValueError(
                     "No task specified, but dataset has more than one task")
-            task = dataset['tasks'][0]['name']
-            task_id = task['id']
+            res = dataset['tasks'][0]
+            task = res['name']
+            task_id = res['id']
 
         # Get Run IDs
         run_models = self._client.runs.get(
@@ -204,12 +205,18 @@ class Analyses(Base):
 
         run_id = [r['id'] for r in run_models]
         # Get Predictor IDs
-        predictors = [p['id'] for p in self._client.predictors.get(
-            run_id=run_id, name=predictor_names)]
+        public_preds = self._client.predictors.get(
+            run_id=run_id, name=predictor_names, active_only=False)
 
-        # Get Predictor IDs
-        predictors += [p['id'] for p in self._client.user.get_predictors(
-            run_id=run_id, name=predictor_names)]
+        predictors = [p['id'] for p in public_preds]
+
+        # If not all predictors found, search in user private predictors
+        private_preds = set(predictor_names) - \
+            set([p['name'] for p in public_preds])
+        if private_preds:
+            # Get Predictor IDs
+            predictors += [p['id'] for p in self._client.user.get_predictors(
+                run_id=run_id, name=private_preds)]
 
         if len(predictors) != len(predictor_names):
             raise ValueError(
