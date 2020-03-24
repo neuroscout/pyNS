@@ -321,10 +321,18 @@ class Analyses(Base):
         :param int n_subjects: Number of subjects in analysis.
         :return: client response object
         """
+
+        def _ts_first(paths):
+            tmaps = [t for t in paths if 'stat-t' in t]
+            for t in tmaps:
+                paths.remove(t)
+
+            return tmaps + group_paths
+
         # Do group, then subject level
         if group_paths is not None:
             print("Uploading group images")
-            for path in tqdm.tqdm(group_paths):
+            for path in tqdm.tqdm(_ts_first(group_paths)):
                 files = {'image_file': open(path, 'rb')}
                 req = self.post(
                     id=id, sub_route='upload', files=files, level='GROUP',
@@ -335,7 +343,7 @@ class Analyses(Base):
 
         if subject_paths is not None:
             print("Uploading subject images")
-            for path in tqdm.tqdm(subject_paths):
+            for path in tqdm.tqdm(_ts_first(subject_paths)):
                 files = {'image_file': open(path, 'rb')}
                 req = self.post(
                     id=id, sub_route='upload', files=files, level='SUBJECT',
