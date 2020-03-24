@@ -228,7 +228,8 @@ class Analyses(Base):
         model = build_model(
             name, predictor_names, task,
             subject=subject, run=run, session=session,
-            hrf_variables=hrf_variables, transformations=transformations,
+            hrf_variables=hrf_variables,
+            transformations=transformations.copy(),
             contrasts=contrasts, dummy_contrasts=dummy_contrasts
             )
 
