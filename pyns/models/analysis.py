@@ -17,8 +17,7 @@ class Analysis:
                         'model', 'predictors', 'private', 'runs']
 
     _aliased_methods_ = ['delete', 'bundle', 'compile', 'generate_report',
-                         'get_report', 'get_report_status',
-                         'upload_neurovault', 'get_uploads',
+                         'get_report', 'upload_neurovault', 'get_uploads',
                          'plot_report']
 
     def __init__(self, *, analyses, name, dataset_id, **kwargs):
@@ -225,11 +224,13 @@ class Analyses(Base):
                 "specified runs.")
 
         # Build model
+        if transformations:
+            transformations = transformations.copy()
         model = build_model(
             name, predictor_names, task,
             subject=subject, run=run, session=session,
             hrf_variables=hrf_variables,
-            transformations=transformations.copy(),
+            transformations=transformations,
             contrasts=contrasts, dummy_contrasts=dummy_contrasts
             )
 
