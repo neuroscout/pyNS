@@ -17,7 +17,8 @@ class Analysis:
                         'model', 'predictors', 'private', 'runs']
 
     _aliased_methods_ = ['delete', 'bundle', 'compile', 'generate_report',
-                         'get_report', 'upload_neurovault', 'get_uploads',
+                         'get_report', 'get_report_status',
+                         'upload_neurovault', 'get_uploads',
                          'plot_report']
 
     def __init__(self, *, analyses, name, dataset_id, **kwargs):
@@ -267,6 +268,21 @@ class Analyses(Base):
         :return: client response object
         """
         return self.get(id=id, sub_route='report', run_id=run_id)
+
+    def get_report_status(self, id, run_id=None):
+        """ Get status of reports for analysis
+        :param str id: Analysis hash_id.
+        :param int run_id: Optional run_id to constrain report.
+        :return: client response object
+        """
+
+        try:
+            rep = self.get(id=id, sub_route='report', run_id=run_id)
+            status = rep['status']
+        except OSError:
+            status = None
+
+        return status
 
     def plot_report(self, id, run_id=None, plot_type='design_matrix_plot',
                     loop_wait=True):
