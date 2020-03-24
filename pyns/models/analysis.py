@@ -18,7 +18,7 @@ class Analysis:
 
     _aliased_methods_ = ['delete', 'bundle', 'compile', 'generate_report',
                          'get_report', 'upload_neurovault', 'get_uploads',
-                         'plot_report']
+                         'plot_report', 'get_design_matrix']
 
     def __init__(self, *, analyses, name, dataset_id, **kwargs):
         """ Initate a new Analysis object. Typically, this is done by
