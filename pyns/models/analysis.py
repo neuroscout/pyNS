@@ -224,10 +224,13 @@ class Analyses(Base):
                 "specified runs.")
 
         # Build model
+        if transformations:
+            transformations = transformations.copy()
         model = build_model(
             name, predictor_names, task,
             subject=subject, run=run, session=session,
-            hrf_variables=hrf_variables, transformations=transformations,
+            hrf_variables=hrf_variables,
+            transformations=transformations,
             contrasts=contrasts, dummy_contrasts=dummy_contrasts
             )
 
@@ -260,13 +263,33 @@ class Analyses(Base):
         """
         return self.post(id=id, sub_route='report', params=dict(run_id=run_id))
 
-    def get_report(self, id, run_id=None):
+    def get_report(self, id, run_id=None, loop_wait=True):
         """ Get generated reports for analysis
         :param str id: Analysis hash_id.
         :param int run_id: Optional run_id to constrain report.
         :return: client response object
         """
-        return self.get(id=id, sub_route='report', run_id=run_id)
+        report = self.get(id=id, sub_route='report', run_id=run_id)
+        if loop_wait:
+            while report['status'] == 'PENDING':
+                time.sleep(2)
+                report = self.get_report(id=id, run_id=run_id)
+
+        return report
+
+    def get_design_matrix(self, id, run_id=None,
+                          loop_wait=True):
+        """ Get report design_matrix
+        :param str id: Analysis hash_id
+        :param int run_id: Optional run_id to constrain report.
+        :param boolean loop_wait: Wait for result from report
+        """
+        report = self.get_report(id=id, run_id=run_id, loop_wait=loop_wait)
+
+        if report['status'] == 'OK':
+            return report['result']['design_matrix']
+        else:
+            return report['status']
 
     def plot_report(self, id, run_id=None, plot_type='design_matrix_plot',
                     loop_wait=True):
@@ -279,12 +302,7 @@ class Analyses(Base):
         if altair is None:
             raise ImportError("Altair is required to plot_reports")
 
-        report = self.get_report(id=id, run_id=run_id)
-
-        if loop_wait:
-            while report['status'] == 'PENDING':
-                time.sleep(2)
-                report = self.get_report(id=id, run_id=run_id)
+        report = self.get_report(id=id, run_id=run_id, loop_wait=loop_wait)
 
         if report['status'] == 'OK':
             for p in report['result'][plot_type]:
@@ -304,10 +322,18 @@ class Analyses(Base):
         :param int n_subjects: Number of subjects in analysis.
         :return: client response object
         """
+
+        def _ts_first(paths):
+            tmaps = [t for t in paths if 'stat-t' in t]
+            for t in tmaps:
+                paths.remove(t)
+
+            return tmaps + group_paths
+
         # Do group, then subject level
         if group_paths is not None:
             print("Uploading group images")
-            for path in tqdm.tqdm(group_paths):
+            for path in tqdm.tqdm(_ts_first(group_paths)):
                 files = {'image_file': open(path, 'rb')}
                 req = self.post(
                     id=id, sub_route='upload', files=files, level='GROUP',
@@ -318,7 +344,7 @@ class Analyses(Base):
 
         if subject_paths is not None:
             print("Uploading subject images")
-            for path in tqdm.tqdm(subject_paths):
+            for path in tqdm.tqdm(_ts_first(subject_paths)):
                 files = {'image_file': open(path, 'rb')}
                 req = self.post(
                     id=id, sub_route='upload', files=files, level='SUBJECT',
