@@ -261,28 +261,33 @@ class Analyses(Base):
         """
         return self.post(id=id, sub_route='report', params=dict(run_id=run_id))
 
-    def get_report(self, id, run_id=None):
+    def get_report(self, id, run_id=None, loop_wait=True):
         """ Get generated reports for analysis
         :param str id: Analysis hash_id.
         :param int run_id: Optional run_id to constrain report.
         :return: client response object
         """
-        return self.get(id=id, sub_route='report', run_id=run_id)
+        report = self.get(id=id, sub_route='report', run_id=run_id)
+        if loop_wait:
+            while report['status'] == 'PENDING':
+                time.sleep(2)
+                report = self.get_report(id=id, run_id=run_id)
 
-    def get_report_status(self, id, run_id=None):
-        """ Get status of reports for analysis
-        :param str id: Analysis hash_id.
+        return report
+
+    def get_design_matrix(self, id, run_id=None,
+                          loop_wait=True):
+        """ Get report design_matrix
+        :param str id: Analysis hash_id
         :param int run_id: Optional run_id to constrain report.
-        :return: client response object
+        :param boolean loop_wait: Wait for result from report
         """
+        report = self.get_report(id=id, run_id=run_id, loop_wait=loop_wait)
 
-        try:
-            rep = self.get(id=id, sub_route='report', run_id=run_id)
-            status = rep['status']
-        except OSError:
-            status = None
-
-        return status
+        if report['status'] == 'OK':
+            return report['result']['design_matrix']
+        else:
+            return report['status']
 
     def plot_report(self, id, run_id=None, plot_type='design_matrix_plot',
                     loop_wait=True):
@@ -295,12 +300,7 @@ class Analyses(Base):
         if altair is None:
             raise ImportError("Altair is required to plot_reports")
 
-        report = self.get_report(id=id, run_id=run_id)
-
-        if loop_wait:
-            while report['status'] == 'PENDING':
-                time.sleep(2)
-                report = self.get_report(id=id, run_id=run_id)
+        report = self.get_report(id=id, run_id=run_id, loop_wait=loop_wait)
 
         if report['status'] == 'OK':
             for p in report['result'][plot_type]:
