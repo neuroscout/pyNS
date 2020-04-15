@@ -248,17 +248,18 @@ class Analyses(Base):
         """
         return Analysis(analyses=self, **self.get(id=id))
 
-    def compile(self, id):
+    def compile(self, id,  build=True):
         """ Submit analysis for complilation
         :param str id: Analysis hash_id.
+        :param bool build: Build pybids object and verify compilation
         :return: client response object
         """
-        return self.post(id=id, sub_route='compile')
+        return self.post(id=id, sub_route='compile', params=dict(build=build))
 
     def generate_report(self, id, run_id=None):
         """ Submit analysis for report generation
         :param str id: Analysis hash_id.
-        :param bool run_id: Optional run_id to constrain report.
+        :param int run_id: Optional run_id to constrain report.
         :return: client response object
         """
         return self.post(id=id, sub_route='report', params=dict(run_id=run_id))
