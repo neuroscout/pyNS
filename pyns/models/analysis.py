@@ -290,7 +290,7 @@ class Analyses(Base):
         if report['status'] == 'OK':
             return report['result']['design_matrix']
         else:
-            return report['status']
+            return None
 
     def plot_report(self, id, run_id=None, plot_type='design_matrix_plot',
                     loop_wait=True):
@@ -309,7 +309,7 @@ class Analyses(Base):
             for p in report['result'][plot_type]:
                 altair.display.vegalite(p)
 
-        return report['status']
+        return None
 
     def upload_neurovault(self, id, validation_hash, subject_paths=None,
                           group_paths=None, collection_id=None, force=False,
