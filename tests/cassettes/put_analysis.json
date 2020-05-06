@@ -1,11 +1,11 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2020-04-15T23:32:26",
+      "recorded_at": "2020-05-06T22:07:02",
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "{\"TR\": 1.5, \"created_at\": \"2020-04-15T23:3\", \"dataset_id\": 5, \"description\": \"new_description\", \"hash_id\": \"Aopkm\", \"locked\": false, \"model\": {\"Input\": {\"Subject\": [\"28\"], \"Task\": \"MerlinMovie\"}, \"Name\": \"pytest_analysis\", \"Steps\": [{\"Contrasts\": [], \"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Run\", \"Model\": {\"X\": [\"brightness\"]}, \"Transformations\": []}, {\"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Dataset\"}]}, \"modified_at\": \"2020-04-15T23:3\", \"name\": \"pytest_analysis\", \"predictions\": \"\", \"predictors\": [12728], \"private\": true, \"runs\": [126], \"status\": \"DRAFT\", \"task_name\": \"MerlinMovie\"}"
+          "string": "{\"TR\": 1.5, \"created_at\": \"2020-05-06T22:0\", \"dataset_id\": 5, \"description\": \"new_description\", \"hash_id\": \"MpDKy\", \"locked\": false, \"model\": {\"Input\": {\"Subject\": [\"28\"], \"Task\": \"MerlinMovie\"}, \"Name\": \"pytest_analysis\", \"Steps\": [{\"Contrasts\": [], \"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Run\", \"Model\": {\"X\": [\"brightness\"]}, \"Transformations\": []}, {\"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Dataset\"}]}, \"modified_at\": \"2020-05-06T22:0\", \"name\": \"pytest_analysis\", \"predictions\": \"\", \"predictors\": [12728], \"private\": true, \"runs\": [126], \"status\": \"DRAFT\", \"task_name\": \"MerlinMovie\"}"
         },
         "headers": {
           "Accept": [
@@ -15,7 +15,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODc1OTc4ODgsImlhdCI6MTU4Njk5MzA4OCwibmJmIjoxNTg2OTkzMDg4LCJpZGVudGl0eSI6MX0.dqqj3hteYOrE6zGiNRjCMS0cb1JPUiprn3arAOg41JM"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODk0MDcxMDMsImlhdCI6MTU4ODgwMjMwMywibmJmIjoxNTg4ODAyMzAzLCJpZGVudGl0eSI6MX0.FyFB7dp6U1VGTbs4BIb4b-IZ0XHy8YkZ7RXcFeG5Ffo"
           ],
           "Connection": [
             "keep-alive"
@@ -27,15 +27,15 @@
             "application/json"
           ],
           "User-Agent": [
-            "python-requests/2.21.0"
+            "python-requests/2.22.0"
           ]
         },
         "method": "PUT",
-        "uri": "https://neuroscout.org/api/analyses/Aopkm"
+        "uri": "https://neuroscout.org/api/analyses/MpDKy"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA41SwW7CMAy97zN8LhOUsaHe0NCkSWMH6GHShKrQmpG1TarYYaoq/n0OhQkOSLs5z8/Pz3Y6SJeQjO4nEeQOFWORKYYE4mE8HAwfBqNJGo+TMURQKFaEnOkCEmEXSLnTDWtrhG7wJ7tEItgp2h25MLNNWQtS2bxEAbaqIoygtgVWkHTwahrPIVj5zTfmEn5CPIV1BKmiUgQW6CptFnavEQ4RvKsaBW1aRuJMGVW1pEkarBgbkuoOnq1hp4jDS3Tmvq7bC6yDtG2CBge9N9wHI7D0wffibOsj+Ng4/bVjg0SwFmrqlKGtdbUKUx7VD1H3T/15v0A4BCWZXm/17W2bW0M2yqHpr2B8VQngsND5yQ/AH2Bd8DeKn+LpOoB6L9eFhJ2X5Ttv+uyj5IgV+1A8X85eUlEgv6k1n/9C30a8l9nJ1dVB7n4BaVKjUkMCAAA=",
+          "base64_string": "H4sIAAAAAAAAA41Sy2rDQAy89zN0doprSBp8KzWF0qaHxIdCCUaxlWYbe21W2hRj8u/V5lHSQ6A37Wg0Gkk7QD6H9O52HEHpCIWqAgVSSOIkHsXjUTzJkySNIYIKBZmkMBWkyq6IS2c6Ma1VuqXv4hKJYIO8OXBh1mUvvSJ1W25JgTXWTBE0bUU1pAM8285LCBZ+9UWlhh+QTGEZQY68DQLkamNn7c4Q7CN4w4YU7XohlgIt1j0b1gYLoY61eoDH1opDlvBSncw3TX+BDZD3XdCQoPdKu2AE5j74np1tvQcfK2c+N2KJGZZKzR1aXreuwTDlQX0fDf/Uz44LhH1Q0unN2lzftr02ZIeO7PEK1te1Ao4qU578APwCrQv+7pL7ZLoMoNnpdSEV53X5zttjdqI5FhQfirP5w1OuCuxXjZHzXzi2Ue/b4uTqz0FufgBWrvWiQwIAAA==",
           "encoding": null,
           "string": ""
         },
@@ -53,7 +53,7 @@
             "application/json"
           ],
           "Date": [
-            "Wed, 15 Apr 2020 23:32:26 GMT"
+            "Wed, 06 May 2020 22:07:02 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -81,7 +81,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://neuroscout.org/api/analyses/Aopkm"
+        "url": "https://neuroscout.org/api/analyses/MpDKy"
       }
     }
   ],

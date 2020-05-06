@@ -151,7 +151,7 @@ def test_id_actions(recorder, neuroscout, analysis):
 
     with recorder.use_cassette('id_analysis'):
         # Test full
-        resp = neuroscout.analyses.full(id=analysis_id)
+        resp = neuroscout.analyses.get_full(id=analysis_id)
         assert 'runs' in resp
 
         # Test get_report
@@ -187,7 +187,7 @@ def test_id_actions(recorder, neuroscout, analysis):
         assert resp['status'] == 'PENDING'
 
         # Test status
-        resp = neuroscout.analyses.status(id=analysis_id)
+        resp = neuroscout.analyses.get_status(id=analysis_id)
         assert 'status' in resp
 
         # Wait until compiled
@@ -196,11 +196,11 @@ def test_id_actions(recorder, neuroscout, analysis):
             resp = neuroscout.analyses.status(id=analysis_id)
 
         # Test resources
-        resp = neuroscout.analyses.resources(id=analysis_id)
+        resp = neuroscout.analyses.get_resources(id=analysis_id)
         assert 'dataset_address' in resp
 
         # Test bundle
-        resp = neuroscout.analyses.bundle(id=analysis_id)
+        resp = neuroscout.analyses.get_bundle(id=analysis_id)
 
         # Test clone
         resp = neuroscout.analyses.clone(id=analysis_id)

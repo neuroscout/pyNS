@@ -92,15 +92,15 @@ class Analysis:
 
     def get_status(self):
         """ Get compilation status """
-        return self._getter_wrapper('status')
+        return self._getter_wrapper('get_status')
 
     def get_resources(self):
         """ Get analysis resources """
-        return self._getter_wrapper('resources')
+        return self._getter_wrapper('get_resources')
 
     def get_full(self):
         """ Get full analysis representation """
-        return self._getter_wrapper('full')
+        return self._getter_wrapper('get_full')
 
     def clone(self, dataset_id=None):
         """ Clone current analysis, and return a new Analysis object
