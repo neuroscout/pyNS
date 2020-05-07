@@ -193,7 +193,7 @@ def test_id_actions(recorder, neuroscout, analysis):
         # Wait until compiled
         while(resp['status'] == 'PENDING'):
             sleep(1)
-            resp = neuroscout.analyses.status(id=analysis_id)
+            resp = neuroscout.analyses.get_status(id=analysis_id)
 
         # Test resources
         resp = neuroscout.analyses.get_resources(id=analysis_id)

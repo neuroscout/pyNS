@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2020-05-06T22:07:02",
+      "recorded_at": "2020-05-06T23:31:00",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -15,7 +15,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODk0MDcxMDMsImlhdCI6MTU4ODgwMjMwMywibmJmIjoxNTg4ODAyMzAzLCJpZGVudGl0eSI6MX0.FyFB7dp6U1VGTbs4BIb4b-IZ0XHy8YkZ7RXcFeG5Ffo"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODk0MTE5NjgsImlhdCI6MTU4ODgwNzE2OCwibmJmIjoxNTg4ODA3MTY4LCJpZGVudGl0eSI6MX0.aT34ctTgBjBh_qGx9RkYo8LsFQjd5v1_TTTwUkTm-Xo"
           ],
           "Connection": [
             "keep-alive"
@@ -25,11 +25,11 @@
           ]
         },
         "method": "GET",
-        "uri": "https://neuroscout.org/api/analyses/MpDKy"
+        "uri": "https://neuroscout.org/api/analyses/MPqQG"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA42RQWvDMAyF7/sZOqcjM7QruY2Fwdi6Q5vDYJSgJurqNXGMLRdC6H+f3LRjOxR2s5+sz09PAxRLyO5upwlUjpCpLpEhA5WqdJJOJ+msUCpLIYEaGT1xqWvI5HVNvnLasu4MZCY0TQI79LtTGRY2f+mlp+mqPYmwxcZTAm1XUwPZAM/GBo6HVdh8USXHD1BzWCdQoN9HALlGm0V30ATHBN6wJVFtz+S5RINN77WXD1ZM1kv3AI+dYYee4004eWjb/pc2QNHbyODIe6VDNALLYASyuNh6jz42Tn/u2JD3sJanhUPjt51rMY56oh+T4Z/8fMwMjpEk0+utvh6wuTakRUdmDH4M2jqqdXX2A/AjdC76u1P3ar6Ooj7IQiFjFyR8F8xYnUnNM3KIzfny4akQgg+bVvNl/eM34n1fnl39WcjNN8tBHlk2AgAA",
+          "base64_string": "H4sIAAAAAAAAA42RQU/CQBCF7/6MORdTSkDSm5FoTMQo9GBiSDO0g6xst3V3lqRp+O/OUjB6IPG2+2bn2zdvOsgWkA6vxxEUlpCpzJEhhSRO4kE8HsSTLBmlI4igREZHnKsSUnldkiusaljVBlLjtY5gi257LMP85ev1QXp0XexIhA1qRxFUdUka0g4eTeM5HJZ+/UmFHN8hmcIqggzdLgDIamXm9V4RHCJ4xopEbVomxzka1K1TTj5YMjVOuju4qw1bdBxuwpn5qmp/aR1kbRMYHHhPtA9GYOGNQOZnW2/Bx9qqjy0bcg5W8jSzaNymthWGUY/0Q9T9kz/rM4NDIMn0aqMuB2wuDdmgJdMH3wfdWCpVcfID8CPUNvgbJjfJdBVEtZeFQsrWS/jWm746kZpjZB+aZ4vb+0wIzq8rxef199+I911+cvVnIVffDZ6/ejYCAAA=",
           "encoding": null,
           "string": ""
         },
@@ -47,7 +47,7 @@
             "application/json"
           ],
           "Date": [
-            "Wed, 06 May 2020 22:07:02 GMT"
+            "Wed, 06 May 2020 23:31:00 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -75,7 +75,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://neuroscout.org/api/analyses/MpDKy"
+        "url": "https://neuroscout.org/api/analyses/MPqQG"
       }
     }
   ],
