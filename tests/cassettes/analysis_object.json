@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2020-04-15T23:24:48",
+      "recorded_at": "2020-05-07T17:42:10",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -15,13 +15,13 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODc1OTc4ODgsImlhdCI6MTU4Njk5MzA4OCwibmJmIjoxNTg2OTkzMDg4LCJpZGVudGl0eSI6MX0.dqqj3hteYOrE6zGiNRjCMS0cb1JPUiprn3arAOg41JM"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODk0NzgxMzAsImlhdCI6MTU4ODg3MzMzMCwibmJmIjoxNTg4ODczMzMwLCJpZGVudGl0eSI6MX0.IMSWGp4eutrnISnNiDRSkqUUUrbKJQvB0wmYn63DSKU"
           ],
           "Connection": [
             "keep-alive"
           ],
           "User-Agent": [
-            "python-requests/2.21.0"
+            "python-requests/2.22.0"
           ]
         },
         "method": "GET",
@@ -47,7 +47,7 @@
             "application/json"
           ],
           "Date": [
-            "Wed, 15 Apr 2020 23:24:48 GMT"
+            "Thu, 07 May 2020 17:42:10 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -79,7 +79,7 @@
       }
     },
     {
-      "recorded_at": "2020-04-15T23:24:48",
+      "recorded_at": "2020-05-07T17:42:10",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -93,21 +93,21 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODc1OTc4ODgsImlhdCI6MTU4Njk5MzA4OCwibmJmIjoxNTg2OTkzMDg4LCJpZGVudGl0eSI6MX0.dqqj3hteYOrE6zGiNRjCMS0cb1JPUiprn3arAOg41JM"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODk0NzgxMzAsImlhdCI6MTU4ODg3MzMzMCwibmJmIjoxNTg4ODczMzMwLCJpZGVudGl0eSI6MX0.IMSWGp4eutrnISnNiDRSkqUUUrbKJQvB0wmYn63DSKU"
           ],
           "Connection": [
             "keep-alive"
           ],
           "User-Agent": [
-            "python-requests/2.21.0"
+            "python-requests/2.22.0"
           ]
         },
         "method": "GET",
-        "uri": "https://neuroscout.org/api/runs?dataset_id=5&task_id=4&subject=28"
+        "uri": "https://neuroscout.org/api/runs?dataset_id=9&task_id=8&subject=rid000001"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA4uuVkpMLizNLM4syczPU7LKK83J0VFKSSxJLE4tic9MUbIyBXJLixIh0oamJsZ6QBGQhKGRmY5SXmluUmoRTF9xanExkjHFpUlZqcklSlZKRhZKOkpAM7OVrExqY7kAq2+/U3YAAAA=",
+          "base64_string": "H4sIAAAAAAAAA6XQTQrCMBAF4L3HmHUoSZMmba8iImmbRTSmmB834t2dKhJxU6Sze8PwPpj9HfR4zTbaZGcPPXAhb7MDApNOOpp0tBP0HcYc9PuklU1FCSz7mjcEfL4MJmAgEE2MrxufncOYh5MZE7YGO9FlGBZj7RlbHuSXFqxeoRnltNhtscVWmyu1YneirpoPrQrNt9NijeZfH5eFZn/Sh90TiTRSOu8BAAA=",
           "encoding": null,
           "string": ""
         },
@@ -125,7 +125,7 @@
             "application/json"
           ],
           "Date": [
-            "Wed, 15 Apr 2020 23:24:48 GMT"
+            "Thu, 07 May 2020 17:42:10 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -153,11 +153,11 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://neuroscout.org/api/runs?dataset_id=5&task_id=4&subject=28"
+        "url": "https://neuroscout.org/api/runs?dataset_id=9&task_id=8&subject=rid000001"
       }
     },
     {
-      "recorded_at": "2020-04-15T23:24:48",
+      "recorded_at": "2020-05-07T17:42:10",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -171,21 +171,21 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODc1OTc4ODgsImlhdCI6MTU4Njk5MzA4OCwibmJmIjoxNTg2OTkzMDg4LCJpZGVudGl0eSI6MX0.dqqj3hteYOrE6zGiNRjCMS0cb1JPUiprn3arAOg41JM"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODk0NzgxMzAsImlhdCI6MTU4ODg3MzMzMCwibmJmIjoxNTg4ODczMzMwLCJpZGVudGl0eSI6MX0.IMSWGp4eutrnISnNiDRSkqUUUrbKJQvB0wmYn63DSKU"
           ],
           "Connection": [
             "keep-alive"
           ],
           "User-Agent": [
-            "python-requests/2.21.0"
+            "python-requests/2.22.0"
           ]
         },
         "method": "GET",
-        "uri": "https://neuroscout.org/api/predictors?run_id=126&name=brightness&active_only=False"
+        "uri": "https://neuroscout.org/api/predictors?run_id=235%2C238%2C237%2C236&name=speech&active_only=False"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA52PTY7CMAyF93OKyOswSlvKT3YzEqdAqPI0LkRKk8pxEQhxd4IEHGB2lt/z9/z2N3AomEk678C2Ghzlnv0kPkWw8HMmxiOpMI8+puzlqtKg5ERq8hcKGTTQRRh7IdcNhDIzgb1Bz2UuK5QCqU21WZh2YbaqNna5tu32u1m1VbWE/+cl7iKOJQx+2R9PEinn3Vsqtmedqlk1RsOYHIaCAhvnEO4vrV7XGw0vxt+HUU4n9ufyPdgBQyYNOc3cP12fqnA/fD0Ab45OvjsBAAA=",
+          "base64_string": "H4sIAAAAAAAAA52PTWrDMBCF9z2FmFUDSpEdGSfalpwg3YViptKYCmTJjOSQNOTuVfp3gO6GeW/eN+94BYcFM5XBOzA7CY6yZT8XnyIYOMxE9l08vvmI7D/ISZGiSCzSOK5AAp0Loy3khpGwLExgrmC5znWFpSa0qtmuVbduN0I1Riuj+6e+6fVGwz9hiYeIUyXBc5rmQOeXKux/teq7N9nqtuslTMlh8OUCJi4h3L61pt2pTsJPSP6i1rOZ/an+DWbEkElCTgvbu+OvJNxeHz4BmstsXjIBAAA=",
           "encoding": null,
           "string": ""
         },
@@ -203,7 +203,7 @@
             "application/json"
           ],
           "Date": [
-            "Wed, 15 Apr 2020 23:24:48 GMT"
+            "Thu, 07 May 2020 17:42:10 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -231,15 +231,15 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://neuroscout.org/api/predictors?run_id=126&name=brightness&active_only=False"
+        "url": "https://neuroscout.org/api/predictors?run_id=235%2C238%2C237%2C236&name=speech&active_only=False"
       }
     },
     {
-      "recorded_at": "2020-04-15T23:24:48",
+      "recorded_at": "2020-05-07T17:42:10",
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "{\"dataset_id\": 5, \"name\": \"pytest_analysis\", \"model\": {\"Steps\": [{\"DummyContrasts\": {\"Type\": \"t\"}, \"Contrasts\": [], \"Level\": \"Run\", \"Model\": {\"X\": [\"brightness\"]}, \"Transformations\": [{\"Input\": [\"brightness\"], \"Name\": \"Convolve\"}]}, {\"DummyContrasts\": {\"Type\": \"FEMA\"}, \"Level\": \"Subject\"}, {\"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Dataset\"}], \"Input\": {\"Subject\": [\"28\"], \"Task\": \"MerlinMovie\"}, \"Name\": \"pytest_analysis\"}, \"predictors\": [12728], \"runs\": [126]}"
+          "string": "{\"dataset_id\": 9, \"name\": \"pytest_analysis\", \"model\": {\"Steps\": [{\"DummyContrasts\": {\"Type\": \"t\"}, \"Contrasts\": [], \"Level\": \"Run\", \"Model\": {\"X\": [\"speech\"]}, \"Transformations\": [{\"Input\": [\"speech\"], \"Name\": \"Convolve\"}]}, {\"DummyContrasts\": {\"Type\": \"FEMA\"}, \"Level\": \"Subject\"}, {\"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Dataset\"}], \"Input\": {\"Subject\": [\"rid000001\"], \"Task\": \"life\", \"Run\": [1, 2, 3, 4]}, \"Name\": \"pytest_analysis\"}, \"predictors\": [12905], \"runs\": [235, 238, 237, 236]}"
         },
         "headers": {
           "Accept": [
@@ -249,19 +249,19 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODc1OTc4ODgsImlhdCI6MTU4Njk5MzA4OCwibmJmIjoxNTg2OTkzMDg4LCJpZGVudGl0eSI6MX0.dqqj3hteYOrE6zGiNRjCMS0cb1JPUiprn3arAOg41JM"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODk0NzgxMzAsImlhdCI6MTU4ODg3MzMzMCwibmJmIjoxNTg4ODczMzMwLCJpZGVudGl0eSI6MX0.IMSWGp4eutrnISnNiDRSkqUUUrbKJQvB0wmYn63DSKU"
           ],
           "Connection": [
             "keep-alive"
           ],
           "Content-Length": [
-            "465"
+            "493"
           ],
           "Content-Type": [
             "application/json"
           ],
           "User-Agent": [
-            "python-requests/2.21.0"
+            "python-requests/2.22.0"
           ]
         },
         "method": "POST",
@@ -269,7 +269,7 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA32SwW7CMAyG73sMn8tUurGh3tA6pEnrDtDDpAlVoTWQ0SZV4nSqqr37HAoIDuyW2PHvz/7TQ7aAeHw/CaAwKAjLXBDEEIVROAofR+NJFj3EEQRQChIWKZclxPy6RFsY2ZDUCmLlqiqAnbC7Qxp+wi0mXFPpYo8c2IjKYgC1LrGCuIc31Tjyh6Vbf2PBxy+IprAKIBN2zwIpmkqqVLcS4TeAD1EjR5uO0FIulKg6Ky03WBI2lqt7eNGKjLDkb6yTuLruLmI9ZF3jNcjrvWPrQWDhFIukJ6xPz7E2crsjhdbCip9mRii70aYWftSh1xH/+u2Zkru2umoZnOv72yTz13R2CXPaxb9FV/jJYMmhkV+u3Mjb/qlbO2yEQTX4OvjYGCxlcRwX4BzQxo8/jp6j6coHZcv/BWIyjr01Tg3ZJ85ZEuR8cbKYzTNWsG5dSzr9rqENs+/zI9WV33d/OUrUjZUCAAA=",
+          "base64_string": "H4sIAAAAAAAAA31STWvCQBC992fMeS1JNLXNTapCofagORREwppM6tbNB/uREkL/e2cTtfZgAwuZ2Xlv3szbDuI1RMF9yCBVyA1mCTcQQeAF3sgLR9409qfRBBhk3HCNJhEZRE8Uok6VqI2oSohKKyWDA9eH/hq+vI+FJIys0iNSIudSI4OiylBC1MFLWVvjftaW0FufBWzMJjsGG7v/xJSutqBE5rnPB8rHXB+JV4oc4ZvBGy+Qwro1qE3CSy5bLTQ13BisNaE7eK5Ko7g2LiKCuS2K9irXQdzWjsM4vldsnLBeDoPVWea706FrxPQAOyqLFS91XqmCu7GHPqdRfusu6qhbU8mGBBO2u61guVjNrkWcd/Av6I/s+WBN38gtWeTito/lrd3VXGE5+Dv4WSvMRHoaFeCSqJQb3Q+evHDnkqKhdwORUZY8VrZfTDAOWTB+pDOl80B12nBjHdF8PVvGxKbtvhDm/OKGljTHMTkpHMy++wEL5IdcogIAAA==",
           "encoding": null,
           "string": ""
         },
@@ -287,7 +287,7 @@
             "application/json"
           ],
           "Date": [
-            "Wed, 15 Apr 2020 23:24:48 GMT"
+            "Thu, 07 May 2020 17:42:10 GMT"
           ],
           "Server": [
             "nginx/1.15.6"

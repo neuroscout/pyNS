@@ -12,7 +12,7 @@ setup(name='pyns',
       url='http://github.com/neuroscout/pyns',
       author='Alejandro de la Vega',
       author_email='aleph4@gmail.com',
-      install_requires=['requests>=2.21'],
+      install_requires=['requests>=2.21', 'pyjwt>=1.7.1', 'tqdm>=4.30.0'],
       license='MIT',
       packages=PACKAGES,
       classifiers=[

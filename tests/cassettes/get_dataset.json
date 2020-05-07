@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2020-04-16T00:31:41",
+      "recorded_at": "2020-05-07T17:43:09",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -15,13 +15,13 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODc1OTc4ODgsImlhdCI6MTU4Njk5MzA4OCwibmJmIjoxNTg2OTkzMDg4LCJpZGVudGl0eSI6MX0.dqqj3hteYOrE6zGiNRjCMS0cb1JPUiprn3arAOg41JM"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODk0NzgxMzAsImlhdCI6MTU4ODg3MzMzMCwibmJmIjoxNTg4ODczMzMwLCJpZGVudGl0eSI6MX0.IMSWGp4eutrnISnNiDRSkqUUUrbKJQvB0wmYn63DSKU"
           ],
           "Connection": [
             "keep-alive"
           ],
           "User-Agent": [
-            "python-requests/2.21.0"
+            "python-requests/2.22.0"
           ]
         },
         "method": "GET",
@@ -47,7 +47,7 @@
             "application/json"
           ],
           "Date": [
-            "Thu, 16 Apr 2020 00:31:41 GMT"
+            "Thu, 07 May 2020 17:43:09 GMT"
           ],
           "Server": [
             "nginx/1.15.6"

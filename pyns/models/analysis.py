@@ -16,7 +16,7 @@ class Analysis:
     _mutable_fields_ = ['dataset_id', 'description', 'name',  'predictions',
                         'model', 'predictors', 'private', 'runs']
 
-    _aliased_methods_ = ['delete', 'bundle', 'compile', 'generate_report',
+    _aliased_methods_ = ['delete', 'get_bundle', 'compile', 'generate_report',
                          'get_report', 'upload_neurovault', 'get_uploads',
                          'plot_report', 'get_design_matrix']
 
@@ -92,15 +92,15 @@ class Analysis:
 
     def get_status(self):
         """ Get compilation status """
-        return self._getter_wrapper('status')
+        return self._getter_wrapper('get_status')
 
     def get_resources(self):
         """ Get analysis resources """
-        return self._getter_wrapper('resources')
+        return self._getter_wrapper('get_resources')
 
     def get_full(self):
         """ Get full analysis representation """
-        return self._getter_wrapper('full')
+        return self._getter_wrapper('get_full')
 
     def clone(self, dataset_id=None):
         """ Clone current analysis, and return a new Analysis object
@@ -137,7 +137,7 @@ class Analyses(Base):
         """
         return self._client._delete(self._base_path_, id=id)
 
-    def bundle(self, id, filename=None):
+    def get_bundle(self, id, filename=None):
         """ Get analysis bundle
         :param str id: Analysis hash_id.
         :param str, object filename: Optional filename to save bundle to
@@ -274,7 +274,7 @@ class Analyses(Base):
         if loop_wait:
             while report['status'] == 'PENDING':
                 time.sleep(2)
-                report = self.get_report(id=id, run_id=run_id)
+                report = self.get(id=id, sub_route='report', run_id=run_id)
 
         return report
 
@@ -290,7 +290,7 @@ class Analyses(Base):
         if report['status'] == 'OK':
             return report['result']['design_matrix']
         else:
-            return report['status']
+            return None
 
     def plot_report(self, id, run_id=None, plot_type='design_matrix_plot',
                     loop_wait=True):
@@ -309,7 +309,7 @@ class Analyses(Base):
             for p in report['result'][plot_type]:
                 altair.display.vegalite(p)
 
-        return report['status']
+        return None
 
     def upload_neurovault(self, id, validation_hash, subject_paths=None,
                           group_paths=None, collection_id=None, force=False,
@@ -363,7 +363,7 @@ class Analyses(Base):
         """
         return self.get(id=id, sub_route='upload')
 
-    def full(self, id):
+    def get_full(self, id):
         """ Get full analysis object (including runs and predictors)
         :param str id: Analysis hash_id.
         :return: client response object
@@ -380,14 +380,14 @@ class Analyses(Base):
         return self.post(id=id, sub_route='fill',
                          params=dict(partial=partial, dryrun=dryrun))
 
-    def resources(self, id):
+    def get_resources(self, id):
         """ Get analysis resources
         :param str id: Analysis hash_id.
         :return: client response object
         """
         return self.get(id=id, sub_route='resources')
 
-    def status(self, id):
+    def get_status(self, id):
         """ Get analysis status
         :param str id: Analysis hash_id.
         :return: client response object

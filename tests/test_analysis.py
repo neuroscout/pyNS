@@ -3,7 +3,7 @@ from time import sleep
 from requests.exceptions import HTTPError
 
 TEST_ANALYSIS = {
-  "dataset_id": 5,
+  "dataset_id": 9,
   "model": {
     "Steps": [
       {
@@ -12,10 +12,16 @@ TEST_ANALYSIS = {
         "Level": "Run",
         "Model": {
           "X": [
-            "brightness"
+            "speech"
           ]
         },
         "Transformations": []
+      },
+      {
+        "DummyContrasts": {
+          "Type": "FEMA"
+        },
+        "Level": "Subject"
       },
       {
         "DummyContrasts": {"Type": "t"},
@@ -23,17 +29,18 @@ TEST_ANALYSIS = {
       }
     ],
     "Input": {
+      "Run": [1],
       "Subject": [
-        "28"
+        "rid000001"
       ],
-      "Task": "MerlinMovie"
+      "Task": "life"
     },
     "Name": "pytest_analysis"
   },
   "name": "pytest_analysis",
-  "predictors": [12728],
-  "runs": [126],
-  "task_name": "MerlinMovie",
+  "predictors": [12905],
+  "runs": [236],
+  "task_name": "life",
 }
 
 
@@ -52,11 +59,11 @@ def analysis_object(recorder, neuroscout):
     with recorder.use_cassette('analysis_object'):
         new = neuroscout.analyses.create_analysis(
             name='pytest_analysis',
-            dataset_name='SherlockMerlin',
-            task='MerlinMovie',
-            predictor_names=['brightness'],
-            hrf_variables=['brightness'],
-            subject=['28'])
+            dataset_name='Life',
+            task='life',
+            predictor_names=['speech'],
+            hrf_variables=['speech'],
+            subject=['rid000001'])
 
     return new
 
@@ -88,22 +95,19 @@ def test_analysis_object(recorder, neuroscout, analysis_object):
         resp = analysis_object.generate_report(run_id=analysis_object.runs[0])
         assert resp['status'] == 'PENDING'
 
-        # Wait until compiled
-        while(resp['status'] == 'PENDING'):
-            sleep(1)
-            resp = analysis_object.get_report(run_id=analysis_object.runs[0])
+        resp = analysis_object.get_report(run_id=analysis_object.runs[0])
 
         assert len(resp['result']['design_matrix']) == 1
 
         # compile
-        analysis_object.compile()
+        analysis_object.compile(build=False)
         assert analysis_object.get_status()['status'] != 'DRAFT'
 
         assert 'dataset_address' in analysis_object.get_resources()
         assert hasattr(analysis_object, 'dataset_address')
 
         while analysis_object.get_status()['status'] != 'PASSED':
-            sleep(1)
+            sleep(2)
 
         # clone
         new = analysis_object.clone()
@@ -151,7 +155,7 @@ def test_id_actions(recorder, neuroscout, analysis):
 
     with recorder.use_cassette('id_analysis'):
         # Test full
-        resp = neuroscout.analyses.full(id=analysis_id)
+        resp = neuroscout.analyses.get_full(id=analysis_id)
         assert 'runs' in resp
 
         # Test get_report
@@ -160,10 +164,8 @@ def test_id_actions(recorder, neuroscout, analysis):
         assert resp['status'] == 'PENDING'
 
         # Wait until compiled
-        while(resp['status'] == 'PENDING'):
-            sleep(1)
-            resp = neuroscout.analyses.get_report(id=analysis_id,
-                                                  run_id=analysis['runs'][0])
+        resp = neuroscout.analyses.get_report(id=analysis_id,
+                                              run_id=analysis['runs'][0])
 
         assert len(resp['result']['design_matrix']) == 1
 
@@ -179,28 +181,28 @@ def test_id_actions(recorder, neuroscout, analysis):
         resp = neuroscout.analyses.fill(
             id=analysis_id)
 
-        assert len(resp['runs']) == 36
+        assert len(resp['runs']) == 76
         assert len(resp['predictors']) == 1
 
         # Test compile
-        resp = neuroscout.analyses.compile(id=analysis_id)
+        resp = neuroscout.analyses.compile(id=analysis_id, build=False)
         assert resp['status'] == 'PENDING'
 
         # Test status
-        resp = neuroscout.analyses.status(id=analysis_id)
+        resp = neuroscout.analyses.get_status(id=analysis_id)
         assert 'status' in resp
 
         # Wait until compiled
         while(resp['status'] == 'PENDING'):
             sleep(1)
-            resp = neuroscout.analyses.status(id=analysis_id)
+            resp = neuroscout.analyses.get_status(id=analysis_id)
 
         # Test resources
-        resp = neuroscout.analyses.resources(id=analysis_id)
+        resp = neuroscout.analyses.get_resources(id=analysis_id)
         assert 'dataset_address' in resp
 
         # Test bundle
-        resp = neuroscout.analyses.bundle(id=analysis_id)
+        resp = neuroscout.analyses.get_bundle(id=analysis_id)
 
         # Test clone
         resp = neuroscout.analyses.clone(id=analysis_id)

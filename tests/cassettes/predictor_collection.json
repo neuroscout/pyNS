@@ -1,11 +1,11 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2020-04-16T00:31:43",
+      "recorded_at": "2020-05-07T17:43:11",
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "--5d240f685997267c8bb1956263cd29c8\r\nContent-Disposition: form-data; name=\"dataset_id\"\r\n\r\n10\r\n--5d240f685997267c8bb1956263cd29c8\r\nContent-Disposition: form-data; name=\"runs\"\r\n\r\n10,9\r\n--5d240f685997267c8bb1956263cd29c8\r\nContent-Disposition: form-data; name=\"runs\"\r\n\r\n8,7\r\n--5d240f685997267c8bb1956263cd29c8\r\nContent-Disposition: form-data; name=\"collection_name\"\r\n\r\ntest_collection\r\n--5d240f685997267c8bb1956263cd29c8\r\nContent-Disposition: form-data; name=\"descriptions\"\r\n\r\n{\"reaction_time\": \"fake RT\"}\r\n--5d240f685997267c8bb1956263cd29c8\r\nContent-Disposition: form-data; name=\"event_files\"; filename=\"new_events1.tsv\"\r\n\r\nonset\tduration\ttrial_type\treaction_time\tstim_file\n1\t5\trate\t198\tobama.jpg\n7\t3\tview\t220\tapple.jpg\n13\t5\trate\t121\tthai_people.jpg\n21\t3\tview\t130\tbutton.jpg\n\r\n--5d240f685997267c8bb1956263cd29c8\r\nContent-Disposition: form-data; name=\"event_files\"; filename=\"new_events1.tsv\"\r\n\r\nonset\tduration\ttrial_type\treaction_time\tstim_file\n1\t5\trate\t198\tobama.jpg\n7\t3\tview\t220\tapple.jpg\n13\t5\trate\t121\tthai_people.jpg\n21\t3\tview\t130\tbutton.jpg\n\r\n--5d240f685997267c8bb1956263cd29c8--\r\n"
+          "string": "--ca496cf03e3a0f165041d2f123b8520d\r\nContent-Disposition: form-data; name=\"dataset_id\"\r\n\r\n10\r\n--ca496cf03e3a0f165041d2f123b8520d\r\nContent-Disposition: form-data; name=\"runs\"\r\n\r\n10,9\r\n--ca496cf03e3a0f165041d2f123b8520d\r\nContent-Disposition: form-data; name=\"runs\"\r\n\r\n8,7\r\n--ca496cf03e3a0f165041d2f123b8520d\r\nContent-Disposition: form-data; name=\"collection_name\"\r\n\r\ntest_collection\r\n--ca496cf03e3a0f165041d2f123b8520d\r\nContent-Disposition: form-data; name=\"descriptions\"\r\n\r\n{\"reaction_time\": \"fake RT\"}\r\n--ca496cf03e3a0f165041d2f123b8520d\r\nContent-Disposition: form-data; name=\"event_files\"; filename=\"new_events1.tsv\"\r\n\r\nonset\tduration\ttrial_type\treaction_time\tstim_file\n1\t5\trate\t198\tobama.jpg\n7\t3\tview\t220\tapple.jpg\n13\t5\trate\t121\tthai_people.jpg\n21\t3\tview\t130\tbutton.jpg\n\r\n--ca496cf03e3a0f165041d2f123b8520d\r\nContent-Disposition: form-data; name=\"event_files\"; filename=\"new_events1.tsv\"\r\n\r\nonset\tduration\ttrial_type\treaction_time\tstim_file\n1\t5\trate\t198\tobama.jpg\n7\t3\tview\t220\tapple.jpg\n13\t5\trate\t121\tthai_people.jpg\n21\t3\tview\t130\tbutton.jpg\n\r\n--ca496cf03e3a0f165041d2f123b8520d--\r\n"
         },
         "headers": {
           "Accept": [
@@ -15,7 +15,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODc1OTc4ODgsImlhdCI6MTU4Njk5MzA4OCwibmJmIjoxNTg2OTkzMDg4LCJpZGVudGl0eSI6MX0.dqqj3hteYOrE6zGiNRjCMS0cb1JPUiprn3arAOg41JM"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODk0NzgxMzAsImlhdCI6MTU4ODg3MzMzMCwibmJmIjoxNTg4ODczMzMwLCJpZGVudGl0eSI6MX0.IMSWGp4eutrnISnNiDRSkqUUUrbKJQvB0wmYn63DSKU"
           ],
           "Connection": [
             "keep-alive"
@@ -24,10 +24,10 @@
             "1082"
           ],
           "Content-Type": [
-            "multipart/form-data; boundary=5d240f685997267c8bb1956263cd29c8"
+            "multipart/form-data; boundary=ca496cf03e3a0f165041d2f123b8520d"
           ],
           "User-Agent": [
-            "python-requests/2.21.0"
+            "python-requests/2.22.0"
           ]
         },
         "method": "POST",
@@ -35,7 +35,7 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA0XKsQ7CIBRG4d3H+GeaYK0dmDXGpXHoZgy5wh2ICA1cJuO7y+Z2cvJ94HKM7CTkZBO9GQbCVex/QyF4mOOssBX2wUkuFeb+UKhC0nrjdl5O1+XSqRRy/CT3gkktRoW2xUyevSXpcNSjHvQ07OdVa3PAd/cD99ANCIIAAAA=",
+          "base64_string": "H4sIAAAAAAAAA0XKsQrCMBRG4d3H+OcUYqkWMivSpTi4iYRrcodgTEpyM4nvbja3w+H7wOUY2UnIySZ6MwyEq9j/hkLwMMdJYSvsg5NcKsz9oVCFpPXG9byelvXSqRRy/CT3gkktRoW2xUyevSXpcNSjHvRh0PNtP5sJ390P0kZwNYIAAAA=",
           "encoding": null,
           "string": ""
         },
@@ -53,7 +53,7 @@
             "application/json"
           ],
           "Date": [
-            "Thu, 16 Apr 2020 00:31:43 GMT"
+            "Thu, 07 May 2020 17:43:11 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -85,7 +85,7 @@
       }
     },
     {
-      "recorded_at": "2020-04-16T00:31:43",
+      "recorded_at": "2020-05-07T17:43:11",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -99,21 +99,21 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODc1OTc4ODgsImlhdCI6MTU4Njk5MzA4OCwibmJmIjoxNTg2OTkzMDg4LCJpZGVudGl0eSI6MX0.dqqj3hteYOrE6zGiNRjCMS0cb1JPUiprn3arAOg41JM"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODk0NzgxMzAsImlhdCI6MTU4ODg3MzMzMCwibmJmIjoxNTg4ODczMzMwLCJpZGVudGl0eSI6MX0.IMSWGp4eutrnISnNiDRSkqUUUrbKJQvB0wmYn63DSKU"
           ],
           "Connection": [
             "keep-alive"
           ],
           "User-Agent": [
-            "python-requests/2.21.0"
+            "python-requests/2.22.0"
           ]
         },
         "method": "GET",
-        "uri": "https://neuroscout.org/api/predictors/collection?collection_id=56"
+        "uri": "https://neuroscout.org/api/predictors/collection?collection_id=64"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA0XKsQ7CIBRG4d3H+GeaYK0dmDXGpXHoZgy5wh2ICA1cJuO7y+Z2cvJ94HKM7CTkZBO9GQbCVex/QyF4mOOssBX2wUkuFeb+UKhC0nrjdl5O1+XSqRRy/CT3gkktRoW2xUyevSXpcNSjHvQ07OdVa3PAd/cD99ANCIIAAAA=",
+          "base64_string": "H4sIAAAAAAAAA12OvQrCMBSFd59C7lwh1moxq4q4FAc3kXBN7hCMTUluBBHf3VSpguv5+c55gPbOkWbrW9XilUACU2T1k6EAa0AuqgK6QMZq9iGCPD7AIGMkVr09FQUYijrY7l2SbXLu05wtliK7Az1YdIrvHUEPtDfkLHNIVED0Keg+tPquy/H/necpBxk55ROw3zTrXbPNKA6o6Yz6Mkynznk0ZBRyDpaiFBMxn4j6MK1lBc/RC0RjAer7AAAA",
           "encoding": null,
           "string": ""
         },
@@ -131,7 +131,7 @@
             "application/json"
           ],
           "Date": [
-            "Thu, 16 Apr 2020 00:31:43 GMT"
+            "Thu, 07 May 2020 17:43:11 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -159,11 +159,11 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://neuroscout.org/api/predictors/collection?collection_id=56"
+        "url": "https://neuroscout.org/api/predictors/collection?collection_id=64"
       }
     },
     {
-      "recorded_at": "2020-04-16T00:31:44",
+      "recorded_at": "2020-05-07T17:43:12",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -177,21 +177,21 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODc1OTc4ODgsImlhdCI6MTU4Njk5MzA4OCwibmJmIjoxNTg2OTkzMDg4LCJpZGVudGl0eSI6MX0.dqqj3hteYOrE6zGiNRjCMS0cb1JPUiprn3arAOg41JM"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODk0NzgxMzAsImlhdCI6MTU4ODg3MzMzMCwibmJmIjoxNTg4ODczMzMwLCJpZGVudGl0eSI6MX0.IMSWGp4eutrnISnNiDRSkqUUUrbKJQvB0wmYn63DSKU"
           ],
           "Connection": [
             "keep-alive"
           ],
           "User-Agent": [
-            "python-requests/2.21.0"
+            "python-requests/2.22.0"
           ]
         },
         "method": "GET",
-        "uri": "https://neuroscout.org/api/predictors/collection?collection_id=56"
+        "uri": "https://neuroscout.org/api/predictors/collection?collection_id=64"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA7WQQUsDMRCF7/6K8s4ppF27Sq4ePQjSm0gYkymEppslmQhS+t/NWrpFL4LgdebN+96bI1yKkZ2ENNiBDgwD4SL2OoZC8DCbXmHM7IOTlAvMyxGehAqLndYrreC5uBzGryMz1BjPl11/320ULu45ULTyMTImw/BO0saSKyuUVLObRA8z3Sx+xjmpX8jY0Z4Xz1tc8f2Mz0znshIO/5bge/e7GV4a1O5C/DP4tQmFpLb/4+mxuUgmx2/k9hdoHWMiz96SNM1ar/VS3y5X/VZr0+F08wksEVn68QEAAA==",
+          "base64_string": "H4sIAAAAAAAAA7WQzYoCMRCE7z6F9DlCZtYfzNWjh4XFm0hokxaCcTIknQUR392M4oheBMFrd3V9VX0CE7wnwy40usEDgQKmxPoxBgHOgpqOBbSRrDMcYgK1PoFFxkSsu3UlBVhKJrr2eqSa7P3t8mc6l2V7d48OveZjS9AZun/kMuaYSUAKOZpOtOjpavga5yzekGGHexr+reCBr3p8JLyVZXf4WoLn7nUPTwWqd85/DN4UISPn8n/4XRYXjmhoi2Z/h+bWB7RkNXLR1LKWIzkZydmqmqkxnAcXwA6/h/EBAAA=",
           "encoding": null,
           "string": ""
         },
@@ -209,7 +209,7 @@
             "application/json"
           ],
           "Date": [
-            "Thu, 16 Apr 2020 00:31:44 GMT"
+            "Thu, 07 May 2020 17:43:12 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -237,7 +237,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://neuroscout.org/api/predictors/collection?collection_id=56"
+        "url": "https://neuroscout.org/api/predictors/collection?collection_id=64"
       }
     }
   ],
