@@ -1,11 +1,11 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2020-05-06T23:31:00",
+      "recorded_at": "2020-05-07T17:42:28",
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "{\"TR\": 1.5, \"created_at\": \"2020-05-06T23:3\", \"dataset_id\": 5, \"description\": \"new_description\", \"hash_id\": \"MPqQG\", \"locked\": false, \"model\": {\"Input\": {\"Subject\": [\"28\"], \"Task\": \"MerlinMovie\"}, \"Name\": \"pytest_analysis\", \"Steps\": [{\"Contrasts\": [], \"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Run\", \"Model\": {\"X\": [\"brightness\"]}, \"Transformations\": []}, {\"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Dataset\"}]}, \"modified_at\": \"2020-05-06T23:3\", \"name\": \"pytest_analysis\", \"predictions\": \"\", \"predictors\": [12728], \"private\": true, \"runs\": [126], \"status\": \"DRAFT\", \"task_name\": \"MerlinMovie\"}"
+          "string": "{\"TR\": 2.5, \"created_at\": \"2020-05-07T17:4\", \"dataset_id\": 9, \"description\": \"new_description\", \"hash_id\": \"Aop06\", \"locked\": false, \"model\": {\"Input\": {\"Run\": [1], \"Subject\": [\"rid000001\"], \"Task\": \"life\"}, \"Name\": \"pytest_analysis\", \"Steps\": [{\"Contrasts\": [], \"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Run\", \"Model\": {\"X\": [\"speech\"]}, \"Transformations\": []}, {\"DummyContrasts\": {\"Type\": \"FEMA\"}, \"Level\": \"Subject\"}, {\"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Dataset\"}]}, \"modified_at\": \"2020-05-07T17:4\", \"name\": \"pytest_analysis\", \"predictions\": \"\", \"predictors\": [12905], \"private\": true, \"runs\": [236], \"status\": \"DRAFT\", \"task_name\": \"life\"}"
         },
         "headers": {
           "Accept": [
@@ -15,13 +15,13 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODk0MTE5NjgsImlhdCI6MTU4ODgwNzE2OCwibmJmIjoxNTg4ODA3MTY4LCJpZGVudGl0eSI6MX0.aT34ctTgBjBh_qGx9RkYo8LsFQjd5v1_TTTwUkTm-Xo"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODk0NzgxMzAsImlhdCI6MTU4ODg3MzMzMCwibmJmIjoxNTg4ODczMzMwLCJpZGVudGl0eSI6MX0.IMSWGp4eutrnISnNiDRSkqUUUrbKJQvB0wmYn63DSKU"
           ],
           "Connection": [
             "keep-alive"
           ],
           "Content-Length": [
-            "594"
+            "653"
           ],
           "Content-Type": [
             "application/json"
@@ -31,11 +31,11 @@
           ]
         },
         "method": "PUT",
-        "uri": "https://neuroscout.org/api/analyses/MPqQG"
+        "uri": "https://neuroscout.org/api/analyses/Aop06"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA41SwU7CQBC9+xlzLqaUgKQ3Y6MxEaPQg4khzdAOstJu6+4spmn4d2cpGDyQeJt98+bNm5ntIJ1DPLweB5AbQqYiQ4YYojAKB+F4EE7SaBSPIIACGS1xpgqIhV2QzY1qWNVa6Jq+s3MkgA3azYELs5ev1wdByjrfkgBrLC0FUNUFlRB38Kgbxz5YuNUn5RK+QzSFZQAp2q0XIFMqPat3imAfwDNWJGjTMlnOUGPZWmWlwYKpsVLdwV2t2aBl/xKdxFVVe4Z1kLaN12Cv90Q7bwTmzvuenWy9eR8roz42rMlaWAo1NajtujYV+ikP6vug+6d+0i8Q9l5JpldrdXnb+tKQDRrS/RW0K0sBDBUqP/oB+AVq4/0No5touvSg2sl1IWbjZPnG6T47kZxlZOeLk/ntfSoK1q0qxae/0LcR79vs6OrPQa5+ADlwnUdDAgAA",
+          "base64_string": "H4sIAAAAAAAAA31SwW7CMAy97zN8LlPbDRC9oTGkSWMH6GESQlVoXZHRplHiMFUV/z6nhYkdWE7xi/38np0O0jUk8eM4gNygICwyQZBAHMbhKByPwmkaTZNnCKAQJCxSJgtIZhyizY3UJBvF6Qq/s1skgIOwhz4X5o0OJ4xUTX5EBkpRWQygbgqsIOngTWlH/rJ2TLWNdgFs3P4Lcwa3YGQR+hMB46mwR2asZIlwDuBD1MihbgktZUKJqrXScqsNobZc3cFLo8gISz5igoWr6/YG6yBttecgz/eOJy+pFxLA6irw0+uwGjE/wI7TUiOULRtTC++1Zz4H3X3u5etqfkt/dfdv0R9Bi2H2cPbteXCylPcXpe5NRQuDaligclXFgMFC5hcTAL9AY7ypKJ6F450H5Yk/BiRkHO/NuN5y/DThN0uCnC9erOfLlBms29eSrt9oaMPaj9lF1bC6hx9Mty6gdwIAAA==",
           "encoding": null,
           "string": ""
         },
@@ -53,7 +53,7 @@
             "application/json"
           ],
           "Date": [
-            "Wed, 06 May 2020 23:31:00 GMT"
+            "Thu, 07 May 2020 17:42:28 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -81,7 +81,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://neuroscout.org/api/analyses/MPqQG"
+        "url": "https://neuroscout.org/api/analyses/Aop06"
       }
     }
   ],
