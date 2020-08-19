@@ -27,10 +27,11 @@ def build_model(name, variables, task, subject, run=None, session=None,
     if not set(variables) >= set(hrf_variables):
         raise ValueError("HRF Variables must be a subset of all variables")
 
-    transformations.append({
-        "Input": hrf_variables,
-        "Name": "Convolve"
-    })
+    if hrf_variables:
+        transformations.append({
+            "Input": hrf_variables,
+            "Name": "Convolve"
+        })
 
     model = {
         "Steps": [
