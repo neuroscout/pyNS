@@ -215,8 +215,10 @@ class Analyses(Base):
             set([p['name'] for p in public_preds])
         if private_preds:
             # Get Predictor IDs
-            predictors += [p['id'] for p in self._client.user.get_predictors(
-                run_id=run_id, name=private_preds)]
+            for pred in private_preds:
+                predictors += [p['id']
+                               for p in self._client.user.get_predictors(
+                                   run_id=run_id, name=pred)]
 
         if len(predictors) != len(predictor_names):
             raise ValueError(
