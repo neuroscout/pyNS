@@ -333,6 +333,7 @@ class Analyses(Base):
 
             return tmaps + group_paths
 
+        req = None
         # Do group, then subject level
         if group_paths is not None:
             print("Uploading group images")
@@ -355,6 +356,9 @@ class Analyses(Base):
                     collection_id=collection_id)
                 if collection_id is None:
                     collection_id = req['collection_id']
+
+        if req is None:
+            print("No images found")
 
         return req
 
