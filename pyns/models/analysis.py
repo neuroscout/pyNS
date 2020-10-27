@@ -315,6 +315,7 @@ class Analyses(Base):
 
     def upload_neurovault(self, id, validation_hash, subject_paths=None,
                           group_paths=None, collection_id=None, force=False,
+                          cli_version=None, fmriprep_version=None,
                           n_subjects=None):
         """ Submit analysis for report generation
         :param str id: Analysis hash_id.
@@ -322,6 +323,8 @@ class Analyses(Base):
         :param list(str) subject_paths: List of image paths.
         :param list(str) group_paths: List of image paths.
         :param bool force: Force upload with unique timestamped name.
+        :param str: neuroscout-cli version at runtime
+        :param str: fmriprep version at runtime
         :param int n_subjects: Number of subjects in analysis.
         :return: client response object
         """
@@ -342,6 +345,7 @@ class Analyses(Base):
                 req = self.post(
                     id=id, sub_route='upload', files=files, level='GROUP',
                     validation_hash=validation_hash, force=force,
+                    fmriprep_version=fmriprep_version, cli_version=cli_version,
                     n_subjects=n_subjects, collection_id=collection_id)
                 if collection_id is None:
                     collection_id = req['collection_id']
@@ -353,6 +357,7 @@ class Analyses(Base):
                 req = self.post(
                     id=id, sub_route='upload', files=files, level='SUBJECT',
                     validation_hash=validation_hash, force=force,
+                    fmriprep_version=fmriprep_version, cli_version=cli_version,
                     collection_id=collection_id)
                 if collection_id is None:
                     collection_id = req['collection_id']
