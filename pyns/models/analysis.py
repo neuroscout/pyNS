@@ -338,6 +338,7 @@ class Analyses(Base):
 
         req = None
         # Do group, then subject level
+        print(group_paths)
         if group_paths is not None:
             print("Uploading group images")
             for path in tqdm.tqdm(_ts_first(group_paths)):
