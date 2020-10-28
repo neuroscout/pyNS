@@ -330,6 +330,7 @@ class Analyses(Base):
         """
 
         def _ts_first(paths):
+            print(paths)
             tmaps = [t for t in paths if 'stat-t' in t]
             for t in tmaps:
                 paths.remove(t)
