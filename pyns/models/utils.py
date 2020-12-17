@@ -16,7 +16,7 @@ def attempt_to_import(dependency, name=None, fromlist=None):
     return mod
 
 
-def build_model(name, variables, task, subject, run=None, session=None,
+def build_model(name, variables, tasks, subjects, run=None, session=None,
                 hrf_variables=None, transformations=None,
                 contrasts=None, dummy_contrasts=True):
     """ Builds a basic two level BIDS-Model """
@@ -47,7 +47,7 @@ def build_model(name, variables, task, subject, run=None, session=None,
         ],
         "Input": {
           "Subject": subject,
-          "Task": task
+          "Task": tasks
         },
         "Name": name,
     }

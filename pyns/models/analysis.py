@@ -160,7 +160,7 @@ class Analyses(Base):
         return self.post(id=id, sub_route='clone')
 
     def create_analysis(self, *, name, dataset_name, predictor_names,
-                        task=None, subject=None, run=None, session=None,
+                        tasks=None, subjects=None, runs=None, session=None,
                         hrf_variables=None, contrasts=None,
                         dummy_contrasts=True, transformations=None, **kwargs):
         """ Analysis creation "wizard". Given run selection filters, and name
@@ -177,36 +177,38 @@ class Analyses(Base):
             dataset = dataset[0]
 
         # Get task name
-        if task is not None:
-            search = [t for t in dataset['tasks'] if t['name'] == task]
-            if len(search) != 1:
-                raise ValueError(
-                    "Task name does not match any tasks in the dataset")
-            task_id = search[0]['id']
+        if tasks is not None:
+            if not isinstance(tasks, list):
+                tasks = [tasks]
+
+            task_ids = []
+            for task in tasks:
+                search = [t for t in dataset['tasks'] if t['name'] == task]
+                if len(search) != 1:
+                    raise ValueError(
+                        "Task name does not match any tasks in the dataset")
+                task_ids.append(search[0]['id'])
         else:
-            if len(dataset['tasks']) > 1:
-                raise ValueError(
-                    "No task specified, but dataset has more than one task")
-            res = dataset['tasks'][0]
-            task = res['name']
-            task_id = res['id']
+            # All tasks
+            tasks = [t['name'] for t in dataset['tasks']]
+            task_ids = [t['id'] for t in dataset['tasks']]
 
         # Get Run IDs
         run_models = self._client.runs.get(
-            dataset_id=dataset['id'], task_id=task_id,
-            subject=subject, number=run, session=session)
+            dataset_id=dataset['id'], task_id=task_ids,
+            subject=subjects, number=runs, session=session)
 
         if len(run_models) < 1:
             raise ValueError("No runs could be found with the given criterion")
 
-        subject = list(set(r['subject'] for r in run_models))
-        run = list(set(r['number'] for r in run_models if r['number']))
-        run = run or None
+        subjects = list(set(r['subject'] for r in run_models))
+        runs = list(set(r['number'] for r in run_models if r['number']))
+        runs = runs or None
 
-        run_id = [r['id'] for r in run_models]
+        run_ids = [r['id'] for r in run_models]
         # Get Predictor IDs
         public_preds = self._client.predictors.get(
-            run_id=run_id, name=predictor_names, active_only=False)
+            run_id=run_ids, name=predictor_names, active_only=False)
 
         predictors = [p['id'] for p in public_preds]
 
@@ -218,7 +220,7 @@ class Analyses(Base):
             for pred in private_preds:
                 predictors += [p['id']
                                for p in self._client.user.get_predictors(
-                                   run_id=run_id, name=pred)]
+                                   run_id=run_ids, name=pred)]
 
         if len(predictors) != len(predictor_names):
             raise ValueError(
@@ -229,15 +231,15 @@ class Analyses(Base):
         if transformations:
             transformations = transformations.copy()
         model = build_model(
-            name, predictor_names, task,
-            subject=subject, run=run, session=session,
+            name, predictor_names, tasks,
+            subject=subjects, run=runs, session=session,
             hrf_variables=hrf_variables,
             transformations=transformations,
             contrasts=contrasts, dummy_contrasts=dummy_contrasts
             )
 
         analysis = Analysis(analyses=self, dataset_id=dataset['id'],
-                            name=name, model=model, runs=run_id,
+                            name=name, model=model, runs=run_ids,
                             predictors=predictors, **kwargs)
 
         return analysis
