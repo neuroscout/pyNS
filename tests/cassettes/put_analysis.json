@@ -1,11 +1,11 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2020-05-07T17:42:28",
+      "recorded_at": "2020-12-17T21:53:04",
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "{\"TR\": 2.5, \"created_at\": \"2020-05-07T17:4\", \"dataset_id\": 9, \"description\": \"new_description\", \"hash_id\": \"Aop06\", \"locked\": false, \"model\": {\"Input\": {\"Run\": [1], \"Subject\": [\"rid000001\"], \"Task\": \"life\"}, \"Name\": \"pytest_analysis\", \"Steps\": [{\"Contrasts\": [], \"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Run\", \"Model\": {\"X\": [\"speech\"]}, \"Transformations\": []}, {\"DummyContrasts\": {\"Type\": \"FEMA\"}, \"Level\": \"Subject\"}, {\"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Dataset\"}]}, \"modified_at\": \"2020-05-07T17:4\", \"name\": \"pytest_analysis\", \"predictions\": \"\", \"predictors\": [12905], \"private\": true, \"runs\": [236], \"status\": \"DRAFT\", \"task_name\": \"life\"}"
+          "string": "{\"created_at\": \"2020-12-17T21:5\", \"dataset_id\": 9, \"description\": \"new_description\", \"hash_id\": \"nx25b\", \"locked\": false, \"model\": {\"Input\": {\"Run\": [1], \"Subject\": [\"rid000001\"], \"Task\": \"life\"}, \"Name\": \"pytest_analysis\", \"Steps\": [{\"Contrasts\": [], \"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Run\", \"Model\": {\"X\": [\"speech\"]}, \"Transformations\": []}, {\"DummyContrasts\": {\"Type\": \"FEMA\"}, \"Level\": \"Subject\"}, {\"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Dataset\"}]}, \"modified_at\": \"2020-12-17T21:5\", \"name\": \"pytest_analysis\", \"predictions\": \"\", \"predictors\": [12905], \"private\": true, \"runs\": [236], \"status\": \"DRAFT\", \"user\": \"example_user\"}"
         },
         "headers": {
           "Accept": [
@@ -15,27 +15,27 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODk0NzgxMzAsImlhdCI6MTU4ODg3MzMzMCwibmJmIjoxNTg4ODczMzMwLCJpZGVudGl0eSI6MX0.IMSWGp4eutrnISnNiDRSkqUUUrbKJQvB0wmYn63DSKU"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDg4NDY3NTYsImlhdCI6MTYwODI0MTk1NiwibmJmIjoxNjA4MjQxOTU2LCJpZGVudGl0eSI6MX0.IIKlNQgC2YlfKmqMDaNKtyKm2kjpWJZroMebZLXW4Ls"
           ],
           "Connection": [
             "keep-alive"
           ],
           "Content-Length": [
-            "653"
+            "645"
           ],
           "Content-Type": [
             "application/json"
           ],
           "User-Agent": [
-            "python-requests/2.22.0"
+            "python-requests/2.21.0"
           ]
         },
         "method": "PUT",
-        "uri": "https://neuroscout.org/api/analyses/Aop06"
+        "uri": "https://neuroscout.org/api/analyses/nx25b"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA31SwW7CMAy97zN8LlPbDRC9oTGkSWMH6GESQlVoXZHRplHiMFUV/z6nhYkdWE7xi/38np0O0jUk8eM4gNygICwyQZBAHMbhKByPwmkaTZNnCKAQJCxSJgtIZhyizY3UJBvF6Qq/s1skgIOwhz4X5o0OJ4xUTX5EBkpRWQygbgqsIOngTWlH/rJ2TLWNdgFs3P4Lcwa3YGQR+hMB46mwR2asZIlwDuBD1MihbgktZUKJqrXScqsNobZc3cFLo8gISz5igoWr6/YG6yBttecgz/eOJy+pFxLA6irw0+uwGjE/wI7TUiOULRtTC++1Zz4H3X3u5etqfkt/dfdv0R9Bi2H2cPbteXCylPcXpe5NRQuDaligclXFgMFC5hcTAL9AY7ypKJ6F450H5Yk/BiRkHO/NuN5y/DThN0uCnC9erOfLlBms29eSrt9oaMPaj9lF1bC6hx9Mty6gdwIAAA==",
+          "base64_string": "H4sIAAAAAAAAA31STWvDMAy972fonEKS0Y3mNtYVBusObQ6DUoKaKNSr4xh/dA0h/31yuo7u0PlkPUtP70nuoTSEjqoCHWSQxmk8SdJJ8pinSTaFCCp0aMkVooJsxiHZ0gjtRKs4XdFXcY1EsEe7H3NBndLpjhHZlgdioEZpKYKmrUhC1sOr0t6Fy8oz1SbZRrD2u08qGdyAEVUcTgKM52gPzChFTTBE8I4Ncag7R9YVqFB2VlhutXakLVf38NwqZ9C6EDHB3DdNd4X1kHc6cLjA90bHIGkUEsHyIvAj6LCaqNzDltNyg8rWrWkweB2Zh6i/zb14WT5d01/c/Vv0R9D8PHsYQnsenKjF7UWpW1PRaEidF6i8lAwYqkT5YwLgF2hNMJWks3i6DaA48seAzBnPezN+tJzeP/Cbdeh8KJ6vnhY5M1i/a4S7fKNzG2/JcAqdsNGSijEc7r4BRYINdnECAAA=",
           "encoding": null,
           "string": ""
         },
@@ -53,7 +53,7 @@
             "application/json"
           ],
           "Date": [
-            "Thu, 07 May 2020 17:42:28 GMT"
+            "Thu, 17 Dec 2020 21:53:04 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
@@ -81,7 +81,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://neuroscout.org/api/analyses/Aop06"
+        "url": "https://neuroscout.org/api/analyses/nx25b"
       }
     }
   ],

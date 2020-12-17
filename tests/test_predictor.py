@@ -3,7 +3,7 @@ from time import sleep
 
 def test_predictor(recorder, neuroscout):
     with recorder.use_cassette('predictor'):
-        resp = neuroscout.predictors.get(dataset_id=5, run_id=126)
+        resp = neuroscout.predictors.get(run_id=126)
         assert len(resp) > 20
 
         first = resp[0]
