@@ -361,7 +361,7 @@ class Analyses(Base):
                 req = self.post(
                     id=id, sub_route='upload', files=files, level='SUBJECT',
                     validation_hash=validation_hash, force=force,
-                    fmriprep_version=fmriprep_version, stimator=estimator,
+                    fmriprep_version=fmriprep_version, estimator=estimator,
                     cli_version=cli_version, collection_id=collection_id)
                 if collection_id is None:
                     collection_id = req['collection_id']
