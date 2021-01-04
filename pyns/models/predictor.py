@@ -28,7 +28,7 @@ class Predictors(Base):
                          descriptions=descriptions)
 
     def get_collection(self, collection_id):
-        return self.get('collection', collection_id=collection_id)
+        return self.get(f'collection/{collection_id}')
 
 
 class PredictorEvents(Base):

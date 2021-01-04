@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2020-05-07T17:43:13",
+      "recorded_at": "2020-12-17T21:53:26",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -15,13 +15,13 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1ODk0NzgxMzAsImlhdCI6MTU4ODg3MzMzMCwibmJmIjoxNTg4ODczMzMwLCJpZGVudGl0eSI6MX0.IMSWGp4eutrnISnNiDRSkqUUUrbKJQvB0wmYn63DSKU"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDg4NDY3NTYsImlhdCI6MTYwODI0MTk1NiwibmJmIjoxNjA4MjQxOTU2LCJpZGVudGl0eSI6MX0.IIKlNQgC2YlfKmqMDaNKtyKm2kjpWJZroMebZLXW4Ls"
           ],
           "Connection": [
             "keep-alive"
           ],
           "User-Agent": [
-            "python-requests/2.22.0"
+            "python-requests/2.21.0"
           ]
         },
         "method": "GET",
@@ -29,7 +29,7 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA82YXW+bMBSG7/crKq7DZBtMQq6WiC6aMqo0jdq1UxW5wU1ZzDcJQVX/+yApa9fWgAVCvUvMG/vJOe85HHiUiEtYGtFIGv5+lCwSk4jGS9uShrgnWTRahbYf254rDSWXJsvXKz3pgUQPB61kTu6u/WzF8Sz73qbWksTZKgIIyADKSF1AfYiy6y5xaHbBT2Maxcvj2XaUXYhiEm8zCGk2urg4NaSnXgOa0d3kxvyABuoyRDLUFggOcWc0ydUej0pp0BB0RmOSYDf/NJnSfwZTWEGjdJepzZRpFTRqdy6+1DYlvtFz39SLjTEffV80hIHhdVVJdZco0zemKSdRWAaHkoL1aE7PjB9nk4Y4vxSjPFOwZoW3kCnTH7iYa2IIchPXjE0bJZUaE/6N4UhTr920EZo52vFsU8B0aOLZ9FKtoGnUbRAUwhmQVOfjaAvYr3nTbCFTSYrScUWB14tNK7Yh06AURmlWUVB/i/O2hvYW53wkI5y3l9c1FFLLXsVeeBJRRg8fcqC2g3J25d9x7aLABQId3it1OmWXn4bGnAXnkwrDdDjVsMG4z6fp54XdaOJ7597SQeI63awraJpMNUIw+jgAPNsUMI1sI0STnBtg0ApNC6FJwPqUfZrQjDwf8CbzVmjE6nun9FFZfQPQ4VDjKJvSW2VtmFYa8TjYuRwaVYY4b8QdTp/nxoxn4oKmw0YM1tQopVG6fEni+RungqZRbCAonWqy8y3CPR/13zwZzOnOpsnJvc1iWnegge8G4P8JwuCK128LAqUZgWhb8XelY0OXr61MjP0/fJrm/hBz642KN63QPCfqtidRh9gsW9lGNPxG98TxGf268vKiuLfD7OfMW9sZmLtlrNj5+NnP5utt+PK1mLiXK4/lI3dGf3yh+vJ9+UyWkNw2x8ezPCLvFQfyl+VnNQRCas7er05HQvuJqRUhtcplPYEFrdiO+GO1s2WxXexYpvl3rFYiQoWoL8KmCEVSEfrfCieSH6vVgZBaF1FjTuA4aqGYYKGYaEIxwWJqocxjjuM4aqHsaEIxwUK51IQ6jybU1TT0dPv05S9225CUhhoAAA==",
+          "base64_string": "H4sIAAAAAAAAA22OwQ7CMAxD73xGzhUfsBN/EpUuQKQ0ndJEICH+nU3ayoWjLT/bb6CaWWCC6GQXeuW6CJ1Lq5DgxtYdpd1ZYdIQScDanT2c27A0V1r5HcWtZ2WbFZ6PyELWm2bBzk7D5OJhPxlX4YL7HbegBP5kdzJ8ZJ1lJLcF/Lf6OX0BmNkZk88AAAA=",
           "encoding": null,
           "string": ""
         },
@@ -47,7 +47,7 @@
             "application/json"
           ],
           "Date": [
-            "Thu, 07 May 2020 17:43:13 GMT"
+            "Thu, 17 Dec 2020 21:53:26 GMT"
           ],
           "Server": [
             "nginx/1.15.6"
