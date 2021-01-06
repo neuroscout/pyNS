@@ -3,11 +3,7 @@
 
 name: Python package
 
-on:
-  push:
-    branches: [ $default-branch ]
-  pull_request:
-    branches: [ $default-branch ]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -30,4 +26,7 @@ jobs:
     - name: Test with pytest
       run: |
         python -m pytest tests/ --cov=./
-        bash <(curl -s https://codecov.io/bash)
+    - uses: codecov/codecov-action@v1
+      with:
+        file: coverage.xml
+      if: ${{ always() }}
