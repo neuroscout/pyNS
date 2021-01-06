@@ -1,5 +1,4 @@
 # pyNS 🌲
-[![Build Status](https://travis-ci.org/neuroscout/pyNS.svg?branch=master)](https://travis-ci.org/neuroscout/pyns)
 [![codecov](https://codecov.io/gh/neuroscout/pyns/branch/master/graph/badge.svg)](https://codecov.io/gh/neuroscout/pyns)
 
 The Neuroscout API wrapper for Python
