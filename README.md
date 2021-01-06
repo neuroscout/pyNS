@@ -1,4 +1,5 @@
 # pyNS 🌲
+![Python package](https://github.com/neuroscout/pyNS/workflows/Python%20package/badge.svg)
 [![codecov](https://codecov.io/gh/neuroscout/pyns/branch/master/graph/badge.svg)](https://codecov.io/gh/neuroscout/pyns)
 
 The Neuroscout API wrapper for Python
