@@ -2,12 +2,18 @@
 from .base import Base
 from pathlib import Path
 from functools import partial
+import datetime
+import tempfile
+import requests
 from .utils import build_model, attempt_to_import
 import tqdm
 import time
 
 altair = attempt_to_import('altair')
+nib = attempt_to_import('nibabel')
 
+
+TMP_DIR = Path(tempfile.mkdtemp())
 
 class Analysis:
     """ Analysis object class. Object representing an analysis that can be
@@ -18,6 +24,7 @@ class Analysis:
 
     _aliased_methods_ = ['delete', 'get_bundle', 'compile', 'generate_report',
                          'get_report', 'upload_neurovault', 'get_uploads',
+                         'load_uploads',
                          'plot_report', 'get_design_matrix']
 
     def __init__(self, *, analyses, name, dataset_id, **kwargs):
@@ -377,6 +384,54 @@ class Analyses(Base):
         :return: client response object
         """
         return self.get(id=id, sub_route='upload')
+
+    def load_uploads(self, id, select='latest', coll_filt={}, download_dir=None, **stat_filt):
+        """ Load collection upload as NiBabel images and associated meta-data
+        :param str id: Analysis hash_id.
+        :param str select: How to select if multiple collections ('latest' or 'oldest')
+        :param dict coll_filt: Filter arguments for collections
+        :param str download_dir: Directory to download images. If None, create tempdir
+        :param dict stat_filt: Filter arguments for statmaps, such as BIDS entities
+        :return list list of tuples of format (Nifti1Image, kwargs). 
+        """
+
+        if download_dir is None:
+            download_dir = TMP_DIR
+
+        uploads = self.get_uploads(id)
+        for u in uploads:
+            u['uploaded_at'] = datetime.datetime.strptime(u['uploaded_at'], '%Y-%m-%dT%H:%M')
+        uploads = sorted(uploads, key=lambda x: x['uploaded_at'], reverse=(select=='latest'))
+
+        # Select based on collection filters
+        uploads = [
+            u for u in uploads 
+            if all([u.get(k, None) == v for k, v in coll_filt.items()])
+            ] 
+
+        if select is not None:
+            uploads = [uploads[0]]
+
+        # Select based on coll_filt
+        flat = []
+        for u in uploads:
+            for f in tqdm.tqdm(u.pop('files')):
+                # Filter files
+                if f.pop('status') == 'OK':
+                    if all([f.get(k, None) == v for k, v in stat_filt.items()]):
+
+                        # Download and open
+                        img_url = f"https://neurovault.org/media/images/{u['collection_id']}/{f['basename']}"
+                        f_name = download_dir / f"{u['collection_id']}_{f['basename']}"
+
+                        if not f_name.exists():
+                            with f_name.open('wb') as file:
+                                file.write(requests.get(img_url).content)
+                        niimg = nib.load(f_name)
+                        f.pop('traceback')
+                        flat.append((niimg, {**u, **f}))
+
+        return flat
 
     def get_full(self, id):
         """ Get full analysis object (including runs and predictors)
