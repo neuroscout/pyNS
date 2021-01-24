@@ -398,12 +398,13 @@ class Analyses(Base):
         if download_dir is None:
             download_dir = TMP_DIR
 
+        # Sort uploads for upload date
         uploads = self.get_uploads(id)
         for u in uploads:
             u['uploaded_at'] = datetime.datetime.strptime(u['uploaded_at'], '%Y-%m-%dT%H:%M')
         uploads = sorted(uploads, key=lambda x: x['uploaded_at'], reverse=(select=='latest'))
 
-        # Select based on collection filters
+        # Select collections based on filters
         uploads = [
             u for u in uploads 
             if all([u.get(k, None) == v for k, v in coll_filt.items()])
@@ -412,7 +413,7 @@ class Analyses(Base):
         if select is not None:
             uploads = [uploads[0]]
 
-        # Select based on coll_filt
+        # Select files based on stat_filt, download if necessary and load as Niimg-object
         flat = []
         for u in uploads:
             for f in tqdm.tqdm(u.pop('files')):
