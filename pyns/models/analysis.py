@@ -8,6 +8,7 @@ import requests
 from .utils import build_model, attempt_to_import
 import tqdm
 import time
+import re
 
 altair = attempt_to_import('altair')
 nib = attempt_to_import('nibabel')
@@ -15,6 +16,7 @@ nilearn = attempt_to_import('nilearn')
 
 
 TMP_DIR = Path(tempfile.mkdtemp())
+
 
 class Analysis:
     """ Analysis object class. Object representing an analysis that can be
@@ -403,9 +405,10 @@ class Analyses(Base):
         If any attributes are not found, they are ignored.
         :return list list of tuples of format (Nifti1Image, kwargs).
         """
-
         if download_dir is None:
             download_dir = TMP_DIR
+        else:
+            download_dir = Path(download_dir)
 
         # Sort uploads for upload date
         uploads = self.get_uploads(id)
@@ -421,24 +424,43 @@ class Analyses(Base):
             if all([u.get(k) == v for k, v in kwargs.items() if k in u])
             ]
 
+        if not uploads:
+            return None
+
+        # Select first item unless all are requested
         if select is not None:
             uploads = [uploads[0]]
+
+        # Extract entities from file path
+        def _get_entities(path):
+            di = {}
+            for t in ['task', 'contrast', 'stat']:
+                matches = re.findall(f"{t}-(.*?)_", path)
+                if matches:
+                    di[t] = matches[0]
+            return di
 
         # Filter files, download if necessary and load as Niimg-object
         flat = []
         for u in uploads:
-            for f in tqdm.tqdm(u.pop('files')):
-                # Filter files
+            for f in u.pop('files'):
+                f = {**f, **_get_entities(f['basename'])}
+
+                # If file matches kwargs and is in NV
                 if f.pop('status') == 'OK' and all(
                   [f.get(k, None) == v for k, v in kwargs.items() if k in f]):
                     # Download and open
-                    img_url = f"https://neurovault.org/media/images/{u['collection_id']}/{f['basename']}"
-                    f_name = download_dir / f"{u['collection_id']}_{f['basename']}"
+                    img_url = "https://neurovault.org/media/images/" \
+                        f"{u['collection_id']}/{f['basename']}"
+                    f_name = download_dir / \
+                        f"{u['collection_id']}_{f['basename']}"
 
                     if not f_name.exists():
+                        print("Downloading image...")
                         with f_name.open('wb') as file:
                             file.write(requests.get(img_url).content)
                     niimg = nib.load(f_name)
+
                     f.pop('traceback')
                     flat.append((niimg, {**u, **f}))
         return flat
