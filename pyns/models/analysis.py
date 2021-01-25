@@ -386,14 +386,22 @@ class Analyses(Base):
         """
         return self.get(id=id, sub_route='upload')
 
-    def load_uploads(self, id, select='latest', coll_filt={}, download_dir=None, **stat_filt):
+    def load_uploads(self, id, select='latest',
+                     download_dir=None, **kwargs):
         """ Load collection upload as NiBabel images and associated meta-data
+        You can filter which images are loaded based on either collection
+        level attributes or statmap image level attributes. These correspond
+        to field returns for `get_uploads` at the collection level or
+        `file` level. In addition for images, BIDS entities are parsed
+        and available to filter on.
+
         :param str id: Analysis hash_id.
-        :param str select: How to select if multiple collections ('latest' or 'oldest')
-        :param dict coll_filt: Filter arguments for collections
-        :param str download_dir: Directory to download images. If None, create tempdir
-        :param dict stat_filt: Filter arguments for statmaps, such as BIDS entities
-        :return list list of tuples of format (Nifti1Image, kwargs). 
+        :param str select: How to select from multiple collections.
+        Options: "latest", "oldest" or None. If None, returns all results.
+        :param str download_dir: Path to download images. If None, tempdir.
+        :param dict kwargs: Attributes to filter images on.
+        If any attributes are not found, they are ignored.
+        :return list list of tuples of format (Nifti1Image, kwargs).
         """
 
         if download_dir is None:
@@ -402,43 +410,42 @@ class Analyses(Base):
         # Sort uploads for upload date
         uploads = self.get_uploads(id)
         for u in uploads:
-            u['uploaded_at'] = datetime.datetime.strptime(u['uploaded_at'], '%Y-%m-%dT%H:%M')
-        uploads = sorted(uploads, key=lambda x: x['uploaded_at'], reverse=(select=='latest'))
+            u['uploaded_at'] = datetime.datetime.strptime(
+                u['uploaded_at'], '%Y-%m-%dT%H:%M')
+        uploads = sorted(uploads, key=lambda x: x['uploaded_at'],
+                         reverse=(select == 'latest'))
 
         # Select collections based on filters
         uploads = [
-            u for u in uploads 
-            if all([u.get(k, None) == v for k, v in coll_filt.items()])
-            ] 
+            u for u in uploads
+            if all([u.get(k) == v for k, v in kwargs.items() if k in u])
+            ]
 
         if select is not None:
             uploads = [uploads[0]]
 
-        # Select files based on stat_filt, download if necessary and load as Niimg-object
+        # Filter files, download if necessary and load as Niimg-object
         flat = []
         for u in uploads:
             for f in tqdm.tqdm(u.pop('files')):
                 # Filter files
-                if f.pop('status') == 'OK':
-                    if all([f.get(k, None) == v for k, v in stat_filt.items()]):
+                if f.pop('status') == 'OK' and all(
+                  [f.get(k, None) == v for k, v in kwargs.items() if k in f]):
+                    # Download and open
+                    img_url = f"https://neurovault.org/media/images/{u['collection_id']}/{f['basename']}"
+                    f_name = download_dir / f"{u['collection_id']}_{f['basename']}"
 
-                        # Download and open
-                        img_url = f"https://neurovault.org/media/images/{u['collection_id']}/{f['basename']}"
-                        f_name = download_dir / f"{u['collection_id']}_{f['basename']}"
-
-                        if not f_name.exists():
-                            with f_name.open('wb') as file:
-                                file.write(requests.get(img_url).content)
-                        niimg = nib.load(f_name)
-                        f.pop('traceback')
-                        flat.append((niimg, {**u, **f}))
+                    if not f_name.exists():
+                        with f_name.open('wb') as file:
+                            file.write(requests.get(img_url).content)
+                    niimg = nib.load(f_name)
+                    f.pop('traceback')
+                    flat.append((niimg, {**u, **f}))
         return flat
-
 
     def plot_uploads(self, id, plot_args={}, **kwargs):
         """ Plot uploads for matching collections using nilearn
         :param str id: Analysis hash_id.
-        
         :param dict kwargs: Arguments for load_uploads
         :return list list of matplotlib objects.
         """
