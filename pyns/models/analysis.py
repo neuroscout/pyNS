@@ -11,6 +11,7 @@ import time
 
 altair = attempt_to_import('altair')
 nib = attempt_to_import('nibabel')
+nilearn = attempt_to_import('nilearn')
 
 
 TMP_DIR = Path(tempfile.mkdtemp())
@@ -24,7 +25,7 @@ class Analysis:
 
     _aliased_methods_ = ['delete', 'get_bundle', 'compile', 'generate_report',
                          'get_report', 'upload_neurovault', 'get_uploads',
-                         'load_uploads',
+                         'load_uploads', 'plot_uploads',
                          'plot_report', 'get_design_matrix']
 
     def __init__(self, *, analyses, name, dataset_id, **kwargs):
@@ -431,8 +432,24 @@ class Analyses(Base):
                         niimg = nib.load(f_name)
                         f.pop('traceback')
                         flat.append((niimg, {**u, **f}))
-
         return flat
+
+
+    def plot_uploads(self, id, plot_args={}, **kwargs):
+        """ Plot uploads for matching collections using nilearn
+        :param str id: Analysis hash_id.
+        
+        :param dict kwargs: Arguments for load_uploads
+        :return list list of matplotlib objects.
+        """
+
+        images = self.load_uploads(id, **kwargs)
+
+        plots = []
+        for niimg, entities in images:
+            plots.append(nilearn.plotting.plot_stat_map(niimg, **plot_args))
+
+        return plots
 
     def get_full(self, id):
         """ Get full analysis object (including runs and predictors)
