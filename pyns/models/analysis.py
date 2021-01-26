@@ -456,7 +456,7 @@ class Analyses(Base):
                         f"{u['collection_id']}_{f['basename']}"
 
                     if not f_name.exists():
-                        print("Downloading image...")
+                        print(".", end ="")  
                         with f_name.open('wb') as file:
                             file.write(requests.get(img_url).content)
                     niimg = nib.load(f_name)

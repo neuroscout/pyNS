@@ -247,3 +247,18 @@ def test_upload_analysis(recorder, neuroscout, analysis, get_test_data_path):
 
         assert all([f['status'] == 'OK' for f in newest['files']])
         assert newest['collection_id'] is not None
+
+
+def test_load_analysis(recorder, neuroscout):
+    with recorder.use_cassette('load_analysis'):
+      m = neuroscout.analyses.get_analysis('A13DD')
+      assert len(m.load_uploads()) == 3
+      assert len(m.load_uploads(select=None)) > 3
+      nistats = m.load_uploads(estimator='nistats')
+      latest_up = nistats[0][1]['uploaded_at']
+      assert len(nistats) == 3
+      assert nistats[0][1]['estimator'] == 'nistats'
+
+      old_nistats = m.load_uploads(estimator='nistats', select='oldest')
+
+      assert old_nistats[0][1]['uploaded_at'] < latest_up
