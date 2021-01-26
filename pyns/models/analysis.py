@@ -474,11 +474,15 @@ class Analyses(Base):
 
         images = self.load_uploads(id, **kwargs)
 
-        plots = []
-        for niimg, entities in images:
-            plots.append(nilearn.plotting.plot_stat_map(niimg, **plot_args))
+        if images:
+            plots = []
+            for niimg, _ in images:
+                plots.append(
+                    nilearn.plotting.plot_stat_map(niimg, **plot_args))
 
-        return plots
+            return plots
+        else:
+            return None
 
     def get_full(self, id):
         """ Get full analysis object (including runs and predictors)
