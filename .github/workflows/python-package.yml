@@ -30,7 +30,7 @@ jobs:
         python -m pip install pytest-cov
     - name: Test with pytest
       run: |
-        python -m pytest tests/ --cov=./
+        python -m pytest tests/ --cov=./ --cov-report xml
     - uses: codecov/codecov-action@v1
       with:
         file: coverage.xml
