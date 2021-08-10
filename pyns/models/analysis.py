@@ -270,13 +270,15 @@ class Analyses(Base):
         """
         return self.post(id=id, sub_route='compile', params=dict(build=build))
 
-    def generate_report(self, id, run_id=None):
+    def generate_report(self, id, run_id=None, sampling_rate=None, scale=False):
         """ Submit analysis for report generation
         :param str id: Analysis hash_id.
         :param int run_id: Optional run_id to constrain report.
         :return: client response object
         """
-        return self.post(id=id, sub_route='report', params=dict(run_id=run_id))
+        return self.post(id=id, sub_route='report', 
+                         params=dict(
+                             run_id=run_id, sampling_rate=sampling_rate, scale=scale))
 
     def get_report(self, id, run_id=None, loop_wait=True):
         """ Get generated reports for analysis
@@ -347,7 +349,7 @@ class Analyses(Base):
             for t in tmaps:
                 paths.remove(t)
 
-            return tmaps + group_paths
+            return tmaps + paths
 
         req = None
         # Do group, then subject level
