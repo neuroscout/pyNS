@@ -1,11 +1,11 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2020-12-17T21:53:04",
+      "recorded_at": "2021-08-11T04:02:52",
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "{\"created_at\": \"2020-12-17T21:5\", \"dataset_id\": 9, \"description\": \"new_description\", \"hash_id\": \"nx25b\", \"locked\": false, \"model\": {\"Input\": {\"Run\": [1], \"Subject\": [\"rid000001\"], \"Task\": \"life\"}, \"Name\": \"pytest_analysis\", \"Steps\": [{\"Contrasts\": [], \"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Run\", \"Model\": {\"X\": [\"speech\"]}, \"Transformations\": []}, {\"DummyContrasts\": {\"Type\": \"FEMA\"}, \"Level\": \"Subject\"}, {\"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Dataset\"}]}, \"modified_at\": \"2020-12-17T21:5\", \"name\": \"pytest_analysis\", \"predictions\": \"\", \"predictors\": [12905], \"private\": true, \"runs\": [236], \"status\": \"DRAFT\", \"user\": \"example_user\"}"
+          "string": "{\"created_at\": \"2021-08-11T04:0\", \"dataset_id\": 9, \"description\": \"new_description\", \"hash_id\": \"88jpc\", \"locked\": false, \"model\": {\"Input\": {\"Run\": [1], \"Subject\": [\"rid000001\"], \"Task\": \"life\"}, \"Name\": \"pytest_analysis\", \"Steps\": [{\"Contrasts\": [], \"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Run\", \"Model\": {\"X\": [\"speech\"]}, \"Transformations\": []}, {\"DummyContrasts\": {\"Type\": \"FEMA\"}, \"Level\": \"Subject\"}, {\"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Dataset\"}]}, \"modified_at\": \"2021-08-11T04:0\", \"name\": \"pytest_analysis\", \"predictions\": \"\", \"predictors\": [12905], \"private\": true, \"runs\": [236], \"status\": \"DRAFT\", \"user\": \"example_user\"}"
         },
         "headers": {
           "Accept": [
@@ -15,7 +15,7 @@
             "gzip, deflate"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MDg4NDY3NTYsImlhdCI6MTYwODI0MTk1NiwibmJmIjoxNjA4MjQxOTU2LCJpZGVudGl0eSI6MX0.IIKlNQgC2YlfKmqMDaNKtyKm2kjpWJZroMebZLXW4Ls"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjkyNTkzNTgsImlhdCI6MTYyODY1NDU1OCwibmJmIjoxNjI4NjU0NTU4LCJpZGVudGl0eSI6MX0.Frxdfl7yUiKKhLTwAoTLJRoexfGz6hb4UMn8EnSW9sE"
           ],
           "Connection": [
             "keep-alive"
@@ -27,15 +27,15 @@
             "application/json"
           ],
           "User-Agent": [
-            "python-requests/2.21.0"
+            "python-requests/2.24.0"
           ]
         },
         "method": "PUT",
-        "uri": "https://neuroscout.org/api/analyses/nx25b"
+        "uri": "https://neuroscout.org/api/analyses/88jpc"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA31STWvDMAy972fonEKS0Y3mNtYVBusObQ6DUoKaKNSr4xh/dA0h/31yuo7u0PlkPUtP70nuoTSEjqoCHWSQxmk8SdJJ8pinSTaFCCp0aMkVooJsxiHZ0gjtRKs4XdFXcY1EsEe7H3NBndLpjhHZlgdioEZpKYKmrUhC1sOr0t6Fy8oz1SbZRrD2u08qGdyAEVUcTgKM52gPzChFTTBE8I4Ncag7R9YVqFB2VlhutXakLVf38NwqZ9C6EDHB3DdNd4X1kHc6cLjA90bHIGkUEsHyIvAj6LCaqNzDltNyg8rWrWkweB2Zh6i/zb14WT5d01/c/Vv0R9D8PHsYQnsenKjF7UWpW1PRaEidF6i8lAwYqkT5YwLgF2hNMJWks3i6DaA48seAzBnPezN+tJzeP/Cbdeh8KJ6vnhY5M1i/a4S7fKNzG2/JcAqdsNGSijEc7r4BRYINdnECAAA=",
+          "base64_string": "H4sIAAAAAAAAA31STW/CMAy972f4XKS2+xD0hsaQJo0doIdJCFWmdUUgTaN8sFUV/31OGRM7sJziF/v5PTs9lIbQUVWggwzSOE1G8XiUJHn8kMUQQYUOLblCVJBNOCRbGqGdaBWnK/osrpEIdmh3Qy6Mx3tdMiLb8kAM1CgtRdC0FUnIenhV2rtwWXqmWiebCFZ+u6eSwTUYUcXhJMB4jvbAjFLUBKcI3rEhDnXnyLoCFcrOCsutVo605eoenlvlDFoXIiaY+abprrAe8k4HDhf43ugYJA1CIlhcBH4EHVYTlTvYcFpuUNm6NQ0GrwPzKepvc89fFtNr+ou7f4v+CJqdZw+n0J4HJ2pxe1Hq1lQ0GlLnBSovJQOGKlH+mAD4BVoTTCXpJH7cBFAc+WNA5oznvRk/WE7vn/jNOnQ+FM+W03nODNZvG+Eu3+jcxlsynEJf2GhJxRCe7r4BVXd9NnECAAA=",
           "encoding": null,
           "string": ""
         },
@@ -53,35 +53,26 @@
             "application/json"
           ],
           "Date": [
-            "Thu, 17 Dec 2020 21:53:04 GMT"
+            "Wed, 11 Aug 2021 04:02:52 GMT"
           ],
           "Server": [
-            "nginx/1.15.6"
+            "nginx/1.19.3"
           ],
           "Strict-Transport-Security": [
-            "max-age=63072000; includeSubDomains; preload"
+            "max-age=31536000"
           ],
           "Transfer-Encoding": [
             "chunked"
           ],
           "Vary": [
             "Accept-Encoding"
-          ],
-          "X-Content-Type-Options": [
-            "nosniff"
-          ],
-          "X-Frame-Options": [
-            "DENY"
-          ],
-          "X-XSS-Protection": [
-            "1; mode=block"
           ]
         },
         "status": {
           "code": 200,
           "message": "OK"
         },
-        "url": "https://neuroscout.org/api/analyses/nx25b"
+        "url": "https://neuroscout.org/api/analyses/88jpc"
       }
     }
   ],
