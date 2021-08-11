@@ -214,7 +214,7 @@ def test_id_actions(recorder, neuroscout, analysis):
 
 
 def test_upload_analysis(recorder, neuroscout, analysis, get_test_data_path):
-    analysis_id = 'A1rYM'  # This is an existing analysis on the api
+    analysis_id = '9hvm3'  # This is an existing analysis on the api
 
     with recorder.use_cassette('upload_analysis'):
         group_paths = [str(p) for p in
@@ -224,7 +224,7 @@ def test_upload_analysis(recorder, neuroscout, analysis, get_test_data_path):
         resp = neuroscout.analyses.upload_neurovault(
             id=analysis_id, group_paths=group_paths,
             subject_paths=sub_paths,
-            validation_hash='QEynReX0Xp', force=True,
+            validation_hash='Av1Jbwl1aO', force=True,
             n_subjects=99)
 
         assert 'uploaded_at' in resp
@@ -251,14 +251,10 @@ def test_upload_analysis(recorder, neuroscout, analysis, get_test_data_path):
 
 def test_load_analysis(recorder, neuroscout):
     with recorder.use_cassette('load_analysis'):
-      m = neuroscout.analyses.get_analysis('A13DD')
+      m = neuroscout.analyses.get_analysis('gbp6i')
       assert len(m.load_uploads()) == 3
-      assert len(m.load_uploads(select=None)) > 3
+      assert len(m.load_uploads(select=None)) == 3
       nistats = m.load_uploads(estimator='nistats')
       latest_up = nistats[0][1]['uploaded_at']
       assert len(nistats) == 3
       assert nistats[0][1]['estimator'] == 'nistats'
-
-      old_nistats = m.load_uploads(estimator='nistats', select='oldest')
-
-      assert old_nistats[0][1]['uploaded_at'] < latest_up
