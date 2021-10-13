@@ -9,6 +9,7 @@ from .utils import build_model, attempt_to_import
 import tqdm
 import time
 import re
+import json
 
 altair = attempt_to_import('altair')
 nib = attempt_to_import('nibabel')
@@ -330,7 +331,7 @@ class Analyses(Base):
     def upload_neurovault(self, id, validation_hash, subject_paths=None,
                           group_paths=None, collection_id=None, force=False,
                           cli_version=None, fmriprep_version=None,
-                          estimator=None, n_subjects=None):
+                          estimator=None, n_subjects=None, cli_args=None):
         """ Submit analysis for report generation
         :param str id: Analysis hash_id.
         :param str validation_hash: Validation hash string.
@@ -341,7 +342,8 @@ class Analyses(Base):
         :param str: fmriprep version at runtime
         :param str: estimator used in fitlins (anfi/nilearn)
         :param int n_subjects: Number of subjects in analysis.
-        :return: client response object
+        :param dict runtime_options 
+        :return: dict cli_args Arguments specified to CLI at runtime
         """
 
         def _ts_first(paths):
@@ -361,8 +363,8 @@ class Analyses(Base):
                     id=id, sub_route='upload', files=files, level='GROUP',
                     validation_hash=validation_hash, force=force,
                     fmriprep_version=fmriprep_version, estimator=estimator,
-                    cli_version=cli_version, n_subjects=n_subjects,
-                    collection_id=collection_id)
+                    cli_version=cli_version, n_subjects=n_subjects, 
+                    cli_args=json.dumps(cli_args), collection_id=collection_id)
                 if collection_id is None:
                     collection_id = req['collection_id']
 
