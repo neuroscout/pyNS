@@ -9,6 +9,7 @@ from .utils import build_model, attempt_to_import
 import tqdm
 import time
 import re
+import json
 
 altair = attempt_to_import('altair')
 nib = attempt_to_import('nibabel')
@@ -362,8 +363,8 @@ class Analyses(Base):
                     id=id, sub_route='upload', files=files, level='GROUP',
                     validation_hash=validation_hash, force=force,
                     fmriprep_version=fmriprep_version, estimator=estimator,
-                    cli_version=cli_version, n_subjects=n_subjects, cli_args=cli_args,
-                    collection_id=collection_id)
+                    cli_version=cli_version, n_subjects=n_subjects, 
+                    cli_args=json.dumps(cli_args), collection_id=collection_id)
                 if collection_id is None:
                     collection_id = req['collection_id']
 
