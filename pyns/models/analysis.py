@@ -438,7 +438,7 @@ class Analyses(Base):
         # Extract entities from file path
         def _get_entities(path):
             di = {}
-            for t in ['task', 'contrast', 'stat']:
+            for t in ['task', 'contrast', 'stat', 'space']:
                 matches = re.findall(f"{t}-(.*?)_", path)
                 if matches:
                     di[t] = matches[0]
