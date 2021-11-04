@@ -452,7 +452,7 @@ class Analyses(Base):
 
                 # If file matches kwargs and is in NV
                 if f.pop('status') == 'OK' and all(
-                  [f.get(k, None) == v for k, v in kwargs.items() if k in f]):
+                  [f.get(k, None) == v  if k in f else False for k, v in kwargs.items()]):
                     # Download and open
                     img_url = "https://neurovault.org/media/images/" \
                         f"{u['collection_id']}/{f['basename']}"
