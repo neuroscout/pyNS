@@ -79,3 +79,8 @@ def build_model(name, variables, tasks, subjects, runs=None, session=None,
         model['Input']['Session'] = session
 
     return model
+
+
+def snake_to_camel(string):
+    words = string.split('_')
+    return words[0] + ''.join(word.title() for word in words[1:])
