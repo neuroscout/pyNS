@@ -449,7 +449,7 @@ class Analyses(Base):
         # Extract entities from file path
         def _get_entities(path):
             di = {}
-            for t in ['task', 'contrast', 'stat']:
+            for t in ['task', 'contrast', 'stat', 'space']:
                 matches = re.findall(f"{t}-(.*?)_", path)
                 if matches:
                     di[t] = matches[0]
@@ -463,7 +463,7 @@ class Analyses(Base):
 
                 # If file matches kwargs and is in NV
                 if f.pop('status') == 'OK' and all(
-                  [f.get(k, None) == v for k, v in kwargs.items() if k in f]):
+                  [f.get(k, None) == v  if k in f else False for k, v in kwargs.items()]):
                     # Download and open
                     img_url = "https://neurovault.org/media/images/" \
                         f"{u['collection_id']}/{f['basename']}"
