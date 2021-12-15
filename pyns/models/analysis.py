@@ -385,15 +385,40 @@ class Analyses(Base):
 
         return req
 
-    def get_uploads(self, id):
+    def get_uploads(self, id, select='latest', **kwargs):
         """ Get NeuroVault uploads associated with this analysis
         :param str id: Analysis hash_id.
+        :param str select: How to select from multiple collections.
+        Options: "latest", "oldest" or None. If None, returns all results.
+        :param dict kwargs: Attributes to filter collections on.
+         If any attributes are not found, they are ignored.
         :return: client response object
         """
-        return self.get(id=id, sub_route='upload')
+        uploads = self.get(id=id, sub_route='upload')
+        
+        # Sort by date
+        uploads = sorted(uploads, key=lambda x: datetime.datetime.strptime(
+                x['uploaded_at'], '%Y-%m-%dT%H:%M'),
+                         reverse=(select == 'latest'))
+
+        # Select collections based on filters
+        uploads = [
+            u for u in uploads
+            if all([u.get(k) == v for k, v in kwargs.items() if k in u])
+            ]
+        
+        if not uploads:
+            return None
+
+        # Select first item unless all are requested
+        if select is not None:
+            uploads = [uploads[0]]
+
+        return uploads
 
     def load_uploads(self, id, select='latest',
-                     download_dir=None, **kwargs):
+                     download_dir=None, collection_filters={}, 
+                     image_filters={}):
         """ Load collection upload as NiBabel images and associated meta-data
         You can filter which images are loaded based on either collection
         level attributes or statmap image level attributes. These correspond
@@ -405,7 +430,8 @@ class Analyses(Base):
         :param str select: How to select from multiple collections.
         Options: "latest", "oldest" or None. If None, returns all results.
         :param str download_dir: Path to download images. If None, tempdir.
-        :param dict kwargs: Attributes to filter images on.
+        :param dict collection_filters: Attributes to filter collections on.
+        :param dict image_filters: Attributes to filter collections on.
         If any attributes are not found, they are ignored.
         :return list list of tuples of format (Nifti1Image, kwargs).
         """
@@ -415,25 +441,10 @@ class Analyses(Base):
             download_dir = Path(download_dir)
 
         # Sort uploads for upload date
-        uploads = self.get_uploads(id)
-        for u in uploads:
-            u['uploaded_at'] = datetime.datetime.strptime(
-                u['uploaded_at'], '%Y-%m-%dT%H:%M')
-        uploads = sorted(uploads, key=lambda x: x['uploaded_at'],
-                         reverse=(select == 'latest'))
-
-        # Select collections based on filters
-        uploads = [
-            u for u in uploads
-            if all([u.get(k) == v for k, v in kwargs.items() if k in u])
-            ]
-
+        uploads = self.get_uploads(id, **collection_filters)
+        
         if not uploads:
             return None
-
-        # Select first item unless all are requested
-        if select is not None:
-            uploads = [uploads[0]]
 
         # Extract entities from file path
         def _get_entities(path):
