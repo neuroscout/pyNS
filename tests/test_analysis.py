@@ -254,7 +254,8 @@ def test_load_analysis(recorder, neuroscout):
       m = neuroscout.analyses.get_analysis('gbp6i')
       assert len(m.load_uploads()) == 3
       assert len(m.load_uploads(select=None)) == 3
-      nistats = m.load_uploads(estimator='nistats')
+      nistats = m.load_uploads(
+        image_filters=dict(estimator='nistats'))
       latest_up = nistats[0][1]['uploaded_at']
       assert len(nistats) == 3
       assert nistats[0][1]['estimator'] == 'nistats'

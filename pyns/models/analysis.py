@@ -431,7 +431,7 @@ class Analyses(Base):
         Options: "latest", "oldest" or None. If None, returns all results.
         :param str download_dir: Path to download images. If None, tempdir.
         :param dict collection_filters: Attributes to filter collections on.
-        :param dict image_filters: Attributes to filter collections on.
+        :param dict image_filters: Attributes to filter images on.
         If any attributes are not found, they are ignored.
         :return list list of tuples of format (Nifti1Image, kwargs).
         """
@@ -493,7 +493,7 @@ class Analyses(Base):
             plots = []
             for niimg, _ in images:
                 plots.append(
-                    nilearn.plotting.plot_stat_map(niimg, **plot_args))
+                    niplt.plot_stat_map(niimg, **plot_args))
 
             return plots
         else:
