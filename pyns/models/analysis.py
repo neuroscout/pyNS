@@ -13,7 +13,7 @@ import json
 
 altair = attempt_to_import('altair')
 nib = attempt_to_import('nibabel')
-nilearn = attempt_to_import('nilearn')
+nilearn = attempt_to_import('nilearn.plotting')
 
 
 TMP_DIR = Path(tempfile.mkdtemp())
@@ -493,7 +493,7 @@ class Analyses(Base):
             plots = []
             for niimg, _ in images:
                 plots.append(
-                    niplt.plot_stat_map(niimg, **plot_args))
+                    nilearn.plotting.plot_stat_map(niimg, **plot_args))
 
             return plots
         else:
