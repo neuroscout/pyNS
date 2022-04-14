@@ -16,15 +16,11 @@ Creating recipes
 ----------------
 
 To retrieve a list of random ingredients,
-you can use the ``lumache.get_random_ingredients()`` function:
-
-.. autofunction:: lumache.get_random_ingredients
+you can use the function:
 
 The ``kind`` parameter should be either ``"meat"``, ``"fish"``,
-or ``"veggies"``. Otherwise, :py:func:`lumache.get_random_ingredients`
+or ``"veggies"``. Otherwise,
 will raise an exception.
-
-.. autoexception:: lumache.InvalidKindError
 
 For example:
 
