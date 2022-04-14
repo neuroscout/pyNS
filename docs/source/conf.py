@@ -2,7 +2,7 @@
 
 # -- Project information
 
-project = 'pyNS'
+project = 'pyns'
 copyright = '2022, Alejandro de la Vega'
 author = 'Alejandro de la Vega'
 
