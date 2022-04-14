@@ -3,6 +3,6 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "pyNS"
+name = "pyns"
 authors = [{name = "Alejandro de la Vega", email = "aleph4@gmail.com"}]
 dynamic = ["version", "description"]
