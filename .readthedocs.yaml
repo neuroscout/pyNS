@@ -5,5 +5,10 @@ build:
   tools:
     python: "3.8"
 
+python:
+  install:
+    - method: pip
+      path: .
+
 sphinx:
   fail_on_warning: true
