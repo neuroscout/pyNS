@@ -1,5 +1,5 @@
 """
-    pyns - Neuroscout API client library
+    Neuroscout API client library
 """
 
 API_BASE_URL = 'https://neuroscout.org/api'
