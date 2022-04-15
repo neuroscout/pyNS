@@ -14,10 +14,12 @@ class Predictors(Base):
         :param int dataset_id: Dataset id.
         :param list(list((int)) runs: List of run ids corresponding to files
         :param list(str) event_files: TSV files with new predictor columns.
-            Required columns: onset, duration,
-            any number of columns with values for new Predictors.
+        Required columns: onset, duration,
+        any number of columns with values for new Predictors.
+
         :param list(dict) descriptions: optional list of descriptions
-                                        for each columns
+                                        for each column
+
         :return: JSON response
         """
         files = tuple([('event_files', open(f, 'rb')) for f in event_files])

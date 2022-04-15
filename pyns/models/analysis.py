@@ -35,10 +35,10 @@ class Analysis:
         """ Initate a new Analysis object. Typically, this is done by
         'get_analysis' or 'create_analysis'.
         Args:
-            self (obj)
-            analyses (obj)- Instantiated analyses object
-            name (str) - Analysis name
-            dataset_id (int) - ID of dataset
+        self (obj)
+        analyses (obj)- Instantiated analyses object
+        name (str) - Analysis name
+        dataset_id (int) - ID of dataset
         """
         self.name = name
         self.dataset_id = dataset_id
@@ -116,7 +116,7 @@ class Analysis:
     def clone(self, dataset_id=None):
         """ Clone current analysis, and return a new Analysis object
         :param int dataset_id: If dataset_id is provided, new run and
-                               predictor_ids will be filled for that dataset.
+        predictor_ids will be filled for that dataset.
         """
         new = Analysis(
             analyses=self._analyses, **self._analyses.clone(self.hash_id))
@@ -391,7 +391,8 @@ class Analyses(Base):
         :param str select: How to select from multiple collections.
         Options: "latest", "oldest" or None. If None, returns all results.
         :param dict kwargs: Attributes to filter collections on.
-         If any attributes are not found, they are ignored.
+        If any attributes are not found, they are ignored.
+
         :return: client response object
         """
         uploads = self.get(id=id, sub_route='upload')
@@ -429,6 +430,7 @@ class Analyses(Base):
         :param str id: Analysis hash_id.
         :param str select: How to select from multiple collections.
         Options: "latest", "oldest" or None. If None, returns all results.
+
         :param str download_dir: Path to download images. If None, tempdir.
         :param dict collection_filters: Attributes to filter collections on.
         :param dict image_filters: Attributes to filter images on.
