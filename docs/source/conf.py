@@ -1,6 +1,10 @@
 # Configuration file for the Sphinx documentation builder.
 
 # -- Project information
+import os
+import sys
+
+sys.path.insert(0, os.path.abspath('../../'))
 
 project = 'pyns'
 copyright = '2022, Alejandro de la Vega'

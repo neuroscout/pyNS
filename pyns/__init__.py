@@ -6,9 +6,9 @@ API_BASE_URL = 'https://neuroscout.org/api'
 ROUTE_PATTERN = '{base_url}/{route}[/{id}][/{sub_route}]'
 
 from .api import Neuroscout
-from . import models
+from . import endpoints
 
-__all__ = ['Neuroscout', 'models']
+__all__ = ['Neuroscout', 'endpoints']
 
 __author__ = ['Alejandro de la Vega']
 __license__ = 'MIT'
