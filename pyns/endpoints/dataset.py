@@ -7,7 +7,7 @@ class Datasets(Base):
     
     auto_methods: `get`
     """
-    base_path_ = 'datasets'
+    _base_path_ = 'datasets'
     _auto_methods_ = ('get', )
 
 
