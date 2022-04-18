@@ -20,15 +20,15 @@ TMP_DIR = Path(tempfile.mkdtemp())
 
 
 class Analysis:
-    """ Analysis object class.
+    """ Analysis interactive object.
     
-    This class is represents an entry in :class:`.Analyses` that can be kept in sync
+    This class is represents a specific instance of a Neuroscout `Analysis` that is synced
     with the API. 
     
-    Variables are set as attributes of this class, and those values are pushed as 
-    values to the instnace of `:class:`.Analysis`. 
+    `Analysis` values (e.g. `.model`, `.name`) are set as attributes of the instance, and kept in 
+    sync with the API using the `push` and `pull` methods.
     
-    Most methods avaiable to :class:`.Analyses` are aliased here 
+    Most methods avaiable to :class:`.Analyses` are aliased here.
     """
     _mutable_fields_ = ['dataset_id', 'description', 'name',  'predictions',
                         'model', 'predictors', 'private', 'runs']
@@ -40,7 +40,7 @@ class Analysis:
 
     def __init__(self, *, analyses, name, dataset_id, **kwargs):
         """ Initate a new Analysis object. Typically, this is done by
-        :class:`.Analyses`.`get_analysis` or `create_analysis`.
+        :class:`.Analyses` `get_analysis` or `create_analysis` methods.
         
         :param analyses: Instantiated :class:`.Analyses` object
         :type analyses: :class:`.Analyses`
@@ -105,13 +105,15 @@ class Analysis:
         return new
 
     def fill(self, partial=True, dryrun=False):
-        """ Fill missing fields from API
-
-        :param partial: Partial fill?
+        """ Fill missing fields
+        
+        :param id: :class:`Analysis` `hash_id`
+        :type id: str
+        :param partial: Partial fill.
         :type partial: bool
-        :param dryrun: Dryrun do not commit to database.
+        :param dryrun: Do not commit to database.
         :type dryrun: bool
-
+        
         :return: Requests response object
         :rype: :class:`requests.Response`
         """
@@ -130,14 +132,13 @@ class Analysis:
         return self._getter_wrapper('get_full')
 
     def clone(self, dataset_id=None):
-        """ Clone current analysis, and return a new Analysis object
-        :param int dataset_id: If dataset_id is provided, new run and
+        """ Clone current analysis. If dataset_id is provided, new run and
         predictor_ids will be filled for that dataset.
         
         :param dataset_id: Dataset ID
         :type dataset_id: int
 
-        :return: :class:`.Analysis` for new `dataset_id`
+        :return: :class:`.Analysis` instance.
         :rype: :class:`.Analysis`
         """
         new = Analysis(
@@ -656,9 +657,9 @@ class Analyses(Base):
         
         :param id: :class:`Analysis` `hash_id`
         :type id: str
-        :param partial: Partial fill?
+        :param partial: Partial fill.
         :type partial: bool
-        :param dryrun: Dryrun do not commit to database
+        :param dryrun: Do not commit to database.
         :type dryrun: bool
         
         :return: Requests response object

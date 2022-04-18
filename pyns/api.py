@@ -12,7 +12,7 @@ from . import endpoints
 class Neuroscout(object):
     """Neuroscout API client object. This is the access point for the API."""
     def __init__(self, email=None, password=None, api_base_url=None):
-        """
+        """ Initialize Neuroscout object.
         :param email: Email address to use for authorization.
         :type email: str, optional
         :param password: Authentication password

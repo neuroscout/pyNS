@@ -1,4 +1,4 @@
-"""API endpoints. Class instances attached to `Neuroscout` object"""
+"""API endpoints. Class instances are attached to `Neuroscout` object"""
 from .user import User
 from .analysis import Analyses
 from .dataset import Datasets, Tasks, Runs
