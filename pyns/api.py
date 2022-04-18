@@ -1,3 +1,4 @@
+""" Neuroscout API client"""
 import requests
 import re
 import jwt
@@ -6,19 +7,20 @@ from datetime import datetime
 from functools import partialmethod
 
 from . import API_BASE_URL, ROUTE_PATTERN
-from . import models
+from . import endpoints
 
 
 class Neuroscout(object):
-    """Neuroscout API client object. This is the access point for the API.
-
-    Args:
-        email (str, optional): Email address to use for authorization.
-        password (str, optional): Password for authorization (not saved)
-        api_base_url (str, optional): Alternate base URL for API
-
-    """
+    """Neuroscout API client object. This is the access point for the API."""
     def __init__(self, email=None, password=None, api_base_url=None):
+        """ Initialize Neuroscout object.
+        :param email: Email address to use for authorization.
+        :type email: str, optional
+        :param password: Authentication password
+        :type password: str, optional
+        :param api_base_url: Alternate base URL for API (for debugging)
+        :type api_base_url: str, optional
+        """
         self._session = requests.Session()
         self._api_base_url = api_base_url or API_BASE_URL
         self._api_token = None
@@ -26,14 +28,14 @@ class Neuroscout(object):
         self._authorize(email, password)
 
         # Set up main routes
-        self.analyses = models.Analyses(self)
-        self.datasets = models.Datasets(self)
-        self.tasks = models.Tasks(self)
-        self.runs = models.Runs(self)
-        self.predictors = models.Predictors(self)
-        self.predictor_events = models.PredictorEvents(self)
-        self.datasets = models.Datasets(self)
-        self.user = models.User(self)
+        self.analyses = endpoints.Analyses(self)
+        self.datasets = endpoints.Datasets(self)
+        self.tasks = endpoints.Tasks(self)
+        self.runs = endpoints.Runs(self)
+        self.predictors = endpoints.Predictors(self)
+        self.predictor_events = endpoints.PredictorEvents(self)
+        self.datasets = endpoints.Datasets(self)
+        self.user = endpoints.User(self)
 
     def _get_headers(self):
         """ Build authorization header """

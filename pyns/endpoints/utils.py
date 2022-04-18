@@ -6,6 +6,7 @@ Dependency = collections.namedtuple('Dependency', 'package value')
 
 
 def attempt_to_import(dependency, name=None, fromlist=None):
+    """ Attempt to import dependency """
     if name is None:
         name = dependency
     try:
@@ -19,7 +20,7 @@ def attempt_to_import(dependency, name=None, fromlist=None):
 def build_model(name, variables, tasks, subjects, runs=None, session=None,
                 hrf_variables=None, transformations=None,
                 contrasts=None, dummy_contrasts=True):
-    """ Builds a basic two level BIDS-Model """
+    """ Builds a basic two level BIDS-Stats model """
     hrf_variables = hrf_variables or []
     transformations = transformations or []
     contrasts = contrasts or []
@@ -82,5 +83,6 @@ def build_model(name, variables, tasks, subjects, runs=None, session=None,
 
 
 def snake_to_camel(string):
+    """ Convert string from snake to camel type """
     words = string.split('_')
     return words[0] + ''.join(word.title() for word in words[1:])

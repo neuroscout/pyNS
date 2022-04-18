@@ -1,4 +1,4 @@
-"""Provides the Analysis related classes."""
+"""Analysis endpoint"""
 from .base import Base
 from pathlib import Path
 from functools import partial
@@ -20,9 +20,16 @@ TMP_DIR = Path(tempfile.mkdtemp())
 
 
 class Analysis:
-    """ Analysis object class. Object representing an analysis that can be
-    synced with the API """
-
+    """ Analysis interactive object.
+    
+    This class is represents a specific instance of a Neuroscout `Analysis` that is synced
+    with the API. 
+    
+    `Analysis` values (e.g. `.model`, `.name`) are set as attributes of the instance, and kept in 
+    sync with the API using the `push` and `pull` methods.
+    
+    Most methods avaiable to :class:`.Analyses` are aliased here.
+    """
     _mutable_fields_ = ['dataset_id', 'description', 'name',  'predictions',
                         'model', 'predictors', 'private', 'runs']
 
@@ -33,12 +40,16 @@ class Analysis:
 
     def __init__(self, *, analyses, name, dataset_id, **kwargs):
         """ Initate a new Analysis object. Typically, this is done by
-        'get_analysis' or 'create_analysis'.
-        Args:
-            self (obj)
-            analyses (obj)- Instantiated analyses object
-            name (str) - Analysis name
-            dataset_id (int) - ID of dataset
+        :class:`.Analyses` `get_analysis` or `create_analysis` methods.
+        
+        :param analyses: Instantiated :class:`.Analyses` object
+        :type analyses: :class:`.Analyses`
+        :param name: Analysis name
+        :type name: str
+        :param dataset_id: Dataset ID
+        :type dataset_id: int
+        :param kwargs: kwargs to set as class attributes        
+        :type kwargs: dict
         """
         self.name = name
         self.dataset_id = dataset_id
@@ -62,7 +73,7 @@ class Analysis:
                     )
 
     def __repr__(self):
-        return "<Analysis hash_id={} name={} dataset_id={}>".format(
+        return "<:class:`Analysis`={} name={} dataset_id={}>".format(
             self.hash_id, self.name, self.dataset_id)
 
     def _asdict(self):
@@ -94,10 +105,17 @@ class Analysis:
         return new
 
     def fill(self, partial=True, dryrun=False):
-        """ Fill missing fields from API
-        :param bool partial: Partial fill?
-        :param bool dryrun: Dryrun do not commit to database.
-        :return: client response object
+        """ Fill missing fields
+        
+        :param id: :class:`Analysis` `hash_id`
+        :type id: str
+        :param partial: Partial fill.
+        :type partial: bool
+        :param dryrun: Do not commit to database.
+        :type dryrun: bool
+        
+        :return: Requests response object
+        :rype: :class:`requests.Response`
         """
         return self._getter_wrapper('fill')
 
@@ -114,9 +132,14 @@ class Analysis:
         return self._getter_wrapper('get_full')
 
     def clone(self, dataset_id=None):
-        """ Clone current analysis, and return a new Analysis object
-        :param int dataset_id: If dataset_id is provided, new run and
-                               predictor_ids will be filled for that dataset.
+        """ Clone current analysis. If dataset_id is provided, new run and
+        predictor_ids will be filled for that dataset.
+        
+        :param dataset_id: Dataset ID
+        :type dataset_id: int
+
+        :return: :class:`.Analysis` instance.
+        :rype: :class:`.Analysis`
         """
         new = Analysis(
             analyses=self._analyses, **self._analyses.clone(self.hash_id))
@@ -130,29 +153,42 @@ class Analysis:
 
 
 class Analyses(Base):
-    """ Class used to access analysis API route """
+    """ Analyses endpoint class """
     _base_path_ = 'analyses'
     _auto_methods_ = ('get', 'post')
 
     def put(self, id, **kwargs):
         """ Put analysis
-        :param str id: Analysis hash_id.
-        :return: client response object
+
+        :param id: :class:`Analysis` `hash_id`
+        :type id: str
+
+        :return: Requests response object
+        :rype: :class:`requests.Response`
         """
         return self._client._put(self._base_path_, id=id, **kwargs)
 
     def delete(self, id):
         """ Delete analysis
-        :param str id: Analysis hash_id.
-        :return: client response object
+
+        :param id: :class:`Analysis` `hash_id`
+        :type id: str
+
+        :return: Requests response object
+        :rype: :class:`requests.Response`
         """
         return self._client._delete(self._base_path_, id=id)
 
     def get_bundle(self, id, filename=None):
-        """ Get analysis bundle
-        :param str id: Analysis hash_id.
-        :param str, object filename: Optional filename to save bundle to
-        :return: client response object
+        """ Get analysis  bundle
+
+        :param id: :class:`Analysis` `hash_id`
+        :type id: str
+        :param filename: Optional filename to save bundle to
+        :type filename: str
+
+        :return: Requests response object
+        :rype: :class:`requests.Response`
         """
         bundle = self.get(id=id, sub_route='bundle')
         if filename is not None:
@@ -165,8 +201,12 @@ class Analyses(Base):
 
     def clone(self, id):
         """ Clone analysis
-        :param str id: Analysis hash_id.
-        :return: client response object, with new analysis id
+
+        :param id: :class:`Analysis` `hash_id`
+        :type id: str
+
+        :return: Requests response object
+        :rype: :class:`requests.Response`
         """
         return self.post(id=id, sub_route='clone')
 
@@ -174,8 +214,36 @@ class Analyses(Base):
                         tasks=None, subjects=None, runs=None, session=None,
                         hrf_variables=None, contrasts=None,
                         dummy_contrasts=True, transformations=None, **kwargs):
-        """ Analysis creation "wizard". Given run selection filters, and name
-        of Predictors, builds Analysis object with prepopulated BIDS model.
+        """ Analysis creation "wizard". Builds analysis with a pre-populated
+        BIDS Stats Model. 
+
+        :param name: analysis name
+        :type name: str
+        :param dataset_name: dataset name
+        :type dataset_name: str
+        :param predictor_names: predictor names to include in model
+        :type predictor_names: list
+        :param tasks: list of tasks to include
+        :type tasks: list
+        :param subjects: list of subject identifiers
+        :type subjects: list
+        :param runs: list of run ids
+        :type runs: list
+        :param session: session name
+        :type session: str
+        :param hrf_variables: subset of `predictor_names` to convolve with HRF
+        :type hrf_variables: list
+        :param contrasts: list of contrast dictionaries
+        :type contrasts: list
+        :param dummy_contrasts: subset of `predictor_names` to create dummy contrast for
+        :type dummy_contrasts: list
+        :param transformations: list of transformations
+        :type transformations: list
+        :param kwargs: arguments to pass to Analysis class
+        :type kwargs: dict
+
+        :return: Analysis object
+        :rype: :class:`Analysis`
         """
 
         # Get dataset id
@@ -258,24 +326,42 @@ class Analyses(Base):
     def get_analysis(self, id):
         """ Convenience function to fetch and create Analysis object from
         a known analysis id
-        :param str id: Analysis hash_id.
-        :return: Analysis object
+        
+        :param id: :class:`Analysis` `hash_id`
+        :type id: str
+
+        :return: Requests response object
+        :rype: :class:`requests.Response`
         """
         return Analysis(analyses=self, **self.get(id=id))
 
-    def compile(self, id,  build=True):
+    def compile(self, id, build=True):
         """ Submit analysis for complilation
-        :param str id: Analysis hash_id.
-        :param bool build: Build pybids object and verify compilation
-        :return: client response object
+
+        :param id: :class:`Analysis` `hash_id`
+        :type id: str
+        :param build: Build pybids object and verify compilation
+        :type build: bool
+
+        :return: Requests response object
+        :rype: :class:`requests.Response`
         """
         return self.post(id=id, sub_route='compile', params=dict(build=build))
 
     def generate_report(self, id, run_id=None, sampling_rate=None, scale=False):
         """ Submit analysis for report generation
-        :param str id: Analysis hash_id.
-        :param int run_id: Optional run_id to constrain report.
-        :return: client response object
+
+        :param id: :class:`Analysis` `hash_id`
+        :type id: str
+        :param run_id: Optional run_id to constrain report.
+        :type run_id: list
+        :param sampling_rate: Sampling rate for design matrix
+        :type sampling_rate: float
+        :param scale: Scale design matrix.
+        :type scale: bool
+    
+        :return: Requests response object
+        :rype: :class:`requests.Response`
         """
         return self.post(id=id, sub_route='report', 
                          params=dict(
@@ -283,9 +369,16 @@ class Analyses(Base):
 
     def get_report(self, id, run_id=None, loop_wait=True):
         """ Get generated reports for analysis
-        :param str id: Analysis hash_id.
-        :param int run_id: Optional run_id to constrain report.
-        :return: client response object
+        
+        :param id: :class:`Analysis` `hash_id`
+        :type id: str
+        :param run_id: Optional run_id to constrain report.
+        :type run_id: list
+        :param loop_wait: Wait until report completes before returning response.
+        :type loop_wait: bool
+    
+        :return: Requests response object
+        :rype: :class:`requests.Response`
         """
         report = self.get(id=id, sub_route='report', run_id=run_id)
         if loop_wait:
@@ -298,9 +391,16 @@ class Analyses(Base):
     def get_design_matrix(self, id, run_id=None,
                           loop_wait=True):
         """ Get report design_matrix
-        :param str id: Analysis hash_id
-        :param int run_id: Optional run_id to constrain report.
-        :param boolean loop_wait: Wait for result from report
+
+        :param id: :class:`Analysis` `hash_id`
+        :type id: str
+        :param run_id: Optional run_id to constrain report.
+        :type run_id: list
+        :param loop_wait: Wait until report completes before returning response.
+        :type loop_wait: bool
+    
+        :return: Requests response object
+        :rype: :class:`requests.Response`
         """
         report = self.get_report(id=id, run_id=run_id, loop_wait=loop_wait)
 
@@ -312,10 +412,18 @@ class Analyses(Base):
     def plot_report(self, id, run_id=None, plot_type='design_matrix_plot',
                     loop_wait=True):
         """ Uses altair to plot design_matrix plot generated by report
-        :param str id: Analysis hash_id
-        :param int run_id: Optional run_id to constrain report.
-        :param str plot_type: Plot type to display
-        :param boolean loop_wait: Wait for result from report
+        
+        :param id: :class:`Analysis` `hash_id`
+        :type id: str
+        :param run_id: Optional run_id to constrain report.
+        :type run_id: list
+        :param plot_type: `design_matrix_plot` or `corr_matrix_plot`
+        :type plot_type: str
+        :param loop_wait: Wait until report completes before returning response.
+        :type loop_wait: bool
+    
+        :return: Requests response object
+        :rype: :class:`requests.Response`
         """
         if altair is None:
             raise ImportError("Altair is required to plot_reports")
@@ -333,17 +441,31 @@ class Analyses(Base):
                           cli_version=None, fmriprep_version=None,
                           estimator=None, n_subjects=None, cli_args=None):
         """ Submit analysis for report generation
-        :param str id: Analysis hash_id.
+
+        :param id: :class:`Analysis` `hash_id`
+        :type id: str
         :param str validation_hash: Validation hash string.
-        :param list(str) subject_paths: List of image paths.
-        :param list(str) group_paths: List of image paths.
-        :param bool force: Force upload with unique timestamped name.
-        :param str: neuroscout-cli version at runtime
-        :param str: fmriprep version at runtime
-        :param str: estimator used in fitlins (anfi/nilearn)
-        :param int n_subjects: Number of subjects in analysis.
-        :param dict runtime_options 
-        :return: dict cli_args Arguments specified to CLI at runtime
+        :type id: str
+        :param subject_paths: List of image paths.
+        :type subject_paths: list
+        :param group_paths: List of image paths.
+        :type group_paths: list
+        :param force: Force upload with unique timestamped name.
+        :type force: bool
+        :param cli_version: neuroscout-cli version at runtime
+        :type cli_version: str
+        :param fmriprep_version: fmriprep version at runtime
+        :type fmriprep_version: str
+        :param estimator: estimator used in fitlins (anfi/nilearn)
+        :type estimator: str
+        :param n_subjects: Number of subjects in analysis.
+        :type n_subjects: int
+        :param cli_args: Run time CLI args
+        :type cli_args: dict
+        :type cli_args: dict
+
+        :return: Arguments specified to CLI at runtime
+        :rype: dict
         """
 
         def _ts_first(paths):
@@ -387,12 +509,18 @@ class Analyses(Base):
 
     def get_uploads(self, id, select='latest', **kwargs):
         """ Get NeuroVault uploads associated with this analysis
-        :param str id: Analysis hash_id.
-        :param str select: How to select from multiple collections.
-        Options: "latest", "oldest" or None. If None, returns all results.
-        :param dict kwargs: Attributes to filter collections on.
-         If any attributes are not found, they are ignored.
-        :return: client response object
+
+        :param id: :class:`Analysis` `hash_id`
+        :type id: str
+        :param select: How to select from multiple collections
+            Options: "latest", "oldest" or None. If None, returns all results.
+        :type select: str
+        :param kwargs: Attributes to filter collections on.
+            If any attributes are not found, they are ignored.
+        :type kwargs: dict
+
+        :return: Requests response object
+        :rype: :class:`requests.Response`
         """
         uploads = self.get(id=id, sub_route='upload')
         
@@ -426,14 +554,21 @@ class Analyses(Base):
         `file` level. In addition for images, BIDS entities are parsed
         and available to filter on.
 
-        :param str id: Analysis hash_id.
-        :param str select: How to select from multiple collections.
-        Options: "latest", "oldest" or None. If None, returns all results.
-        :param str download_dir: Path to download images. If None, tempdir.
-        :param dict collection_filters: Attributes to filter collections on.
-        :param dict image_filters: Attributes to filter images on.
-        If any attributes are not found, they are ignored.
-        :return list list of tuples of format (Nifti1Image, kwargs).
+        :param id: :class:`Analysis` `hash_id`
+        :type id: str
+        :param select: How to select from multiple collections
+            Options: "latest", "oldest" or None. If None, returns all results.
+        :type select: str
+        :param download_dir: Path to download images. If None, tempdir.
+        :type download_str: str
+        :param collection_filters: Attributes to filter collections on.
+        :type collection_filters: dict
+        :param image_filters: Attributes to filter images on.
+            If any attributes are not found, they are ignored.
+        :type image_filters: dict
+
+        :return: list list of tuples of format (Nifti1Image, kwargs).
+        :rype: list
         """
         if download_dir is None:
             download_dir = TMP_DIR
@@ -463,7 +598,7 @@ class Analyses(Base):
 
                 # If file matches kwargs and is in NV
                 if f.pop('status') == 'OK' and all(
-                  [f.get(k, None) == v  if k in f else False for k, v in image_filters.items()]):
+                 [f.get(k, None) == v  if k in f else False for k, v in image_filters.items()]):
                     # Download and open
                     img_url = "https://neurovault.org/media/images/" \
                         f"{u['collection_id']}/{f['basename']}"
@@ -482,9 +617,16 @@ class Analyses(Base):
 
     def plot_uploads(self, id, plot_args={}, **kwargs):
         """ Plot uploads for matching collections using nilearn
-        :param str id: Analysis hash_id.
-        :param dict kwargs: Arguments for load_uploads
-        :return list list of matplotlib objects.
+
+        :param id: :class:`Analysis` `hash_id`
+        :type id: str
+        :param plot_args: Plot arguments for nilearn.plotting
+        :type plot_args: dict
+        :param kwargs: Arguments for load_uploads
+        :type kwargs: dict
+        
+        :return: list of matplotlib objects.
+        :rype: list
         """
 
         images = self.load_uploads(id, **kwargs)
@@ -501,31 +643,49 @@ class Analyses(Base):
 
     def get_full(self, id):
         """ Get full analysis object (including runs and predictors)
-        :param str id: Analysis hash_id.
-        :return: client response object
+
+        :param id: :class:`Analysis` `hash_id`
+        :type id: str
+
+        :return: Requests response object
+        :rype: :class:`requests.Response`
         """
         return self.get(id=id, sub_route='full')
 
     def fill(self, id, partial=True, dryrun=False):
         """ Fill missing fields
-        :param str id: Analysis hash_id.
-        :param bool partial: Partial fill?
-        :param bool dryrun: Dryrun do not commit to database.
-        :return: client response object
+        
+        :param id: :class:`Analysis` `hash_id`
+        :type id: str
+        :param partial: Partial fill.
+        :type partial: bool
+        :param dryrun: Do not commit to database.
+        :type dryrun: bool
+        
+        :return: Requests response object
+        :rype: :class:`requests.Response`
         """
         return self.post(id=id, sub_route='fill',
                          params=dict(partial=partial, dryrun=dryrun))
 
     def get_resources(self, id):
         """ Get analysis resources
-        :param str id: Analysis hash_id.
-        :return: client response object
+
+        :param id: :class:`Analysis` `hash_id`
+        :type id: str
+
+        :return: Requests response object
+        :rype: :class:`requests.Response`
         """
         return self.get(id=id, sub_route='resources')
 
     def get_status(self, id):
         """ Get analysis status
-        :param str id: Analysis hash_id.
-        :return: client response object
+
+        :param id: :class:`Analysis` `hash_id`
+        :type id: str
+
+        :return: Requests response object
+        :rype: :class:`requests.Response`
         """
         return self.get(id=id, sub_route='compile')
