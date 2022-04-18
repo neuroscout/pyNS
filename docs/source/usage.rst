@@ -16,11 +16,8 @@ Quickstart
 ----------
 
 .. note::
-   For a full tutorial see this `Jupyter Notebook <https://github.com/neuroscout/pyNS/blob/master/examples/Tutorial.ipynb>`_ or
-   the Neuroscout Paper `Jupyter Book <https://neuroscout.github.io/neuroscout-paper/intro.html>`_
-
-We are assuming you already have valid Neuroscout API credentials (and
-if you dont, sign up at: ``neuroscout.org``)
+   We are assuming you already have valid Neuroscout API credentials (and
+   if you dont, sign up at: `neuroscout.org  <https://neuroscout.org>`_)
 
 First, instantiate a Neuroscout API Client object:
 
@@ -96,3 +93,10 @@ And get the predictor-events associated with that predictor:
      'predictor_id': 197,
      'run_id': 26,
      'value': '13'}]
+
+Tutorial
+--------
+
+For a full fledged tutorial see this `Jupyter Notebook <https://github.com/neuroscout/pyNS/blob/master/examples/Tutorial.ipynb>`_.
+
+For a complete example, including meta-analytic workflows, see the the Neuroscout Paper `Jupyter Book <https://neuroscout.github.io/neuroscout-paper/intro.html>`_.
