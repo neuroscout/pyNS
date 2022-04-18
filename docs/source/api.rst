@@ -6,5 +6,5 @@ API
    :template: custom-module-template.rst
    :recursive:
 
-   pyns.api.Neuroscout
+   pyns.api
    pyns.endpoints

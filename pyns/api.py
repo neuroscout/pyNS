@@ -1,3 +1,4 @@
+""" Neuroscout API client"""
 import requests
 import re
 import jwt
