@@ -10,16 +10,14 @@ pyNS is a python library to easily interact with the Neuroscout API.
 pyNS enables interations with the Neuroscout API in applications such as [neuroscout-cli](https://github.com/neuroscout/neuroscout-cli/), as well as advanced usage of Neuroscout that goes beyond what is possible with the [web application](https://neuroscout.org).
 
 ### Installation
-pyNS is supported in Python 3.4+
 Use `pip` to install it:
 
     pip install pyns
 
-## Documentation
+## Documentation 📚
+Full documentation can be found at [readthedocs] (https://pyns.readthedocs.io/en/latest/).
 
-Full documentation for `pyNS` can be found at [readthedocs] (https://pyns.readthedocs.io/en/latest/).
-
-For API documentation, check out the [Swagger API UI](http://neuroscout.org/swagger-ui/): 
+For API docs , check out the [Swagger API UI](http://neuroscout.org/swagger-ui/): 
 
 For a tutorial see this [jupyter notebook example](./examples/Tutorial.ipynb).
 You can also follow the Neuroscout Paper's analyses in this interactive [jupyter book](https://neuroscout.github.io/neuroscout-paper/intro.html)
