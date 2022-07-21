@@ -1,5 +1,8 @@
 """ Miscelaneous utilities """
 import collections
+import warnings
+from functools import wraps
+import pyns
 
 module_names = {}
 Dependency = collections.namedtuple('Dependency', 'package value')
@@ -86,3 +89,65 @@ def snake_to_camel(string):
     """ Convert string from snake to camel type """
     words = string.split('_')
     return words[0] + ''.join(word.title() for word in words[1:])
+
+
+def dt_name_to_ids(func):
+    ''' Decorator which converts dataset_name and task_name to ids. '''
+    @wraps(func)
+    def wrapper(*args, task_name=None, dataset_name=None, **kwargs):
+        api = pyns.Neuroscout()
+        dataset_id = None
+        if dataset_name is not None:
+            datasets = api.datasets.get() 
+            ds_ids = [d['id'] for d in datasets if d['name']==dataset_name]
+            if not ds_ids:
+                raise ValueError(f"{dataset_name} is not a valid dataset name."
+                                  "See all available datasets using"
+                                  "Neuroscout().datasets.get()")
+            kwargs['dataset_id'] = ds_ids[0]
+        
+        task_id = None
+        if task_name is not None:
+            tasks = api.tasks.get(dataset_id=dataset_id)
+            task_ids = [t['id'] for t in tasks if t['name'] == task_name]
+            if not task_ids:
+                raise ValueError(f''' {task_name} is not a valid task name.''')
+            kwargs['task_id'] = task_ids[0]
+        
+        return func(*args, **kwargs)
+    
+    return wrapper
+
+
+def find_runs(func):
+    """ Decorator which finds runs for a given dataset and task names.
+    Assumes that downstream function accepts names instead of ids 
+    (i.e. has been decorated with dt_name_to_ids)"""
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        api = pyns.Neuroscout()
+        search_args = {}
+        for i in ['dataset_name', 'task_name']:
+            if i in kwargs:
+                search_args[i] = kwargs.pop(i)
+
+        if 'run_ids' not in kwargs and search_args:
+            runs = api.runs.get(
+                dataset_name=search_args.get('dataset_name', None), 
+                task_name=search_args.get('task_name', None)
+                )
+            # if 'subject' in kwargs:
+            #     subjects = kwargs.pop('subjects')
+            #     filtered_runs = []
+            #     for s in subjects:
+            #         subj_runs = [r for r in runs if r['subject']==s]
+            #         if len(subj_runs)==0:
+            #             warnings.warn(f'''subject {s} not found''')
+            #         filtered_runs += subj_runs 
+            #     runs = filtered_runs
+            run_id = [r['id'] for r in runs]
+            if not run_id:
+                raise ValueError("No runs found using provided arguments")
+            kwargs['run_id'] = run_id
+        return func(*args, **kwargs)
+    return wrapper

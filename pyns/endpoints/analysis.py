@@ -5,7 +5,7 @@ from functools import partial
 import datetime
 import tempfile
 import requests
-from .utils import build_model, attempt_to_import
+from .utils import build_model, attempt_to_import, dt_name_to_ids
 import tqdm
 import time
 import re
@@ -131,12 +131,14 @@ class Analysis:
         """ Get full analysis representation """
         return self._getter_wrapper('get_full')
 
+    @dt_name_to_ids
     def clone(self, dataset_id=None):
         """ Clone current analysis. If dataset_id is provided, new run and
         predictor_ids will be filled for that dataset.
         
         :param dataset_id: Dataset ID
         :type dataset_id: int
+        :type dataset_name: str
 
         :return: :class:`.Analysis` instance.
         :rype: :class:`.Analysis`

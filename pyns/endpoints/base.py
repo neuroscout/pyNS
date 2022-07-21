@@ -1,7 +1,7 @@
 """Base endpoint class"""
 from abc import ABC, abstractmethod
 from functools import partial
-
+from .utils import dt_name_to_ids
 
 class Base(ABC):
     """Superclass for all resources.
@@ -12,6 +12,9 @@ class Base(ABC):
     
     These are listed in subclasses as `auto_methods`.
     """
+
+    _convert_dt_to_ids_ = False
+    _auto_methods_ = ()
 
     def __init__(self, client):
         """Initialize a Model instance.
@@ -30,7 +33,13 @@ class Base(ABC):
                     partial(
                         getattr(self._client, "_" + method),
                         self._base_path_)
-                    )
+            )
+            # For get methods, automatically convert dataset and task name to ID
+            if method =='get' and self._convert_dt_to_ids_ is True:
+                setattr(self,
+                        method,
+                        dt_name_to_ids(getattr(self, method))
+                )
 
     @property
     @abstractmethod
