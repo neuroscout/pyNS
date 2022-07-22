@@ -158,6 +158,7 @@ class Analyses(Base):
     """ Analyses endpoint class """
     _base_path_ = 'analyses'
     _auto_methods_ = ('get', 'post')
+    _convert_names_to_ids_ = True
 
     def put(self, id, **kwargs):
         """ Put analysis
