@@ -127,24 +127,12 @@ def find_runs(func):
     def wrapper(*args, **kwargs):
         api = pyns.Neuroscout()
         search_args = {}
-        for i in ['dataset_name', 'task_name']:
+        for i in ['dataset_name', 'task_name', 'subject', 'number', 'session']:
             if i in kwargs:
                 search_args[i] = kwargs.pop(i)
 
         if 'run_ids' not in kwargs and search_args:
-            runs = api.runs.get(
-                dataset_name=search_args.get('dataset_name', None), 
-                task_name=search_args.get('task_name', None)
-                )
-            # if 'subject' in kwargs:
-            #     subjects = kwargs.pop('subjects')
-            #     filtered_runs = []
-            #     for s in subjects:
-            #         subj_runs = [r for r in runs if r['subject']==s]
-            #         if len(subj_runs)==0:
-            #             warnings.warn(f'''subject {s} not found''')
-            #         filtered_runs += subj_runs 
-            #     runs = filtered_runs
+            runs = api.runs.get(**search_args)
             run_id = [r['id'] for r in runs]
             if not run_id:
                 raise ValueError("No runs found using provided arguments")
