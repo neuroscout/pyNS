@@ -1,5 +1,6 @@
 """ Miscelaneous utilities """
 import collections
+from os import kill
 import warnings
 from functools import wraps
 import pyns
@@ -91,51 +92,53 @@ def snake_to_camel(string):
     return words[0] + ''.join(word.title() for word in words[1:])
 
 
-def dt_name_to_ids(func):
-    ''' Decorator which converts dataset_name and task_name to ids. '''
+def names_to_ids(func):
+    ''' Decorator which converts *_name to *_id by automatically looking up in API'''
     @wraps(func)
-    def wrapper(*args, task_name=None, dataset_name=None, **kwargs):
+    def wrapper(*args, **kwargs):
         api = pyns.Neuroscout()
-        dataset_id = None
-        if dataset_name is not None:
-            datasets = api.datasets.get() 
-            ds_ids = [d['id'] for d in datasets if d['name']==dataset_name]
-            if not ds_ids:
-                raise ValueError(f"{dataset_name} is not a valid dataset name."
-                                  "See all available datasets using"
-                                  "Neuroscout().datasets.get()")
-            kwargs['dataset_id'] = ds_ids[0]
-        
-        task_id = None
-        if task_name is not None:
-            tasks = api.tasks.get(dataset_id=dataset_id)
-            task_ids = [t['id'] for t in tasks if t['name'] == task_name]
-            if not task_ids:
-                raise ValueError(f''' {task_name} is not a valid task name.''')
-            kwargs['task_id'] = task_ids[0]
-        
+
+        # Sorting guarantees that 'dataset' is looked up before 'task' to constrain search
+        for kw in sorted(kwargs):
+            if kw.endswith('_name'):
+                try:
+                    mod = getattr(api, kw.replace('_name', 's'))
+                except:
+                    raise ValueError("No API endpoint for {}".format(kw))
+
+                filter_args = {'name': kwargs[kw]}
+                if kw == 'task_name' and 'dataset_id' in kwargs:
+                    filter_args['dataset_id'] = kwargs['dataset_id']
+
+                res = mod.get(**filter_args)
+
+                if not res:
+                    raise ValueError("No {} found using provided arguments".format(kw))
+                if len(res) > 1:
+                    raise ValueError("Multiple {} found using provided arguments".format(kw))
+
+                kwargs[kw.replace('_name', '_id')] = res[0]['id']
+                kwargs.pop(kw)
+
         return func(*args, **kwargs)
-    
     return wrapper
 
 
 def find_runs(func):
     """ Decorator which finds runs for a given dataset and task names.
     Assumes that downstream function accepts names instead of ids 
-    (i.e. has been decorated with dt_name_to_ids)"""
+    (i.e. has been decorated with names_to_ids)"""
     @wraps(func)
     def wrapper(*args, **kwargs):
         api = pyns.Neuroscout()
-        search_args = {}
-        for i in ['dataset_name', 'task_name', 'subject', 'number', 'session']:
-            if i in kwargs:
-                search_args[i] = kwargs.pop(i)
+        FIELDS = ['dataset_name', 'task_name', 'subject', 'number', 'session']
+        search_args = {k: kwargs.pop(k) for k in FIELDS if k in kwargs}
 
         if 'run_ids' not in kwargs and search_args:
-            runs = api.runs.get(**search_args)
-            run_id = [r['id'] for r in runs]
-            if not run_id:
+            kwargs['run_id'] = [r['id'] for r in api.runs.get(**search_args)]
+            if not kwargs['run_id']:
                 raise ValueError("No runs found using provided arguments")
-            kwargs['run_id'] = run_id
+        elif 'run_ids' in kwargs and search_args:
+            raise ValueError(f"Run filter arguments {search_args} cannot be provided if run_ids are provided")
         return func(*args, **kwargs)
     return wrapper

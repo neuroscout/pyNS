@@ -18,7 +18,7 @@ class Tasks(Base):
     """
     _base_path_ = 'tasks'
     _auto_methods_ = ('get', )
-    _convert_dt_to_ids_ = True
+    _convert_names_to_ids_ = True
 
 
 class Runs(Base):
@@ -28,4 +28,4 @@ class Runs(Base):
     """
     _base_path_ = 'runs'
     _auto_methods_ = ('get', )
-    _convert_dt_to_ids_ = True
+    _convert_names_to_ids_ = True
