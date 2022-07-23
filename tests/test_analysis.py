@@ -136,6 +136,13 @@ def test_get_analysis(recorder, neuroscout, analysis):
         assert resp['name'] == 'pytest_analysis'
         assert resp['status'] == 'DRAFT'
 
+        resp = neuroscout.analyses.get(dataset_id=9)
+        assert resp[0]['dataset_id'] == 9
+
+        resp2 = neuroscout.analysis.get(dataset_name='Life')
+        assert resp == resp2
+
+
 
 def test_put_analysis(recorder, neuroscout, analysis):
     analysis_id = analysis['hash_id']

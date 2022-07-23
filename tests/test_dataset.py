@@ -10,6 +10,9 @@ def test_dataset(recorder, neuroscout):
         tasks = resp['tasks']
         assert len(tasks) == 2
 
+        resp2 = neuroscout.dataset.get(name='SherlockMerlin')
+        assert resp == resp2
+
         resp = neuroscout.tasks.get(dataset_id=5)
         assert resp[0]['name'] == tasks[0]['name']
 

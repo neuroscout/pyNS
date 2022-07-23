@@ -12,6 +12,15 @@ def test_predictor(recorder, neuroscout):
         resp = neuroscout.predictors.get(id=first['id'])
         assert 'source' in resp
 
+        resp = neuroscout.predictors.get(dataset_name='studyforrest')
+        assert resp[0]['dataset_id'] == 11
+        assert resp[-1]['dataset_id'] == 11
+
+        resp2 = neuroscout.predictors.get(dataset_name='studyforrest', subject=16)
+        resp3 = neuroscout.predictors.get(dataset_name='studyforrest', subject=14)
+
+        assert len(resp2) == len(resp3)
+
 
 def test_predictor_collection(recorder, neuroscout, get_test_data_path):
     with recorder.use_cassette('predictor_collection'):
