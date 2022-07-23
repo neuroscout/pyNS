@@ -6,7 +6,7 @@ Usage
 Installation
 ------------
 
-To use pyNS, first install it using pip:
+To use pyNS, simply install it using pip:
 
 .. code-block:: console
 
@@ -28,7 +28,7 @@ First, instantiate a Neuroscout API Client object:
 
 With the ``neuroscout`` instance, you can interact with the API. All of
 the major routes are linked to the main ``neuroscout`` object, and
-return ``requests`` ``Response`` objects.
+return JSON objects.
 
 For example we can retrieve our user profile:
 
@@ -42,7 +42,10 @@ For example we can retrieve our user profile:
      'name': 'My new analysis',
      'status': 'PASSED'}]]}
 
-Or query various endpoints, such as ``datasets``:
+Querying the Neuroscout API
+----------
+----------
+`pyNS` makes it easy query various endpoints of the Neuroscout API, such as ``datasets``:
 
 ::
 
@@ -60,8 +63,35 @@ Or query various endpoints, such as ``datasets``:
    ...
      'tasks': [{'id': 8, 'name': 'life'}]}]
 
-For example, we could use this to get the first predictor associated
-with a dataset:
+Note that the valid arguments for each endpoint are listed in the official Neuroscout `API documentation <https://neuroscout.org/api/>`_.
+For example, for `neuroscout.datasets.get`, this is the `reference for the valid arguments <https://neuroscout.org/api/swagger/#/dataset/get_api_datasets>`.
+
+In the documentation, we can see that we the `name` argument can be used to find a specific dataset.
+
+::
+
+   >>> neuroscout.datasets.get(name='SherlockMerlin')
+      {'active': True,
+      'dataset_address': None,
+      'description': {'Authors': ['Zadbood, A.',
+         'Chen, J.',
+         'Leong, Y.C.',
+         'Norman, K.A.',
+         'Hasson, U.'],
+      'BIDSVersion': '1.0.2',
+      'Funding': 'National Institutes of Health (1R01MH112357-01 and 1R01MH112566-01)',
+      'Name': 'Sherlock_Merlin',
+      'ReferencesAndLinks': ['https://academic.oup.com/cercor/article/doi/10.1093/cercor/bhx202/4080827/How-We-Transmit-Memories-to-Other-Brains']},
+      'id': 5,
+   ...
+      'url': 'https://openneuro.org/datasets/ds001110'}
+
+Syntactic sugar: pyNS makes using the Neuroscout API easier
+----------
+----------
+
+Typically, to query the Neuroscout API you will need to refer to the `ids` of the objects you want to query.
+For example, to discover the available predictors for `SherlockMerlin`, we would refer to the `id` of the dataset:
 
 ::
 
@@ -76,7 +106,40 @@ with a dataset:
     'name': 'boundingPoly_vertex1_y',
     'source': 'extracted'}
 
-And get the predictor-events associated with that predictor:
+
+However, `pyNS` adds conveniences to make this easier.
+For any argument ending in `_id` (such as `dataset_id`), you can simply use the name of the object, and `pyNS` will 
+automatically look up the id for you and pass it to the API.
+
+For example, perform the same query as above using `dataset_name`, and further restrict results
+to a specific task as follows:
+
+::
+
+   >>> first = neuroscout.predictors.get(dataset_name='Sherlock_Merlin', task_name='MerlinMovie')[0]
+   {'description': 'Bounding polygon around face. y coordinate for vertex 1',
+    'extracted_feature': {'created_at': '2018-04-12 00:44:14.868349',
+     'description': 'Bounding polygon around face. y coordinate for vertex 1',
+     'extractor_name': 'GoogleVisionAPIFaceExtractor',
+     'id': 102,
+     'modality': None},
+    'id': 197,
+    'name': 'boundingPoly_vertex1_y',
+    'source': 'extracted'}
+
+.. note::
+   This syntactic sugar is only available in `pyNS`, and not when accessing the `API` directly.
+   For example, the official API documentation does not list `dataset_name` as a valid argument for
+   `neuroscout.predictors.get`, and instead lists `dataset_id` as required.
+
+
+Getting the data: querying `predictor_events`
+----------
+----------
+
+An important aspect of `pyNS` is the ability to retrieve moment by moment events for specific predictors.
+
+For example, we can chain the previous query with a query to `predictor_events` to get the events for the first predictor:
 
 ::
 

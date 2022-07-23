@@ -6,7 +6,10 @@ Welcome to pyNS's documentation!
 **pyNS** enables advanced used cases not supported by the `neuroscout.org <https://neuroscout.org>`_` 
 web-based analysis builder, such as batch-creation of analyses, or meta-analytic applications.
 
-See the :doc:`usage` section for further information, including :ref:`installation` of pyNS.
+**pyNS** mirrors the official Neuroscout API with a Pythonic interface.
+Note that the best reference for the API is the official `API docs <https://neuroscout.org/api>`.
+
+See the :doc:`usage` section to get started, including :ref:`installation` of pyNS.
 
 .. note::
 

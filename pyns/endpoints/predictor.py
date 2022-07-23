@@ -58,3 +58,8 @@ class Predictors(Base):
 class PredictorEvents(Base):
     _base_path_ = 'predictor-events'
     _auto_methods_ = ('get', )
+    _convert_names_to_ids_ = True
+
+    def __init__(self, client):
+        super().__init__(client)
+        self.get = find_runs(self.get)
