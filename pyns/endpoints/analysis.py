@@ -5,7 +5,8 @@ from functools import partial
 import datetime
 import tempfile
 import requests
-from .utils import build_model, attempt_to_import, names_to_ids
+from .utils import build_model, attempt_to_import
+from .base import names_to_ids
 import tqdm
 import time
 import re

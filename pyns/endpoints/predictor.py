@@ -1,7 +1,6 @@
 """Predictor endpoint"""
 from .base import Base
 import json
-from .utils import find_runs
 
 class Predictors(Base):
     """Predictors endpoint
@@ -10,10 +9,7 @@ class Predictors(Base):
     """
     _base_path_ = 'predictors'
     _auto_methods_ = ('get', 'post')
-
-    def __init__(self, client):
-        super().__init__(client)
-        self.get = find_runs(self.get)
+    _find_runs_ = True
 
     def create_collection(self, collection_name, dataset_id,
                           runs, event_files, descriptions=None):
@@ -59,7 +55,4 @@ class PredictorEvents(Base):
     _base_path_ = 'predictor-events'
     _auto_methods_ = ('get', )
     _convert_names_to_ids_ = True
-
-    def __init__(self, client):
-        super().__init__(client)
-        self.get = find_runs(self.get)
+    _find_runs_ = True
