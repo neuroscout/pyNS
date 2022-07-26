@@ -67,7 +67,7 @@ class Base(ABC):
 
 
 def names_to_ids(func):
-    ''' Decorator which converts *_name to *_id by automatically looking up in API'''
+    ''' Decorator which converts _name to _id by automatically looking up in API'''
     @wraps(func)
     def wrapper(*args, **kwargs):
         api = pyns.Neuroscout()

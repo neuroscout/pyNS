@@ -55,7 +55,7 @@ In the documentation, we can see that we the `name` argument can be used to find
 
 
 ------------------------------------------------------------
-Added conveniences: Automatic conversion of _name to _id
+Human friendly queries: Automatic conversion of _name to _id
 ------------------------------------------------------------
 
 Typically, to query the Neuroscout API you will need to refer to the `ids` of the objects you want to query.
@@ -71,14 +71,13 @@ using the dataset's ID to complete the `runs` query:
 To make this query easier, `pyNS` automatically converts all arguments ending in `_name` to `_id`, by looking up the corresponding `id` 
 in the Neuroscout API prior to making the subsequent API call. 
 
-For example, we can ask for the first run for the dataset `NaturalisticNeuroimagingDatabase`, for the task `500daysofsummer`:
+For example, we can ask for the first run for the dataset `NaturalisticNeuroimagingDatabase`, for the task `500daysofsummer` by name:
 
 
 .. doctest::
 
    >>> neuroscout.runs.get(dataset_name='NaturalisticNeuroimagingDatabase', task_name='500daysofsummer')[0]
    {'acquisition': None, 'dataset_id': 28, 'duration': 5470.0, 'id': 1581, 'number': None, 'session': None, 'subject': '18', 'task': 50, 'task_name': '500daysofsummer'}
-
 
 
 However, `pyNS` adds conveniences to make this easier.
