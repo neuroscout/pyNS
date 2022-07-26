@@ -116,7 +116,7 @@ to a specific task as follows:
 
 ::
 
-   >>> first = neuroscout.predictors.get(dataset_name='Sherlock_Merlin', task_name='MerlinMovie')[0]
+   >>> first = neuroscout.predictors.get(dataset_name='SherlockMerlin', task_name='MerlinMovie')[0]
    {'description': 'Bounding polygon around face. y coordinate for vertex 1',
     'extracted_feature': {'created_at': '2018-04-12 00:44:14.868349',
      'description': 'Bounding polygon around face. y coordinate for vertex 1',
@@ -156,6 +156,50 @@ For example, we can chain the previous query with a query to `predictor_events` 
      'predictor_id': 197,
      'run_id': 26,
      'value': '13'}]
+
+We can also take advantage of the `pyNS` syntactic sugar to query for the events for the first predictor:
+
+::
+
+   >>> neuroscout.predictor_events.get(predictor_name='speech', dataset_name='Sherlock_Merlin', task_name='MerlinMovie')[0:2]
+   [{'duration': 0.30100000000000016,
+   'onset': 72.422,
+   'predictor_id': 12725,
+   'run_id': 134,
+   'value': '1'},
+   {'duration': 0.30100000000000016,
+   'onset': 72.422,
+   'predictor_id': 12725,
+   'run_id': 117,
+   'value': '1'}]
+
+
+Automatic conversion to pandas DataFrames
+----------
+----------
+You can easily convert any query result to a pandas DataFrame. Simply pass the argument output_type='df' to the query:
+
+::
+
+   >>> neuroscout.predictor_events.get(predictor_id=first['id'])[0:2]
+
+            duration    onset  predictor_id  run_id value predictor_name subject session number acquisition
+      0         0.301   72.422         12725     134     1         speech      36    None   None        None
+      1         0.301   72.422         12725     117     1         speech      19    None   None        None
+      2         0.301   72.422         12725     118     1         speech      20    None   None        None
+      3         0.301   72.422         12725     119     1         speech      21    None   None        None
+      4         0.301   72.422         12725     120     1         speech      22    None   None        None
+      ...         ...      ...           ...     ...   ...            ...     ...     ...    ...         ...
+      25735     0.371  793.302         12725    1410     1         speech      25    None   None        None
+      25736     0.280  793.673         12725    1410     1         speech      25    None   None        None
+      25737     0.380  794.883         12725    1410     1         speech      25    None   None        None
+      25738     0.180  796.358         12725    1410     1         speech      25    None   None        None
+      25739     0.549  796.648         12725    1410     1         speech      25    None   None        None
+
+      [25740 rows x 10 columns]
+
+To make the interpretation of the query easier, `pyNS` automatically converts all columns ending in `_id` to their respective names.
+In the case of `run_id`, we fetch the corresponding BIDS entities (i.e.`subject`, `number`, `session`, `acquisition`) and add them to the DataFrame.
 
 Tutorial
 --------
