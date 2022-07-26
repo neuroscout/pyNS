@@ -14,7 +14,7 @@ web-based analysis builder, such as batch-creation of analyses, or meta-analytic
 **pyNS** mirrors the official Neuroscout API with a Pythonic interface.
 Note that the best reference for the API is the official `API docs <https://neuroscout.org/api>`_
 
-See the :doc:`usage` section to get started, including :ref:`installation` of pyNS.
+See the :doc:`installation` and :doc:`quickstart` sections to get started.
 
 .. note::
 
