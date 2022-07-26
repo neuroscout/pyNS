@@ -1,6 +1,11 @@
 Welcome to pyNS's documentation!
 ===================================
 
+.. image:: neuroscout-logo.svg
+  :width: 400
+  :alt: Neuroscout Logo
+
+
 **pyNS** is the Python client library for accessing the `Neuroscout API <https://neuroscout.org/api>`_
 
 **pyNS** enables advanced used cases not supported by the `neuroscout.org <https://neuroscout.org>`_` 
@@ -21,5 +26,6 @@ Contents
 
 .. toctree::
 
+   installation
    usage
    api

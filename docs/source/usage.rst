@@ -1,17 +1,6 @@
 Usage
 =====
 
-.. _installation:
-
-Installation
-------------
-
-To use pyNS, simply install it using pip:
-
-.. code-block:: console
-
-   $ pip install pyns
-
 Quickstart
 ----------
 
@@ -43,8 +32,9 @@ For example we can retrieve our user profile:
      'status': 'PASSED'}]]}
 
 Querying the Neuroscout API
-----------
-----------
+---------------------------
+---------------------------
+
 `pyNS` makes it easy query various endpoints of the Neuroscout API, such as ``datasets``:
 
 ::
@@ -87,8 +77,8 @@ In the documentation, we can see that we the `name` argument can be used to find
       'url': 'https://openneuro.org/datasets/ds001110'}
 
 Syntactic sugar: pyNS makes using the Neuroscout API easier
-----------
-----------
+-----------------------------------------------------------
+------------------------------------------------------------
 
 Typically, to query the Neuroscout API you will need to refer to the `ids` of the objects you want to query.
 For example, to discover the available predictors for `SherlockMerlin`, we would refer to the `id` of the dataset:
@@ -134,8 +124,8 @@ to a specific task as follows:
 
 
 Getting the data: querying `predictor_events`
-----------
-----------
+---------------------------------------------
+---------------------------------------------
 
 An important aspect of `pyNS` is the ability to retrieve moment by moment events for specific predictors.
 
@@ -175,8 +165,8 @@ We can also take advantage of the `pyNS` syntactic sugar to query for the events
 
 
 Automatic conversion to pandas DataFrames
-----------
-----------
+------------------------------------------
+------------------------------------------
 You can easily convert any query result to a pandas DataFrame. Simply pass the argument output_type='df' to the query:
 
 ::
