@@ -139,7 +139,7 @@ def test_get_analysis(recorder, neuroscout, analysis):
         resp = neuroscout.analyses.get(dataset_id=9)
         assert resp[0]['dataset_id'] == 9
 
-        resp2 = neuroscout.analysis.get(dataset_name='Life')
+        resp2 = neuroscout.analyses.get(dataset_name='Life')
         assert resp == resp2
 
 
@@ -232,6 +232,7 @@ def test_upload_analysis(recorder, neuroscout, analysis, get_test_data_path):
             id=analysis_id, group_paths=group_paths,
             subject_paths=sub_paths,
             validation_hash='Av1Jbwl1aO', force=True,
+            cli_args={},
             n_subjects=99)
 
         assert 'uploaded_at' in resp

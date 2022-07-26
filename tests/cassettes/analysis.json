@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2021-08-11T04:02:52",
+      "recorded_at": "2022-07-26T00:02:45",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -12,10 +12,10 @@
             "*/*"
           ],
           "Accept-Encoding": [
-            "gzip, deflate"
+            "gzip, deflate, br"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjkyNTkzNTgsImlhdCI6MTYyODY1NDU1OCwibmJmIjoxNjI4NjU0NTU4LCJpZGVudGl0eSI6MX0.Frxdfl7yUiKKhLTwAoTLJRoexfGz6hb4UMn8EnSW9sE"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTkzOTg1NTIsImlhdCI6MTY1ODc5Mzc1MiwibmJmIjoxNjU4NzkzNzUyLCJpZGVudGl0eSI6MX0.55A1Lj_YkR1rnvtVxXnDkHuyMbY8I5xRYvD38Rh9NXY"
           ],
           "Connection": [
             "keep-alive"
@@ -27,7 +27,7 @@
             "application/json"
           ],
           "User-Agent": [
-            "python-requests/2.24.0"
+            "python-requests/2.26.0"
           ]
         },
         "method": "POST",
@@ -35,8 +35,8 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA31Sy2rDMBC89zP27IDtPkh8C00DhaaHxIdCCEa110SJLAtpFWpM/r0ruynpIfXJO9LMzuyqh9KiIKwKQZBBGqfJJJ5OkiSPH7IYIqgECYdUyAqyGZfoSisNyVZDpr1SEeyF2w/HMJ0eTMkc1ZZHZKAWymEETVuhgqyHV208hZ+1Z/Y22UWw8Z8HLBncgpVVHL4EGM+FO7KikjXCOYJ30SCXpiN0VAgtVOek41YbQuOY3cNzq8kKR6FigYVvmu4K6yHvTNCgoPeGp2BpMBLB6mLwI/hwBrHcw46v5VZoV7e2ESHwoHyO+tvay5fV/Fr+ku5f0h9Di3HccA7teXCylrd3o29NxQiLetzZuCNjsZLlTwiAX6C1IVSSzuLHXQDlid8CZGQ97836IXJ6/8RnjgT5QF6s58ucFZz/bCRdXs7Yxju0fAW/RGMUFkN5vvsGNyCvLGQCAAA=",
-          "encoding": null,
+          "base64_string": "H4sIAAAAAAAAA31Sy2rDMBC89zP2rIDj0rTxLTQNFJoeEh8KIRjFXhM1siT0CDXG/96V3ZT0kPrkHWlmZ3bVQWmRe6wK7iGDNEnTSfI4SWd5kmQJMKi45w59ISrI5lSiK60wXmgFmQpSMjhydxyOQT+5QyCO1OUJCai5dMig0RVKyDp4VSb4+LMJxN5N9wy24fCJJYE7sKJK4jcFwnPuTqQoRY3QM3jnDVJpWo/OF1xx2TrhqNXWo3HE7uBZK2+587EigWVomvYK6yBvTdTwUe8Nz9HSYITB+mLwI/pwBrE8wp6u5ZYrV2vb8Bh4UO5Zd1t79bJeXMtf0v1L+mNoOY4b+tieBidqcXs36tZU1LkodVDEShgYblGNCxwXZixWovxJBPALaBsTTtN58rCPoDjTw4DM20BLtGHIn97P6Mx57kMkLzeLVU4KLhwa4S/PaGwTHFq6gl+8MRKLoezvvgEbyNMlcQIAAA==",
+          "encoding": "utf-8",
           "string": ""
         },
         "headers": {
@@ -53,10 +53,10 @@
             "application/json"
           ],
           "Date": [
-            "Wed, 11 Aug 2021 04:02:52 GMT"
+            "Tue, 26 Jul 2022 00:02:45 GMT"
           ],
           "Server": [
-            "nginx/1.19.3"
+            "nginx/1.21.6"
           ],
           "Strict-Transport-Security": [
             "max-age=31536000"

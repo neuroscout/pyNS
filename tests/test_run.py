@@ -5,8 +5,8 @@ def test_run(recorder, neuroscout):
         assert len(resp) > 1
 
         resp = neuroscout.runs.get(id=5)
-        assert len(resp) == 1
-        assert resp[0]['id'] == 5
+        assert isinstance(resp, dict)
+        assert resp['id'] == 5
 
         resp = neuroscout.runs.get(dataset_id=5)
         resp2 = neuroscout.runs.get(dataset_name='SherlockMerlin')

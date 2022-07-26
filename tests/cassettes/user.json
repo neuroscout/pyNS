@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2021-08-11T04:03:19",
+      "recorded_at": "2022-07-26T00:03:06",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -12,16 +12,16 @@
             "*/*"
           ],
           "Accept-Encoding": [
-            "gzip, deflate"
+            "gzip, deflate, br"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjkyNTkzNTgsImlhdCI6MTYyODY1NDU1OCwibmJmIjoxNjI4NjU0NTU4LCJpZGVudGl0eSI6MX0.Frxdfl7yUiKKhLTwAoTLJRoexfGz6hb4UMn8EnSW9sE"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTkzOTg1NTIsImlhdCI6MTY1ODc5Mzc1MiwibmJmIjoxNjU4NzkzNzUyLCJpZGVudGl0eSI6MX0.55A1Lj_YkR1rnvtVxXnDkHuyMbY8I5xRYvD38Rh9NXY"
           ],
           "Connection": [
             "keep-alive"
           ],
           "User-Agent": [
-            "python-requests/2.24.0"
+            "python-requests/2.26.0"
           ]
         },
         "method": "GET",
@@ -30,7 +30,7 @@
       "response": {
         "body": {
           "base64_string": "H4sIAAAAAAAAA22OwQ7CMAxD73xGzhUfsBN/EpUuQKQ0ndJEICH+nU3ayoWjLT/bb6CaWWCC6GQXeuW6CJ1Lq5DgxtYdpd1ZYdIQScDanT2c27A0V1r5HcWtZ2WbFZ6PyELWm2bBzk7D5OJhPxlX4YL7HbegBP5kdzJ8ZJ1lJLcF/Lf6OX0BmNkZk88AAAA=",
-          "encoding": null,
+          "encoding": "utf-8",
           "string": ""
         },
         "headers": {
@@ -47,10 +47,10 @@
             "application/json"
           ],
           "Date": [
-            "Wed, 11 Aug 2021 04:03:19 GMT"
+            "Tue, 26 Jul 2022 00:03:06 GMT"
           ],
           "Server": [
-            "nginx/1.19.3"
+            "nginx/1.21.6"
           ],
           "Strict-Transport-Security": [
             "max-age=31536000"
