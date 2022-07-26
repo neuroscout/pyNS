@@ -7,12 +7,12 @@ Welcome to pyNS's documentation!
 
 
 **pyNS** is the Python client library for accessing the `Neuroscout API <https://neuroscout.org/api>`_
-
-**pyNS** enables advanced used cases not supported by the `neuroscout.org <https://neuroscout.org>`_` 
+ 
+**pyNS** enables advanced used cases not supported by the `neuroscout.org <https://neuroscout.org>`_
 web-based analysis builder, such as batch-creation of analyses, or meta-analytic applications.
 
 **pyNS** mirrors the official Neuroscout API with a Pythonic interface.
-Note that the best reference for the API is the official `API docs <https://neuroscout.org/api>`.
+Note that the best reference for the API is the official `API docs <https://neuroscout.org/api>`_
 
 See the :doc:`usage` section to get started, including :ref:`installation` of pyNS.
 
@@ -27,5 +27,7 @@ Contents
 .. toctree::
 
    installation
-   usage
+   quickstart
+   querying
+   analyses
    api

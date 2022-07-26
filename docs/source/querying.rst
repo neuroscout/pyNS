@@ -1,42 +1,14 @@
-Usage
+Querying
 =====
 
-----------
-Quickstart
-----------
+---------------------------
+Querying the Neuroscout API
+---------------------------
 
 .. testsetup::
 
    from pyns import Neuroscout
    neuroscout = Neuroscout()
-
-First, instantiate a Neuroscout API Client object, optionally passing in your authentication credentials:
-
-.. doctest::
-   
-   >> from pyns import Neuroscout
-   >> neuroscout = Neuroscout()
-
-The ```Neuroscout`` object provides a connection the Neuroscout API, with each major endpoint represented as 
-an object linked to the main ``Neuroscout`` object. 
-
-For example, using the attribute `neuroscout.datasets`, we can query the Neuroscout API for a list of datasets.
-
-.. doctest::
-
-   >>> datasets = neuroscout.datasets.get()
-   >>> len(datasets) # Number of datasets available
-   12
-   >>> datasets[0]['name'] # Name of the first Dataset
-   'Raiders'
-
-
-The available Neuroscout endpoints are listed here: :meth:`mymodule.MyClass.mymethod`, and currently include:
-`['analyses', 'datasets', 'tasks', 'runs', 'predictors', 'predictor_events', 'user']`
-
----------------------------
-Querying the Neuroscout API
----------------------------
 
 For each of the available endpoints, the Neuroscout API provides a number of query parameters. 
 
@@ -172,11 +144,3 @@ In the case of `run_id`, we fetch the corresponding BIDS entities (i.e.`subject`
 
 .. note::
    Asking for PredictorEvents for a dataset or task without specifying a `predictor_name` may results in a very long running query.
-
---------
-Tutorial
---------
-
-For a full fledged tutorial see this `Jupyter Notebook <https://github.com/neuroscout/pyNS/blob/master/examples/Tutorial.ipynb>`_.
-
-For a complete example, including meta-analytic workflows, see the the Neuroscout Paper `Jupyter Book <https://neuroscout.github.io/neuroscout-paper/intro.html>`_.
