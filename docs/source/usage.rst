@@ -34,8 +34,9 @@ For example, using the attribute `neuroscout.datasets`, we can query the Neurosc
 The available Neuroscout endpoints are listed here: :meth:`mymodule.MyClass.mymethod`, and currently include:
 `['analyses', 'datasets', 'tasks', 'runs', 'predictors', 'predictor_events', 'user']`
 
-Query parameters
-================
+---------------------------
+Querying the Neuroscout API
+---------------------------
 
 For each of the available endpoints, the Neuroscout API provides a number of query parameters. 
 
@@ -53,15 +54,16 @@ In the documentation, we can see that we the `name` argument can be used to find
    >>> dataset['long_description']
    'This dataset includes the data of 18 particpants who watched Sherlock movie and data of 18 participants who watched Merlin movie.'
 
-
-------------------------------------------------------------
+---------------------------------------------------------------
 Human friendly queries: Automatic conversion of _name to _id
-------------------------------------------------------------
+---------------------------------------------------------------
 
-Typically, to query the Neuroscout API you will need to refer to the `ids` of the objects you want to query.
+pyNS adds several conveniences to the Neuroscout API to make querying easier.
+
+Typically, when querying the Neuroscout API you will need to refer to the `ids` of the objects you want to query.
 For example, to discover the runs associated with `SherlockMerlin`, we would refer to the `id` of this dataset, 
 which requires first looking up the dataset by name (``neuroscout.datasets.get(name='SherlockMerlin')``) and then
-using the dataset's ID to complete the `runs` query:
+using the `dataset_id`` query for `runs` available:
 
 .. doctest::
 
@@ -73,37 +75,43 @@ in the Neuroscout API prior to making the subsequent API call.
 
 For example, we can ask for the first run for the dataset `NaturalisticNeuroimagingDatabase`, for the task `500daysofsummer` by name:
 
-
 .. doctest::
 
    >>> neuroscout.runs.get(dataset_name='NaturalisticNeuroimagingDatabase', task_name='500daysofsummer')[0]
    {'acquisition': None, 'dataset_id': 28, 'duration': 5470.0, 'id': 1581, 'number': None, 'session': None, 'subject': '18', 'task': 50, 'task_name': '500daysofsummer'}
 
-
-However, `pyNS` adds conveniences to make this easier.
-For any argument ending in `_id` (such as `dataset_id`), you can simply use the name of the object, and `pyNS` will 
-automatically look up the id for you and pass it to the API.
-
-For example, perform the same query as above using `dataset_name`, and further restrict results
-to a specific task as follows:
-
-::
-
-   >>> first = neuroscout.predictors.get(dataset_name='SherlockMerlin', task_name='MerlinMovie')[0]
-   {'description': 'Bounding polygon around face. y coordinate for vertex 1',
-    'extracted_feature': {'created_at': '2018-04-12 00:44:14.868349',
-     'description': 'Bounding polygon around face. y coordinate for vertex 1',
-     'extractor_name': 'GoogleVisionAPIFaceExtractor',
-     'id': 102,
-     'modality': None},
-    'id': 197,
-    'name': 'boundingPoly_vertex1_y',
-    'source': 'extracted'}
-
 .. note::
-   This syntactic sugar is only available in `pyNS`, and not when accessing the `API` directly.
+   These conveniences are available in `pyNS`, and not when accessing the `API` directly.
    For example, the official API documentation does not list `dataset_name` as a valid argument for
-   `neuroscout.predictors.get`, and instead lists `dataset_id` as required.
+   `neuroscout.datasets.get`, and instead lists `dataset_id` as required.
+
+----------------------------------------------------
+Looking up Predictors by run_id, and by run entities
+----------------------------------------------------
+
+Neuroscout provides a large number of pre-extracted `Predictors` all tasks and datasets.
+It's important to note that the `Predictors` are always associated with `run_ids` rather than tasks or session directly, to enable maximum experimental design flexibility.
+This means that when looking up `Predictors`, we must refer to one or more `run_ids`. 
+
+For example, here's we can ask for an arbitrary `Predictor` associated with for the first run of `500daysofsummer` by referencing the `run_id`:
+
+.. doctest::
+
+   >>> neuroscout.predictors.get(run_id=1581)[0]
+   {'dataset_id': 28, 'description': 'Degree of blur/sharpness of the image', 'extracted_feature': {'created_at': '2021-05-05 00:52:59.856713', 'description': 'Degree of blur/sharpness of the image', 'extractor_name': 'SharpnessExtractor', 'id': 425739, 'modality': 'image', 'resample_frequency': None}, 'id': 40254, 'max': 1.0, 'mean': 0.8604099357979763, 'min': 0.0, 'name': 'sharpness', 'num_na': 0, 'private': False, 'source': 'extracted'}
+
+
+pyNS makes this query easier by allowing the user to instead pass `run` identifiers directly, and automatically converting them to `run_ids`.
+For example, we can ask for a list of all `Predictors` associated with the the task `500daysofsummer` directly:
+
+.. doctest::
+
+   >>> predictors = neuroscout.predictors.get(dataset_name='NaturalisticNeuroimagingDatabase', task_name='500daysofsummer')
+   >>> [p['name'] for p in predictors][0:5] # Print first 5 predictor names
+   ['sharpness', 'tool', 'subtlexusfrequency_FREQcount', 'subtlexusfrequency_CDcount', 'subtlexusfrequency_FREQlow']
+
+
+Under the hood, `pyNS` looks up the `dataset_id` and `task_id` for the given `dataset_name` and `task_name` and then uses these to lookup the `run_id` for the given `run`.
 
 ---------------------------------------------
 Getting the data: querying `predictor_events`
@@ -111,50 +119,37 @@ Getting the data: querying `predictor_events`
 
 An important aspect of `pyNS` is the ability to retrieve moment by moment events for specific predictors.
 
-For example, we can chain the previous query with a query to `predictor_events` to get the events for the first predictor:
+The simplest way is to simply use `predictor_id` to query for a specific Predictor, for a specific `run_id`:
 
-::
+.. doctest::
 
-   >>> neuroscout.predictor_events.get(predictor_id=first['id'])[0:2]
-   [{'duration': 9.0,
-     'id': '1050781',
-     'onset': 114.0,
-     'predictor_id': 197,
-     'run_id': 2,
-     'value': '13'},
-    {'duration': 9.0,
-     'id': '1050782',
-     'onset': 114.0,
-     'predictor_id': 197,
-     'run_id': 26,
-     'value': '13'}]
+   >>> neuroscout.predictor_events.get(predictor_id=40254, run_id=1581)[0:2]  # First two events for Predictor
+   [{'duration': 1.0, 'onset': 0.0, 'predictor_id': 40254, 'run_id': 1581, 'value': '0.03137254901960784'}, {'duration': 1.0, 'onset': 1.0, 'predictor_id': 40254, 'run_id': 1581, 'value': '0.0196078431372549'}]
 
-We can also take advantage of the `pyNS` syntactic sugar to query for the events for the first predictor:
+However, as before, we can make this simpler by taking advantage of pyNS's convenience features, and querying using the names directly.
+Let's try looking up a `Predictor` named `speech` for the task `MerlinMovie`:
 
-::
+.. doctest::
 
-   >>> neuroscout.predictor_events.get(predictor_name='speech', dataset_name='Sherlock_Merlin', task_name='MerlinMovie')[0:2]
-   [{'duration': 0.30100000000000016,
-   'onset': 72.422,
-   'predictor_id': 12725,
-   'run_id': 134,
-   'value': '1'},
-   {'duration': 0.30100000000000016,
-   'onset': 72.422,
-   'predictor_id': 12725,
-   'run_id': 117,
-   'value': '1'}]
+   >>> neuroscout.predictor_events.get(predictor_name='speech', dataset_name='SherlockMerlin', task_name='MerlinMovie')[0:2]
+   [{'duration': 0.30100000000000016, 'onset': 72.422, 'predictor_id': 12725, 'run_id': 134, 'value': '1'}, {'duration': 0.30100000000000016, 'onset': 72.422, 'predictor_id': 12725, 'run_id': 117, 'value': '1'}]
+
+.. note::
+   `PredictorEvents` are primarily associated with `run_id` to allow for maximum design flexibility, such as each subject seeing a different stimulus.
+   As such, the above results will contain all event timepoints for all subjects/runs for that Predictor.
+   However, in many cases all subjects will have seen the same movie, in which case you can simply use the events for a single subject as reference.
 
 
 ------------------------------------------
-Automatic conversion to pandas DataFrames
+Friendly outputs to pandas DataFrames
 ------------------------------------------
 
-You can easily convert any query result to a pandas DataFrame. Simply pass the argument output_type='df' to the query:
+You can easily convert any query result to a pandas DataFrame. Simply pass the argument `output_type='df'` to the query.
+This is particularly useful for `PredictorEvents`, as the are naturally represented as a pandas DataFrame`.
 
 ::
 
-   >>> neuroscout.predictor_events.get(predictor_id=first['id'])[0:2]
+   >>> neuroscout.predictor_events.get(predictor_name='speech', dataset_name='Sherlock_Merlin', task_name='MerlinMovie')
 
             duration    onset  predictor_id  run_id value predictor_name subject session number acquisition
       0         0.301   72.422         12725     134     1         speech      36    None   None        None
@@ -171,8 +166,12 @@ You can easily convert any query result to a pandas DataFrame. Simply pass the a
 
       [25740 rows x 10 columns]
 
+
 To make the interpretation of the query easier, `pyNS` automatically converts all columns ending in `_id` to their respective names.
 In the case of `run_id`, we fetch the corresponding BIDS entities (i.e.`subject`, `number`, `session`, `acquisition`) and add them to the DataFrame.
+
+.. note::
+   Asking for PredictorEvents for a dataset or task without specifying a `predictor_name` may results in a very long running query.
 
 --------
 Tutorial
