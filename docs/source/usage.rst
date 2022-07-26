@@ -1,100 +1,84 @@
 Usage
 =====
 
+----------
 Quickstart
 ----------
 
-.. note::
-   We are assuming you already have valid Neuroscout API credentials (and
-   if you dont, sign up at: `neuroscout.org  <https://neuroscout.org>`_)
-
-First, instantiate a Neuroscout API Client object:
-
-::
+.. testsetup::
 
    from pyns import Neuroscout
-   neuroscout = Neuroscout(username='USERNAME', password='PASSWORD')
+   neuroscout = Neuroscout()
 
-With the ``neuroscout`` instance, you can interact with the API. All of
-the major routes are linked to the main ``neuroscout`` object, and
-return JSON objects.
+First, instantiate a Neuroscout API Client object, optionally passing in your authentication credentials:
 
-For example we can retrieve our user profile:
+.. doctest::
+   
+   >> from pyns import Neuroscout
+   >> neuroscout = Neuroscout()
 
-::
+The ```Neuroscout`` object provides a connection the Neuroscout API, with each major endpoint represented as 
+an object linked to the main ``Neuroscout`` object. 
 
-   >>> neuroscout.user.get()
-   {'email': 'user@example.com',
-    'analyses': [ {'description': 'Does the brain care about language?',
-     'hash_id': 'RZd',
-     'modified_at': '2018-08-09T23:3',
-     'name': 'My new analysis',
-     'status': 'PASSED'}]]}
+For example, using the attribute `neuroscout.datasets`, we can query the Neuroscout API for a list of datasets.
 
-Querying the Neuroscout API
----------------------------
----------------------------
+.. doctest::
 
-`pyNS` makes it easy query various endpoints of the Neuroscout API, such as ``datasets``:
+   >>> datasets = neuroscout.datasets.get()
+   >>> len(datasets) # Number of datasets available
+   12
+   >>> datasets[0]['name'] # Name of the first Dataset
+   'Raiders'
 
-::
 
-   >>> neuroscout.datasets.get()
-   [{'description': {'Acknowledgements': '',
-      'Authors': ['Tomoyasu Horikawa', 'Yukiyasu Kamitani'],
-      'DatasetDOI': '',
-      'Funding': '',
-      'HowToAcknowledge': '',
-      'License': '',
-      'Name': 'Generic Object Decoding (fMRI on ImageNet)',
-      'ReferencesAndLinks': ['Horikawa & Kamitani (2017) Generic decoding of seen and imagined objects using hierarchical visual features. Nature Communications volume 8:15037. doi:10.1038/ncomms15037']},
-     'id': 1,
-     'name': 'generic_object_decoding',
-   ...
-     'tasks': [{'id': 8, 'name': 'life'}]}]
+The available Neuroscout endpoints are listed here: :meth:`mymodule.MyClass.mymethod`, and currently include:
+`['analyses', 'datasets', 'tasks', 'runs', 'predictors', 'predictor_events', 'user']`
 
-Note that the valid arguments for each endpoint are listed in the official Neuroscout `API documentation <https://neuroscout.org/api/>`_.
-For example, for `neuroscout.datasets.get`, this is the `reference for the valid arguments <https://neuroscout.org/api/swagger/#/dataset/get_api_datasets>`.
+Query parameters
+================
+
+For each of the available endpoints, the Neuroscout API provides a number of query parameters. 
+
+The valid arguments for each endpoint are listed in the official Neuroscout `API documentation <https://neuroscout.org/api/>`_.
 
 In the documentation, we can see that we the `name` argument can be used to find a specific dataset.
 
-::
+.. doctest::
 
-   >>> neuroscout.datasets.get(name='SherlockMerlin')
-      {'active': True,
-      'dataset_address': None,
-      'description': {'Authors': ['Zadbood, A.',
-         'Chen, J.',
-         'Leong, Y.C.',
-         'Norman, K.A.',
-         'Hasson, U.'],
-      'BIDSVersion': '1.0.2',
-      'Funding': 'National Institutes of Health (1R01MH112357-01 and 1R01MH112566-01)',
-      'Name': 'Sherlock_Merlin',
-      'ReferencesAndLinks': ['https://academic.oup.com/cercor/article/doi/10.1093/cercor/bhx202/4080827/How-We-Transmit-Memories-to-Other-Brains']},
-      'id': 5,
-   ...
-      'url': 'https://openneuro.org/datasets/ds001110'}
+   >>> dataset = neuroscout.datasets.get(name='SherlockMerlin')[0]
+   >>> dataset['name']
+   'SherlockMerlin'
+   >>> dataset['id']
+   5
+   >>> dataset['long_description']
+   'This dataset includes the data of 18 particpants who watched Sherlock movie and data of 18 participants who watched Merlin movie.'
 
-Syntactic sugar: pyNS makes using the Neuroscout API easier
------------------------------------------------------------
+
+------------------------------------------------------------
+Added conveniences: Automatic conversion of _name to _id
 ------------------------------------------------------------
 
 Typically, to query the Neuroscout API you will need to refer to the `ids` of the objects you want to query.
-For example, to discover the available predictors for `SherlockMerlin`, we would refer to the `id` of the dataset:
+For example, to discover the runs associated with `SherlockMerlin`, we would refer to the `id` of this dataset, 
+which requires first looking up the dataset by name (``neuroscout.datasets.get(name='SherlockMerlin')``) and then
+using the dataset's ID to complete the `runs` query:
 
-::
+.. doctest::
 
-   >>> first = neuroscout.predictors.get(dataset_id=5)[0]
-   {'description': 'Bounding polygon around face. y coordinate for vertex 1',
-    'extracted_feature': {'created_at': '2018-04-12 00:44:14.868349',
-     'description': 'Bounding polygon around face. y coordinate for vertex 1',
-     'extractor_name': 'GoogleVisionAPIFaceExtractor',
-     'id': 102,
-     'modality': None},
-    'id': 197,
-    'name': 'boundingPoly_vertex1_y',
-    'source': 'extracted'}
+   >>> neuroscout.runs.get(dataset_id=5)[0] # First run of SherlockMerlin
+   {'acquisition': None, 'dataset_id': 5, 'duration': 1453.5, 'id': 1428, 'number': None, 'session': None, 'subject': '17', 'task': 45, 'task_name': 'SherlockMovie'}
+
+To make this query easier, `pyNS` automatically converts all arguments ending in `_name` to `_id`, by looking up the corresponding `id` 
+in the Neuroscout API prior to making the subsequent API call. 
+
+For example, we can ask for the first run for the dataset `NaturalisticNeuroimagingDatabase`, for the task `500daysofsummer`:
+
+
+.. doctest::
+
+   >>> neuroscout.runs.get(dataset_name='NaturalisticNeuroimagingDatabase', task_name='500daysofsummer')[0]
+   {'acquisition': None, 'dataset_id': 28, 'duration': 5470.0, 'id': 1581, 'number': None, 'session': None, 'subject': '18', 'task': 50, 'task_name': '500daysofsummer'}
+
 
 
 However, `pyNS` adds conveniences to make this easier.
@@ -122,9 +106,8 @@ to a specific task as follows:
    For example, the official API documentation does not list `dataset_name` as a valid argument for
    `neuroscout.predictors.get`, and instead lists `dataset_id` as required.
 
-
-Getting the data: querying `predictor_events`
 ---------------------------------------------
+Getting the data: querying `predictor_events`
 ---------------------------------------------
 
 An important aspect of `pyNS` is the ability to retrieve moment by moment events for specific predictors.
@@ -164,9 +147,10 @@ We can also take advantage of the `pyNS` syntactic sugar to query for the events
    'value': '1'}]
 
 
+------------------------------------------
 Automatic conversion to pandas DataFrames
 ------------------------------------------
-------------------------------------------
+
 You can easily convert any query result to a pandas DataFrame. Simply pass the argument output_type='df' to the query:
 
 ::
@@ -191,6 +175,7 @@ You can easily convert any query result to a pandas DataFrame. Simply pass the a
 To make the interpretation of the query easier, `pyNS` automatically converts all columns ending in `_id` to their respective names.
 In the case of `run_id`, we fetch the corresponding BIDS entities (i.e.`subject`, `number`, `session`, `acquisition`) and add them to the DataFrame.
 
+--------
 Tutorial
 --------
 
