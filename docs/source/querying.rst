@@ -79,10 +79,10 @@ For example, we can ask for a list of all `predictors` associated with the the t
 
 
 Under the hood, `pyNS` looks up the ``dataset_id`` and ``task_id`` for the given ``dataset_name`` and ``task_name`` and then uses these to lookup the ``run_id`` for the given `run`.
-`
----------------------------------------------
+
+-------------------------------------------------
 Getting the data: querying for `predictor_events`
----------------------------------------------
+-------------------------------------------------
 
 An important aspect of `pyNS` is the ability to retrieve moment by moment events for specific predictors.
 
