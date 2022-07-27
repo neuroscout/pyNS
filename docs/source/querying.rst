@@ -10,7 +10,7 @@ For each of the available endpoints, the Neuroscout API provides a number of que
 
 The valid arguments for each endpoint are listed in the official Neuroscout `API documentation <https://neuroscout.org/api/>`_.
 
-In the documentation, we can see that we the ```name``` argument can be used to find a specific dataset.
+In the documentation, we can see that we the ``name`` argument can be used to find a specific dataset.
 
 .. doctest::
 
@@ -28,9 +28,9 @@ Human friendly queries: conversion of _name to _id
 
 `pyNS`` adds several conveniences to the Neuroscout API to make querying easier.
 
-Typically, when querying the Neuroscout API you will need to refer to the ```ids``` of the objects you want to query.
+Typically, when querying the Neuroscout API you will need to refer to the ``ids`` of the objects you want to query.
 For example, to discover the runs associated with `SherlockMerlin`, we would refer to the ``id`` of this dataset, 
-which requires first looking up the dataset by name and then using the ```dataset_id`` query for ``runs`` available:
+which requires first looking up the dataset by name and then using the ``dataset_id`` query for ``runs`` available:
 
 .. doctest::
 
@@ -40,7 +40,7 @@ which requires first looking up the dataset by name and then using the ```datase
 To make this query easier, `pyNS` automatically converts all arguments ending in ``_name`` to ``_id``, by looking up the corresponding `id` 
 in the Neuroscout API prior to making the subsequent API call. 
 
-For example, we can ask for the first run for the dataset ```NaturalisticNeuroimagingDatabase```, for the task ``500daysofsummer`` by name:
+For example, we can ask for the first run for the dataset ``NaturalisticNeuroimagingDatabase``, for the task ``500daysofsummer`` by name:
 
 .. doctest::
 
@@ -57,7 +57,7 @@ Looking up Predictors by run_id, and by run entities
 ----------------------------------------------------
 
 Neuroscout provides a large number of pre-extracted ``Predictors`` all tasks and datasets.
-It's important to note that the ``Predictors`` are always associated with ```run_ids`` rather than tasks or session directly, to enable maximum experimental design flexibility.
+It's important to note that the ``Predictors`` are always associated with ``run_ids`` rather than tasks or session directly, to enable maximum experimental design flexibility.
 This means that when looking up ``Predictors``, we must refer to one or more ``run_ids``. 
 
 For example, here's we can ask for an arbitrary `predictor` associated with for the first run of ``500daysofsummer`` by referencing the ``run_id``:
