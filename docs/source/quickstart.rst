@@ -7,7 +7,7 @@ Quickstart
    from pyns import Neuroscout
    neuroscout = Neuroscout()
 
-First, instantiate a `Neuroscout`` API Client object, optionally passing in your authentication credentials:
+First, instantiate a :py:class:`pyns.Neuroscout` API Client object, optionally passing in your authentication credentials:
 
 .. doctest::
    
@@ -19,8 +19,8 @@ First, instantiate a `Neuroscout`` API Client object, optionally passing in your
    Google single-sign-on is not currently supported in pyNS. Please register for a Neuroscout account if you 
    wish to use `pyNS` to create analyses.
 
-The :meth:`pyns.Neuroscout` object provides a connection the Neuroscout API, with each major endpoint represented as 
-an object linked to the main :meth:`pyns.Neuroscout` object. 
+The :py:class:`pyns.Neuroscout` object provides a connection the Neuroscout API, with each major endpoint represented as 
+an object linked to the main :py:class:`pyns.Neuroscout` object. 
 
 For example, using the attribute `neuroscout.datasets`, we can query the Neuroscout API for a list of datasets.
 
@@ -33,5 +33,5 @@ For example, using the attribute `neuroscout.datasets`, we can query the Neurosc
    'Raiders'
 
 
-The available Neuroscout endpoints are listed here: :meth:`pyns.endpoints`, and currently include:
+The available Neuroscout endpoints are listed here: :py:mod:`pyns.endpoints`, and currently include:
 ``['analyses', 'datasets', 'tasks', 'runs', 'predictors', 'predictor_events', 'user']``
