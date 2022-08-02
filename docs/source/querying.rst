@@ -10,7 +10,7 @@ For each of the available endpoints, the Neuroscout API provides a number of que
 
 The valid arguments for each endpoint are listed in the official Neuroscout `API documentation <https://neuroscout.org/api/>`_.
 
-In the documentation, we can see that we the ``name`` argument can be used to find a specific dataset.
+In the documentation, we can see that the ``name`` argument can be used to find a specific dataset.
 
 .. doctest::
 
@@ -37,10 +37,10 @@ which requires first looking up the dataset by name and then using the ``dataset
    >>> neuroscout.runs.get(dataset_id=5)[0] # First run of SherlockMerlin
    {'acquisition': None, 'dataset_id': 5, 'duration': 1453.5, 'id': 1428, 'number': None, 'session': None, 'subject': '17', 'task': 45, 'task_name': 'SherlockMovie'}
 
-To make this query easier, `pyNS` automatically converts all arguments ending in ``_name`` to ``_id``, by looking up the corresponding `id` 
+To make this query easier, `pyNS` automatically converts all arguments ending in ``_name`` to ``_id``, by looking up the corresponding ``id`` 
 in the Neuroscout API prior to making the subsequent API call. 
 
-For example, we can ask for the first run for the dataset ``NaturalisticNeuroimagingDatabase``, for the task ``500daysofsummer`` by name:
+For example, we can ask for the first run from the dataset ``NaturalisticNeuroimagingDatabase``, for the task ``500daysofsummer`` by name:
 
 .. doctest::
 
@@ -56,11 +56,11 @@ For example, we can ask for the first run for the dataset ``NaturalisticNeuroima
 Looking up Predictors by run_id, and by run entities
 ----------------------------------------------------
 
-Neuroscout provides a large number of pre-extracted ``Predictors`` all tasks and datasets.
-It's important to note that the ``Predictors`` are always associated with ``run_ids`` rather than tasks or session directly, to enable maximum experimental design flexibility.
+Neuroscout provides a large number of pre-extracted ``Predictors`` for all tasks and datasets.
+It's important to note that the ``Predictors`` are always associated with ``run_ids`` rather than tasks or sessions directly, to enable maximum experimental design flexibility.
 This means that when looking up ``Predictors``, we must refer to one or more ``run_ids``. 
 
-For example, here's we can ask for an arbitrary `predictor` associated with for the first run of ``500daysofsummer`` by referencing the ``run_id``:
+For example, here we can ask for an arbitrary `predictor` associated with the first run of ``500daysofsummer`` by referencing the ``run_id``:
 
 .. doctest::
 
@@ -68,7 +68,7 @@ For example, here's we can ask for an arbitrary `predictor` associated with for 
    {'dataset_id': 28, 'description': 'Degree of blur/sharpness of the image', 'extracted_feature': {'created_at': '2021-05-05 00:52:59.856713', 'description': 'Degree of blur/sharpness of the image', 'extractor_name': 'SharpnessExtractor', 'id': 425739, 'modality': 'image', 'resample_frequency': None}, 'id': 40254, 'max': 1.0, 'mean': 0.8604099357979763, 'min': 0.0, 'name': 'sharpness', 'num_na': 0, 'private': False, 'source': 'extracted'}
 
 
-`pyNS`` makes this query easier by allowing the user to instead pass `run` identifiers directly, and automatically converting them to ``run_ids``.
+`pyNS` makes this query easier by allowing the user to instead pass `run` identifiers directly, and automatically converting them to ``run_ids``.
 For example, we can ask for a list of all `predictors` associated with the the task ``500daysofsummer`` directly:
 
 .. doctest::
@@ -113,7 +113,7 @@ Friendly outputs to pandas DataFrames
 ------------------------------------------
 
 You can easily convert any query result to a pandas DataFrame. Simply pass the argument ``output_type='df'`` to the query.
-This is particularly useful for `PredictorEvents`, as the are naturally represented as a pandas DataFrame`.
+This is particularly useful for `PredictorEvents`, as the are naturally represented as a pandas DataFrame.
 
 ::
 
@@ -136,7 +136,7 @@ This is particularly useful for `PredictorEvents`, as the are naturally represen
 
 
 To make the interpretation of the query easier, `pyNS` automatically converts all columns ending in `_id` to their respective names.
-In the case of ``run_id``, we fetch the corresponding BIDS entities (i.e. ``subject``, ``number``, ``session``, ``acquisition``) and add them to the DataFrame.
+In the case of ``run_id``, we fetch the corresponding BIDS entities (e.g. ``subject``, ``number``, ``session``, ``acquisition``) and add them to the DataFrame.
 
 .. note::
    Asking for PredictorEvents for a dataset or task without specifying a ``predictor_name`` may results in a very long running query.

@@ -19,7 +19,7 @@ First, instantiate a :py:class:`pyns.Neuroscout` API Client object, optionally p
    Google single-sign-on is not currently supported in pyNS. Please register for a Neuroscout account if you 
    wish to use `pyNS` to create analyses.
 
-The :py:class:`pyns.Neuroscout` object provides a connection the Neuroscout API, with each major endpoint represented as 
+The :py:class:`pyns.Neuroscout` object provides a connection to the Neuroscout API, with each major endpoint represented as 
 an object linked to the main :py:class:`pyns.Neuroscout` object. 
 
 For example, using the attribute `neuroscout.datasets`, we can query the Neuroscout API for a list of datasets.
