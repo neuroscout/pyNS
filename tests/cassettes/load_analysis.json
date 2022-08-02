@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2021-08-11T04:03:09",
+      "recorded_at": "2022-07-26T00:03:01",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -12,16 +12,16 @@
             "*/*"
           ],
           "Accept-Encoding": [
-            "gzip, deflate"
+            "gzip, deflate, br"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjkyNTkzNTgsImlhdCI6MTYyODY1NDU1OCwibmJmIjoxNjI4NjU0NTU4LCJpZGVudGl0eSI6MX0.Frxdfl7yUiKKhLTwAoTLJRoexfGz6hb4UMn8EnSW9sE"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTkzOTg1NTIsImlhdCI6MTY1ODc5Mzc1MiwibmJmIjoxNjU4NzkzNzUyLCJpZGVudGl0eSI6MX0.55A1Lj_YkR1rnvtVxXnDkHuyMbY8I5xRYvD38Rh9NXY"
           ],
           "Connection": [
             "keep-alive"
           ],
           "User-Agent": [
-            "python-requests/2.24.0"
+            "python-requests/2.26.0"
           ]
         },
         "method": "GET",
@@ -29,8 +29,8 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA32UQW/jNhBG7/0ZPHsBk5REybdFswUKdIuiyaFAsVgwNh2rkSVBpFKkQf57542TIFssevBnzuh7w6FE8snslxRLOnyNxeyM2zr7YVt9cM2NsztvNuYQS8ypfO0PZudaiVPeL/1c+mk0u3Edho05xXzS5+budm56gYZpf58kcYxDThtzng5pMLsn8/M4r4XB9Xr7V9rL8E/TOgHaRiQEkUp+BBVBqIm2SCvikJquamxE1mIjcoy8jjoA+Bae+jWDCvFQreLUdZqjZIVYckFDRpZOWgo7DSlV6bTaHaPAUyYMeBudDK9XUVQLM0/N00a70/UyqrVtbLpyXTAjrx2rDcohnrCGslhqXYo2S2i1ijbG3DUjilhsFZTTcqQoRqZiVGlbmtOH2iDFvK6mMV825ibme76WdY8pLjnmIT4kXev2EB/zdMzr+ZwWydzG/X2Zyikd17IuePZ96f9J43FaeT70pQzp3Oec1zGf+hHLvA7zsd/rrtqYPItJ/qXIvKRc+rt0ifIp/i2/8X5Jh3SeX+zyYM2rbLU1z7KpsvnyvDG/xnOSHSmZtD+J6bqkOcsKnsyP01iWmAuRrOxKGn98l1PDoac2jtcKvIPHmZLFSPlf0gNb2vy+0sHn1w3+x3tCbDdLHPNxWs7xtd7bIXhf+aVZmfhhGuS9Pgv79J3OXjr46dPnj++beD1N/wt90/bV5VTrRBzP/th//wpgY43/eZVzXNJ4uREuF4B8pMPl48mExrwlpoUV+87Z+gvJ/kFumrdbYVn1hdi6bje2bi3iROpOpNki5BpyjUcqpEYaJCCwDUSACBABIkAEiAARIAJEgAgQLUSLr8XX4mvxtfha7Qpfh6+jckflDqKD6CA6iA6ig+iEaLZbxCIO8UiF1EiDBKRFICyEhbAQFsJCWAgLYSEshIVwEA7CQTgIB+EgHISDcBAOwkN4CA/hITyEh/AQHsJDeIgKooKoICovnzGXWFa+828fr68/XXFc19uzHOqXDXTZEmuWy2BnopwLuSjuonn+4V8z1R98awYAAA==",
-          "encoding": null,
+          "base64_string": "H4sIAAAAAAAAA32UzW7jNhRG930Mrj2ASUqi5N2gmQIFOkXRZFGgCAJGpmM1siSIpIs0yLv3HjoJMsWgC38mL79zeSn+PKt+DT6F/Z1PaqfM1uhP2+qTaW6M3lm1UXuffAzpbtirnWmlH2K/Dksa5kntpjyOG3X08VjG1cP90gwCjXP/GCRw8GMMG3Wa92FUu2f187TkROM63/8Vemn+qVojQNuIOCdSyY9ORcfV9LZIK2KQmqpqbPS0xkbP0LKl1QHAt/Dkr2lUiIVqC05eU2KkrBBNzJUuLU0lLYlN6ZKqKtOW6mg5RpnQ4W3KZHhtkYKWxMxTM9qU6sp6adWlbGxl5WXBtGypuNigDGLp1lAaS12WUoqlq0uWUhhz17RIorFVUKakI0QyIhWtqpRVYmWwFEgyW1bTqNuNuvHxkd3S5in4Nfo4+nMoa93u/VOcDzGfTmGVyL3vH9OcjuGQU17x9EMa/gnTYc6Mj0NKYzgNMcY8xeMwYVnyuByGvpyqjYqLmORfkixriGl4CJdePPq/5Tc9rmEfTsurXQZyzHLUclzkUEV1+7JRv/pTkBMpkdAfxXSdwhJlBc/qx3lKq4+JnqzsSgp/+hArhv1AbhxvGfgGTwspk5L0v4QzR1r9nqng69sB/+MjIbab1U/xMK8n/5bv/RJ8zPxarEx8nkf5ri/CPn+nstcKfvry9fPHIt5u0/9C35R9dbnVZSKu53AYvv8EcLCm/3zK6XzXz3kSs5ad82uYLs/D5TWQHdtfdlJmV+o9MK8s33ZG17cEh7M8O+9PxJrL19F13W503WrEiNSdSLNFiDXEGotUSI00iENgGwgH4SAchINwEA7CQTgIB+EgWogWX4uvxdfia/G1pSp8Hb6OzB2ZO4gOooPoIDqIDqITotluEY0YxCIVUiMN4pAWgdAQGkJDaAgNoSE0hIbQEBrCQBgIA2EgDISBMBAGwkAYCAthISyEhbAQFsJCWAgLYSEqiAqigqisbGNMPmX2+bfP19dfrri7+f4kN/z1NF2ORI7yMuyUl0sir8aDVy8//AuRrEc5eAYAAA==",
+          "encoding": "utf-8",
           "string": ""
         },
         "headers": {
@@ -47,10 +47,10 @@
             "application/json"
           ],
           "Date": [
-            "Wed, 11 Aug 2021 04:03:09 GMT"
+            "Tue, 26 Jul 2022 00:03:01 GMT"
           ],
           "Server": [
-            "nginx/1.19.3"
+            "nginx/1.21.6"
           ],
           "Strict-Transport-Security": [
             "max-age=31536000"
@@ -70,7 +70,7 @@
       }
     },
     {
-      "recorded_at": "2021-08-11T04:03:09",
+      "recorded_at": "2022-07-26T00:03:01",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -81,16 +81,16 @@
             "*/*"
           ],
           "Accept-Encoding": [
-            "gzip, deflate"
+            "gzip, deflate, br"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjkyNTkzNTgsImlhdCI6MTYyODY1NDU1OCwibmJmIjoxNjI4NjU0NTU4LCJpZGVudGl0eSI6MX0.Frxdfl7yUiKKhLTwAoTLJRoexfGz6hb4UMn8EnSW9sE"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTkzOTg1NTIsImlhdCI6MTY1ODc5Mzc1MiwibmJmIjoxNjU4NzkzNzUyLCJpZGVudGl0eSI6MX0.55A1Lj_YkR1rnvtVxXnDkHuyMbY8I5xRYvD38Rh9NXY"
           ],
           "Connection": [
             "keep-alive"
           ],
           "User-Agent": [
-            "python-requests/2.24.0"
+            "python-requests/2.26.0"
           ]
         },
         "method": "GET",
@@ -98,8 +98,8 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA8VRwU7DMAy98xk+N1VaUcR64zShwYYQnKap8lKXWaRJlKSVYNq/43LhA3bgZNl+fu9Zb38GY7mbKSb2DlrQZVNWUIDx1pLJMuy4h3Z1f1sXQCnziNlHATpOGXMS6MCWErT7MxwxkcORZJ0CGlLP28eqqbdP7GqtV+YhfY2d8S5HTFmlQGRO3UKj8m8ZMZSOufz4FlpLM1lhWr/u3l+kXwCT6MBuI51QGDqi+YTWTdZeimvUaRjk13+1MGNkdIauNXGQPMbIIVL4S3XZFDAF67GnvsMs17WuK6Ubpe/eKt02cDnc/ACru8XnDQIAAA==",
-          "encoding": null,
+          "base64_string": "H4sIAAAAAAAAA8WRz07DMAzG7zxGzk2VRhSx3jhNCNgQgtM0VV7qDov8U5JWgmnvjrcdeIAdOEWf/eVnW9/mIIylHtI+i85P1lZnPWPKFLzohKrbuhFcDdaiKVzsaRDd4v5WVwJzIQclJDZ6ygVKZutIFpm2OYgdZPTgkNs5gkH5snpsWr16Jq+VWpiH/O16E3xJkIvMEdF89ieMLOfHQaw9Ub3/YazFGS2Tlm/rj1fWJ8PEc8T6iRUjDO7AfF3OOFbXTMdx5Fv/dYUZEoE3eO0SW87DJYoJ41+ql6CnaAMMOPRQ+LdWupGqleruvVFdK47bm1/4d0AgHQIAAA==",
+          "encoding": "utf-8",
           "string": ""
         },
         "headers": {
@@ -116,10 +116,10 @@
             "application/json"
           ],
           "Date": [
-            "Wed, 11 Aug 2021 04:03:09 GMT"
+            "Tue, 26 Jul 2022 00:03:01 GMT"
           ],
           "Server": [
-            "nginx/1.19.3"
+            "nginx/1.21.6"
           ],
           "Strict-Transport-Security": [
             "max-age=31536000"
@@ -139,7 +139,7 @@
       }
     },
     {
-      "recorded_at": "2021-08-11T04:03:15",
+      "recorded_at": "2022-07-26T00:03:03",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -150,16 +150,16 @@
             "*/*"
           ],
           "Accept-Encoding": [
-            "gzip, deflate"
+            "gzip, deflate, br"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjkyNTkzNTgsImlhdCI6MTYyODY1NDU1OCwibmJmIjoxNjI4NjU0NTU4LCJpZGVudGl0eSI6MX0.Frxdfl7yUiKKhLTwAoTLJRoexfGz6hb4UMn8EnSW9sE"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTkzOTg1NTIsImlhdCI6MTY1ODc5Mzc1MiwibmJmIjoxNjU4NzkzNzUyLCJpZGVudGl0eSI6MX0.55A1Lj_YkR1rnvtVxXnDkHuyMbY8I5xRYvD38Rh9NXY"
           ],
           "Connection": [
             "keep-alive"
           ],
           "User-Agent": [
-            "python-requests/2.24.0"
+            "python-requests/2.26.0"
           ]
         },
         "method": "GET",
@@ -167,8 +167,8 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA8VRwU7DMAy98xk+N1VaUcR64zShwYYQnKap8lKXWaRJlKSVYNq/43LhA3bgZNl+fu9Zb38GY7mbKSb2DlrQZVNWUIDx1pLJMuy4h3Z1f1sXQCnziNlHATpOGXMS6MCWErT7MxwxkcORZJ0CGlLP28eqqbdP7GqtV+YhfY2d8S5HTFmlQGRO3UKj8m8ZMZSOufz4FlpLM1lhWr/u3l+kXwCT6MBuI51QGDqi+YTWTdZeimvUaRjk13+1MGNkdIauNXGQPMbIIVL4S3XZFDAF67GnvsMs17WuK6Ubpe/eKt02cDnc/ACru8XnDQIAAA==",
-          "encoding": null,
+          "base64_string": "H4sIAAAAAAAAA8WRz07DMAzG7zxGzk2VRhSx3jhNCNgQgtM0VV7qDov8U5JWgmnvjrcdeIAdOEWf/eVnW9/mIIylHtI+i85P1lZnPWPKFLzohKrbuhFcDdaiKVzsaRDd4v5WVwJzIQclJDZ6ygVKZutIFpm2OYgdZPTgkNs5gkH5snpsWr16Jq+VWpiH/O16E3xJkIvMEdF89ieMLOfHQaw9Ub3/YazFGS2Tlm/rj1fWJ8PEc8T6iRUjDO7AfF3OOFbXTMdx5Fv/dYUZEoE3eO0SW87DJYoJ41+ql6CnaAMMOPRQ+LdWupGqleruvVFdK47bm1/4d0AgHQIAAA==",
+          "encoding": "utf-8",
           "string": ""
         },
         "headers": {
@@ -185,10 +185,10 @@
             "application/json"
           ],
           "Date": [
-            "Wed, 11 Aug 2021 04:03:16 GMT"
+            "Tue, 26 Jul 2022 00:03:03 GMT"
           ],
           "Server": [
-            "nginx/1.19.3"
+            "nginx/1.21.6"
           ],
           "Strict-Transport-Security": [
             "max-age=31536000"
@@ -208,7 +208,7 @@
       }
     },
     {
-      "recorded_at": "2021-08-11T04:03:15",
+      "recorded_at": "2022-07-26T00:03:03",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -219,16 +219,16 @@
             "*/*"
           ],
           "Accept-Encoding": [
-            "gzip, deflate"
+            "gzip, deflate, br"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjkyNTkzNTgsImlhdCI6MTYyODY1NDU1OCwibmJmIjoxNjI4NjU0NTU4LCJpZGVudGl0eSI6MX0.Frxdfl7yUiKKhLTwAoTLJRoexfGz6hb4UMn8EnSW9sE"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTkzOTg1NTIsImlhdCI6MTY1ODc5Mzc1MiwibmJmIjoxNjU4NzkzNzUyLCJpZGVudGl0eSI6MX0.55A1Lj_YkR1rnvtVxXnDkHuyMbY8I5xRYvD38Rh9NXY"
           ],
           "Connection": [
             "keep-alive"
           ],
           "User-Agent": [
-            "python-requests/2.24.0"
+            "python-requests/2.26.0"
           ]
         },
         "method": "GET",
@@ -236,8 +236,8 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA8VRwU7DMAy98xk+N1VaUcR64zShwYYQnKap8lKXWaRJlKSVYNq/43LhA3bgZNl+fu9Zb38GY7mbKSb2DlrQZVNWUIDx1pLJMuy4h3Z1f1sXQCnziNlHATpOGXMS6MCWErT7MxwxkcORZJ0CGlLP28eqqbdP7GqtV+YhfY2d8S5HTFmlQGRO3UKj8m8ZMZSOufz4FlpLM1lhWr/u3l+kXwCT6MBuI51QGDqi+YTWTdZeimvUaRjk13+1MGNkdIauNXGQPMbIIVL4S3XZFDAF67GnvsMs17WuK6Ubpe/eKt02cDnc/ACru8XnDQIAAA==",
-          "encoding": null,
+          "base64_string": "H4sIAAAAAAAAA8WRz07DMAzG7zxGzk2VRhSx3jhNCNgQgtM0VV7qDov8U5JWgmnvjrcdeIAdOEWf/eVnW9/mIIylHtI+i85P1lZnPWPKFLzohKrbuhFcDdaiKVzsaRDd4v5WVwJzIQclJDZ6ygVKZutIFpm2OYgdZPTgkNs5gkH5snpsWr16Jq+VWpiH/O16E3xJkIvMEdF89ieMLOfHQaw9Ub3/YazFGS2Tlm/rj1fWJ8PEc8T6iRUjDO7AfF3OOFbXTMdx5Fv/dYUZEoE3eO0SW87DJYoJ41+ql6CnaAMMOPRQ+LdWupGqleruvVFdK47bm1/4d0AgHQIAAA==",
+          "encoding": "utf-8",
           "string": ""
         },
         "headers": {
@@ -254,10 +254,10 @@
             "application/json"
           ],
           "Date": [
-            "Wed, 11 Aug 2021 04:03:16 GMT"
+            "Tue, 26 Jul 2022 00:03:03 GMT"
           ],
           "Server": [
-            "nginx/1.19.3"
+            "nginx/1.21.6"
           ],
           "Strict-Transport-Security": [
             "max-age=31536000"

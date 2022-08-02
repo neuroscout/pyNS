@@ -6,6 +6,7 @@ import datetime
 import tempfile
 import requests
 from .utils import build_model, attempt_to_import
+from .base import names_to_ids
 import tqdm
 import time
 import re
@@ -131,12 +132,14 @@ class Analysis:
         """ Get full analysis representation """
         return self._getter_wrapper('get_full')
 
+    @names_to_ids
     def clone(self, dataset_id=None):
         """ Clone current analysis. If dataset_id is provided, new run and
         predictor_ids will be filled for that dataset.
         
         :param dataset_id: Dataset ID
         :type dataset_id: int
+        :type dataset_name: str
 
         :return: :class:`.Analysis` instance.
         :rype: :class:`.Analysis`
@@ -156,6 +159,7 @@ class Analyses(Base):
     """ Analyses endpoint class """
     _base_path_ = 'analyses'
     _auto_methods_ = ('get', 'post')
+    _convert_names_to_ids_ = True
 
     def put(self, id, **kwargs):
         """ Put analysis

@@ -1,5 +1,6 @@
 """ Miscelaneous utilities """
 import collections
+from os import kill
 
 module_names = {}
 Dependency = collections.namedtuple('Dependency', 'package value')

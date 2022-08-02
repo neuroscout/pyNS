@@ -1,42 +1,42 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2021-08-11T04:02:52",
+      "recorded_at": "2022-07-26T00:02:46",
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "{\"created_at\": \"2021-08-11T04:0\", \"dataset_id\": 9, \"description\": \"new_description\", \"hash_id\": \"88jpc\", \"locked\": false, \"model\": {\"Input\": {\"Run\": [1], \"Subject\": [\"rid000001\"], \"Task\": \"life\"}, \"Name\": \"pytest_analysis\", \"Steps\": [{\"Contrasts\": [], \"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Run\", \"Model\": {\"X\": [\"speech\"]}, \"Transformations\": []}, {\"DummyContrasts\": {\"Type\": \"FEMA\"}, \"Level\": \"Subject\"}, {\"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Dataset\"}]}, \"modified_at\": \"2021-08-11T04:0\", \"name\": \"pytest_analysis\", \"predictions\": \"\", \"predictors\": [12905], \"private\": true, \"runs\": [236], \"status\": \"DRAFT\", \"user\": \"example_user\"}"
+          "string": "{\"created_at\": \"2022-07-26T00:0\", \"dataset_id\": 9, \"description\": \"new_description\", \"hash_id\": \"o8sbu\", \"locked\": false, \"model\": {\"Input\": {\"Run\": [1], \"Subject\": [\"rid000001\"], \"Task\": \"life\"}, \"Name\": \"pytest_analysis\", \"Steps\": [{\"Contrasts\": [], \"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Run\", \"Model\": {\"X\": [\"speech\"]}, \"Transformations\": []}, {\"DummyContrasts\": {\"Type\": \"FEMA\"}, \"Level\": \"Subject\"}, {\"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Dataset\"}]}, \"modified_at\": \"2022-07-26T00:0\", \"name\": \"pytest_analysis\", \"nv_count\": 0, \"predictions\": \"\", \"predictors\": [12905], \"private\": true, \"runs\": [236], \"status\": \"DRAFT\", \"user\": \"example_user\"}"
         },
         "headers": {
           "Accept": [
             "*/*"
           ],
           "Accept-Encoding": [
-            "gzip, deflate"
+            "gzip, deflate, br"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MjkyNTkzNTgsImlhdCI6MTYyODY1NDU1OCwibmJmIjoxNjI4NjU0NTU4LCJpZGVudGl0eSI6MX0.Frxdfl7yUiKKhLTwAoTLJRoexfGz6hb4UMn8EnSW9sE"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTkzOTg1NTIsImlhdCI6MTY1ODc5Mzc1MiwibmJmIjoxNjU4NzkzNzUyLCJpZGVudGl0eSI6MX0.55A1Lj_YkR1rnvtVxXnDkHuyMbY8I5xRYvD38Rh9NXY"
           ],
           "Connection": [
             "keep-alive"
           ],
           "Content-Length": [
-            "645"
+            "660"
           ],
           "Content-Type": [
             "application/json"
           ],
           "User-Agent": [
-            "python-requests/2.24.0"
+            "python-requests/2.26.0"
           ]
         },
         "method": "PUT",
-        "uri": "https://neuroscout.org/api/analyses/88jpc"
+        "uri": "https://neuroscout.org/api/analyses/o8sbu"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA31STW/CMAy972f4XKS2+xD0hsaQJo0doIdJCFWmdUUgTaN8sFUV/31OGRM7sJziF/v5PTs9lIbQUVWggwzSOE1G8XiUJHn8kMUQQYUOLblCVJBNOCRbGqGdaBWnK/osrpEIdmh3Qy6Mx3tdMiLb8kAM1CgtRdC0FUnIenhV2rtwWXqmWiebCFZ+u6eSwTUYUcXhJMB4jvbAjFLUBKcI3rEhDnXnyLoCFcrOCsutVo605eoenlvlDFoXIiaY+abprrAe8k4HDhf43ugYJA1CIlhcBH4EHVYTlTvYcFpuUNm6NQ0GrwPzKepvc89fFtNr+ou7f4v+CJqdZw+n0J4HJ2pxe1Hq1lQ0GlLnBSovJQOGKlH+mAD4BVoTTCXpJH7cBFAc+WNA5oznvRk/WE7vn/jNOnQ+FM+W03nODNZvG+Eu3+jcxlsynEJf2GhJxRCe7r4BVXd9NnECAAA=",
-          "encoding": null,
+          "base64_string": "H4sIAAAAAAAAA31STU/DMAy98zN8zqSsiMF6Q4xJSIzD1gPSNFVZ62phaRLlY1BV++84HUPjMHKKX+zn9+z0UDkUAetSBMgh41k24vejbFJwnnNgUIsgPIZS1pBPKURfOWmDNJrSNX6WlwiDnfC7IRfMg99GQpSp9khAI5RHBq2pUUHew4u2MaTLMhLVerxhsIrbD6wIXIOTNU9nDIQXwu+JUckG4cjgTbRIoe0C+lAKLVTnpadWq4DWU3UPT0YHJ3xIERHMYtt2F1gPRWcTR0h8r3hIkgYhDBZnge9Jh7eI1Q42lFY4oX1jXCuS14H5yPrr3PPnxeMl/dndv0V/BM1Os4djak+Dk428vih9bSr6UFYmaqriDKxwqE/b1FEpAhzWsvpxBPALGJccjrMpv9skUB7ol0AeXKQlujj4z24n9OaDCDEVz5aP84IYfNy2Mpz/1KlN9OgoBb9EaxWWQ3i8+QZ8T+M1fgIAAA==",
+          "encoding": "utf-8",
           "string": ""
         },
         "headers": {
@@ -53,10 +53,10 @@
             "application/json"
           ],
           "Date": [
-            "Wed, 11 Aug 2021 04:02:52 GMT"
+            "Tue, 26 Jul 2022 00:02:46 GMT"
           ],
           "Server": [
-            "nginx/1.19.3"
+            "nginx/1.21.6"
           ],
           "Strict-Transport-Security": [
             "max-age=31536000"
@@ -72,7 +72,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://neuroscout.org/api/analyses/88jpc"
+        "url": "https://neuroscout.org/api/analyses/o8sbu"
       }
     }
   ],

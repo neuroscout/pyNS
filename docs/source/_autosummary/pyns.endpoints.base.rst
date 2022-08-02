@@ -1,4 +1,4 @@
-pyns.endpoints.base
+﻿pyns.endpoints.base
 ===================
 
 .. automodule:: pyns.endpoints.base
@@ -8,6 +8,15 @@ pyns.endpoints.base
    
 
    
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:                                          
+   
+      find_runs
+      names_to_ids
+      to_df
    
    
 

@@ -1,4 +1,4 @@
-pyns.endpoints.dataset.Datasets
+﻿pyns.endpoints.dataset.Datasets
 ===============================
 
 .. currentmodule:: pyns.endpoints.dataset
@@ -21,11 +21,5 @@ pyns.endpoints.dataset.Datasets
    
 
    
-   
-   .. rubric:: Attributes
-
-   .. autosummary::
-   
-      ~Datasets.base_path_
    
    
