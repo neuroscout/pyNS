@@ -22,9 +22,9 @@ In the documentation, we can see that the ``name`` argument can be used to find 
    >>> dataset['long_description']
    'This dataset includes the data of 18 particpants who watched Sherlock movie and data of 18 participants who watched Merlin movie.'
 
----------------------------------------------------
-Human friendly queries: conversion of _name to _id
----------------------------------------------------
+----------------------------------
+Human friendly queries
+----------------------------------
 
 `pyNS`` adds several conveniences to the Neuroscout API to make querying easier.
 
@@ -52,9 +52,9 @@ For example, we can ask for the first run from the dataset ``NaturalisticNeuroim
    For example, the official API documentation does not list `dataset_name` as a valid argument for
    `neuroscout.datasets.get`, and instead lists `dataset_id` as required.
 
-----------------------------------------------------
-Looking up Predictors by run_id, and by run entities
-----------------------------------------------------
+----------------------------------
+Looking up Predictors by run
+----------------------------------
 
 Neuroscout provides a large number of pre-extracted ``Predictors`` for all tasks and datasets.
 It's important to note that the ``Predictors`` are always associated with ``run_ids`` rather than tasks or sessions directly, to enable maximum experimental design flexibility.
@@ -80,9 +80,9 @@ For example, we can ask for a list of all `predictors` associated with the the t
 
 Under the hood, `pyNS` looks up the ``dataset_id`` and ``task_id`` for the given ``dataset_name`` and ``task_name`` and then uses these to lookup the ``run_id`` for the given `run`.
 
--------------------------------------------------
-Getting the data: querying for `predictor_events`
--------------------------------------------------
+----------------------------------
+Getting the predictor data
+----------------------------------
 
 An important aspect of `pyNS` is the ability to retrieve moment by moment events for specific predictors.
 
