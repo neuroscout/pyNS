@@ -4,7 +4,7 @@ Creating analyses
 Another major use of `pyNS` is to create `Neuroscout` analyses programatically.
 
 This is particulary useful for users that want to create a large number of analyses, or specify a
-BIDS Stats Model that is not currently support by the Neuroscout frontend web application.
+BIDS Stats Model that is not currently supported by the Neuroscout frontend web application.
 
 .. note::
    To update analyses, you must be authenticated and be the owner of a particular analysis
@@ -20,7 +20,7 @@ BIDS Stats Model that is not currently support by the Neuroscout frontend web ap
 Querying for Analyses
 ----------------------
 
-First, as before, you can use `pyNS` to query and look up existing an
+First, as before, you can use `pyNS` to query and look up existing any existing public analyses.
 
 For example, we can find two arbitrary analyses named `brightness` by name:
 
@@ -37,7 +37,7 @@ The Analysis object
 To make it easier to work with the analyses, `pyNS` provides a special `Analysis` which represents a single Neuroscout analysis
 as a Python object. To create this object, you can use :meth:`pyns.endpoints.analyses.get_analysis` to create an object from an Analysis' ``hash_id``
 
-This `Analysis` object has all attributes of an analysis as class attributes that can be modified and updated.
+This `Analysis` object has all the attributes of an analysis as class attributes that can be modified and updated.
 
 .. doctest::
 
@@ -66,7 +66,7 @@ This `Analysis` object has all attributes of an analysis as class attributes tha
 Modifying analyses
 ----------------------
 
-Assumping you are the owner of an analysis--and the analysis is still editable--you can modify it using the `Analysis` object.
+Assuming you are the owner of an analysis--and the analysis is still editable--you can modify it using the `Analysis` object.
 Simply modify the attributes of the :class:`pyns.endpoints.Analysis` object and then call `Analysis.push()` to push the changes to the server
 
 
@@ -88,7 +88,7 @@ Creating new analyses
 ----------------------
 
 You can use the :meth:`pyns.endpoints.analyses.create_analysis` function to create a new :class:`pyns.endpoints.Analysis` object corresponding to a new analysis you just created.
-This function mak`es it easy to create an analysis, by allowing you to specify your predictors, dataset, and other attributes
+This function makes it easy to create an analysis, by allowing you to specify your predictors, dataset, and other attributes
 of the analysis by name.
 
 ::
