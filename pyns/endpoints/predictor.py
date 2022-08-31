@@ -19,14 +19,15 @@ class Predictors(Base):
         :type collection_name: str
         :param dataset_id: Dataset id.
         :type dataset_id: int
-        :param runs: List of list of run ids corresponding to each event_file
+        :param runs: List of lists of run ids corresponding to each event_file.
         :type runs: list
         :param event_files: List of TSV files with new predictor columns.
             Required columns: onset, duration, any number of columns 
             with values for new Predictors.
         :type event_files: list
-        :param descriptions: list of descriptions (dict)
-            for each column
+        :param descriptions: list of dictionaries, where each dict matches to 
+            a tsv file, and keys in the dict correspond to columns in the event
+            file. Values are strings with a verbal description of each column. 
         :type descriptions: list
 
         :return: Requests response object
