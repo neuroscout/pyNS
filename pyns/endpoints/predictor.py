@@ -19,7 +19,7 @@ class Predictors(Base):
         :type collection_name: str
         :param dataset_id: Dataset id.
         :type dataset_id: int
-        :param runs: List of run ids corresponding to files
+        :param runs: List of list of run ids corresponding to each event_file
         :type runs: list
         :param event_files: List of TSV files with new predictor columns.
             Required columns: onset, duration, any number of columns 
