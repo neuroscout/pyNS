@@ -15,7 +15,7 @@ class Predictors(Base):
                           runs, event_files, descriptions=None):
         """ Create new predictor collection
         
-        :param collection_name: Force upload with unique timestamped name.
+        :param collection_name: Collection name.
         :type collection_name: str
         :param dataset_id: Dataset id.
         :type dataset_id: int
