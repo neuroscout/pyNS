@@ -100,6 +100,31 @@ of the analysis by name.
     subject=['rid000001', 'rid000005']
     )
 
+---------------------------
+Uploading custom predictors
+---------------------------
+
+It is possible to upload custom predictors using :meth:`neuroscout.predictors.create_collection`. Features should be in BIDS-compliant events format. Two columns are mandatory: “onset” and “duration” (both in seconds). You can then include any number of novel predictors as additional columns. Missing values can be annotated using the value “n/a” (no quotes).
+
+For each events file that you upload, you will be asked to associate it with runs in the respective dataset. Typically, there will be a different event file for each run in a naturalistic dataset. You must then associate each file with subjects. For example, in most cases, all subjects will have seen the same stimulus, but this will vary across datasets.
+
+::
+
+      >>> raiders1 = neuroscout.runs.get(dataset_id=10,number=1)[0:3] # 3 runs from raiders part 1
+      >>> raiders2 = neuroscout.runs.get(dataset_id=10,number=2)[0:3] # 3 runs from raiders part 2
+      >>> runs = [ [p['id'] for p in raiders1], [p['id'] for p in raiders2] ]
+      >>> runs
+      [[328, 344, 336], [331, 323, 355]]
+      >>> event_files = ['food_raiders1.tsv', 'food_raiders2.tsv']
+      >>> descriptions = {
+          "grapes": "instances of grapes manually coded",
+          "apples": "instances of apples manually coded",
+          "bananas": "instances of bananas manually coded"}
+      >>> neuroscout.predictors.create_collection(collection_name="raiders food",\
+                                              dataset_id=11, \
+                                              runs=runs, \
+                                              event_files=event_files, \
+                                              descriptions = descriptions)
 
 --------
 Tutorial
