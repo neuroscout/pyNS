@@ -92,7 +92,8 @@ This function makes it easy to create an analysis, by allowing you to specify yo
 of the analysis by name.
 
 ::
-    analysis = neuroscout.analyses.create_analysis(
+
+    >>> analysis = neuroscout.analyses.create_analysis(
     dataset_name='Life', name='My new analysis!',
     predictor_names=['rmse', 'FramewiseDisplacement'],
     hrf_variables=['rmse'], 
