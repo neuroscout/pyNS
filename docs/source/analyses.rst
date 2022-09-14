@@ -104,7 +104,9 @@ of the analysis by name.
 Uploading custom predictors
 ---------------------------
 
-It is possible to upload custom predictors using :meth:`neuroscout.predictors.create_collection`. Features should be in BIDS-compliant events format. Two columns are mandatory: “onset” and “duration” (both in seconds). You can then include any number of novel predictors as additional columns. Missing values can be annotated using the value “n/a” (no quotes).
+It is possible to upload custom predictors by passing a list of ``event_files`` (list of strings), and a corresponding list of lists of ``run_id`` integers of the same length to :meth:`neuroscout.predictors.create_collection`.
+
+Features should be in BIDS-compliant events format. Two columns are mandatory: ``onset`` and ``duration`` (both in seconds). You can then include any number of novel predictors as additional columns. Missing values can be annotated using the value ``n/a``.
 
 For each events file that you upload, you will be asked to associate it with runs in the respective dataset. Typically, there will be a different event file for each run in a naturalistic dataset. You must then associate each file with subjects. For example, in most cases, all subjects will have seen the same stimulus, but this will vary across datasets.
 
@@ -125,6 +127,8 @@ For each events file that you upload, you will be asked to associate it with run
                                               runs=runs, \
                                               event_files=event_files, \
                                               descriptions = descriptions)
+
+In the above example, ``food_raiders1.tsv`` matches with run_ids ``[328, 344, 336]`` and ``food_raiders2.tsv`` corresponds to runs ``[331, 323, 355]``. The ``description`` parameter is optional and is a dictionary. Each key in the dictionary is a column in the .tsv file and matches to a string description of the columns.
 
 --------
 Tutorial
