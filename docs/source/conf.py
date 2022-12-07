@@ -10,8 +10,8 @@ project = 'pyns'
 copyright = '2022, Alejandro de la Vega'
 author = 'Alejandro de la Vega'
 
-release = '0.4'
-version = '0.4.10'
+release = '0.5'
+version = '0.5.0'
 
 # -- General configuration
 
