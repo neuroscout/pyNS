@@ -38,3 +38,14 @@ def test_predictor_collection(recorder, neuroscout, get_test_data_path):
             new = neuroscout.predictors.get_collection(resp['id'])
 
         assert len(new['predictors']) == 3
+
+def test_predictor_events(recorder, neuroscout):
+    with recorder.use_cassette('predictor_events'):
+        resp = neuroscout.predictor_events.get(predictor_name='vehicle', dataset_name='Budapest', subject='sid000005')
+        assert len(resp) == 2952
+        assert resp[0]['predictor_id'] == 37993
+
+        resp = neuroscout.predictor_events.get(
+            predictor_name=['vehicle', 'landscape'], dataset_name='Budapest', subject='sid000005')
+        assert len(resp) == 2952 * 2
+        assert resp[-1]['predictor_id'] == 37993
