@@ -117,7 +117,7 @@ This is particularly useful for `PredictorEvents`, as the are naturally represen
 
 ::
 
-   >>> neuroscout.predictor_events.get(predictor_name='speech', dataset_name='Sherlock_Merlin', task_name='MerlinMovie')
+   >>> neuroscout.predictor_events.get(predictor_name='speech', dataset_name='Sherlock_Merlin', task_name='MerlinMovie', output_type='df')
 
             duration    onset  predictor_id  run_id value predictor_name subject session number acquisition
       0         0.301   72.422         12725     134     1         speech      36    None   None        None
