@@ -50,7 +50,7 @@ def fetch_neuroscout_predictors(predictor_names, dataset_name, return_type='df',
         
     # Create BIDSRunVariableCollection
     variables = []
-    for (run_id, predictor_names), df in all_df.groupby(['run_id', 'predictor_names']):
+    for (run_id, predictor_names), df in all_df.groupby(['run_id', 'predictor_name']):
         # Determine entities / run info
         keep_cols = []
         entities = {}
