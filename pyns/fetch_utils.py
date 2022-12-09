@@ -79,4 +79,4 @@ def fetch_neuroscout_predictors(predictor_names, dataset_name, return_type='df',
         collection = collection.to_df()
         collection = collection.sort_values(['subject', 'session', 'run', 'acquisition', 'onset'])
 
-    return 
+    return collection
