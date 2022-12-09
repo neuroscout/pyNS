@@ -153,7 +153,7 @@ def _id_to_entities(df):
                 names = {
                     r: endpoint.get(r)['name'] 
                     for r in df[col].unique()
-                    if r is not None
+                    if r
                     }
                 df[col.replace('_id', '_name')] = df[col].map(names)
     return df
