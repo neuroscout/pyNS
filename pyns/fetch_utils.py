@@ -77,6 +77,7 @@ def fetch_neuroscout_predictors(predictor_names, dataset_name, return_type='df',
 
     if return_type == 'df':
         collection = collection.to_df()
-        collection = collection.sort_values(['subject', 'session', 'run', 'acquisition', 'onset'])
+        sort_keys = [a for a in ['subject', 'session', 'run', 'acquisition', 'onset'] if a in collection.columns]
+        collection = collection.sort_values(sort_keys)
 
     return collection
