@@ -31,7 +31,7 @@ def fetch_neuroscout_predictors(predictor_names, dataset_name, return_type='df',
 
     # Fetch from API
     all_df = api.predictor_events.get(
-        predictor_names=predictor_names, dataset_name=dataset_name, output_type='df', **entities)
+        predictor_name=predictor_names, dataset_name=dataset_name, output_type='df', **entities)
     all_df = all_df.rename(columns={'number': 'run', 'value': 'amplitude'})
     
     # Get run-level metadata
