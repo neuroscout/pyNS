@@ -31,7 +31,7 @@ def fetch_neuroscout_predictors(predictor_names, dataset_name, return_type='df',
 
     # Fetch from API
     all_df = api.predictor_events.get(
-        predictor_name=predictor_name, dataset_name=dataset_name, output_type='df', **entities)
+        predictor_names=predictor_names, dataset_name=dataset_name, output_type='df', **entities)
     all_df = all_df.rename(columns={'number': 'run', 'value': 'amplitude'})
     
     # Get run-level metadata
@@ -50,7 +50,7 @@ def fetch_neuroscout_predictors(predictor_names, dataset_name, return_type='df',
         
     # Create BIDSRunVariableCollection
     variables = []
-    for (run_id, predictor_name), df in all_df.groupby(['run_id', 'predictor_name']):
+    for (run_id, predictor_names), df in all_df.groupby(['run_id', 'predictor_names']):
         # Determine entities / run info
         keep_cols = []
         entities = {}
@@ -68,7 +68,7 @@ def fetch_neuroscout_predictors(predictor_names, dataset_name, return_type='df',
         
         df = df[['onset', 'duration', 'amplitude'] + keep_cols].sort_values('onset')
         variables.append(SparseRunVariable(
-            predictor_name, df, run_info, 'events'))
+            predictor_names, df, run_info, 'events'))
             
     collection = BIDSRunVariableCollection(variables=variables)
 
