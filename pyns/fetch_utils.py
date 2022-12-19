@@ -186,9 +186,11 @@ def fetch_preproc(dataset_name, data_dir, no_get=False, datalad_jobs=-1, **filte
     
     Examples:
         >>> from pyns.fetch_utils import fetch_preproc
-        >>> paths = fetch_preproc('Budapest', '/data/neuroscout', subjects='sid000005', runs=[1, 2])
+        >>> paths = fetch_preproc(
+                'Budapest', '/data/neuroscout', subjects='sid000005', runs=[1, 2])
         >>> paths
-        [PosixPath('/data/neuroscout/Budapest/fmriprep/sub-sid000005/func/sub-sid000005_task-movie_run-1_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz'),
+        [PosixPath('/data/neuroscout/Budapest/fmriprep/sub-sid000005/func/ \ 
+        sub-sid000005_task-movie_run-1_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz'),
         ...
         ]
     """
