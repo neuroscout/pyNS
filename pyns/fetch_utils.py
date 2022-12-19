@@ -8,8 +8,10 @@ from pyns import Neuroscout
 from datalad.api import install, get
 from pathlib import Path
 
-def fetch_neuroscout_predictors(predictor_names, dataset_name, return_type='df', resample=True, api=None, **entities):
-    """ Fetch predictors from Neuroscout API, and return as a BIDSRunVariableCollection or pandas DataFrame
+def fetch_neuroscout_predictors(predictor_names, dataset_name, return_type='df', 
+    resample=True, api=None, **entities):
+    """ Fetch predictors from Neuroscout API, and return as a 
+    BIDSRunVariableCollection or pandas DataFrame
 
     Parameters
     ----------
@@ -169,7 +171,8 @@ def install_dataset(dataset_dir, preproc_address, no_get=False):
     return preproc_dir
 
 
-def fetch_preproc(dataset_name, data_dir, no_get=False, datalad_jobs=-1, **filters):
+def fetch_preproc(dataset_name, data_dir, no_get=False, datalad_jobs=-1, 
+    preproc_address=None, **filters):
     """ Fetch preprocessed images from a Neuroscout dataset.
     Installs dataset using DataLad if not already installed.
     
@@ -179,14 +182,16 @@ def fetch_preproc(dataset_name, data_dir, no_get=False, datalad_jobs=-1, **filte
             in data_dir / dataset_name if not already installed.
         no_get (bool): Whether to skip fetching (i.e. dry run)
         datalad_jobs (int): Number of jobs to use for DataLad download
+        preproc_address (str): URL to install dataset from. Fetched from API if not provided.
         **filters: Additional filters to pass to get_paths (e.g. subjects, runs, tasks)
 
     Returns:
+        preproc_dir (str): Path to preprocessed folder (i.e. fmriprep or preproc)
         paths (Path object): List of paths to images 
     
     Examples:
         >>> from pyns.fetch_utils import fetch_preproc
-        >>> paths = fetch_preproc(
+        >>> preproc_dir, paths = fetch_preproc(
                 'Budapest', '/data/neuroscout', subjects='sid000005', runs=[1, 2])
         >>> paths
         [PosixPath('/data/neuroscout/Budapest/fmriprep/sub-sid000005/func/ \ 
@@ -194,8 +199,10 @@ def fetch_preproc(dataset_name, data_dir, no_get=False, datalad_jobs=-1, **filte
         ...
         ]
     """
-    api = Neuroscout()
-    preproc_address = api.datasets.get(name=dataset_name)[0]['preproc_address']
+    if not preproc_address:
+        api = Neuroscout()
+        preproc_address = api.datasets.get(name=dataset_name)[0]['preproc_address']
+
     data_dir = Path(data_dir)
     dataset_dir = data_dir / dataset_name
     
@@ -203,16 +210,16 @@ def fetch_preproc(dataset_name, data_dir, no_get=False, datalad_jobs=-1, **filte
     
     paths = get_paths(preproc_dir, **filters)
     
-    try:
-        # Get with DataLad
-        if not no_get:
-            get([str(p) for p in paths], dataset=dataset_dir, jobs=datalad_jobs)
+    if not no_get:
+        try:
+            # Get with DataLad
+                get([str(p) for p in paths], dataset=dataset_dir, jobs=datalad_jobs)
 
-    except Exception as exp:
-        if hasattr(exp, 'failed'):
-            message = exp.failed[0]['message']
-            raise ValueError("Datalad failed. Reason: {}".format(message))
-        else:
-            raise exp
+        except Exception as exp:
+            if hasattr(exp, 'failed'):
+                message = exp.failed[0]['message']
+                raise ValueError("Datalad failed. Reason: {}".format(message))
+            else:
+                raise exp
             
-    return paths
+    return preproc_dir, paths
