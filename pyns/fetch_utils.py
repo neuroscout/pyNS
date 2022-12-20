@@ -2,12 +2,24 @@
 import math
 import warnings
 import pandas as pd
-from bids.variables import SparseRunVariable, BIDSRunVariableCollection
-from bids.variables.entities import RunInfo
-from bids.layout import BIDSLayout
 from pyns import Neuroscout
-from datalad.api import install, get
 from pathlib import Path
+
+try:
+    from bids.variables import SparseRunVariable, BIDSRunVariableCollection
+    from bids.variables.entities import RunInfo
+    from bids.layout import BIDSLayout
+except ImportError:
+    SparseRunVariable = None
+    BIDSRunVariableCollection = None
+    RunInfo = None
+    BIDSLayout = None
+
+try:
+    from datalad.api import install, get
+except ImportError:
+    install = None
+    get = None
 
 def fetch_predictors(predictor_names, dataset_name, return_type='df', 
     resample=True, api=None, **entities):
@@ -31,6 +43,9 @@ def fetch_predictors(predictor_names, dataset_name, return_type='df',
     """
     if api is None:
         api = Neuroscout()
+
+    if SparseRunVariable is None:
+        raise ImportError("bids.variables is required to fetch predictors. Please install pybids.")
 
     # Fetch from API
     if 'run' in entities:
@@ -106,6 +121,9 @@ def get_paths(preproc_dir, fetch_json=False, fetch_brain_mask=False, **entities)
     """
     preproc_dir = Path(preproc_dir)
     paths = []
+
+    if BIDSLayout is None:
+        raise ImportError("pybids is required to query dataset and associate with meta-data.")
     
     layout = BIDSLayout(preproc_dir, derivatives=preproc_dir, index_metadata=False)
     
@@ -136,6 +154,10 @@ def install_dataset(dataset_dir, preproc_address, no_get=False):
     Returns:
         preproc_dir (str): Path to preprocessed folder (i.e. fmriprep or preproc)
     """
+
+    if install is None:
+        raise Exception("Install datalad to use this function")
+
     dataset_dir = Path(dataset_dir)
     # Install DataLad dataset if dataset_dir does not exist
     if not dataset_dir.exists() and not no_get:
