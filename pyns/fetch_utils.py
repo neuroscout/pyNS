@@ -4,6 +4,7 @@ import warnings
 import pandas as pd
 from bids.variables import SparseRunVariable, BIDSRunVariableCollection
 from bids.variables.entities import RunInfo
+from bids.layout import BIDSLayout
 from pyns import Neuroscout
 from datalad.api import install, get
 from pathlib import Path
@@ -87,48 +88,28 @@ def fetch_neuroscout_predictors(predictor_names, dataset_name, return_type='df',
     return collection
 
 
-def get_paths(preproc_dir, fetch_json=False, subjects=None, runs=None, tasks=None):
+def get_paths(preproc_dir, fetch_json=False, 
+    fetch_brain_mask=False, **entities):
     """ Get paths to preprocessed images in a Neuroscout dataset.
     Args:
         preproc_dir (str): Path to preprocessed dataset
         fetch_json (bool): Whether to fetch JSON metadata files
-        subjects (list or str): List of subjects to fetch
-        runs (list or str): List of runs to fetch
-        tasks (list or str): List of tasks to fetch
-    
+        entities (dict): Entities to filter by
     Returns:
-        paths: List of paths to images
+        paths: List of BIDSFile objects to fetch
     """
     preproc_dir = Path(preproc_dir)
     paths = []
     
+    layout = BIDSLayout(preproc_dir, derivatives=BIDSLayout, index_metadata=False)
+    
+    # Identify functional runs
+    paths = layout.get(desc='preproc', extension='.nii.gz', suffix='bold', 
+        **entities)
 
-    if tasks is None:
-        tasks = ''
-    if not isinstance(tasks, list):
-        tasks = [tasks]
-    tasks = [f'task-{t}*' for t in tasks]
-    
-    if not subjects:
-        subjects = '*'
-    if not isinstance(subjects, list):
-        subjects = [subjects]
-    
-    if not runs:
-        runs = ''
-    if not isinstance(runs, list):
-        runs = [runs]
-        
-    run_p = [f'run-{r}*'  if r else r for r in runs]
-    run_p += [f'run-{str(r).zfill(2)}*' if r else r for r in runs]
-    runs = list(set(run_p))
-    
-    for sub in subjects:
-        for run in runs:
-            for task in tasks:
-                pre =  f'sub-{sub}/**/func/*{task}{run}space-MNI152NLin2009cAsym*'
-                paths += list(preproc_dir.glob(pre + 'preproc*.nii.gz'))
-                paths += list(preproc_dir.glob(pre + 'brain_mask.nii.gz'))
+    if fetch_brain_mask:
+        paths = layout.get(datatype='func', extension='.nii.gz', suffix='mask', 
+            **entities)
 
     if not paths:
         raise Exception("No images suitable for download.")
@@ -136,11 +117,6 @@ def get_paths(preproc_dir, fetch_json=False, subjects=None, runs=None, tasks=Non
     if fetch_json:
         # Get all JSON files in Dataset just in case
         paths += list(preproc_dir.rglob('*.json'))
-    
-    # Check for correctness:
-    errors = [1 if not p.is_symlink() else 0 for p in paths]
-    if sum(errors) > 0:
-        warnings.warn("Error computing image paths. Attempt fetch anyways.")
     
     return paths
 
@@ -167,12 +143,15 @@ def install_dataset(dataset_dir, preproc_address, no_get=False):
             break
     else:
         preproc_dir = dataset_dir
+    
+    if not no_get:
+        get(preproc_dir / 'dataset_description.json', dataset=dataset_dir)
         
     return preproc_dir
 
 
 def fetch_preproc(dataset_name, data_dir, no_get=False, datalad_jobs=-1, 
-    preproc_address=None, **filters):
+    preproc_address=None, **kwargs):
     """ Fetch preprocessed images from a Neuroscout dataset.
     Installs dataset using DataLad if not already installed.
     
@@ -183,7 +162,8 @@ def fetch_preproc(dataset_name, data_dir, no_get=False, datalad_jobs=-1,
         no_get (bool): Whether to skip fetching (i.e. dry run)
         datalad_jobs (int): Number of jobs to use for DataLad download
         preproc_address (str): URL to install dataset from. Fetched from API if not provided.
-        **filters: Additional filters to pass to get_paths (e.g. subjects, runs, tasks)
+        **kwargs: Additional arguments to pass to get_paths, including filters
+         (e.g. subjects, runs, tasks)
 
     Returns:
         preproc_dir (str): Path to preprocessed folder (i.e. fmriprep or preproc)
@@ -208,12 +188,12 @@ def fetch_preproc(dataset_name, data_dir, no_get=False, datalad_jobs=-1,
     
     preproc_dir = install_dataset(dataset_dir, preproc_address, no_get=no_get)
     
-    paths = get_paths(preproc_dir, **filters)
+    paths = get_paths(preproc_dir, **kwargs)
     
     if not no_get:
         try:
             # Get with DataLad
-                get([str(p) for p in paths], dataset=dataset_dir, jobs=datalad_jobs)
+                get([img.path for img in paths], dataset=dataset_dir, jobs=datalad_jobs)
 
         except Exception as exp:
             if hasattr(exp, 'failed'):
