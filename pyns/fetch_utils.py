@@ -27,14 +27,14 @@ def fetch_predictors(predictor_names, dataset_name, return_type='df',
     api : pyns.Neuroscout
         Authenticated instance of Neuroscout API (if None, will create one)
     entities : dict
-        Entities to filter by
-
-
+        Entities to filter by. Can include 'subject', 'session', 'run',
     """
     if api is None:
         api = Neuroscout()
 
     # Fetch from API
+    if 'run' in entities:
+        entities['number'] = entities.pop('run')
     all_df = api.predictor_events.get(
         predictor_name=predictor_names, dataset_name=dataset_name, output_type='df', **entities)
     all_df = all_df.rename(columns={'number': 'run', 'value': 'amplitude'})
@@ -82,8 +82,15 @@ def fetch_predictors(predictor_names, dataset_name, return_type='df',
 
     if return_type == 'df':
         collection = collection.to_df()
+
+        # Sort rows by keys
         sort_keys = [a for a in ['subject', 'session', 'run', 'acquisition', 'onset'] if a in collection.columns]
         collection = collection.sort_values(sort_keys)
+
+        # Reorder columns
+        sort_columns = ['onset', 'duration'] + predictor_names
+        sort_columns += collection.columns.difference(sort_columns).tolist()
+        collection = collection[sort_columns]
 
     return collection
 
@@ -171,7 +178,7 @@ def fetch_images(dataset_name, data_dir, no_get=False, datalad_jobs=-1,
     Examples:
         >>> from pyns.fetch_utils import fetch_preproc
         >>> preproc_dir, paths = fetch_preproc(
-                'Budapest', '/data/neuroscout', subjects='sid000005', runs=[1, 2])
+                'Budapest', '/tmp', subjects='sid000005', runs=[1, 2])
         >>> paths
         [<BIDSImageFile filename='/tmp/Budapest/fmriprep/sub-sid000005/\ 
         func/sub-sid000005_task-movie_run-1_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz'>, 

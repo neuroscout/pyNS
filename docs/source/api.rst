@@ -8,3 +8,4 @@ API
 
    pyns.api
    pyns.endpoints
+   pyns.fetch_utils
