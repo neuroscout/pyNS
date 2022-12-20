@@ -9,7 +9,7 @@ from pyns import Neuroscout
 from datalad.api import install, get
 from pathlib import Path
 
-def fetch_neuroscout_predictors(predictor_names, dataset_name, return_type='df', 
+def fetch_predictors(predictor_names, dataset_name, return_type='df', 
     resample=True, api=None, **entities):
     """ Fetch predictors from Neuroscout API, and return as a 
     BIDSRunVariableCollection or pandas DataFrame
