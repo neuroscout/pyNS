@@ -84,6 +84,10 @@ Under the hood, `pyNS` looks up the ``dataset_id`` and ``task_id`` for the given
 Getting the predictor data
 ----------------------------------
 
+.. note::
+    
+    High-level utilities are available to facilitate this process. See the :doc:`fetching` documentation.
+
 An important aspect of `pyNS` is the ability to retrieve moment by moment events for specific predictors.
 
 The simplest way is to simply use ``predictor_id`` to query for a specific Predictor, for a specific ``run_id``:
