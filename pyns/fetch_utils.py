@@ -100,7 +100,7 @@ def get_paths(preproc_dir, fetch_json=False, fetch_brain_mask=False, **entities)
     preproc_dir = Path(preproc_dir)
     paths = []
     
-    layout = BIDSLayout(preproc_dir, derivatives=BIDSLayout, index_metadata=False)
+    layout = BIDSLayout(preproc_dir, derivatives=preproc_dir, index_metadata=False)
     
     # Identify functional runs
     paths = layout.get(desc='preproc', extension='.nii.gz', suffix='bold', 
