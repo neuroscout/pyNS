@@ -184,7 +184,7 @@ def fetch_images(dataset_name, data_dir, no_get=False, datalad_jobs=-1,
     
     Args:
         dataset_name (str): Name of dataset to fetch.
-        data_dir (str): Path to datasets directories. Dataset will be installed.
+        data_dir (str): Path to datasetim s directories. Dataset will be installed.
         in data_dir / dataset_name if not already installed.
         no_get (bool): Whether to skip fetching (i.e. dry run).
         datalad_jobs (int): Number of jobs to use for DataLad download.
