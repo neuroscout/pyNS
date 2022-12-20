@@ -1,6 +1,5 @@
 """ High-level utilities for fetching predictors from Neuroscout API """
 import math
-import warnings
 import pandas as pd
 from pyns import Neuroscout
 from pathlib import Path
@@ -26,20 +25,19 @@ def fetch_predictors(predictor_names, dataset_name, return_type='df',
     """ Fetch predictors from Neuroscout API, and return as a 
     BIDSRunVariableCollection or pandas DataFrame
 
-    Parameters
-    ----------
-    predictor_names : str
-        Name of predictors to fetch
-    dataset_name : str
-        Name of dataset to fetch predictors from
-    return_type : str
-        Either 'df' or 'BIDSRunVariableCollection'
-    resample : bool
-        Whether to resample predictors to TR
-    api : pyns.Neuroscout
-        Authenticated instance of Neuroscout API (if None, will create one)
-    entities : dict
-        Entities to filter by. Can include 'subject', 'session', 'run',
+    Args:
+        predictor_names : str
+            Name of predictors to fetch
+        dataset_name : str
+            Name of dataset to fetch predictors from
+        return_type : str
+            Either 'df' or 'BIDSRunVariableCollection'
+        resample : bool
+            Whether to resample predictors to TR
+        api : pyns.Neuroscout
+            Authenticated instance of Neuroscout API (if None, will create one)
+        entities : dict
+            Entities to filter by. Can include 'subject', 'session', 'run',
     """
     if api is None:
         api = Neuroscout()
@@ -112,6 +110,7 @@ def fetch_predictors(predictor_names, dataset_name, return_type='df',
 
 def get_paths(preproc_dir, fetch_json=False, fetch_brain_mask=False, **entities):
     """ Get paths to preprocessed images in a Neuroscout dataset.
+
     Args:
         preproc_dir (str): Path to preprocessed dataset
         fetch_json (bool): Whether to fetch JSON metadata files
@@ -146,6 +145,7 @@ def get_paths(preproc_dir, fetch_json=False, fetch_brain_mask=False, **entities)
 
 def install_dataset(dataset_dir, preproc_address, no_get=False):
     """ Install a Neuroscout dataset using DataLad.
+    
     Args:
         dataset_dir (str): Path to install dataset
         preproc_address (str): URL to install dataset from
@@ -186,12 +186,12 @@ def fetch_images(dataset_name, data_dir, no_get=False, datalad_jobs=-1,
     Args:
         dataset_name (str): Name of dataset to fetch
         data_dir (str): Path to datasets directories. Dataset will be installed
-            in data_dir / dataset_name if not already installed.
+        in data_dir / dataset_name if not already installed.
         no_get (bool): Whether to skip fetching (i.e. dry run)
         datalad_jobs (int): Number of jobs to use for DataLad download
         preproc_address (str): URL to install dataset from. Fetched from API if not provided.
         **kwargs: Additional arguments to pass to get_paths, including filters
-         (e.g. subjects, runs, tasks)
+        (e.g. subjects, runs, tasks)
 
     Returns:
         preproc_dir (str): Path to preprocessed folder (i.e. fmriprep or preproc)
