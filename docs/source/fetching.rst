@@ -25,10 +25,6 @@ predictors from the Neuroscout API, and the corresponding images from the prepro
 Fetching & re-sampling predictor data
 --------------------------------------
 
-.. note::
-    
-    To learn about low-level utilities for fetching predictors, see the :doc:`querying` documentation.
-
 The method :meth:`pyns.fetch_utils.fetch_predictors` can be used to fetch predictor data, 
 resample it to the TR of the images, and return it as a pandas DataFrame.
 
@@ -38,26 +34,38 @@ Optionally, you can also restrict the data to a subset of subjects, runs or task
 .. code-block:: python
 
     fetch_predictors(predictor_names=['speech', 'rms'], dataset_name='Budapest', 
-        subject='sid000005', run=[1, 2]resample=True)
+        subject='sid000005', run=[1, 2], resample=True, rescale=False)
 
 
-+----+------------+---------+-------+-----------+--------------+--------------+----------+
-|    |   duration |   onset |   run | subject   |          rms |       speech |   run_id |
-+====+============+=========+=======+===========+==============+==============+==========+
-|  0 |          1 |       0 |     1 | sid000005 |  6.18876e-07 |  9.5801e-06  |     1433 |
-+----+------------+---------+-------+-----------+--------------+--------------+----------+
-|  2 |          1 |       1 |     1 | sid000005 | -1.49298e-06 | -2.57011e-05 |     1433 |
-+----+------------+---------+-------+-----------+--------------+--------------+----------+
-|  4 |          1 |       2 |     1 | sid000005 |  3.50004e-06 |  6.755e-05   |     1433 |
-+----+------------+---------+-------+-----------+--------------+--------------+----------+
-|  6 |          1 |       3 |     1 | sid000005 | -7.91888e-06 | -0.000173993 |     1433 |
-+----+------------+---------+-------+-----------+--------------+--------------+----------+
-|  8 |          1 |       4 |     1 | sid000005 |  1.70871e-05 |  0.000439006 |     1433 |
-+----+------------+---------+-------+-----------+--------------+--------------+----------+
+
++----+---------+------------+--------------+--------------+-------+-----------+----------+
+|    |   onset |   duration |       speech |          rms |   run | subject   |   run_id |
++====+=========+============+==============+==============+=======+===========+==========+
+|  0 |       0 |          1 |  9.5801e-06  |  6.18876e-07 |     1 | sid000005 |     1433 |
++----+---------+------------+--------------+--------------+-------+-----------+----------+
+|  2 |       1 |          1 | -2.57011e-05 | -1.49298e-06 |     1 | sid000005 |     1433 |
++----+---------+------------+--------------+--------------+-------+-----------+----------+
+|  4 |       2 |          1 |  6.755e-05   |  3.50004e-06 |     1 | sid000005 |     1433 |
++----+---------+------------+--------------+--------------+-------+-----------+----------+
+|  6 |       3 |          1 | -0.000173993 | -7.91888e-06 |     1 | sid000005 |     1433 |
++----+---------+------------+--------------+--------------+-------+-----------+----------+
+|  8 |       4 |          1 |  0.000439006 |  1.70871e-05 |     1 | sid000005 |     1433 |
++----+---------+------------+--------------+--------------+-------+-----------+----------+
+
 
 This will return a pandas DataFrame with the predictors resampled to the TR (in this case 0.33s) 
-ith `onset` and `duration` columns. In addition, columns describing the entities identifying each columns
-(e.g. which run, subject, etc...) are included as columns.
+with `onset` and `duration` columns. In addition, columns describing the entities identifying each columns
+(e.g. `subject`, `run`...) are included as columns.
+
+Note that you can choose to rescale the predictors to have a mean of 0 and standard deviation of 1, by setting
+`rescale=True`. This operation will occur prior to densification and resampling of variables.
+
+It's possible to retrieve `BIDSRunVariableCollection` collection (`return_type='collection'`), which can be used to
+apply further transformations to the data.
+
+.. note::
+    
+    To learn about low-level utilities for fetching predictors, see the :doc:`querying` documentation.
 
 -----------------------------
 Fetching preprocessed images

@@ -20,7 +20,7 @@ except ImportError:
     install = None
     get = None
 
-def fetch_predictors(predictor_names, dataset_name, return_type='df', 
+def fetch_predictors(predictor_names, dataset_name, return_type='df', rescale=False,
     resample=True, api=None, **entities):
     """ Fetch predictors from Neuroscout API, and return as a 
     BIDSRunVariableCollection or pandas DataFrame
@@ -29,6 +29,7 @@ def fetch_predictors(predictor_names, dataset_name, return_type='df',
         predictor_names (str): Mame of predictors to fetch
         dataset_name (str): Name of dataset to fetch predictors from
         return_type (str): Either 'df' or 'BIDSRunVariableCollection'
+        rescale (bool): Whether to rescale predictors to mean 0, std 1
         resample (bool): Whether to resample predictors to TR
         api (pyns.Neuroscout): A instance of API (if None, will create one)
         entities (dict): Entities to filter by. e.g.: 'subject', 'session', 'run',
@@ -83,6 +84,10 @@ def fetch_predictors(predictor_names, dataset_name, return_type='df',
             predictor_names, df, run_info, 'events'))
             
     collection = BIDSRunVariableCollection(variables=variables)
+
+    if rescale:
+        from bids.modeling.transformations import Scale
+        Scale(collection, predictor_names)
 
     if resample:
         collection = collection.to_dense().resample('TR')
