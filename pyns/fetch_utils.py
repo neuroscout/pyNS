@@ -88,8 +88,7 @@ def fetch_neuroscout_predictors(predictor_names, dataset_name, return_type='df',
     return collection
 
 
-def get_paths(preproc_dir, fetch_json=False, 
-    fetch_brain_mask=False, **entities):
+def get_paths(preproc_dir, fetch_json=False, fetch_brain_mask=False, **entities):
     """ Get paths to preprocessed images in a Neuroscout dataset.
     Args:
         preproc_dir (str): Path to preprocessed dataset
@@ -150,7 +149,7 @@ def install_dataset(dataset_dir, preproc_address, no_get=False):
     return preproc_dir
 
 
-def fetch_preproc(dataset_name, data_dir, no_get=False, datalad_jobs=-1, 
+def fetch_images(dataset_name, data_dir, no_get=False, datalad_jobs=-1, 
     preproc_address=None, **kwargs):
     """ Fetch preprocessed images from a Neuroscout dataset.
     Installs dataset using DataLad if not already installed.
@@ -167,15 +166,15 @@ def fetch_preproc(dataset_name, data_dir, no_get=False, datalad_jobs=-1,
 
     Returns:
         preproc_dir (str): Path to preprocessed folder (i.e. fmriprep or preproc)
-        paths (Path object): List of paths to images 
+        paths (Path object): List of BIDSImageFile objects corresponding to fetched files 
     
     Examples:
         >>> from pyns.fetch_utils import fetch_preproc
         >>> preproc_dir, paths = fetch_preproc(
                 'Budapest', '/data/neuroscout', subjects='sid000005', runs=[1, 2])
         >>> paths
-        [PosixPath('/data/neuroscout/Budapest/fmriprep/sub-sid000005/func/ \ 
-        sub-sid000005_task-movie_run-1_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz'),
+        [<BIDSImageFile filename='/tmp/Budapest/fmriprep/sub-sid000005/\ 
+        func/sub-sid000005_task-movie_run-1_space-MNI152NLin2009cAsym_desc-brain_mask.nii.gz'>, 
         ...
         ]
     """
