@@ -26,18 +26,12 @@ def fetch_predictors(predictor_names, dataset_name, return_type='df',
     BIDSRunVariableCollection or pandas DataFrame
 
     Args:
-        predictor_names : str
-            Name of predictors to fetch
-        dataset_name : str
-            Name of dataset to fetch predictors from
-        return_type : str
-            Either 'df' or 'BIDSRunVariableCollection'
-        resample : bool
-            Whether to resample predictors to TR
-        api : pyns.Neuroscout
-            Authenticated instance of Neuroscout API (if None, will create one)
-        entities : dict
-            Entities to filter by. Can include 'subject', 'session', 'run',
+        predictor_names (str): Mame of predictors to fetch
+        dataset_name (str): Name of dataset to fetch predictors from
+        return_type (str): Either 'df' or 'BIDSRunVariableCollection'
+        resample (bool): Whether to resample predictors to TR
+        api (pyns.Neuroscout): A instance of API (if None, will create one)
+        entities (dict): Entities to filter by. e.g.: 'subject', 'session', 'run',
     """
     if api is None:
         api = Neuroscout()
@@ -145,7 +139,7 @@ def get_paths(preproc_dir, fetch_json=False, fetch_brain_mask=False, **entities)
 
 def install_dataset(dataset_dir, preproc_address, no_get=False):
     """ Install a Neuroscout dataset using DataLad.
-    
+
     Args:
         dataset_dir (str): Path to install dataset
         preproc_address (str): URL to install dataset from
@@ -190,7 +184,7 @@ def fetch_images(dataset_name, data_dir, no_get=False, datalad_jobs=-1,
         no_get (bool): Whether to skip fetching (i.e. dry run)
         datalad_jobs (int): Number of jobs to use for DataLad download
         preproc_address (str): URL to install dataset from. Fetched from API if not provided.
-        **kwargs: Additional arguments to pass to get_paths, including filters
+        kwargs: Additional arguments to pass to get_paths, including filters
         (e.g. subjects, runs, tasks)
 
     Returns:

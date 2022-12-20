@@ -1,5 +1,5 @@
 pyNS: Neuroscout API client documentation
-===================================
+=========================================
 
 .. image:: neuroscout-logo.svg
   :width: 400
