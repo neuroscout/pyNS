@@ -63,7 +63,7 @@ def fetch_predictors(predictor_names, dataset_name, return_type='df', rescale=Fa
         
     # Create BIDSRunVariableCollection
     variables = []
-    for (run_id, predictor_names), df in all_df.groupby(['run_id', 'predictor_name']):
+    for (run_id, names), df in all_df.groupby(['run_id', 'predictor_name']):
         # Determine entities / run info
         keep_cols = []
         entities = {}
@@ -81,7 +81,7 @@ def fetch_predictors(predictor_names, dataset_name, return_type='df', rescale=Fa
         
         df = df[['onset', 'duration', 'amplitude'] + keep_cols].sort_values('onset')
         variables.append(SparseRunVariable(
-            predictor_names, df, run_info, 'events'))
+            names, df, run_info, 'events'))
             
     collection = BIDSRunVariableCollection(variables=variables)
 
