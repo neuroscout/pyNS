@@ -130,7 +130,7 @@ def get_paths(preproc_dir, fetch_json=False, fetch_brain_mask=False, **entities)
         **entities)
 
     if fetch_brain_mask:
-        paths = layout.get(datatype='func', extension='.nii.gz', suffix='mask', 
+        paths += layout.get(datatype='func', extension='.nii.gz', suffix='mask', 
             **entities)
 
     if not paths:
