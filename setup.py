@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(name='pyns',
-      version='0.4.10',
+      version='0.5.0',
       description='Neuroscout API wrapper',
       long_description=long_description,
       long_description_content_type="text/markdown",
