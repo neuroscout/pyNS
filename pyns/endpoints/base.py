@@ -90,10 +90,13 @@ def names_to_ids(func):
 
                 if not res:
                     raise ValueError("No {} found using provided arguments".format(kw))
-                if len(res) > 1:
+                if len(res) > 1 and not isinstance(kwargs[kw], list):
                     raise ValueError("Multiple {} found using provided arguments".format(kw))
 
-                kwargs[kw.replace('_name', '_id')] = res[0]['id']
+                ids_ = [r['id'] for r in res]
+                if len(ids_) == 1:
+                    ids_ = ids_[0]
+                kwargs[kw.replace('_name', '_id')] = ids_
                 kwargs.pop(kw)
 
         return func(*args, **kwargs)
@@ -149,7 +152,7 @@ def _id_to_entities(df):
             else:
                 names = {
                     r: endpoint.get(r)['name'] 
-                    for r in df[col].unique()
+                    for r in df[col].dropna().unique()
                     }
                 df[col.replace('_id', '_name')] = df[col].map(names)
     return df

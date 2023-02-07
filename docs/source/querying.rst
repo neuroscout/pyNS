@@ -84,6 +84,10 @@ Under the hood, `pyNS` looks up the ``dataset_id`` and ``task_id`` for the given
 Getting the predictor data
 ----------------------------------
 
+.. note::
+    
+    High-level utilities are available to facilitate this process. See the :doc:`fetching` documentation.
+
 An important aspect of `pyNS` is the ability to retrieve moment by moment events for specific predictors.
 
 The simplest way is to simply use ``predictor_id`` to query for a specific Predictor, for a specific ``run_id``:
@@ -117,7 +121,7 @@ This is particularly useful for `PredictorEvents`, as the are naturally represen
 
 ::
 
-   >>> neuroscout.predictor_events.get(predictor_name='speech', dataset_name='Sherlock_Merlin', task_name='MerlinMovie')
+   >>> neuroscout.predictor_events.get(predictor_name='speech', dataset_name='Sherlock_Merlin', task_name='MerlinMovie', output_type='df')
 
             duration    onset  predictor_id  run_id value predictor_name subject session number acquisition
       0         0.301   72.422         12725     134     1         speech      36    None   None        None
