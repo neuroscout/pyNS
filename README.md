@@ -16,7 +16,7 @@ Use `pip` to install it:
 ## Documentation 📚
 Full documentation can be found at [readthedocs](https://pyns.readthedocs.io/en/latest/).
 
-For API docs, check out the [Swagger API UI](http://neuroscout.org/swagger-ui/).
+For API docs, check out the [Swagger API UI](https://neuroscout.org/api/swagger/).
 
 For a tutorial see this [jupyter notebook example](./examples/Tutorial.ipynb).  
 You can also follow the Neuroscout Paper's analyses in this interactive [jupyter book](https://neuroscout.github.io/neuroscout-paper/intro.html).
