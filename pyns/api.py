@@ -137,10 +137,12 @@ class Neuroscout(object):
             self._api_token = rv['access_token']
 
             iat = datetime.utcfromtimestamp(
-                jwt.decode(self._api_token, verify=False)['iat'])
+                jwt.decode(self._api_token, verify=False, 
+                           options={'verify_signature': False})['iat'])
             adj = iat - datetime.now()
             self._api_token_exp = datetime.utcfromtimestamp(
-                jwt.decode(self._api_token, verify=False)['exp']) - adj
+                jwt.decode(self._api_token, verify=False, 
+                           options={'verify_signature': False})['exp']) - adj
 
     def _check_expiry(self):
         if self._api_token is not None:

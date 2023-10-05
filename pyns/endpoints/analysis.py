@@ -529,6 +529,11 @@ class Analyses(Base):
         uploads = self.get(id=id, sub_route='upload')
         
         # Sort by date
+        # Strip off seconds if they are there
+        for u in uploads:
+            if u['uploaded_at'].count(':') > 1:
+                u['uploaded_at'] = u['uploaded_at'][:-3]
+
         uploads = sorted(uploads, key=lambda x: datetime.datetime.strptime(
                 x['uploaded_at'], '%Y-%m-%dT%H:%M'),
                          reverse=(select == 'latest'))

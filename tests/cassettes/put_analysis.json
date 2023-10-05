@@ -1,11 +1,11 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2022-07-26T00:02:46",
+      "recorded_at": "2023-10-05T20:35:17",
       "request": {
         "body": {
           "encoding": "utf-8",
-          "string": "{\"created_at\": \"2022-07-26T00:0\", \"dataset_id\": 9, \"description\": \"new_description\", \"hash_id\": \"o8sbu\", \"locked\": false, \"model\": {\"Input\": {\"Run\": [1], \"Subject\": [\"rid000001\"], \"Task\": \"life\"}, \"Name\": \"pytest_analysis\", \"Steps\": [{\"Contrasts\": [], \"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Run\", \"Model\": {\"X\": [\"speech\"]}, \"Transformations\": []}, {\"DummyContrasts\": {\"Type\": \"FEMA\"}, \"Level\": \"Subject\"}, {\"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Dataset\"}]}, \"modified_at\": \"2022-07-26T00:0\", \"name\": \"pytest_analysis\", \"nv_count\": 0, \"predictions\": \"\", \"predictors\": [12905], \"private\": true, \"runs\": [236], \"status\": \"DRAFT\", \"user\": \"example_user\"}"
+          "string": "{\"created_at\": \"2023-10-05T20:3\", \"dataset_id\": 9, \"description\": \"new_description\", \"hash_id\": \"cmprm\", \"locked\": false, \"model\": {\"Input\": {\"Run\": [1], \"Subject\": [\"rid000001\"], \"Task\": \"life\"}, \"Name\": \"pytest_analysis\", \"Steps\": [{\"Contrasts\": [], \"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Run\", \"Model\": {\"X\": [\"speech\"]}, \"Transformations\": []}, {\"DummyContrasts\": {\"Type\": \"FEMA\"}, \"Level\": \"Subject\"}, {\"DummyContrasts\": {\"Type\": \"t\"}, \"Level\": \"Dataset\"}]}, \"modified_at\": \"2023-10-05T20:3\", \"name\": \"pytest_analysis\", \"nv_count\": 0, \"predictions\": \"\", \"predictors\": [12905], \"private\": true, \"runs\": [236], \"status\": \"DRAFT\", \"user\": \"example_user\"}"
         },
         "headers": {
           "Accept": [
@@ -15,7 +15,7 @@
             "gzip, deflate, br"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTkzOTg1NTIsImlhdCI6MTY1ODc5Mzc1MiwibmJmIjoxNjU4NzkzNzUyLCJpZGVudGl0eSI6MX0.55A1Lj_YkR1rnvtVxXnDkHuyMbY8I5xRYvD38Rh9NXY"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTcxNDI5MDMsImlhdCI6MTY5NjUzODEwMywibmJmIjoxNjk2NTM4MTAzLCJpZGVudGl0eSI6MX0.hHABEu1rQp90CjzyOR4_lNzu9NFmGMYqo8tTE3tnlDA"
           ],
           "Connection": [
             "keep-alive"
@@ -31,11 +31,11 @@
           ]
         },
         "method": "PUT",
-        "uri": "https://neuroscout.org/api/analyses/o8sbu"
+        "uri": "https://neuroscout.org/api/analyses/cmprm"
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA31STU/DMAy98zN8zqSsiMF6Q4xJSIzD1gPSNFVZ62phaRLlY1BV++84HUPjMHKKX+zn9+z0UDkUAetSBMgh41k24vejbFJwnnNgUIsgPIZS1pBPKURfOWmDNJrSNX6WlwiDnfC7IRfMg99GQpSp9khAI5RHBq2pUUHew4u2MaTLMhLVerxhsIrbD6wIXIOTNU9nDIQXwu+JUckG4cjgTbRIoe0C+lAKLVTnpadWq4DWU3UPT0YHJ3xIERHMYtt2F1gPRWcTR0h8r3hIkgYhDBZnge9Jh7eI1Q42lFY4oX1jXCuS14H5yPrr3PPnxeMl/dndv0V/BM1Os4djak+Dk428vih9bSr6UFYmaqriDKxwqE/b1FEpAhzWsvpxBPALGJccjrMpv9skUB7ol0AeXKQlujj4z24n9OaDCDEVz5aP84IYfNy2Mpz/1KlN9OgoBb9EaxWWQ3i8+QZ8T+M1fgIAAA==",
+          "base64_string": "H4sIAAAAAAAAA31STWvDMAy972fo7EKS0kFzK+sKg3WHNodBKcFNFOrVdow/uoWQ/z45XUd36HyynqWn9yT3UFnkHuuSe8ghS7LpJE0myazIknwKDGruuUNfihryOYXoKiuMF62mdI2f5S3C4MjdccyFShmrCJFtdUICGi4dMlBtjRLyHl60CT5eNoGodumewTYcPrAicAdW1Ek8KRBecHciRikahIHBG1dIoek8Ol9yzWXnhKNWW4/GUXUPT632ljsfIyJYBqW6G6yHojORw0e+VzxHSaMQBuurwPeowxnE6gh7Siss165preLR68g8sP4+9+p5vbilv7r7t+iPoOVl9jDE9jQ40Yj7i9L3pqLPZdUGTVUJA8Mt6ss2dZCSAIu1qH4cAfwCrY0O02yezPYRFGf6JZB7G2iJNoz+s+kjvTnPfYjFy81iVRCDCwcl/PVPXdoEh5ZS8IsrI7Ecw+HhG3lb/Ut+AgAA",
           "encoding": "utf-8",
           "string": ""
         },
@@ -53,7 +53,7 @@
             "application/json"
           ],
           "Date": [
-            "Tue, 26 Jul 2022 00:02:46 GMT"
+            "Thu, 05 Oct 2023 20:35:17 GMT"
           ],
           "Server": [
             "nginx/1.21.6"
@@ -72,7 +72,7 @@
           "code": 200,
           "message": "OK"
         },
-        "url": "https://neuroscout.org/api/analyses/o8sbu"
+        "url": "https://neuroscout.org/api/analyses/cmprm"
       }
     }
   ],
