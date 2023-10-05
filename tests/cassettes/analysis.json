@@ -1,7 +1,7 @@
 {
   "http_interactions": [
     {
-      "recorded_at": "2022-07-26T00:02:45",
+      "recorded_at": "2023-10-05T20:35:16",
       "request": {
         "body": {
           "encoding": "utf-8",
@@ -15,7 +15,7 @@
             "gzip, deflate, br"
           ],
           "Authorization": [
-            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2NTkzOTg1NTIsImlhdCI6MTY1ODc5Mzc1MiwibmJmIjoxNjU4NzkzNzUyLCJpZGVudGl0eSI6MX0.55A1Lj_YkR1rnvtVxXnDkHuyMbY8I5xRYvD38Rh9NXY"
+            "JWT eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2OTcxNDI5MDMsImlhdCI6MTY5NjUzODEwMywibmJmIjoxNjk2NTM4MTAzLCJpZGVudGl0eSI6MX0.hHABEu1rQp90CjzyOR4_lNzu9NFmGMYqo8tTE3tnlDA"
           ],
           "Connection": [
             "keep-alive"
@@ -35,7 +35,7 @@
       },
       "response": {
         "body": {
-          "base64_string": "H4sIAAAAAAAAA31Sy2rDMBC89zP2rIDj0rTxLTQNFJoeEh8KIRjFXhM1siT0CDXG/96V3ZT0kPrkHWlmZ3bVQWmRe6wK7iGDNEnTSfI4SWd5kmQJMKi45w59ISrI5lSiK60wXmgFmQpSMjhydxyOQT+5QyCO1OUJCai5dMig0RVKyDp4VSb4+LMJxN5N9wy24fCJJYE7sKJK4jcFwnPuTqQoRY3QM3jnDVJpWo/OF1xx2TrhqNXWo3HE7uBZK2+587EigWVomvYK6yBvTdTwUe8Nz9HSYITB+mLwI/pwBrE8wp6u5ZYrV2vb8Bh4UO5Zd1t79bJeXMtf0v1L+mNoOY4b+tieBidqcXs36tZU1LkodVDEShgYblGNCxwXZixWovxJBPALaBsTTtN58rCPoDjTw4DM20BLtGHIn97P6Mx57kMkLzeLVU4KLhwa4S/PaGwTHFq6gl+8MRKLoezvvgEbyNMlcQIAAA==",
+          "base64_string": "H4sIAAAAAAAAA31Sy2rDMBC89zP2rIDtkEJ8C00DhaaHxIdCCEaR10SNJQs9Qo3xv3dlN6U9pD55R5rZmV31ICxyj1XJPeSQJdl8liazZFFkST4HBhX33KEvZQX5kkp0wkrjZash16FpGJy5O4/HIJSxijhNKy5IQM0bhwxUW2EDeQ8v2gQff3aB2If0yGAfTh8oCDyAlVUSvxQIL7i7kGIja4SBwRtXSKXpPDpfcs2bzklHrfYejSN2D0+t9pY7HysSWAelul9YD0VnooaPeq94jZZGIwy2N4Pv0YcziOIMR7pWWK5d3VrFY+BReWD9fe3N83b1W/6W7l/SH0PradwwxPY0OFnL+7vR96air6VogyZWwsBwi3pa4LQwY7GS4jsRwA/Q2pgwzZbJ4hhBeaWHAbm3gZZow5g/mz/SmfPch0he71abghRcOCnpb89oahMcWrqCn1yZBsuxHB6+AGVJPhBxAgAA",
           "encoding": "utf-8",
           "string": ""
         },
@@ -53,7 +53,7 @@
             "application/json"
           ],
           "Date": [
-            "Tue, 26 Jul 2022 00:02:45 GMT"
+            "Thu, 05 Oct 2023 20:35:16 GMT"
           ],
           "Server": [
             "nginx/1.21.6"
