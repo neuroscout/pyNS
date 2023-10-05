@@ -7,7 +7,7 @@ from pathlib import Path
 try:
     from bids.variables import SparseRunVariable, BIDSRunVariableCollection
     from bids.variables.entities import RunInfo
-    from bids.layout import BIDSLayout
+    from bids.layout import BIDSLayout, BIDSLayoutIndexer
 except ImportError:
     SparseRunVariable = None
     BIDSRunVariableCollection = None
@@ -90,7 +90,7 @@ def fetch_predictors(predictor_names, dataset_name, return_type='df', rescale=Fa
         Scale(collection, predictor_names)
 
     if resample:
-        collection = collection.to_dense().resample('TR')
+        collection = collection.to_dense('TR')
 
     if return_type == 'df':
         collection = collection.to_df()
@@ -177,7 +177,7 @@ def install_dataset(dataset_dir, preproc_address, no_get=False):
     return preproc_dir
 
 
-def fetch_images(dataset_name, data_dir, no_get=False, datalad_jobs=-1, 
+def fetch_images(dataset_name, data_dir, no_get=False, datalad_jobs='auto', 
     preproc_address=None, **kwargs):
     """ Fetch preprocessed images from a Neuroscout dataset.
     Installs dataset using DataLad if not already installed.
